@@ -1,0 +1,463 @@
+<!doctype html>
+<html lang="en" id="html-root">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Us - JSL FastLine</title>
+    <link rel="shortcut icon" href="RoundFavicon.png" type="image/x-icon" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800;900&family=DM+Sans:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- ===== NAVIGATION ===== -->
+    <nav id="navbar">
+      <div class="container nav-inner">
+        <div class="nav-logo">
+          <span class="nav-logo-text">JSL FastLine</span>
+          <div class="nav-logo-icon">
+            <img src="RoundIcon.png" alt="Logo" referrerpolicy="no-referrer" />
+          </div>
+        </div>
+
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="index.html#vision">Vision</a></li>
+          <li><a href="index.html#features">Features</a></li>
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="index.html#tech">Technology</a></li>
+        </ul>
+
+        <button id="theme-toggle" class="btn-theme" aria-label="Toggle theme">
+          <i data-lucide="sun" class="icon-sun"></i>
+          <i data-lucide="moon" class="icon-moon"></i>
+        </button>
+
+        <button onclick="window.location.href='signup.html'" class="btn-primary">Get Started</button>
+
+        <!-- Mobile controls -->
+        <div class="nav-mobile-btns">
+          <button
+            id="theme-toggle-mobile"
+            class="btn-theme"
+            aria-label="Toggle theme"
+          >
+            <i data-lucide="sun" class="icon-sun"></i>
+            <i data-lucide="moon" class="icon-moon"></i>
+          </button>
+          <button id="menu-toggle" aria-label="Open menu">
+            <i data-lucide="menu"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div id="mobile-menu">
+        <a href="index.html">Home</a>
+        <a href="index.html#vision">Vision</a>
+        <a href="index.html#features">Features</a>
+        <a href="index.html#about">About</a>
+        <a href="index.html#tech">Technology</a>
+        <button onclick="window.location.href='signup.html'" class="btn-primary">Get Started</button>
+      </div>
+    </nav>
+
+    <!-- ===== HERO SECTION ===== -->
+    <section class="contact-hero">
+      <div class="container">
+        <div class="contact-hero-content">
+          <div class="contact-hero-badge">
+            <i data-lucide="message-circle"></i>
+            Get in Touch
+          </div>
+          <h1 class="contact-hero-title">
+            Let's Build Something <br />
+            <span class="gradient-text">Amazing Together</span>
+          </h1>
+          <p class="contact-hero-desc">
+            Have questions about our offline-first platform? Want to partner
+            with us? Need support? We're here to help. Reach out and let's
+            start a conversation.
+          </p>
+          <div class="contact-hero-quick">
+            <div class="quick-contact">
+              <i data-lucide="mail"></i>
+              <span>hello@jslfastline.com</span>
+            </div>
+            <div class="quick-contact">
+              <i data-lucide="phone"></i>
+              <span>+1 (555) 123-4567</span>
+            </div>
+            <div class="quick-contact">
+              <i data-lucide="clock"></i>
+              <span>24/7 Support</span>
+            </div>
+          </div>
+        </div>
+        <div class="contact-hero-visual">
+          <div class="contact-illustration">
+            <div class="floating-element" style="top: 15%; left: 10%; animation-delay: 0s">
+              <i data-lucide="send"></i>
+            </div>
+            <div class="floating-element" style="top: 50%; right: 20%; animation-delay: 1s">
+              <i data-lucide="headphones"></i>
+            </div>
+            <div class="floating-element" style="bottom: 25%; left: 15%; animation-delay: 2s">
+              <i data-lucide="users"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CONTACT FORM ===== -->
+    <section class="contact-form-section">
+      <div class="container">
+        <div class="contact-form-container">
+          <div class="contact-form-content">
+            <div class="section-header">
+              <h2 class="section-title">Send us a Message</h2>
+              <p class="section-subtitle">
+                We'd love to hear from you. Fill out the form below and we'll
+                get back to you as soon as possible.
+              </p>
+            </div>
+
+            <form class="contact-form" id="contactForm">
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="firstName">First Name *</label>
+                  <input
+                    type="text"
+                    id="firstName"
+                    name="firstName"
+                    required
+                    placeholder="John"
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="lastName">Last Name *</label>
+                  <input
+                    type="text"
+                    id="lastName"
+                    name="lastName"
+                    required
+                    placeholder="Doe"
+                  />
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="email">Email Address *</label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  required
+                  placeholder="john.doe@example.com"
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="company">Company</label>
+                <input
+                  type="text"
+                  id="company"
+                  name="company"
+                  placeholder="Your Company Name"
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="subject">Subject *</label>
+                <select id="subject" name="subject" required>
+                  <option value="">Select a topic</option>
+                  <option value="general">General Inquiry</option>
+                  <option value="support">Technical Support</option>
+                  <option value="partnership">Partnership Opportunities</option>
+                  <option value="press">Press/Media</option>
+                  <option value="careers">Careers</option>
+                  <option value="feedback">Feedback</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="message">Message *</label>
+                <textarea
+                  id="message"
+                  name="message"
+                  required
+                  rows="6"
+                  placeholder="Tell us how we can help you..."
+                ></textarea>
+              </div>
+
+              <div class="form-group checkbox-group">
+                <label class="checkbox-label">
+                  <input type="checkbox" name="newsletter" id="newsletter" />
+                  <span class="checkmark"></span>
+                  Subscribe to our newsletter for updates and insights
+                </label>
+              </div>
+
+              <button type="submit" class="btn-primary form-submit">
+                Send Message
+                <i data-lucide="send"></i>
+              </button>
+            </form>
+          </div>
+
+          <div class="contact-info">
+            <div class="contact-info-card">
+              <div class="contact-info-icon">
+                <i data-lucide="headphones"></i>
+              </div>
+              <h3>Support</h3>
+              <p>
+                Need help with our platform? Our support team is available
+                24/7 to assist you.
+              </p>
+              <a href="mailto:support@jslfastline.com" class="contact-link">
+                support@jslfastline.com
+              </a>
+            </div>
+
+            <div class="contact-info-card">
+              <div class="contact-info-icon">
+                <i data-lucide="building"></i>
+              </div>
+              <h3>Business Inquiries</h3>
+              <p>
+                Interested in partnerships or enterprise solutions? Let's
+                discuss how we can work together.
+              </p>
+              <a href="mailto:business@jslfastline.com" class="contact-link">
+                business@jslfastline.com
+              </a>
+            </div>
+
+            <div class="contact-info-card">
+              <div class="contact-info-icon">
+                <i data-lucide="camera"></i>
+              </div>
+              <h3>Press & Media</h3>
+              <p>
+                Media inquiries, press releases, and brand assets for
+                journalists and content creators.
+              </p>
+              <a href="mailto:press@jslfastline.com" class="contact-link">
+                press@jslfastline.com
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== OFFICE LOCATIONS ===== -->
+    <section class="offices-section">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Our Offices</h2>
+          <p class="section-subtitle">
+            Visit us at one of our global locations
+          </p>
+        </div>
+
+        <div class="offices-grid">
+          <div class="office-card reveal">
+            <div class="office-image">
+              <div class="office-placeholder">
+                <i data-lucide="map-pin"></i>
+              </div>
+            </div>
+            <div class="office-content">
+              <h3>San Francisco, CA</h3>
+              <p class="office-type">Headquarters</p>
+              <address>
+                123 Tech Street<br />
+                San Francisco, CA 94105<br />
+                United States
+              </address>
+              <div class="office-contact">
+                <div class="office-phone">
+                  <i data-lucide="phone"></i>
+                  +1 (555) 123-4567
+                </div>
+                <div class="office-email">
+                  <i data-lucide="mail"></i>
+                  sf@jslfastline.com
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="office-card reveal" style="transition-delay: 100ms">
+            <div class="office-image">
+              <div class="office-placeholder">
+                <i data-lucide="map-pin"></i>
+              </div>
+            </div>
+            <div class="office-content">
+              <h3>London, UK</h3>
+              <p class="office-type">European Hub</p>
+              <address>
+                45 Innovation Square<br />
+                London, EC2A 4DP<br />
+                United Kingdom
+              </address>
+              <div class="office-contact">
+                <div class="office-phone">
+                  <i data-lucide="phone"></i>
+                  +44 20 7123 4567
+                </div>
+                <div class="office-email">
+                  <i data-lucide="mail"></i>
+                  london@jslfastline.com
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="office-card reveal" style="transition-delay: 200ms">
+            <div class="office-image">
+              <div class="office-placeholder">
+                <i data-lucide="map-pin"></i>
+              </div>
+            </div>
+            <div class="office-content">
+              <h3>Singapore</h3>
+              <p class="office-type">Asia-Pacific Hub</p>
+              <address>
+                Marina Bay Financial Centre<br />
+                Tower 1, Level 12<br />
+                Singapore 018956
+              </address>
+              <div class="office-contact">
+                <div class="office-phone">
+                  <i data-lucide="phone"></i>
+                  +65 6789 0123
+                </div>
+                <div class="office-email">
+                  <i data-lucide="mail"></i>
+                  singapore@jslfastline.com
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== FAQ SECTION ===== -->
+    <section class="faq-section">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Frequently Asked Questions</h2>
+          <p class="section-subtitle">
+            Quick answers to common questions
+          </p>
+        </div>
+
+        <div class="faq-grid">
+          <div class="faq-item reveal">
+            <div class="faq-question">
+              <h3>How do I get started with JSL FastLine?</h3>
+              <button class="faq-toggle">
+                <i data-lucide="chevron-down"></i>
+              </button>
+            </div>
+            <div class="faq-answer">
+              <p>
+                Getting started is easy! Sign up for a free account on our
+                platform, and you'll have access to our beta program. Our
+                onboarding team will guide you through the setup process and
+                help you get the most out of our offline-first platform.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item reveal" style="transition-delay: 100ms">
+            <div class="faq-question">
+              <h3>What makes JSL FastLine different from other platforms?</h3>
+              <button class="faq-toggle">
+                <i data-lucide="chevron-down"></i>
+              </button>
+            </div>
+            <div class="faq-answer">
+              <p>
+                JSL FastLine is the world's first truly offline-first platform,
+                designed specifically for areas with limited or no internet
+                connectivity. Our distributed architecture ensures your data
+                and applications work seamlessly, regardless of network
+                conditions.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item reveal" style="transition-delay: 200ms">
+            <div class="faq-question">
+              <h3>Do you offer enterprise solutions?</h3>
+              <button class="faq-toggle">
+                <i data-lucide="chevron-down"></i>
+              </button>
+            </div>
+            <div class="faq-answer">
+              <p>
+                Yes! We offer comprehensive enterprise solutions including
+                custom deployments, dedicated support, advanced security
+                features, and integration with existing systems. Contact our
+                business team to discuss your specific requirements.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item reveal" style="transition-delay: 300ms">
+            <div class="faq-question">
+              <h3>How secure is my data on JSL FastLine?</h3>
+              <button class="faq-toggle">
+                <i data-lucide="chevron-down"></i>
+              </button>
+            </div>
+            <div class="faq-answer">
+              <p>
+                Security is our top priority. We use end-to-end encryption,
+                zero-trust architecture, and distributed security protocols to
+                ensure your data remains private and secure. All data is
+                encrypted at rest and in transit, with no centralized points
+                of failure.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CTA SECTION ===== -->
+    <section class="contact-cta">
+      <div class="container">
+        <div class="cta-content">
+          <h2>Ready to Get Started?</h2>
+          <p>
+            Join thousands of users who are already experiencing the future of
+            digital connectivity with JSL FastLine.
+          </p>
+          <div class="cta-actions">
+            <button onclick="window.location.href='signup.html'" class="btn-primary">
+              Start Free Trial
+              <i data-lucide="arrow-right"></i>
+            </button>
+            <button onclick="window.location.href='about.html'" class="btn-secondary">
+              Learn More
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script src="script.js"></script>
+  </body>
+</html>

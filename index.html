@@ -35,7 +35,14 @@
           <i data-lucide="moon" class="icon-moon"></i>
         </button>
 
-        <button class="btn-primary">Get Started</button>
+        <button
+          onclick="window.location.href = 'signup.html'"
+          class="btn-primary"
+          type="button"
+          aria-label="Get started with JSL FastLine - create your account"
+        >
+          Get Started
+        </button>
 
         <!-- Mobile controls -->
         <div class="nav-mobile-btns">
@@ -59,9 +66,488 @@
         <a href="#features">Features</a>
         <a href="#about">About Me</a>
         <a href="#tech">Technology</a>
-        <button class="btn-primary">Get Started</button>
+        <button
+          onclick="window.location.href = 'signup.html'"
+          class="btn-primary"
+          type="button"
+          aria-label="Get started with JSL FastLine - create your account"
+        >
+          Get Started
+        </button>
       </div>
     </nav>
+
+    <!-- ===== LEARN MORE MODAL ===== -->
+    <div id="learn-more-modal" class="modal">
+      <div class="modal-overlay"></div>
+      <div class="modal-content">
+        <button id="modal-close" class="modal-close" aria-label="Close modal">
+          <i data-lucide="x"></i>
+        </button>
+
+        <div class="modal-header">
+          <h2>Discover JSL FastLine</h2>
+          <p>The Future of Digital Connection</p>
+        </div>
+
+        <div class="modal-body">
+          <!-- What is Section -->
+          <div class="modal-section">
+            <h3>What is JSL FastLine?</h3>
+            <p>
+              JSL FastLine is a revolutionary offline-first digital platform
+              that enables seamless communication, collaboration, and commerce
+              regardless of internet connectivity. Designed with
+              low-connectivity environments in mind, it provides a complete
+              digital ecosystem for modern life.
+            </p>
+          </div>
+
+          <!-- Key Features -->
+          <div class="modal-section">
+            <h3>Key Features</h3>
+            <div class="modal-features-grid">
+              <div class="feature-item">
+                <div class="feature-icon">
+                  <i data-lucide="message-square"></i>
+                </div>
+                <h4>Instant Messaging</h4>
+                <p>
+                  Send messages offline and auto-sync when online. Never miss a
+                  conversation.
+                </p>
+              </div>
+              <div class="feature-item">
+                <div class="feature-icon">
+                  <i data-lucide="shopping-bag"></i>
+                </div>
+                <h4>Local Marketplace</h4>
+                <p>
+                  Discover and transact with sellers near you with or without
+                  internet.
+                </p>
+              </div>
+              <div class="feature-item">
+                <div class="feature-icon">
+                  <i data-lucide="share-2"></i>
+                </div>
+                <h4>Peer-to-Peer Sharing</h4>
+                <p>
+                  Share files, photos, and videos with nearby users instantly.
+                </p>
+              </div>
+              <div class="feature-item">
+                <div class="feature-icon">
+                  <i data-lucide="cpu"></i>
+                </div>
+                <h4>Smart AI Assistant</h4>
+                <p>
+                  Get intelligent assistance offline and premium features when
+                  online.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Why It Matters -->
+          <div class="modal-section">
+            <h3>Why It Matters</h3>
+            <ul class="modal-list">
+              <li>
+                <strong>Universal Connectivity:</strong> Works seamlessly
+                whether you're online or offline, removing barriers to digital
+                participation.
+              </li>
+              <li>
+                <strong>Data Efficiency:</strong> Optimized for low-bandwidth
+                environments, using minimal data while maximizing functionality.
+              </li>
+              <li>
+                <strong>Privacy First:</strong> End-to-end encrypted storage and
+                transmission keep your information under your control.
+              </li>
+              <li>
+                <strong>Speed & Performance:</strong> Local-first architecture
+                means faster response times and better user experience.
+              </li>
+              <li>
+                <strong>Financial Inclusion:</strong> Enables commerce and
+                digital services for underserved communities.
+              </li>
+            </ul>
+          </div>
+
+          <!-- Technology Stack -->
+          <div class="modal-section">
+            <h3>Technology Stack</h3>
+            <div class="tech-stack-list">
+              <div class="stack-item">
+                <span class="stack-label">Offline Storage</span>
+                <span class="stack-value">IndexedDB with AES Encryption</span>
+              </div>
+              <div class="stack-item">
+                <span class="stack-label">Real-time Sync</span>
+                <span class="stack-value">Firebase Cloud Firestore</span>
+              </div>
+              <div class="stack-item">
+                <span class="stack-label">Network Communication</span>
+                <span class="stack-value">Queue-Based Sync Protocol</span>
+              </div>
+              <div class="stack-item">
+                <span class="stack-label">AI Processing</span>
+                <span class="stack-value">Hybrid Local & Cloud Models</span>
+              </div>
+              <div class="stack-item">
+                <span class="stack-label">Media Optimization</span>
+                <span class="stack-value"
+                  >Auto-Compression & Adaptive Quality</span
+                >
+              </div>
+              <div class="stack-item">
+                <span class="stack-label">Security</span>
+                <span class="stack-value">End-to-End Encryption (E2EE)</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Use Cases -->
+          <div class="modal-section">
+            <h3>Perfect For</h3>
+            <ul class="modal-list">
+              <li>
+                <strong>Remote Communities:</strong> Areas with unreliable
+                internet connectivity.
+              </li>
+              <li>
+                <strong>Traveling Users:</strong> People who need connectivity
+                on the move.
+              </li>
+              <li>
+                <strong>Business Operations:</strong> Organizations needing
+                offline-capable digital tools.
+              </li>
+              <li>
+                <strong>Social Networks:</strong> Communities building stronger
+                local connections.
+              </li>
+              <li>
+                <strong>E-Commerce:</strong> Marketplaces serving underserved
+                regions.
+              </li>
+            </ul>
+          </div>
+
+          <!-- Statistics -->
+          <div class="modal-section modal-stats">
+            <div class="stat-box">
+              <div class="stat-number">50ms</div>
+              <div class="stat-label">Avg Local Response Time</div>
+            </div>
+            <div class="stat-box">
+              <div class="stat-number">92%</div>
+              <div class="stat-label">Data Reduction vs Standard</div>
+            </div>
+            <div class="stat-box">
+              <div class="stat-number">24/7</div>
+              <div class="stat-label">Always Available</div>
+            </div>
+          </div>
+
+          <!-- Call to Action -->
+          <div class="modal-section modal-cta">
+            <h3>Ready to Experience the Future?</h3>
+            <p>
+              Join thousands of users already using JSL FastLine to stay
+              connected, no matter what.
+            </p>
+            <div class="modal-actions">
+              <button
+                onclick="window.location.href = 'login.html'"
+                class="btn-modal-primary"
+              >
+                Join the Beta
+              </button>
+              <button id="modal-learn-docs" class="btn-modal-secondary">
+                View Documentation
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== BETA SIGNUP MODAL ===== -->
+    <div id="beta-signup-modal" class="modal">
+      <div class="modal-overlay"></div>
+      <div class="modal-content">
+        <button id="beta-close" class="modal-close" aria-label="Close modal">
+          <i data-lucide="x"></i>
+        </button>
+
+        <div class="modal-header">
+          <h2>Join the Beta</h2>
+          <div class="modal-logo">
+            <img src="RoundIcon.png" alt="JSL FastLine Logo" />
+          </div>
+          <p>
+            Be the first to experience the future of offline-first connectivity
+          </p>
+        </div>
+
+        <div class="modal-body">
+          <form id="beta-signup-form" class="beta-form">
+            <!-- Name Fields -->
+            <div class="name-fields-group">
+              <div class="form-group name-field">
+                <label for="beta-first-name">First Name *</label>
+                <input
+                  type="text"
+                  id="beta-first-name"
+                  name="firstName"
+                  placeholder="Josephat"
+                  required
+                />
+                <span class="form-error" data-error="firstName"></span>
+              </div>
+              <div class="form-group name-field">
+                <label for="beta-middle-initial">Middle Initial</label>
+                <input
+                  type="text"
+                  id="beta-middle-initial"
+                  name="middleInitial"
+                  placeholder="J"
+                  maxlength="1"
+                />
+                <span class="form-error" data-error="middleInitial"></span>
+              </div>
+              <div class="form-group name-field">
+                <label for="beta-last-name">Last Name *</label>
+                <input
+                  type="text"
+                  id="beta-last-name"
+                  name="lastName"
+                  placeholder="Athanas"
+                  required
+                />
+                <span class="form-error" data-error="lastName"></span>
+              </div>
+            </div>
+
+            <!-- Full Name Display -->
+            <div class="form-group">
+              <label for="beta-full-name">Full Name</label>
+              <input
+                type="text"
+                id="beta-full-name"
+                name="fullName"
+                readonly
+                placeholder="Auto-generated from above fields"
+              />
+              <span class="form-hint"
+                >This field is auto-generated and cannot be edited</span
+              >
+            </div>
+
+            <!-- Email Field -->
+            <div class="form-group">
+              <label for="beta-email">Email Address *</label>
+              <div class="email-group">
+                <input
+                  type="email"
+                  id="beta-email"
+                  name="email"
+                  placeholder="your@email.com"
+                  required
+                />
+                <button type="button" id="send-otp-btn" class="btn-otp">
+                  <span>Send OTP</span>
+                  <i data-lucide="mail"></i>
+                </button>
+              </div>
+              <span class="form-error" data-error="email"></span>
+              <div
+                id="email-verification-status"
+                class="verification-status"
+              ></div>
+            </div>
+
+            <!-- OTP Field -->
+            <div
+              class="form-group otp-group"
+              id="otp-section"
+              style="display: none"
+            >
+              <label for="beta-otp">Enter OTP *</label>
+              <div class="otp-input-group">
+                <input
+                  type="text"
+                  id="beta-otp"
+                  name="otp"
+                  placeholder="Enter 6-digit code"
+                  maxlength="6"
+                  pattern="[0-9]{6}"
+                />
+                <button type="button" id="verify-otp-btn" class="btn-verify">
+                  <span>Verify</span>
+                  <i data-lucide="check"></i>
+                </button>
+              </div>
+              <span class="form-error" data-error="otp"></span>
+              <div id="otp-status" class="verification-status"></div>
+            </div>
+
+            <!-- Phone Field -->
+            <div class="form-group">
+              <label for="beta-phone">Phone Number (Optional)</label>
+              <input
+                type="tel"
+                id="beta-phone"
+                name="phone"
+                placeholder="+1 (123) 456-7890"
+              />
+              <span class="form-error" data-error="phone"></span>
+            </div>
+
+            <!-- Interests Section -->
+            <div class="form-group">
+              <label class="form-label"
+                >What features interest you the most? *</label
+              >
+              <div class="checkbox-grid">
+                <div class="checkbox-item">
+                  <input
+                    type="checkbox"
+                    id="interest-messaging"
+                    name="interests"
+                    value="Messaging"
+                  />
+                  <label for="interest-messaging">
+                    <span class="checkbox-custom"></span>
+                    Messaging
+                  </label>
+                </div>
+                <div class="checkbox-item">
+                  <input
+                    type="checkbox"
+                    id="interest-marketplace"
+                    name="interests"
+                    value="Marketplace"
+                  />
+                  <label for="interest-marketplace">
+                    <span class="checkbox-custom"></span>
+                    Marketplace
+                  </label>
+                </div>
+                <div class="checkbox-item">
+                  <input
+                    type="checkbox"
+                    id="interest-sharing"
+                    name="interests"
+                    value="File Sharing"
+                  />
+                  <label for="interest-sharing">
+                    <span class="checkbox-custom"></span>
+                    File Sharing
+                  </label>
+                </div>
+                <div class="checkbox-item">
+                  <input
+                    type="checkbox"
+                    id="interest-ai"
+                    name="interests"
+                    value="AI Assistant"
+                  />
+                  <label for="interest-ai">
+                    <span class="checkbox-custom"></span>
+                    AI Assistant
+                  </label>
+                </div>
+                <div class="checkbox-item">
+                  <input
+                    type="checkbox"
+                    id="interest-offline"
+                    name="interests"
+                    value="Offline Features"
+                  />
+                  <label for="interest-offline">
+                    <span class="checkbox-custom"></span>
+                    Offline Features
+                  </label>
+                </div>
+                <div class="checkbox-item">
+                  <input
+                    type="checkbox"
+                    id="interest-security"
+                    name="interests"
+                    value="Security"
+                  />
+                  <label for="interest-security">
+                    <span class="checkbox-custom"></span>
+                    Security & Privacy
+                  </label>
+                </div>
+              </div>
+              <span class="form-error" data-error="interests"></span>
+            </div>
+
+            <!-- Message Field -->
+            <div class="form-group">
+              <label for="beta-message"
+                >Tell us why you're interested (Optional)</label
+              >
+              <textarea
+                id="beta-message"
+                name="message"
+                placeholder="Share your thoughts about JSL FastLine..."
+                rows="4"
+              ></textarea>
+              <span class="form-error" data-error="message"></span>
+            </div>
+
+            <!-- Consent Checkbox -->
+            <div class="form-group checkbox-consent">
+              <input
+                type="checkbox"
+                id="beta-consent"
+                name="consent"
+                required
+              />
+              <label for="beta-consent">
+                I agree to receive updates about JSL FastLine and its beta
+                program
+              </label>
+              <span class="form-error" data-error="consent"></span>
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit" class="btn-submit">
+              <span>Join the Beta</span>
+              <i data-lucide="arrow-right"></i>
+            </button>
+
+            <!-- Success Message -->
+            <div id="beta-success" class="form-message success">
+              <i data-lucide="check-circle"></i>
+              <div>
+                <strong>Welcome to the beta!</strong>
+                <p>
+                  Check your email for next steps and exclusive beta access.
+                </p>
+              </div>
+            </div>
+
+            <!-- Error Message -->
+            <div id="beta-error" class="form-message error">
+              <i data-lucide="alert-circle"></i>
+              <div>
+                <strong>Oops! Something went wrong.</strong>
+                <p id="beta-error-text">Please try again later.</p>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
 
     <!-- ===== HERO SECTION ===== -->
     <section id="vision">
@@ -83,7 +569,10 @@
             connectivity.
           </p>
           <div class="hero-actions">
-            <button class="btn-hero-primary">
+            <button
+              onclick="window.location.href = 'login.html'"
+              class="btn-hero-primary"
+            >
               Join the Beta <i data-lucide="arrow-right"></i>
             </button>
             <button class="btn-hero-secondary">Learn More</button>
@@ -404,19 +893,19 @@
           <div class="footer-col">
             <h5>Company</h5>
             <ul>
-              <li><a href="#">About Us</a></li>
-              <li><a href="#">Growth Strategy</a></li>
-              <li><a href="#">Careers</a></li>
-              <li><a href="#">Contact</a></li>
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="growth.html">Growth Strategy</a></li>
+              <li><a href="careers.html">Careers</a></li>
+              <li><a href="contact.html">Contact</a></li>
             </ul>
           </div>
 
           <div class="footer-col">
             <h5>Legal</h5>
             <ul>
-              <li><a href="#">Privacy Policy</a></li>
-              <li><a href="#">Terms of Service</a></li>
-              <li><a href="#">Security</a></li>
+              <li><a href="Privacy.html">Privacy Policy</a></li>
+              <li><a href="Terms.html">Terms of Service</a></li>
+              <li><a href="Security.html">Security</a></li>
             </ul>
           </div>
         </div>

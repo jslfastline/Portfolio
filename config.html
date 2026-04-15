@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>API Configuration - JSL FastLine</title>
+    <link rel="shortcut icon" href="RoundFavicon.png" type="image/x-icon" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800;900&family=DM+Sans:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="config-container">
+      <div class="config-header">
+        <h1>API Configuration</h1>
+        <p>Configure your API keys for JSL FastLine authentication</p>
+      </div>
+
+      <div class="config-form">
+        <div class="config-section">
+          <h2>EmailJS Configuration</h2>
+          <div class="config-fields">
+            <div class="config-field">
+              <label for="emailjs-service-id">Service ID</label>
+              <input
+                type="text"
+                id="emailjs-service-id"
+                placeholder="service_xxxxxxxxxx"
+              />
+              <small>Your EmailJS service ID</small>
+            </div>
+            <div class="config-field">
+              <label for="emailjs-template-id">Template ID</label>
+              <input
+                type="text"
+                id="emailjs-template-id"
+                placeholder="template_xxxxxxxx"
+              />
+              <small>Your EmailJS template ID for OTP</small>
+            </div>
+            <div class="config-field">
+              <label for="emailjs-public-key">Public Key</label>
+              <input
+                type="text"
+                id="emailjs-public-key"
+                placeholder="xxxxxxxxxxxxxxx"
+              />
+              <small>Your EmailJS public key</small>
+            </div>
+          </div>
+        </div>
+
+        <div class="config-section">
+          <h2>Firebase Configuration</h2>
+          <div class="config-fields">
+            <div class="config-field">
+              <label for="firebase-api-key">API Key</label>
+              <input
+                type="text"
+                id="firebase-api-key"
+                placeholder="AIzaSy..."
+              />
+              <small>Your Firebase API key</small>
+            </div>
+            <div class="config-field">
+              <label for="firebase-auth-domain">Auth Domain</label>
+              <input
+                type="text"
+                id="firebase-auth-domain"
+                placeholder="your-project.firebaseapp.com"
+              />
+              <small>Your Firebase auth domain</small>
+            </div>
+            <div class="config-field">
+              <label for="firebase-project-id">Project ID</label>
+              <input
+                type="text"
+                id="firebase-project-id"
+                placeholder="your-project-id"
+              />
+              <small>Your Firebase project ID</small>
+            </div>
+            <div class="config-field">
+              <label for="firebase-storage-bucket">Storage Bucket</label>
+              <input
+                type="text"
+                id="firebase-storage-bucket"
+                placeholder="your-project.appspot.com"
+              />
+              <small>Your Firebase storage bucket</small>
+            </div>
+            <div class="config-field">
+              <label for="firebase-messaging-sender-id"
+                >Messaging Sender ID</label
+              >
+              <input
+                type="text"
+                id="firebase-messaging-sender-id"
+                placeholder="123456789"
+              />
+              <small>Your Firebase messaging sender ID</small>
+            </div>
+            <div class="config-field">
+              <label for="firebase-app-id">App ID</label>
+              <input
+                type="text"
+                id="firebase-app-id"
+                placeholder="1:123456789:web:abcdef123456"
+              />
+              <small>Your Firebase app ID</small>
+            </div>
+          </div>
+        </div>
+
+        <div class="config-actions">
+          <button id="save-config" class="btn-primary">
+            <span>Save Configuration</span>
+            <i data-lucide="save"></i>
+          </button>
+          <button id="test-config" class="btn-secondary">
+            <span>Test Configuration</span>
+            <i data-lucide="check-circle"></i>
+          </button>
+        </div>
+
+        <div id="config-status" class="config-status"></div>
+      </div>
+    </div>
+
+    <script src="config.js"></script>
+  </body>
+</html>

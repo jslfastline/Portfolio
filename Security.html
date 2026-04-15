@@ -1,0 +1,313 @@
+<!doctype html>
+<html lang="en" id="html-root">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Security - JSL FastLine</title>
+    <link rel="shortcut icon" href="RoundFavicon.png" type="image/x-icon" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800;900&family=DM+Sans:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- ===== NAVIGATION ===== -->
+    <nav id="navbar">
+      <div class="container nav-inner">
+        <div class="nav-logo">
+          <span class="nav-logo-text">JSL FastLine</span>
+          <div class="nav-logo-icon">
+            <img src="RoundIcon.png" alt="Logo" referrerpolicy="no-referrer" />
+          </div>
+        </div>
+
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="index.html#vision">Vision</a></li>
+          <li><a href="index.html#features">Features</a></li>
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="index.html#tech">Technology</a></li>
+        </ul>
+
+        <button id="theme-toggle" class="btn-theme" aria-label="Toggle theme">
+          <i data-lucide="sun" class="icon-sun"></i>
+          <i data-lucide="moon" class="icon-moon"></i>
+        </button>
+
+        <button
+          onclick="window.location.href = 'signup.html'"
+          class="btn-primary"
+        >
+          Get Started
+        </button>
+
+        <!-- Mobile controls -->
+        <div class="nav-mobile-btns">
+          <button
+            id="theme-toggle-mobile"
+            class="btn-theme"
+            aria-label="Toggle theme"
+          >
+            <i data-lucide="sun" class="icon-sun"></i>
+            <i data-lucide="moon" class="icon-moon"></i>
+          </button>
+          <button id="menu-toggle" aria-label="Open menu">
+            <i data-lucide="menu"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div id="mobile-menu">
+        <a href="index.html">Home</a>
+        <a href="index.html#vision">Vision</a>
+        <a href="index.html#features">Features</a>
+        <a href="index.html#about">About</a>
+        <a href="index.html#tech">Technology</a>
+        <button
+          onclick="window.location.href = 'signup.html'"
+          class="btn-primary"
+        >
+          Get Started
+        </button>
+      </div>
+    </nav>
+
+    <!-- ===== SECURITY CONTENT ===== -->
+    <section class="policy-section">
+      <div class="container">
+        <div class="policy-header">
+          <h1 class="policy-title">Security For The App</h1>
+          <p class="policy-subtitle">Last updated: April 15, 2026</p>
+        </div>
+
+        <div class="policy-content">
+          <div class="policy-article">
+            <h2>1. Security Overview</h2>
+            <p>
+              JSL FastLine takes security and data protection seriously. Our
+              offline-first architecture is designed with security as a
+              fundamental principle, ensuring that your personal information
+              remains protected whether you're online or offline.
+            </p>
+          </div>
+
+          <div class="policy-article">
+            <h2>2. End-to-End Encryption</h2>
+            <p>
+              All communications on JSL FastLine, including messages and file
+              transfers, are protected using industry-standard end-to-end
+              encryption. This means that only you and the intended recipient
+              can read your messages—even JSL FastLine cannot access the content
+              of your communications.
+            </p>
+          </div>
+
+          <div class="policy-article">
+            <h2>3. Local Data Storage</h2>
+            <h3>3.1 Device-Level Security</h3>
+            <p>
+              Your data is primarily stored locally on your device using secure
+              storage mechanisms. This approach gives you immediate control over
+              your information and reduces the risk of centralized data
+              breaches.
+            </p>
+
+            <h3>3.2 Database Encryption</h3>
+            <p>
+              IndexedDB storage on your device is encrypted, ensuring that if
+              your device is compromised, attackers cannot easily access your
+              stored data.
+            </p>
+          </div>
+
+          <div class="policy-article">
+            <h2>4. Cloud Synchronization Security</h2>
+            <p>
+              When synchronizing data with our servers, all data is encrypted
+              before transmission. We use Firebase's security infrastructure,
+              which includes:
+            </p>
+            <ul>
+              <li>SSL/TLS encryption for all data in transit</li>
+              <li>Secure authentication protocols</li>
+              <li>Regular security audits and monitoring</li>
+              <li>Compliance with major data protection standards</li>
+            </ul>
+          </div>
+
+          <div class="policy-article">
+            <h2>5. Authentication & Access Control</h2>
+            <p>
+              We implement robust authentication mechanisms to ensure only
+              authorized users can access accounts. Features include:
+            </p>
+            <ul>
+              <li>Secure password hashing algorithms</li>
+              <li>Multi-factor authentication support</li>
+              <li>Session management and timeout protocols</li>
+              <li>Role-based access control for sensitive operations</li>
+            </ul>
+          </div>
+
+          <div class="policy-article">
+            <h2>6. Offline Security</h2>
+            <p>
+              Our offline-first design includes security features that work
+              without internet connectivity:
+            </p>
+            <ul>
+              <li>Local encryption of all offline data</li>
+              <li>Secure peer-to-peer communication protocols</li>
+              <li>Message integrity verification</li>
+              <li>Protection against unauthorized access to local data</li>
+            </ul>
+          </div>
+
+          <div class="policy-article">
+            <h2>7. Vulnerability Management</h2>
+            <p>
+              We maintain a comprehensive vulnerability management program that
+              includes:
+            </p>
+            <ul>
+              <li>Regular security audits and penetration testing</li>
+              <li>Responsible disclosure program for security researchers</li>
+              <li>Prompt patching of identified vulnerabilities</li>
+              <li>Continuous monitoring for security threats</li>
+            </ul>
+          </div>
+
+          <div class="policy-article">
+            <h2>8. User Security Best Practices</h2>
+            <p>
+              To maximize your security while using JSL FastLine, we recommend:
+            </p>
+            <ul>
+              <li>Keep your device and application updated</li>
+              <li>Use strong, unique passwords</li>
+              <li>Enable multi-factor authentication when available</li>
+              <li>Be cautious about sharing sensitive information</li>
+              <li>Review your privacy settings regularly</li>
+              <li>Report suspicious activity to our security team</li>
+            </ul>
+          </div>
+
+          <div class="policy-article">
+            <h2>9. Incident Response</h2>
+            <p>
+              In the unlikely event of a security incident, we have established
+              response procedures that include immediate notification to
+              affected users, investigation of the incident, remediation
+              actions, and prevention of future incidents.
+            </p>
+          </div>
+
+          <div class="policy-article">
+            <h2>10. Compliance & Standards</h2>
+            <p>
+              JSL FastLine adheres to leading security and privacy standards,
+              including GDPR, CCPA, and other applicable international data
+              protection regulations. We regularly update our security practices
+              to meet evolving industry standards.
+            </p>
+          </div>
+
+          <div class="policy-article">
+            <h2>11. Report a Security Vulnerability</h2>
+            <p>
+              If you discover a security vulnerability in JSL FastLine, please
+              report it responsibly to our security team rather than disclosing
+              it publicly. This helps us address the issue before it can be
+              exploited.
+            </p>
+            <p>
+              Email: security@jslfastline.com<br />
+              Responsible Disclosure: We commit to acknowledging your report
+              within 48 hours and providing regular updates on our investigation
+              progress.
+            </p>
+          </div>
+
+          <div class="policy-article">
+            <h2>12. Contact Us</h2>
+            <p>
+              If you have any questions about security at JSL FastLine, please
+              contact us at:
+            </p>
+            <p>
+              Email: jslfastline58@gmail.com<br />
+              Address: JSL FastLine Brand Company
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer>
+      <div class="container">
+        <div class="footer-grid">
+          <div>
+            <div class="footer-brand-logo">
+              <span>JSL FastLine</span>
+              <div class="footer-logo-icon">
+                <img
+                  src="RoundIcon.png"
+                  alt="Logo"
+                  referrerpolicy="no-referrer"
+                />
+              </div>
+            </div>
+            <p class="footer-tagline">
+              A complete digital ecosystem for communication, interaction, and
+              daily life — designed for low-connectivity environments.
+            </p>
+          </div>
+
+          <div class="footer-col">
+            <h5>Platform</h5>
+            <ul>
+              <li><a href="index.html">Home Feed</a></li>
+              <li><a href="index.html#vision">Explore</a></li>
+              <li><a href="index.html#features">Marketplace</a></li>
+              <li><a href="index.html#tech">Smart AI</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h5>Company</h5>
+            <ul>
+              <li><a href="index.html#about">About Us</a></li>
+              <li><a href="#">Growth Strategy</a></li>
+              <li><a href="#">Careers</a></li>
+              <li><a href="#">Contact</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h5>Legal</h5>
+            <ul>
+              <li><a href="Privacy.html">Privacy Policy</a></li>
+              <li><a href="Terms.html">Terms of Service</a></li>
+              <li><a href="Security.html">Security</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p>&copy; 2026 JSL FastLine. All Rights Reserved.</p>
+          <div class="footer-socials">
+            <a href="https://x.com/jslfastline">Twitter</a>
+            <a href="https://github.com/jslfastline">GitHub</a>
+            <a href="https://linkedin.com/company/jslfastline">LinkedIn</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

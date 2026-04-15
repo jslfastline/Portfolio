@@ -1,0 +1,216 @@
+<!doctype html>
+<html lang="en" id="html-root">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Log In - JSL FastLine</title>
+    <link rel="shortcut icon" href="RoundFavicon.png" type="image/x-icon" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800;900&family=DM+Sans:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- ===== NAVIGATION ===== -->
+    <nav id="navbar">
+      <div class="container nav-inner">
+        <div class="nav-logo">
+          <span class="nav-logo-text">JSL FastLine</span>
+          <div class="nav-logo-icon">
+            <img src="RoundIcon.png" alt="Logo" referrerpolicy="no-referrer" />
+          </div>
+        </div>
+
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="index.html#vision">Vision</a></li>
+          <li><a href="index.html#features">Features</a></li>
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="index.html#tech">Technology</a></li>
+        </ul>
+
+        <button id="theme-toggle" class="btn-theme" aria-label="Toggle theme">
+          <i data-lucide="sun" class="icon-sun"></i>
+          <i data-lucide="moon" class="icon-moon"></i>
+        </button>
+
+        <button
+          onclick="window.location.href = 'signup.html'"
+          class="btn-secondary"
+        >
+          Sign Up
+        </button>
+
+        <!-- Mobile controls -->
+        <div class="nav-mobile-btns">
+          <button
+            id="theme-toggle-mobile"
+            class="btn-theme"
+            aria-label="Toggle theme"
+          >
+            <i data-lucide="sun" class="icon-sun"></i>
+            <i data-lucide="moon" class="icon-moon"></i>
+          </button>
+          <button id="menu-toggle" aria-label="Open menu">
+            <i data-lucide="menu"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div id="mobile-menu">
+        <a href="index.html">Home</a>
+        <a href="index.html#vision">Vision</a>
+        <a href="index.html#features">Features</a>
+        <a href="index.html#about">About</a>
+        <a href="index.html#tech">Technology</a>
+        <button
+          onclick="window.location.href = 'signup.html'"
+          class="btn-secondary"
+        >
+          Sign Up
+        </button>
+      </div>
+    </nav>
+
+    <!-- ===== LOGIN FORM ===== -->
+    <section class="auth-section">
+      <div class="container">
+        <div class="auth-card">
+          <div class="auth-header">
+            <h1>Welcome Back</h1>
+            <p>Log in to your JSL FastLine account</p>
+          </div>
+
+          <form id="login-form" class="auth-form">
+            <!-- Email Field -->
+            <div class="form-group">
+              <label for="login-email">Email Address *</label>
+              <input
+                type="email"
+                id="login-email"
+                name="email"
+                placeholder="your@email.com"
+                required
+              />
+              <span class="form-error" data-error="email"></span>
+            </div>
+
+            <!-- Password Field -->
+            <div class="form-group">
+              <label for="login-password">Password *</label>
+              <input
+                type="password"
+                id="login-password"
+                name="password"
+                placeholder="Enter your password"
+                required
+              />
+              <span class="form-error" data-error="password"></span>
+            </div>
+
+            <!-- Remember Me -->
+            <div class="form-group checkbox-consent">
+              <input type="checkbox" id="login-remember" name="remember" />
+              <label for="login-remember"> Remember me for 30 days </label>
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit" class="btn-submit">
+              <span>Log In</span>
+              <i data-lucide="log-in"></i>
+            </button>
+
+            <!-- Success Message -->
+            <div
+              id="login-success"
+              class="form-message success"
+              style="display: none"
+            >
+              <i data-lucide="check-circle"></i>
+              <div>
+                <strong>Login Successful!</strong>
+                <p>Welcome back to JSL FastLine.</p>
+              </div>
+            </div>
+
+            <!-- Error Message -->
+            <div
+              id="login-error"
+              class="form-message error"
+              style="display: none"
+            >
+              <i data-lucide="alert-circle"></i>
+              <div>
+                <strong>Login Failed</strong>
+                <p id="login-error-text">
+                  Invalid email or password. Please try again.
+                </p>
+              </div>
+            </div>
+          </form>
+
+          <div class="auth-footer">
+            <p>Don't have an account? <a href="signup.html">Sign Up</a></p>
+            <p>
+              <a href="#" id="forgot-password-link">Forgot your password?</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== FORGOT PASSWORD MODAL ===== -->
+    <div id="forgot-password-modal" class="modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2>Reset Password</h2>
+          <button class="modal-close" data-modal="forgot-password-modal">
+            <i data-lucide="x"></i>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form id="forgot-password-form">
+            <div class="form-group">
+              <label for="reset-email">Email Address *</label>
+              <input
+                type="email"
+                id="reset-email"
+                name="email"
+                placeholder="Enter your email address"
+                required
+              />
+              <span class="form-error" data-error="email"></span>
+            </div>
+            <button type="submit" class="btn-submit">
+              <span>Send Reset Link</span>
+              <i data-lucide="mail"></i>
+            </button>
+            <div id="reset-success" class="form-message success">
+              <i data-lucide="check-circle"></i>
+              <div>
+                <strong>Reset Link Sent!</strong>
+                <p>Check your email for password reset instructions.</p>
+              </div>
+            </div>
+            <div id="reset-error" class="form-message error">
+              <i data-lucide="alert-circle"></i>
+              <div>
+                <strong>Reset Failed</strong>
+                <p id="reset-error-text">Please try again later.</p>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <script src="auth.js"></script>
+  </body>
+</html>

@@ -1,0 +1,355 @@
+<!doctype html>
+<html lang="en" id="html-root">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Growth Strategy - JSL FastLine</title>
+    <link rel="shortcut icon" href="RoundFavicon.png" type="image/x-icon" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800;900&family=DM+Sans:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- ===== NAVIGATION ===== -->
+    <nav id="navbar">
+      <div class="container nav-inner">
+        <div class="nav-logo">
+          <span class="nav-logo-text">JSL FastLine</span>
+          <div class="nav-logo-icon">
+            <img src="RoundIcon.png" alt="Logo" referrerpolicy="no-referrer" />
+          </div>
+        </div>
+
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="index.html#vision">Vision</a></li>
+          <li><a href="index.html#features">Features</a></li>
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="index.html#tech">Technology</a></li>
+        </ul>
+
+        <button id="theme-toggle" class="btn-theme" aria-label="Toggle theme">
+          <i data-lucide="sun" class="icon-sun"></i>
+          <i data-lucide="moon" class="icon-moon"></i>
+        </button>
+
+        <button onclick="window.location.href='signup.html'" class="btn-primary">Get Started</button>
+
+        <!-- Mobile controls -->
+        <div class="nav-mobile-btns">
+          <button
+            id="theme-toggle-mobile"
+            class="btn-theme"
+            aria-label="Toggle theme"
+          >
+            <i data-lucide="sun" class="icon-sun"></i>
+            <i data-lucide="moon" class="icon-moon"></i>
+          </button>
+          <button id="menu-toggle" aria-label="Open menu">
+            <i data-lucide="menu"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div id="mobile-menu">
+        <a href="index.html">Home</a>
+        <a href="index.html#vision">Vision</a>
+        <a href="index.html#features">Features</a>
+        <a href="index.html#about">About</a>
+        <a href="index.html#tech">Technology</a>
+        <button onclick="window.location.href='signup.html'" class="btn-primary">Get Started</button>
+      </div>
+    </nav>
+
+    <!-- ===== HERO SECTION ===== -->
+    <section class="growth-hero">
+      <div class="container">
+        <div class="growth-hero-content">
+          <div class="growth-hero-badge">
+            <i data-lucide="trending-up"></i>
+            Strategic Growth
+          </div>
+          <h1 class="growth-hero-title">
+            Scaling Innovation for <br />
+            <span class="gradient-text">Global Impact</span>
+          </h1>
+          <p class="growth-hero-desc">
+            Our growth strategy combines technological innovation with sustainable
+            expansion, creating lasting value for users, partners, and communities
+            worldwide through strategic partnerships and market penetration.
+          </p>
+        </div>
+        <div class="growth-hero-visual">
+          <div class="growth-chart">
+            <div class="chart-line"></div>
+            <div class="chart-points">
+              <div class="chart-point" style="left: 20%; top: 80%; animation-delay: 0s">
+                <div class="point-label">2026</div>
+              </div>
+              <div class="chart-point" style="left: 40%; top: 60%; animation-delay: 0.5s">
+                <div class="point-label">2027</div>
+              </div>
+              <div class="chart-point" style="left: 60%; top: 40%; animation-delay: 1s">
+                <div class="point-label">2028</div>
+              </div>
+              <div class="chart-point" style="left: 80%; top: 20%; animation-delay: 1.5s">
+                <div class="point-label">2029</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== STRATEGY PILLARS ===== -->
+    <section class="strategy-section">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Strategic Pillars</h2>
+          <p class="section-subtitle">
+            Four interconnected strategies driving our sustainable growth
+          </p>
+        </div>
+
+        <div class="strategy-grid">
+          <div class="strategy-card reveal">
+            <div class="strategy-icon">
+              <i data-lucide="globe"></i>
+            </div>
+            <h3>Market Expansion</h3>
+            <p>
+              Systematic penetration of emerging markets with limited connectivity
+              infrastructure, starting with Southeast Asia, Africa, and Latin America.
+            </p>
+            <div class="strategy-metrics">
+              <div class="metric">
+                <span class="metric-number">50M+</span>
+                <span class="metric-label">Target Users</span>
+              </div>
+              <div class="metric">
+                <span class="metric-number">25</span>
+                <span class="metric-label">Countries</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="strategy-card reveal" style="transition-delay: 100ms">
+            <div class="strategy-icon">
+              <i data-lucide="handshake"></i>
+            </div>
+            <h3>Strategic Partnerships</h3>
+            <p>
+              Building alliances with telecom providers, governments, and NGOs
+              to accelerate adoption and create sustainable business models.
+            </p>
+            <div class="strategy-metrics">
+              <div class="metric">
+                <span class="metric-number">15+</span>
+                <span class="metric-label">Partners</span>
+              </div>
+              <div class="metric">
+                <span class="metric-number">Q3 2026</span>
+                <span class="metric-label">First Deals</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="strategy-card reveal" style="transition-delay: 200ms">
+            <div class="strategy-icon">
+              <i data-lucide="cpu"></i>
+            </div>
+            <h3>Technology Leadership</h3>
+            <p>
+              Continuous innovation in offline-first technologies, AI integration,
+              and peer-to-peer networking to maintain competitive advantage.
+            </p>
+            <div class="strategy-metrics">
+              <div class="metric">
+                <span class="metric-number">12</span>
+                <span class="metric-label">Patents Filed</span>
+              </div>
+              <div class="metric">
+                <span class="metric-number">R&D</span>
+                <span class="metric-label">30% of Revenue</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="strategy-card reveal" style="transition-delay: 300ms">
+            <div class="strategy-icon">
+              <i data-lucide="users"></i>
+            </div>
+            <h3>Community Building</h3>
+            <p>
+              Fostering developer ecosystems, user communities, and open-source
+              contributions to create network effects and sustainable growth.
+            </p>
+            <div class="strategy-metrics">
+              <div class="metric">
+                <span class="metric-number">100K+</span>
+                <span class="metric-label">Developers</span>
+              </div>
+              <div class="metric">
+                <span class="metric-number">Open Source</span>
+                <span class="metric-label">Core Components</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== ROADMAP SECTION ===== -->
+    <section class="roadmap-section">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Growth Roadmap</h2>
+          <p class="section-subtitle">
+            Our phased approach to global expansion and market leadership
+          </p>
+        </div>
+
+        <div class="roadmap-timeline">
+          <div class="roadmap-phase reveal">
+            <div class="phase-header">
+              <div class="phase-number">01</div>
+              <h3>Foundation (2026)</h3>
+            </div>
+            <div class="phase-content">
+              <p>
+                Establish core platform, achieve product-market fit, and build
+                initial user base through strategic beta programs and partnerships.
+              </p>
+              <div class="phase-goals">
+                <span class="goal-tag">50K Users</span>
+                <span class="goal-tag">5 Countries</span>
+                <span class="goal-tag">Core Features</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="roadmap-phase reveal" style="transition-delay: 100ms">
+            <div class="phase-header">
+              <div class="phase-number">02</div>
+              <h3>Expansion (2027)</h3>
+            </div>
+            <div class="phase-content">
+              <p>
+                Scale user acquisition, expand geographic presence, and establish
+                enterprise partnerships while optimizing platform performance.
+              </p>
+              <div class="phase-goals">
+                <span class="goal-tag">2M Users</span>
+                <span class="goal-tag">15 Countries</span>
+                <span class="goal-tag">Enterprise APIs</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="roadmap-phase reveal" style="transition-delay: 200ms">
+            <div class="phase-header">
+              <div class="phase-number">03</div>
+              <h3>Dominance (2028-2029)</h3>
+            </div>
+            <div class="phase-content">
+              <p>
+                Achieve market leadership through ecosystem expansion, advanced
+                AI integration, and global infrastructure development.
+              </p>
+              <div class="phase-goals">
+                <span class="goal-tag">50M Users</span>
+                <span class="goal-tag">Global Coverage</span>
+                <span class="goal-tag">AI Ecosystem</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== METRICS SECTION ===== -->
+    <section class="metrics-section">
+      <div class="container">
+        <div class="metrics-grid">
+          <div class="metric-card reveal">
+            <div class="metric-icon">
+              <i data-lucide="users"></i>
+            </div>
+            <div class="metric-number">50M+</div>
+            <div class="metric-label">Target Users by 2029</div>
+            <div class="metric-growth">+300% YoY</div>
+          </div>
+
+          <div class="metric-card reveal" style="transition-delay: 100ms">
+            <div class="metric-icon">
+              <i data-lucide="globe"></i>
+            </div>
+            <div class="metric-number">50+</div>
+            <div class="metric-label">Countries by 2028</div>
+            <div class="metric-growth">Global Expansion</div>
+          </div>
+
+          <div class="metric-card reveal" style="transition-delay: 200ms">
+            <div class="metric-icon">
+              <i data-lucide="dollar-sign"></i>
+            </div>
+            <div class="metric-number">$500M</div>
+            <div class="metric-label">Revenue Target 2029</div>
+            <div class="metric-growth">Sustainable Growth</div>
+          </div>
+
+          <div class="metric-card reveal" style="transition-delay: 300ms">
+            <div class="metric-icon">
+              <i data-lucide="zap"></i>
+            </div>
+            <div class="metric-number">99.9%</div>
+            <div class="metric-label">Platform Uptime</div>
+            <div class="metric-growth">Reliability First</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== INVESTMENT SECTION ===== -->
+    <section class="investment-section">
+      <div class="container">
+        <div class="investment-content">
+          <div class="investment-text">
+            <h2>Investment Opportunities</h2>
+            <p>
+              We're seeking strategic investors and partners who share our vision
+              of democratizing digital connectivity. Join us in building the future
+              of offline-first technology.
+            </p>
+            <div class="investment-highlights">
+              <div class="highlight">
+                <i data-lucide="check-circle"></i>
+                <span>$25M Series A completed</span>
+              </div>
+              <div class="highlight">
+                <i data-lucide="check-circle"></i>
+                <span>Strong unit economics</span>
+              </div>
+              <div class="highlight">
+                <i data-lucide="check-circle"></i>
+                <span>Defensible technology moat</span>
+              </div>
+            </div>
+          </div>
+          <div class="investment-cta">
+            <button onclick="window.location.href='contact.html'" class="btn-primary">
+              Discuss Partnership
+              <i data-lucide="arrow-right"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script src="script.js"></script>
+  </body>
+</html>
