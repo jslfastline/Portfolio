@@ -26,7 +26,9 @@ function loadConfigurations() {
 }
 
 function initializeFirebase() {
-  if (firebaseConfig) {
+  if (window.firebaseAuth && window.firebaseDb) {
+    console.log('Firebase already initialized');
+  } else if (firebaseConfig) {
     try {
       firebase.initializeApp(firebaseConfig);
       console.log('Firebase initialized successfully');
@@ -34,20 +36,20 @@ function initializeFirebase() {
       console.error('Firebase initialization failed:', error);
     }
   } else {
-    console.warn('Firebase configuration not found. Please configure in config.html');
+    console.warn('Firebase configuration not found. Please configure firebaseConfig.js');
   }
 }
 
 function initializeEmailJS() {
-  if (emailjsConfig) {
+  if (window.EMAILJS_PUBLIC_KEY) {
     try {
-      emailjs.init(emailjsConfig.publicKey);
+      emailjs.init(window.EMAILJS_PUBLIC_KEY);
       console.log('EmailJS initialized successfully');
     } catch (error) {
       console.error('EmailJS initialization failed:', error);
     }
   } else {
-    console.warn('EmailJS configuration not found. Please configure in config.html');
+    console.warn('EmailJS public key not found. Please set window.EMAILJS_PUBLIC_KEY');
   }
 }
 
@@ -116,8 +118,11 @@ function initializeSignupForm() {
   }
 
   firstNameInput.addEventListener('input', updateFullName);
+  firstNameInput.addEventListener('blur', updateFullName);
   middleInitialInput.addEventListener('input', updateFullName);
+  middleInitialInput.addEventListener('blur', updateFullName);
   lastNameInput.addEventListener('input', updateFullName);
+  lastNameInput.addEventListener('blur', updateFullName);
 
   // OTP functionality
   document.getElementById('send-otp-signup').addEventListener('click', () => sendOTP('signup'));
@@ -158,7 +163,7 @@ async function sendOTP(formType) {
 
   try {
     // Send OTP via EmailJS
-    if (emailjsConfig) {
+    if (window.EMAILJS_SERVICE_ID && window.EMAILJS_TEMPLATE_ID) {
       const templateParams = {
         to_email: email,
         otp_code: otp,
@@ -166,8 +171,8 @@ async function sendOTP(formType) {
       };
 
       await emailjs.send(
-        emailjsConfig.serviceId,
-        emailjsConfig.templateId,
+        window.EMAILJS_SERVICE_ID,
+        window.EMAILJS_TEMPLATE_ID,
         templateParams
       );
 
@@ -263,15 +268,13 @@ async function handleSignup(e) {
     };
 
     // Create user in Firebase Auth
-    const auth = firebase.auth();
-    const userCredential = await auth.createUserWithEmailAndPassword(
+    const userCredential = await window.firebaseAuth.createUserWithEmailAndPassword(
       userData.email,
       formData.get('password')
     );
 
     // Store additional user data in Firestore
-    const db = firebase.firestore();
-    await db.collection('users').doc(userCredential.user.uid).set(userData);
+    await window.firebaseDb.collection('users').doc(userCredential.user.uid).set(userData);
 
     // Success
     document.getElementById('signup-success').style.display = 'flex';
@@ -364,8 +367,7 @@ async function handleLogin(e) {
   submitBtn.innerHTML = '<span>Logging In...</span><i data-lucide="loader"></i>';
 
   try {
-    const auth = firebase.auth();
-    const userCredential = await auth.signInWithEmailAndPassword(
+    const userCredential = await window.firebaseAuth.signInWithEmailAndPassword(
       formData.get('email'),
       formData.get('password')
     );
@@ -407,8 +409,7 @@ async function handleForgotPassword(e) {
   }
 
   try {
-    const auth = firebase.auth();
-    await auth.sendPasswordResetEmail(email);
+    await window.firebaseAuth.sendPasswordResetEmail(email);
 
     document.getElementById('reset-success').style.display = 'flex';
     document.getElementById('reset-error').style.display = 'none';

@@ -36,7 +36,12 @@
           <i data-lucide="moon" class="icon-moon"></i>
         </button>
 
-        <button onclick="window.location.href='signup.html'" class="btn-primary">Get Started</button>
+        <button
+          onclick="window.location.href = 'signup.html'"
+          class="btn-primary"
+        >
+          Get Started
+        </button>
 
         <!-- Mobile controls -->
         <div class="nav-mobile-btns">
@@ -61,7 +66,12 @@
         <a href="index.html#features">Features</a>
         <a href="index.html#about">About</a>
         <a href="index.html#tech">Technology</a>
-        <button onclick="window.location.href='signup.html'" class="btn-primary">Get Started</button>
+        <button
+          onclick="window.location.href = 'signup.html'"
+          class="btn-primary"
+        >
+          Get Started
+        </button>
       </div>
     </nav>
 
@@ -78,9 +88,10 @@
             <span class="gradient-text">Offline Connectivity</span>
           </h1>
           <p class="about-hero-desc">
-            JSL FastLine was born from a simple yet powerful vision: to create a world where
-            digital connectivity transcends the limitations of traditional internet infrastructure.
-            We're building the foundation for a truly connected future.
+            JSL FastLine was born from a simple yet powerful vision: to create a
+            world where digital connectivity transcends the limitations of
+            traditional internet infrastructure. We're building the foundation
+            for a truly connected future.
           </p>
         </div>
         <div class="about-hero-visual">
@@ -113,9 +124,10 @@
             </div>
             <h3>Our Mission</h3>
             <p>
-              To democratize digital connectivity by creating innovative offline-first
-              technologies that empower communities worldwide, regardless of infrastructure
-              limitations or connectivity challenges.
+              To democratize digital connectivity by creating innovative
+              offline-first technologies that empower communities worldwide,
+              regardless of infrastructure limitations or connectivity
+              challenges.
             </p>
           </div>
 
@@ -125,9 +137,9 @@
             </div>
             <h3>Our Vision</h3>
             <p>
-              A world where every person has access to powerful digital tools and
-              seamless connectivity, breaking down barriers between online and offline
-              experiences through intelligent, adaptive technology.
+              A world where every person has access to powerful digital tools
+              and seamless connectivity, breaking down barriers between online
+              and offline experiences through intelligent, adaptive technology.
             </p>
           </div>
 
@@ -137,8 +149,9 @@
             </div>
             <h3>Our Values</h3>
             <p>
-              Innovation, accessibility, and human-centric design drive everything we do.
-              We believe technology should serve humanity, not the other way around.
+              Innovation, accessibility, and human-centric design drive
+              everything we do. We believe technology should serve humanity, not
+              the other way around.
             </p>
           </div>
         </div>
@@ -167,7 +180,8 @@
               <p class="team-role">Founder & CEO</p>
               <p class="team-bio">
                 Visionary leader with 8+ years in distributed systems and
-                peer-to-peer technologies. Former engineer at major tech companies.
+                peer-to-peer technologies. Former engineer at major tech
+                companies.
               </p>
             </div>
           </div>
@@ -237,8 +251,8 @@
               <div class="timeline-year">2025</div>
               <h4>Prototype Development</h4>
               <p>
-                Core technology development, AI integration, and initial
-                user testing. First working prototypes of the offline-first platform.
+                Core technology development, AI integration, and initial user
+                testing. First working prototypes of the offline-first platform.
               </p>
             </div>
           </div>
@@ -250,7 +264,8 @@
               <h4>Beta Launch</h4>
               <p>
                 Public beta release with 50,000+ users across 15 countries.
-                Real-world testing and continuous improvement based on user feedback.
+                Real-world testing and continuous improvement based on user
+                feedback.
               </p>
             </div>
           </div>
@@ -261,8 +276,8 @@
               <div class="timeline-year">2027</div>
               <h4>Global Expansion</h4>
               <p>
-                Full platform launch with enterprise partnerships and
-                expanded feature set. Scaling to millions of users worldwide.
+                Full platform launch with enterprise partnerships and expanded
+                feature set. Scaling to millions of users worldwide.
               </p>
             </div>
           </div>
@@ -276,21 +291,70 @@
         <div class="cta-content">
           <h2>Join Our Mission</h2>
           <p>
-            Be part of the revolution in offline connectivity.
-            Help us build a more connected world.
+            Be part of the revolution in offline connectivity. Help us build a
+            more connected world.
           </p>
           <div class="cta-actions">
-            <button onclick="window.location.href='signup.html'" class="btn-primary">
+            <button onclick="showModal('beta-modal')" class="btn-primary">
               Join the Beta
               <i data-lucide="arrow-right"></i>
             </button>
-            <button onclick="window.location.href='careers.html'" class="btn-secondary">
+            <button
+              onclick="window.location.href = 'careers.html'"
+              class="btn-secondary"
+            >
               View Careers
             </button>
           </div>
         </div>
       </div>
     </section>
+
+    <!-- ===== BETA ACCESS MODAL ===== -->
+    <div id="beta-modal" class="modal">
+      <div class="modal-overlay"></div>
+      <div class="modal-content beta-modal-content">
+        <div class="modal-header beta-header">
+          <div class="beta-icon-container">
+            <img
+              src="RoundIcon.png"
+              alt="JSL FastLine Logo"
+              class="beta-icon"
+            />
+          </div>
+          <h2>JSL FastLine Beta Access</h2>
+          <button class="modal-close" data-modal="beta-modal">
+            <i data-lucide="x"></i>
+          </button>
+        </div>
+        <div class="modal-body beta-body">
+          <div class="beta-status">
+            <div class="beta-status-icon">🚧</div>
+            <h3>Project in Progress</h3>
+          </div>
+          <p class="beta-message">
+            Thank you for your interest in joining the JSL FastLine Beta.
+          </p>
+          <p class="beta-message">
+            We're currently refining and enhancing the platform to deliver a
+            fast, reliable, and innovative experience. The system is not yet
+            open for public testing.
+          </p>
+          <div class="beta-next-steps">
+            <h4>📩 What happens next?</h4>
+            <p>
+              You'll be among the first to get notified as soon as the Beta
+              version is ready for testing.
+            </p>
+          </div>
+          <p class="beta-appreciation">
+            We truly appreciate your interest and support as we build something
+            impactful.
+          </p>
+          <div class="beta-signature">— JSL FastLine Technologies</div>
+        </div>
+      </div>
+    </div>
 
     <script src="script.js"></script>
   </body>

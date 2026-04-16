@@ -569,10 +569,7 @@
             connectivity.
           </p>
           <div class="hero-actions">
-            <button
-              onclick="window.location.href = 'login.html'"
-              class="btn-hero-primary"
-            >
+            <button onclick="showModal('beta-modal')" class="btn-hero-primary">
               Join the Beta <i data-lucide="arrow-right"></i>
             </button>
             <button class="btn-hero-secondary">Learn More</button>
@@ -699,9 +696,9 @@
             </div>
 
             <div class="about-actions">
-              <button class="btn-link">
+              <a href="team.html" class="btn-link">
                 View Portfolio <i data-lucide="external-link"></i>
-              </button>
+              </a>
               <div class="passion-tag">
                 <i data-lucide="heart"></i>
                 Built with Passion
@@ -863,7 +860,7 @@
     <footer>
       <div class="container">
         <div class="footer-grid">
-          <div>
+          <div class="footer-brand-section">
             <div class="footer-brand-logo">
               <span>JSL FastLine</span>
               <div class="footer-logo-icon">
@@ -920,6 +917,52 @@
         </div>
       </div>
     </footer>
+
+    <!-- ===== BETA ACCESS MODAL ===== -->
+    <div id="beta-modal" class="modal">
+      <div class="modal-overlay"></div>
+      <div class="modal-content beta-modal-content">
+        <div class="modal-header beta-header">
+          <div class="beta-icon-container">
+            <img
+              src="RoundIcon.png"
+              alt="JSL FastLine Logo"
+              class="beta-icon"
+            />
+          </div>
+          <h2>JSL FastLine Beta Access</h2>
+          <button class="modal-close" data-modal="beta-modal">
+            <i data-lucide="x"></i>
+          </button>
+        </div>
+        <div class="modal-body beta-body">
+          <div class="beta-status">
+            <div class="beta-status-icon">🚧</div>
+            <h3>Project in Progress</h3>
+          </div>
+          <p class="beta-message">
+            Thank you for your interest in joining the JSL FastLine Beta.
+          </p>
+          <p class="beta-message">
+            We're currently refining and enhancing the platform to deliver a
+            fast, reliable, and innovative experience. The system is not yet
+            open for public testing.
+          </p>
+          <div class="beta-next-steps">
+            <h4>📩 What happens next?</h4>
+            <p>
+              You'll be among the first to get notified as soon as the Beta
+              version is ready for testing.
+            </p>
+          </div>
+          <p class="beta-appreciation">
+            We truly appreciate your interest and support as we build something
+            impactful.
+          </p>
+          <div class="beta-signature">— JSL FastLine Technologies</div>
+        </div>
+      </div>
+    </div>
 
     <script src="script.js"></script>
   </body>
