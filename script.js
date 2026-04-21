@@ -87,6 +87,33 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // ===== Navbar Scroll Effect =====
 const navbar = document.getElementById('navbar');
+let lastScrollY = window.scrollY;
+
+function updateMobileNavbarVisibility() {
+  const isMobileView = window.innerWidth <= 768;
+  if (!navbar) return;
+
+  if (!isMobileView) {
+    navbar.classList.remove('nav-hidden-mobile');
+    lastScrollY = window.scrollY;
+    return;
+  }
+
+  const currentScrollY = window.scrollY;
+  const mobileMenuOpen = mobileMenu && mobileMenu.classList.contains('open');
+
+  if (mobileMenuOpen) {
+    navbar.classList.remove('nav-hidden-mobile');
+  } else if (currentScrollY <= 20) {
+    navbar.classList.add('nav-hidden-mobile');
+  } else if (currentScrollY > lastScrollY) {
+    navbar.classList.add('nav-hidden-mobile');
+  } else {
+    navbar.classList.remove('nav-hidden-mobile');
+  }
+
+  lastScrollY = Math.max(currentScrollY, 0);
+}
 
 window.addEventListener('scroll', () => {
   if (window.scrollY > 50) {
@@ -94,7 +121,11 @@ window.addEventListener('scroll', () => {
   } else {
     navbar.classList.remove('scrolled');
   }
+  updateMobileNavbarVisibility();
 });
+
+window.addEventListener('resize', updateMobileNavbarVisibility);
+window.addEventListener('load', updateMobileNavbarVisibility);
 
 // ===== Reveal on Scroll =====
 const revealObserver = new IntersectionObserver(
@@ -304,14 +335,22 @@ const verifyOTP = () => {
   }, 1500);
 };
 
-// Event listeners for OTP buttons
-document.getElementById('send-otp-btn').addEventListener('click', sendOTP);
-document.getElementById('verify-otp-btn').addEventListener('click', verifyOTP);
+// Event listeners for OTP buttons (only if elements exist)
+const sendOtpBtn = document.getElementById('send-otp-btn');
+const verifyOtpBtn = document.getElementById('verify-otp-btn');
+const betaOtpInput = document.getElementById('beta-otp');
 
-// Allow only numbers in OTP field
-document.getElementById('beta-otp').addEventListener('input', (e) => {
-  e.target.value = e.target.value.replace(/[^0-9]/g, '');
-});
+if (sendOtpBtn) {
+  sendOtpBtn.addEventListener('click', sendOTP);
+}
+if (verifyOtpBtn) {
+  verifyOtpBtn.addEventListener('click', verifyOTP);
+}
+if (betaOtpInput) {
+  betaOtpInput.addEventListener('input', (e) => {
+    e.target.value = e.target.value.replace(/[^0-9]/g, '');
+  });
+}
 
 // ===== Beta Form Validation & Submission =====
 const validateForm = () => {

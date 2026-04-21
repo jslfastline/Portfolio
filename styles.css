@@ -13,6 +13,7 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 110px;
 }
 
 body {
@@ -21,6 +22,16 @@ body {
   color: var(--text-dark);
   transition: background-color 0.3s, color 0.3s;
 }
+
+section[class], .page-section, .anchor-target {
+  scroll-margin-top: 110px;
+}
+
+@media (max-width: 768px) {
+  html { scroll-padding-top: 90px; }
+  section[class], .page-section, .anchor-target { scroll-margin-top: 90px; }
+}
+
 
 body.dark {
   background-color: var(--dark);
@@ -67,9 +78,14 @@ img { display: block; max-width: 100%; }
   top: 0; left: 0; right: 0;
   z-index: 50;
   padding: 24px 0;
-  transition: all 0.3s;
+  transition: all 0.3s ease;
   background-color: rgba(245, 244, 240, 0.7);
   backdrop-filter: blur(10px);
+}
+#navbar.nav-hidden-mobile {
+  transform: translateY(-100%);
+  opacity: 0;
+  pointer-events: none;
 }
 #navbar.scrolled {
   background-color: rgba(245, 244, 240, 0.9);
@@ -78,6 +94,7 @@ img { display: block; max-width: 100%; }
   padding: 16px 0;
   box-shadow: 0 2px 8px rgba(0,0,0,0.05);
 }
+
 body.dark #navbar {
   background-color: rgba(15, 23, 42, 0.7);
   backdrop-filter: blur(10px);
@@ -3568,6 +3585,16 @@ body.dark .join-team-content p {
 
   .team-member-card {
     margin: 0 auto;
-    max-width: 300px;
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .team-member-image {
+    height: 180px;
+  }
+
+  .team-member-info {
+    padding: 20px;
   }
 }
+

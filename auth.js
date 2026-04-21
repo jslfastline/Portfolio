@@ -6,22 +6,39 @@ let firebaseConfig = null;
 let emailjsConfig = null;
 
 // Load configurations on page load
-document.addEventListener('DOMContentLoaded', function() {
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', function() {
+    loadConfigurations();
+    initializeFirebase();
+    initializeEmailJS();
+    initializeAuthForms();
+    initializeTheme();
+    initializeNavigation();
+  });
+} else {
+  // DOM already loaded
   loadConfigurations();
   initializeFirebase();
   initializeEmailJS();
   initializeAuthForms();
   initializeTheme();
   initializeNavigation();
-});
+}
 
 // ===== CONFIGURATION MANAGEMENT =====
 function loadConfigurations() {
-  const savedConfig = localStorage.getItem('jsl_fastline_config');
+  const savedConfig = localStorage.getItem('jslConfig');
   if (savedConfig) {
     const config = JSON.parse(savedConfig);
     firebaseConfig = config.firebase;
     emailjsConfig = config.emailjs;
+
+    // Set EmailJS globals
+    if (config.emailjs) {
+      window.EMAILJS_PUBLIC_KEY = config.emailjs.publicKey;
+      window.EMAILJS_SERVICE_ID = config.emailjs.serviceId;
+      window.EMAILJS_TEMPLATE_ID = config.emailjs.templateId;
+    }
   }
 }
 
@@ -117,16 +134,29 @@ function initializeSignupForm() {
     fullNameInput.value = fullName;
   }
 
-  firstNameInput.addEventListener('input', updateFullName);
-  firstNameInput.addEventListener('blur', updateFullName);
-  middleInitialInput.addEventListener('input', updateFullName);
-  middleInitialInput.addEventListener('blur', updateFullName);
-  lastNameInput.addEventListener('input', updateFullName);
-  lastNameInput.addEventListener('blur', updateFullName);
+  if (firstNameInput) {
+    firstNameInput.addEventListener('input', updateFullName);
+    firstNameInput.addEventListener('blur', updateFullName);
+  }
+  if (middleInitialInput) {
+    middleInitialInput.addEventListener('input', updateFullName);
+    middleInitialInput.addEventListener('blur', updateFullName);
+  }
+  if (lastNameInput) {
+    lastNameInput.addEventListener('input', updateFullName);
+    lastNameInput.addEventListener('blur', updateFullName);
+  }
 
   // OTP functionality
-  document.getElementById('send-otp-signup').addEventListener('click', () => sendOTP('signup'));
-  document.getElementById('verify-otp-signup').addEventListener('click', () => verifyOTP('signup'));
+  const sendOtpBtn = document.getElementById('send-otp-signup');
+  const verifyOtpBtn = document.getElementById('verify-otp-signup');
+
+  if (sendOtpBtn) {
+    sendOtpBtn.addEventListener('click', () => sendOTP('signup'));
+  }
+  if (verifyOtpBtn) {
+    verifyOtpBtn.addEventListener('click', () => verifyOTP('signup'));
+  }
 
   // Form submission
   form.addEventListener('submit', handleSignup);
