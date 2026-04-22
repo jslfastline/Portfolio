@@ -16,6 +16,13 @@
     <script src="firebaseConfig.js"></script>
     <script src="firebase.js"></script>
     <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <!-- EmailJS SDK -->
+    <script>
+      window.EMAILJS_PUBLIC_KEY = "srQo3QulZIh_t9kZE";
+      window.EMAILJS_SERVICE_ID = "service_pn792k9";
+      window.EMAILJS_TEMPLATE_ID = "template_dmkj7iy";
+      emailjs.init(window.EMAILJS_PUBLIC_KEY);
+    </script>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
@@ -293,5 +300,306 @@
 
     <script src="script.js"></script>
     <script src="auth.js"></script>
+
+    <!-- OTP Handling for Sign Up -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // ===== FULL NAME AUTO-FILL =====
+        const firstNameInput = document.getElementById("signup-first-name");
+        const middleInitialInput = document.getElementById(
+          "signup-middle-initial",
+        );
+        const lastNameInput = document.getElementById("signup-last-name");
+        const fullNameInput = document.getElementById("signup-full-name");
+
+        function updateFullName() {
+          const first = firstNameInput.value.trim();
+          const middle = middleInitialInput.value.trim();
+          const last = lastNameInput.value.trim();
+
+          let fullName = first;
+          if (middle) fullName += " " + middle + ".";
+          if (last) fullName += " " + last;
+
+          fullNameInput.value = fullName.trim();
+        }
+
+        // Add event listeners for full name auto-fill
+        if (firstNameInput) {
+          firstNameInput.addEventListener("input", updateFullName);
+          firstNameInput.addEventListener("blur", updateFullName);
+          firstNameInput.addEventListener("change", updateFullName);
+        }
+        if (middleInitialInput) {
+          middleInitialInput.addEventListener("input", updateFullName);
+          middleInitialInput.addEventListener("blur", updateFullName);
+          middleInitialInput.addEventListener("change", updateFullName);
+        }
+        if (lastNameInput) {
+          lastNameInput.addEventListener("input", updateFullName);
+          lastNameInput.addEventListener("blur", updateFullName);
+          lastNameInput.addEventListener("change", updateFullName);
+        }
+
+        // ===== OTP HANDLING =====
+        const sendOtpBtn = document.getElementById("send-otp-signup");
+        const signupEmailInput = document.getElementById("signup-email");
+        const otpSection = document.getElementById("otp-section-signup");
+        const otpInput = document.getElementById("signup-otp");
+        const verifyOtpBtn = document.getElementById("verify-otp-signup");
+        const emailVerificationStatus = document.getElementById(
+          "email-verification-status-signup",
+        );
+        const otpStatus = document.getElementById("otp-status-signup");
+        const signupSubmitBtn = document.getElementById("signup-submit-btn");
+
+        // Store OTP state
+        let otpState = {
+          email: null,
+          otp: null,
+          expiry: null,
+          verified: false,
+        };
+
+        const OTP_VALID_MINUTES = 10;
+
+        function isValidEmail(email) {
+          return /^[^\s@]+@([^\s@]+\.)+[^\s@]+$/.test(email);
+        }
+
+        function generateOTP() {
+          return Math.floor(100000 + Math.random() * 900000).toString();
+        }
+
+        function showNotification(message, type = "success") {
+          const notification = document.createElement("div");
+          notification.className = `notification ${type}`;
+          notification.style.cssText = `
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: ${type === "success" ? "#10B981" : "#EF4444"};
+            color: white;
+            padding: 12px 20px;
+            border-radius: 8px;
+            z-index: 1000;
+            font-weight: 500;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+          `;
+          notification.textContent = message;
+          document.body.appendChild(notification);
+          setTimeout(() => notification.remove(), 4000);
+        }
+
+        // Initialize EmailJS (in case not already initialized)
+        if (!emailjs.publicKey) {
+          emailjs.init(window.EMAILJS_PUBLIC_KEY);
+        }
+
+        // Send OTP Handler
+        sendOtpBtn.addEventListener("click", async function (e) {
+          e.preventDefault();
+          const email = signupEmailInput.value.trim();
+
+          if (!email) {
+            emailVerificationStatus.innerHTML =
+              '<span style="color: #EF4444;">Please enter your email address</span>';
+            return;
+          }
+
+          if (!isValidEmail(email)) {
+            emailVerificationStatus.innerHTML =
+              '<span style="color: #EF4444;">Please enter a valid email address</span>';
+            return;
+          }
+
+          // Generate OTP
+          const otp = generateOTP();
+          const expiry = Date.now() + OTP_VALID_MINUTES * 60 * 1000;
+
+          // Show loading state
+          sendOtpBtn.disabled = true;
+          sendOtpBtn.innerHTML =
+            '<span>Sending...</span><i data-lucide="loader"></i>';
+
+          try {
+            // Send OTP via EmailJS
+            await emailjs.send(
+              window.EMAILJS_SERVICE_ID,
+              window.EMAILJS_TEMPLATE_ID,
+              {
+                to_email: email,
+                to_name: email,
+                otp_code: otp,
+                app_name: "JSL FastLine",
+              },
+            );
+
+            // Store OTP state
+            otpState = {
+              email: email,
+              otp: otp,
+              expiry: expiry,
+              verified: false,
+            };
+
+            // Save to sessionStorage for persistence across app switches
+            sessionStorage.setItem(
+              "fastline_signup_otp",
+              JSON.stringify(otpState),
+            );
+
+            // Show OTP section
+            otpSection.style.display = "block";
+            emailVerificationStatus.innerHTML =
+              '<span style="color: #10B981;">✓ OTP sent successfully!</span>';
+            otpInput.focus();
+
+            showNotification(`OTP sent to ${email}`, "success");
+            console.log(`[DEMO] OTP for ${email}: ${otp}`);
+          } catch (error) {
+            console.error("Error sending OTP:", error);
+            emailVerificationStatus.innerHTML =
+              '<span style="color: #EF4444;">Failed to send OTP. Please try again.</span>';
+            showNotification("Failed to send OTP", "error");
+          } finally {
+            sendOtpBtn.disabled = false;
+            sendOtpBtn.innerHTML =
+              '<span>Send OTP</span><i data-lucide="mail"></i>';
+            lucide.createIcons();
+          }
+        });
+
+        // Verify OTP Handler
+        verifyOtpBtn.addEventListener("click", async function (e) {
+          e.preventDefault();
+          const enteredOtp = otpInput.value.trim();
+
+          // Get latest OTP state from sessionStorage
+          const savedOtpState = sessionStorage.getItem("fastline_signup_otp");
+          if (savedOtpState) {
+            try {
+              otpState = JSON.parse(savedOtpState);
+            } catch (e) {
+              console.error("Error parsing saved OTP state:", e);
+            }
+          }
+
+          if (!otpState.otp) {
+            otpStatus.innerHTML =
+              '<span style="color: #EF4444;">Please send an OTP first</span>';
+            return;
+          }
+
+          if (!enteredOtp) {
+            otpStatus.innerHTML =
+              '<span style="color: #EF4444;">Please enter the OTP code</span>';
+            return;
+          }
+
+          if (enteredOtp.length !== 6 || isNaN(enteredOtp)) {
+            otpStatus.innerHTML =
+              '<span style="color: #EF4444;">OTP must be a 6-digit number</span>';
+            return;
+          }
+
+          if (Date.now() > otpState.expiry) {
+            otpStatus.innerHTML =
+              '<span style="color: #EF4444;">OTP has expired. Please request a new one.</span>';
+            otpState.verified = false;
+            return;
+          }
+
+          if (enteredOtp === otpState.otp) {
+            otpStatus.innerHTML =
+              '<span style="color: #10B981;">✓ Email verified successfully!</span>';
+            otpState.verified = true;
+
+            // Allow form submission
+            signupSubmitBtn.style.display = "block";
+            otpInput.disabled = true;
+            verifyOtpBtn.disabled = true;
+
+            showNotification("Email verified successfully!", "success");
+
+            // Save verified state
+            sessionStorage.setItem(
+              "fastline_signup_otp",
+              JSON.stringify(otpState),
+            );
+          } else {
+            otpStatus.innerHTML =
+              '<span style="color: #EF4444;">Incorrect OTP. Please try again.</span>';
+            otpInput.value = "";
+            otpInput.focus();
+          }
+        });
+
+        // Auto-submit handler for OTP input
+        otpInput.addEventListener("input", function () {
+          this.value = this.value.replace(/[^0-9]/g, "");
+          if (this.value.length === 6) {
+            // Automatically verify when 6 digits are entered
+            verifyOtpBtn.click();
+          }
+        });
+
+        // Check if OTP was already verified (page refresh scenario)
+        window.addEventListener("load", function () {
+          const savedOtpState = sessionStorage.getItem("fastline_signup_otp");
+          if (savedOtpState) {
+            try {
+              const state = JSON.parse(savedOtpState);
+              if (state.verified && Date.now() < state.expiry) {
+                otpState = state;
+                otpSection.style.display = "block";
+                otpStatus.innerHTML =
+                  '<span style="color: #10B981;">✓ Email verified successfully!</span>';
+                signupSubmitBtn.style.display = "block";
+                otpInput.disabled = true;
+                verifyOtpBtn.disabled = true;
+                signupEmailInput.value = state.email;
+                signupEmailInput.disabled = true;
+              }
+            } catch (e) {
+              console.error("Error loading saved OTP state:", e);
+            }
+          }
+        });
+
+        // Handle form submission
+        document
+          .getElementById("signup-form")
+          .addEventListener("submit", async function (e) {
+            e.preventDefault();
+
+            // Check if OTP is verified
+            const savedOtpState = sessionStorage.getItem("fastline_signup_otp");
+            let isOtpVerified = false;
+
+            if (savedOtpState) {
+              try {
+                const state = JSON.parse(savedOtpState);
+                isOtpVerified = state.verified && Date.now() < state.expiry;
+              } catch (e) {
+                console.error("Error checking OTP state:", e);
+              }
+            }
+
+            if (!isOtpVerified) {
+              document.getElementById("signup-error").style.display = "block";
+              document.getElementById("signup-error-text").textContent =
+                "Please verify your email with OTP before creating account.";
+              return;
+            }
+
+            // If OTP is verified, proceed with registration
+            // The existing auth.js script should handle the rest
+            // You can add additional validation here if needed
+
+            showNotification("Creating your account...", "success");
+          });
+      });
+    </script>
   </body>
 </html>

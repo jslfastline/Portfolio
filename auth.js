@@ -275,7 +275,19 @@ async function handleSignup(e) {
   }
 
   // Check email verification
-  if (!sessionStorage.getItem('signup_email_verified')) {
+  const savedOtpState = sessionStorage.getItem('fastline_signup_otp');
+  let isEmailVerified = false;
+  
+  if (savedOtpState) {
+    try {
+      const state = JSON.parse(savedOtpState);
+      isEmailVerified = state.verified && Date.now() < state.expiry;
+    } catch (e) {
+      console.error("Error checking OTP state:", e);
+    }
+  }
+
+  if (!isEmailVerified) {
     showError('signup-email', 'Please verify your email first');
     return;
   }
@@ -312,12 +324,16 @@ async function handleSignup(e) {
 
     // Clear form and session data
     form.reset();
-    sessionStorage.removeItem('signup_otp');
+    sessionStorage.removeItem('fastline_signup_otp');
     sessionStorage.removeItem('signup_email_verified');
 
-    // Redirect after success
+    // Save user session
+    localStorage.setItem('fastline_session_email', userData.email);
+    localStorage.setItem('fastline_session_expiry', Date.now() + 30 * 24 * 60 * 60 * 1000);
+
+    // Redirect to JSL FastLine App
     setTimeout(() => {
-      window.location.href = 'index.html';
+      window.location.href = 'index.html?welcome=true&user=' + encodeURIComponent(userData.fullName);
     }, 2000);
 
   } catch (error) {
