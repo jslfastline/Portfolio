@@ -3,10 +3,18 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>JSL FastLine Portfolio | Fast Connections, Smart Future</title>
-    <link rel="shortcut icon" href="RoundFavicon.png" type="image/x-icon" />
+    <meta
+      name="description"
+      content="FastLine Technologies (JSL FastLine) — engineering digital products, enterprise systems and intelligent software. Explore FeMOS, Neo-Smart Core and bespoke applications built by Founder & CEO, Josephat J. Athanas."
+    />
+    <title>JSL FastLine | FastLine Technologies — Digital Products & Enterprise Systems</title>
+    <link rel="shortcut icon" href="favicon-32.png" type="image/x-icon" />
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="favicon-192.png" />
+    <link rel="apple-touch-icon" href="apple-touch-icon.png" />
     <link
-      href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800;900&family=DM+Sans:wght@400;500;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800;900&family=DM+Sans:wght@400;500;700&family=JetBrains+Mono:wght@400;500;700&display=swap"
       rel="stylesheet"
     />
     <script src="https://unpkg.com/lucide@latest"></script>
@@ -16,33 +24,29 @@
     <!-- ===== NAVIGATION ===== -->
     <nav id="navbar">
       <div class="container nav-inner">
-        <div class="nav-logo">
-          <span class="nav-logo-text">JSL FastLine</span>
+        <a href="#home" class="nav-logo">
           <div class="nav-logo-icon">
-            <img src="RoundIcon.png" alt="Logo" referrerpolicy="no-referrer" />
+            <img src="RoundIcon.png" alt="FastLine Logo" referrerpolicy="no-referrer" />
           </div>
-        </div>
+          <span class="nav-logo-text">FastLine <em>Technologies</em></span>
+        </a>
 
         <ul class="nav-links">
-          <li><a href="#vision">Vision</a></li>
-          <li><a href="#features">Features</a></li>
-          <li><a href="#about">About Me</a></li>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#about">About</a></li>
           <li><a href="#tech">Technology</a></li>
+          <li><a href="#contact">Contact</a></li>
         </ul>
 
-        <button id="theme-toggle" class="btn-theme" aria-label="Toggle theme">
-          <i data-lucide="sun" class="icon-sun"></i>
-          <i data-lucide="moon" class="icon-moon"></i>
-        </button>
-
-        <button
-          onclick="window.location.href = 'signup.html'"
-          class="btn-primary"
-          type="button"
-          aria-label="Get started with JSL FastLine - create your account"
-        >
-          Get Started
-        </button>
+        <div class="nav-actions">
+          <button id="theme-toggle" class="btn-theme" aria-label="Toggle theme">
+            <i data-lucide="sun" class="icon-sun"></i>
+            <i data-lucide="moon" class="icon-moon"></i>
+          </button>
+          <a href="#contact" class="btn-primary">Start a Project</a>
+        </div>
 
         <!-- Mobile controls -->
         <div class="nav-mobile-btns">
@@ -62,626 +66,460 @@
 
       <!-- Mobile Menu -->
       <div id="mobile-menu">
-        <a href="#vision">Vision</a>
-        <a href="#features">Features</a>
-        <a href="#about">About Me</a>
+        <a href="#home">Home</a>
+        <a href="#projects">Projects</a>
+        <a href="#services">Services</a>
+        <a href="#about">About</a>
         <a href="#tech">Technology</a>
-        <button
-          onclick="window.location.href = 'signup.html'"
-          class="btn-primary"
-          type="button"
-          aria-label="Get started with JSL FastLine - create your account"
-        >
-          Get Started
-        </button>
+        <a href="#contact">Contact</a>
+        <a href="#contact" class="btn-primary">Start a Project</a>
       </div>
     </nav>
 
-    <!-- ===== LEARN MORE MODAL ===== -->
-    <div id="learn-more-modal" class="modal">
-      <div class="modal-overlay"></div>
-      <div class="modal-content">
-        <button id="modal-close" class="modal-close" aria-label="Close modal">
-          <i data-lucide="x"></i>
-        </button>
+    <!-- ===== HERO ===== -->
+    <section id="home" class="hero">
+      <div class="hero-orb hero-orb-one"></div>
+      <div class="hero-orb hero-orb-two"></div>
+      <div class="hero-grid-overlay"></div>
 
-        <div class="modal-header">
-          <h2>Discover JSL FastLine</h2>
-          <p>The Future of Digital Connection</p>
-        </div>
-
-        <div class="modal-body">
-          <!-- What is Section -->
-          <div class="modal-section">
-            <h3>What is JSL FastLine?</h3>
-            <p>
-              JSL FastLine is a revolutionary offline-first digital platform
-              that enables seamless communication, collaboration, and commerce
-              regardless of internet connectivity. Designed with
-              low-connectivity environments in mind, it provides a complete
-              digital ecosystem for modern life.
-            </p>
-          </div>
-
-          <!-- Key Features -->
-          <div class="modal-section">
-            <h3>Key Features</h3>
-            <div class="modal-features-grid">
-              <div class="feature-item">
-                <div class="feature-icon">
-                  <i data-lucide="message-square"></i>
-                </div>
-                <h4>Instant Messaging</h4>
-                <p>
-                  Send messages offline and auto-sync when online. Never miss a
-                  conversation.
-                </p>
-              </div>
-              <div class="feature-item">
-                <div class="feature-icon">
-                  <i data-lucide="shopping-bag"></i>
-                </div>
-                <h4>Local Marketplace</h4>
-                <p>
-                  Discover and transact with sellers near you with or without
-                  internet.
-                </p>
-              </div>
-              <div class="feature-item">
-                <div class="feature-icon">
-                  <i data-lucide="share-2"></i>
-                </div>
-                <h4>Peer-to-Peer Sharing</h4>
-                <p>
-                  Share files, photos, and videos with nearby users instantly.
-                </p>
-              </div>
-              <div class="feature-item">
-                <div class="feature-icon">
-                  <i data-lucide="cpu"></i>
-                </div>
-                <h4>Smart AI Assistant</h4>
-                <p>
-                  Get intelligent assistance offline and premium features when
-                  online.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <!-- Why It Matters -->
-          <div class="modal-section">
-            <h3>Why It Matters</h3>
-            <ul class="modal-list">
-              <li>
-                <strong>Universal Connectivity:</strong> Works seamlessly
-                whether you're online or offline, removing barriers to digital
-                participation.
-              </li>
-              <li>
-                <strong>Data Efficiency:</strong> Optimized for low-bandwidth
-                environments, using minimal data while maximizing functionality.
-              </li>
-              <li>
-                <strong>Privacy First:</strong> End-to-end encrypted storage and
-                transmission keep your information under your control.
-              </li>
-              <li>
-                <strong>Speed & Performance:</strong> Local-first architecture
-                means faster response times and better user experience.
-              </li>
-              <li>
-                <strong>Financial Inclusion:</strong> Enables commerce and
-                digital services for underserved communities.
-              </li>
-            </ul>
-          </div>
-
-          <!-- Technology Stack -->
-          <div class="modal-section">
-            <h3>Technology Stack</h3>
-            <div class="tech-stack-list">
-              <div class="stack-item">
-                <span class="stack-label">Offline Storage</span>
-                <span class="stack-value">IndexedDB with AES Encryption</span>
-              </div>
-              <div class="stack-item">
-                <span class="stack-label">Real-time Sync</span>
-                <span class="stack-value">Firebase Cloud Firestore</span>
-              </div>
-              <div class="stack-item">
-                <span class="stack-label">Network Communication</span>
-                <span class="stack-value">Queue-Based Sync Protocol</span>
-              </div>
-              <div class="stack-item">
-                <span class="stack-label">AI Processing</span>
-                <span class="stack-value">Hybrid Local & Cloud Models</span>
-              </div>
-              <div class="stack-item">
-                <span class="stack-label">Media Optimization</span>
-                <span class="stack-value"
-                  >Auto-Compression & Adaptive Quality</span
-                >
-              </div>
-              <div class="stack-item">
-                <span class="stack-label">Security</span>
-                <span class="stack-value">End-to-End Encryption (E2EE)</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Use Cases -->
-          <div class="modal-section">
-            <h3>Perfect For</h3>
-            <ul class="modal-list">
-              <li>
-                <strong>Remote Communities:</strong> Areas with unreliable
-                internet connectivity.
-              </li>
-              <li>
-                <strong>Traveling Users:</strong> People who need connectivity
-                on the move.
-              </li>
-              <li>
-                <strong>Business Operations:</strong> Organizations needing
-                offline-capable digital tools.
-              </li>
-              <li>
-                <strong>Social Networks:</strong> Communities building stronger
-                local connections.
-              </li>
-              <li>
-                <strong>E-Commerce:</strong> Marketplaces serving underserved
-                regions.
-              </li>
-            </ul>
-          </div>
-
-          <!-- Statistics -->
-          <div class="modal-section modal-stats">
-            <div class="stat-box">
-              <div class="stat-number">50ms</div>
-              <div class="stat-label">Avg Local Response Time</div>
-            </div>
-            <div class="stat-box">
-              <div class="stat-number">92%</div>
-              <div class="stat-label">Data Reduction vs Standard</div>
-            </div>
-            <div class="stat-box">
-              <div class="stat-number">24/7</div>
-              <div class="stat-label">Always Available</div>
-            </div>
-          </div>
-
-          <!-- Call to Action -->
-          <div class="modal-section modal-cta">
-            <h3>Ready to Experience the Future?</h3>
-            <p>
-              Join thousands of users already using JSL FastLine to stay
-              connected, no matter what.
-            </p>
-            <div class="modal-actions">
-              <button
-                onclick="window.location.href = 'login.html'"
-                class="btn-modal-primary"
-              >
-                Join the Beta
-              </button>
-              <button id="modal-learn-docs" class="btn-modal-secondary">
-                View Documentation
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- ===== BETA SIGNUP MODAL ===== -->
-    <div id="beta-signup-modal" class="modal">
-      <div class="modal-overlay"></div>
-      <div class="modal-content">
-        <button id="beta-close" class="modal-close" aria-label="Close modal">
-          <i data-lucide="x"></i>
-        </button>
-
-        <div class="modal-header">
-          <h2>Join the Beta</h2>
-          <div class="modal-logo">
-            <img src="RoundIcon.png" alt="JSL FastLine Logo" />
-          </div>
-          <p>
-            Be the first to experience the future of offline-first connectivity
-          </p>
-        </div>
-
-        <div class="modal-body">
-          <form id="beta-signup-form" class="beta-form">
-            <!-- Name Fields -->
-            <div class="name-fields-group">
-              <div class="form-group name-field">
-                <label for="beta-first-name">First Name *</label>
-                <input
-                  type="text"
-                  id="beta-first-name"
-                  name="firstName"
-                  placeholder="Josephat"
-                  required
-                />
-                <span class="form-error" data-error="firstName"></span>
-              </div>
-              <div class="form-group name-field">
-                <label for="beta-middle-initial">Middle Initial</label>
-                <input
-                  type="text"
-                  id="beta-middle-initial"
-                  name="middleInitial"
-                  placeholder="J"
-                  maxlength="1"
-                />
-                <span class="form-error" data-error="middleInitial"></span>
-              </div>
-              <div class="form-group name-field">
-                <label for="beta-last-name">Last Name *</label>
-                <input
-                  type="text"
-                  id="beta-last-name"
-                  name="lastName"
-                  placeholder="Athanas"
-                  required
-                />
-                <span class="form-error" data-error="lastName"></span>
-              </div>
-            </div>
-
-            <!-- Full Name Display -->
-            <div class="form-group">
-              <label for="beta-full-name">Full Name</label>
-              <input
-                type="text"
-                id="beta-full-name"
-                name="fullName"
-                readonly
-                placeholder="Auto-generated from above fields"
-              />
-              <span class="form-hint"
-                >This field is auto-generated and cannot be edited</span
-              >
-            </div>
-
-            <!-- Email Field -->
-            <div class="form-group">
-              <label for="beta-email">Email Address *</label>
-              <div class="email-group">
-                <input
-                  type="email"
-                  id="beta-email"
-                  name="email"
-                  placeholder="your@email.com"
-                  required
-                />
-                <button type="button" id="send-otp-btn" class="btn-otp">
-                  <span>Send OTP</span>
-                  <i data-lucide="mail"></i>
-                </button>
-              </div>
-              <span class="form-error" data-error="email"></span>
-              <div
-                id="email-verification-status"
-                class="verification-status"
-              ></div>
-            </div>
-
-            <!-- OTP Field -->
-            <div
-              class="form-group otp-group"
-              id="otp-section"
-              style="display: none"
-            >
-              <label for="beta-otp">Enter OTP *</label>
-              <div class="otp-input-group">
-                <input
-                  type="text"
-                  id="beta-otp"
-                  name="otp"
-                  placeholder="Enter 6-digit code"
-                  maxlength="6"
-                  pattern="[0-9]{6}"
-                />
-                <button type="button" id="verify-otp-btn" class="btn-verify">
-                  <span>Verify</span>
-                  <i data-lucide="check"></i>
-                </button>
-              </div>
-              <span class="form-error" data-error="otp"></span>
-              <div id="otp-status" class="verification-status"></div>
-            </div>
-
-            <!-- Phone Field -->
-            <div class="form-group">
-              <label for="beta-phone">Phone Number (Optional)</label>
-              <input
-                type="tel"
-                id="beta-phone"
-                name="phone"
-                placeholder="+1 (123) 456-7890"
-              />
-              <span class="form-error" data-error="phone"></span>
-            </div>
-
-            <!-- Interests Section -->
-            <div class="form-group">
-              <label class="form-label"
-                >What features interest you the most? *</label
-              >
-              <div class="checkbox-grid">
-                <div class="checkbox-item">
-                  <input
-                    type="checkbox"
-                    id="interest-messaging"
-                    name="interests"
-                    value="Messaging"
-                  />
-                  <label for="interest-messaging">
-                    <span class="checkbox-custom"></span>
-                    Messaging
-                  </label>
-                </div>
-                <div class="checkbox-item">
-                  <input
-                    type="checkbox"
-                    id="interest-marketplace"
-                    name="interests"
-                    value="Marketplace"
-                  />
-                  <label for="interest-marketplace">
-                    <span class="checkbox-custom"></span>
-                    Marketplace
-                  </label>
-                </div>
-                <div class="checkbox-item">
-                  <input
-                    type="checkbox"
-                    id="interest-sharing"
-                    name="interests"
-                    value="File Sharing"
-                  />
-                  <label for="interest-sharing">
-                    <span class="checkbox-custom"></span>
-                    File Sharing
-                  </label>
-                </div>
-                <div class="checkbox-item">
-                  <input
-                    type="checkbox"
-                    id="interest-ai"
-                    name="interests"
-                    value="AI Assistant"
-                  />
-                  <label for="interest-ai">
-                    <span class="checkbox-custom"></span>
-                    AI Assistant
-                  </label>
-                </div>
-                <div class="checkbox-item">
-                  <input
-                    type="checkbox"
-                    id="interest-offline"
-                    name="interests"
-                    value="Offline Features"
-                  />
-                  <label for="interest-offline">
-                    <span class="checkbox-custom"></span>
-                    Offline Features
-                  </label>
-                </div>
-                <div class="checkbox-item">
-                  <input
-                    type="checkbox"
-                    id="interest-security"
-                    name="interests"
-                    value="Security"
-                  />
-                  <label for="interest-security">
-                    <span class="checkbox-custom"></span>
-                    Security & Privacy
-                  </label>
-                </div>
-              </div>
-              <span class="form-error" data-error="interests"></span>
-            </div>
-
-            <!-- Message Field -->
-            <div class="form-group">
-              <label for="beta-message"
-                >Tell us why you're interested (Optional)</label
-              >
-              <textarea
-                id="beta-message"
-                name="message"
-                placeholder="Share your thoughts about JSL FastLine..."
-                rows="4"
-              ></textarea>
-              <span class="form-error" data-error="message"></span>
-            </div>
-
-            <!-- Consent Checkbox -->
-            <div class="form-group checkbox-consent">
-              <input
-                type="checkbox"
-                id="beta-consent"
-                name="consent"
-                required
-              />
-              <label for="beta-consent">
-                I agree to receive updates about JSL FastLine and its beta
-                program
-              </label>
-              <span class="form-error" data-error="consent"></span>
-            </div>
-
-            <!-- Submit Button -->
-            <button type="submit" class="btn-submit">
-              <span>Join the Beta</span>
-              <i data-lucide="arrow-right"></i>
-            </button>
-
-            <!-- Success Message -->
-            <div id="beta-success" class="form-message success">
-              <i data-lucide="check-circle"></i>
-              <div>
-                <strong>Welcome to the beta!</strong>
-                <p>
-                  Check your email for next steps and exclusive beta access.
-                </p>
-              </div>
-            </div>
-
-            <!-- Error Message -->
-            <div id="beta-error" class="form-message error">
-              <i data-lucide="alert-circle"></i>
-              <div>
-                <strong>Oops! Something went wrong.</strong>
-                <p id="beta-error-text">Please try again later.</p>
-              </div>
-            </div>
-          </form>
-        </div>
-      </div>
-    </div>
-
-    <!-- ===== HERO SECTION ===== -->
-    <section id="vision">
-      <div class="hero-glow"></div>
       <div class="container">
-        <div class="reveal">
-          <span class="hero-badge">
-            <i data-lucide="wifi-off"></i>
-            Offline-First Platform
-          </span>
-          <h1 class="hero-title">
-            Fast Connections, <br />
-            <span class="gradient-text">Smart Future</span>
-          </h1>
-          <h2 class="hero-subtitle">The Internet Without Internet</h2>
-          <p class="hero-desc">
-            JSL FastLine is a digital life platform designed to allow users to
-            connect, share, communicate, and transact with or without internet
-            connectivity.
-          </p>
-          <div class="hero-actions">
-            <button onclick="showModal('beta-modal')" class="btn-hero-primary">
-              Join the Beta <i data-lucide="arrow-right"></i>
-            </button>
-            <button class="btn-hero-secondary">Learn More</button>
-          </div>
-        </div>
+        <div class="hero-layout">
+          <div class="hero-content reveal">
+            <span class="hero-badge">
+              <span class="badge-dot"></span>
+              Engineering Digital Excellence
+            </span>
 
-        <!-- Mock App Window -->
-        <div class="hero-mockup reveal" style="transition-delay: 200ms">
-          <div class="mockup-window">
-            <div class="mockup-overlay"></div>
-            <div class="mockup-inner">
-              <div class="mockup-titlebar">
+            <h1 class="hero-title">
+              FastLine <span class="gradient-text">Technologies</span>
+            </h1>
+            <h2 class="hero-subtitle">
+              From operating systems to intelligent software — we build the
+              digital future.
+            </h2>
+            <p class="hero-desc">
+              JSL FastLine is an independent software engineering studio led by
+              its Founder &amp; CEO, delivering enterprise-grade platforms,
+              smart-core systems and bespoke applications — designed, engineered
+              and shipped by one passionate builder with a full-stack mindset.
+            </p>
+
+            <div class="hero-actions">
+              <a href="#projects" class="btn-hero-primary">
+                Explore Projects <i data-lucide="arrow-right"></i>
+              </a>
+              <a href="#contact" class="btn-hero-secondary">
+                <i data-lucide="mail"></i> Talk to the CEO
+              </a>
+            </div>
+
+            <div class="hero-stats">
+              <div class="hero-stat">
+                <span class="hero-stat-number" data-count="10">0+</span>
+                <span class="hero-stat-label">Years Experience</span>
+              </div>
+              <div class="hero-stat">
+                <span class="hero-stat-number" data-count="25">0+</span>
+                <span class="hero-stat-label">Products Shipped</span>
+              </div>
+              <div class="hero-stat">
+                <span class="hero-stat-number" data-count="100">0%</span>
+                <span class="hero-stat-label">Client Commitment</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Terminal-style brand card -->
+          <div class="hero-visual reveal" style="transition-delay: 150ms">
+            <div class="terminal-card">
+              <div class="terminal-titlebar">
                 <div class="mockup-dots">
                   <div class="dot dot-red"></div>
                   <div class="dot dot-orange"></div>
                   <div class="dot dot-green"></div>
                 </div>
-                <div class="mockup-status">
-                  <div class="status-dot animate-pulse"></div>
-                  <span>Offline Mode Active</span>
+                <span class="terminal-title">fastline@core: ~/build</span>
+              </div>
+              <div class="terminal-body">
+                <p><span class="terminal-prompt">$</span> fastline init --vision</p>
+                <p class="terminal-out">"Fast connections, smart future."</p>
+                <p><span class="terminal-prompt">$</span> cargo build --target feMOS</p>
+                <p class="terminal-out ok">✔ Enterprise OS compiled · 0 errors</p>
+                <p><span class="terminal-prompt">$</span> neural core sync</p>
+                <p class="terminal-out ok">✔ Neo-Smart Core online · 24ms latency</p>
+                <p><span class="terminal-prompt">$</span> deploy to production →</p>
+                <div class="terminal-loading">
+                  <div class="terminal-bar"></div>
+                  <span>Deploying to fastline.co.tz…</span>
                 </div>
               </div>
+            </div>
 
-              <div class="mockup-grid">
-                <!-- Nearby Feed Panel -->
-                <div class="mock-panel">
-                  <div class="mock-panel-header">
-                    <div class="mock-icon blue">
-                      <i data-lucide="users"></i>
-                    </div>
-                    <span class="mock-panel-title">Nearby Feed</span>
-                  </div>
-                  <div class="mock-row"></div>
-                  <div class="mock-row"></div>
-                  <div class="mock-row"></div>
-                </div>
-
-                <!-- Local Chat Panel -->
-                <div class="mock-panel">
-                  <div class="mock-panel-top">
-                    <div class="mock-panel-header" style="margin-bottom: 0">
-                      <div class="mock-icon teal">
-                        <i data-lucide="message-square"></i>
-                      </div>
-                      <span class="mock-panel-title">Local Chat</span>
-                    </div>
-                    <span class="badge-pending">3 Pending</span>
-                  </div>
-                  <div class="chat-messages">
-                    <div class="chat-msg">
-                      <div class="bubble received">
-                        Hey! Are you near the marketplace?
-                      </div>
-                    </div>
-                    <div class="chat-msg right">
-                      <div class="bubble sent">
-                        Yes, I'm here. Sending the files now.
-                      </div>
-                    </div>
-                    <div class="chat-msg">
-                      <div class="bubble pending">Syncing...</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+            <div class="floating-chip chip-one">
+              <i data-lucide="cpu"></i> FeMOS
+            </div>
+            <div class="floating-chip chip-two">
+              <i data-lucide="brain-circuit"></i> Neo-Smart Core
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ===== ABOUT SECTION ===== -->
-    <section id="about">
+    <!-- ===== MARQUEE ===== -->
+    <div class="marquee">
+      <div class="marquee-track">
+        <span>Web Applications</span><i data-lucide="zap"></i>
+        <span>Desktop & OS Systems</span><i data-lucide="monitor"></i>
+        <span>Mobile Apps</span><i data-lucide="smartphone"></i>
+        <span>AI & Automation</span><i data-lucide="bot"></i>
+        <span>Enterprise Software</span><i data-lucide="server"></i>
+        <span>API Integration</span><i data-lucide="plug"></i>
+        <span>Cloud & Databases</span><i data-lucide="cloud"></i>
+        <span>System Security</span><i data-lucide="shield-check"></i>
+        <span>Web Applications</span><i data-lucide="zap"></i>
+        <span>Desktop & OS Systems</span><i data-lucide="monitor"></i>
+        <span>Mobile Apps</span><i data-lucide="smartphone"></i>
+        <span>AI & Automation</span><i data-lucide="bot"></i>
+        <span>Enterprise Software</span><i data-lucide="server"></i>
+        <span>API Integration</span><i data-lucide="plug"></i>
+        <span>Cloud & Databases</span><i data-lucide="cloud"></i>
+        <span>System Security</span><i data-lucide="shield-check"></i>
+      </div>
+    </div>
+
+    <!-- ===== PROJECTS ===== -->
+    <section id="projects" class="section">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-eyebrow">What the Company Has Built</span>
+          <h2 class="section-title">Flagship <span class="gradient-text">Projects</span></h2>
+          <p class="section-desc">
+            Real systems engineered end-to-end by FastLine Technologies. Every
+            product is architected for performance, security and real-world
+            impact.
+          </p>
+        </div>
+
+        <div class="projects-grid">
+          <!-- FeMOS (Featured) -->
+          <article class="project-card project-featured reveal">
+            <div class="project-card-glow"></div>
+            <div class="project-layout">
+              <div class="project-info">
+                <div class="project-top">
+                  <div class="project-icon">
+                    <i data-lucide="monitor-cog"></i>
+                  </div>
+                  <span class="project-flag">Flagship Product</span>
+                </div>
+                <h3 class="project-title">FeMOS</h3>
+                <p class="project-sub">FastLine Enterprise Modern Operating System</p>
+                <p class="project-desc">
+                  A modern, enterprise-grade operating system engineered to power
+                  businesses end-to-end. FeMOS connects productivity, workflow
+                  automation, data management and system operations into a single
+                  secure platform — built for reliability, speed and scale.
+                </p>
+                <ul class="project-features">
+                  <li><i data-lucide="check-circle"></i> Unified enterprise dashboard</li>
+                  <li><i data-lucide="check-circle"></i> Secure multi-user architecture</li>
+                  <li><i data-lucide="check-circle"></i> Automation-first workflows</li>
+                  <li><i data-lucide="check-circle"></i> Optimized, low-footprint core</li>
+                </ul>
+                <div class="project-tags">
+                  <span>Operating Systems</span>
+                  <span>Enterprise</span>
+                  <span>Automation</span>
+                  <span>Security</span>
+                </div>
+              </div>
+
+              <!-- FeMOS Demo: enterprise dashboard -->
+              <div class="demo demo-femos">
+                <div class="browser">
+                  <div class="browser-bar">
+                    <div class="mockup-dots">
+                      <div class="dot dot-red"></div>
+                      <div class="dot dot-orange"></div>
+                      <div class="dot dot-green"></div>
+                    </div>
+                    <span class="browser-url"><i data-lucide="lock"></i> fem.fastline.co.tz/system</span>
+                  </div>
+                  <div class="browser-body">
+                    <div class="os-sidebar">
+                      <div class="os-sidebar-logo">
+                        <img src="RoundIcon.png" alt="FeMOS" referrerpolicy="no-referrer" />
+                      </div>
+                      <div class="os-nav-item active"><i data-lucide="layout-dashboard"></i></div>
+                      <div class="os-nav-item"><i data-lucide="users"></i></div>
+                      <div class="os-nav-item"><i data-lucide="chart-line"></i></div>
+                      <div class="os-nav-item"><i data-lucide="settings"></i></div>
+                    </div>
+                    <div class="os-main">
+                      <div class="os-welcome">
+                        <div>
+                          <p class="os-hello">Good morning, Administrator</p>
+                          <p class="os-sub">FeMOS v3.4 · All systems operational</p>
+                        </div>
+                        <span class="os-pill"><span class="os-dot"></span> Live</span>
+                      </div>
+                      <div class="os-stats">
+                        <div class="os-stat" style="--c: var(--primary)">
+                          <span class="os-stat-label">Revenue</span>
+                          <span class="os-stat-value">$48.2K</span>
+                          <span class="os-stat-trend up">+12.4%</span>
+                        </div>
+                        <div class="os-stat" style="--c: var(--secondary)">
+                          <span class="os-stat-label">Active Users</span>
+                          <span class="os-stat-value">3,842</span>
+                          <span class="os-stat-trend up">+8.1%</span>
+                        </div>
+                        <div class="os-stat" style="--c: #A855F7">
+                          <span class="os-stat-label">Tasks Done</span>
+                          <span class="os-stat-value">1,206</span>
+                          <span class="os-stat-trend down">98% on time</span>
+                        </div>
+                        <div class="os-stat" style="--c: #F97316">
+                          <span class="os-stat-label">Uptime</span>
+                          <span class="os-stat-value">99.98%</span>
+                          <span class="os-stat-trend up">Stable</span>
+                        </div>
+                      </div>
+                      <div class="os-chart">
+                        <div class="os-chart-bars">
+                          <div style="--h: 40%"></div>
+                          <div style="--h: 65%"></div>
+                          <div style="--h: 50%"></div>
+                          <div style="--h: 80%"></div>
+                          <div style="--h: 60%"></div>
+                          <div style="--h: 90%"></div>
+                          <div style="--h: 72%"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Neo-Smart Core -->
+          <article class="project-card reveal" style="transition-delay: 100ms">
+            <div class="project-top">
+              <div class="project-icon icon-teal">
+                <i data-lucide="brain-circuit"></i>
+              </div>
+              <span class="project-status">Smart Core</span>
+            </div>
+            <h3 class="project-title">Neo-Smart Core</h3>
+            <p class="project-sub">Intelligent Automation & AI Engine</p>
+
+            <!-- Neo-Smart Demo: pipeline -->
+            <div class="demo demo-smart">
+              <div class="smart-node">
+                <div class="smart-node-icon"><i data-lucide="cpu"></i></div>
+                <span class="smart-status">Core Online</span>
+                <span class="smart-metric">24ms</span>
+              </div>
+              <div class="smart-flow">
+                <div class="smart-flow-item">
+                  <span class="smart-flow-tag"><i data-lucide="download"></i> Input</span>
+                </div>
+                <div class="smart-flow-arrow"><i data-lucide="arrow-right"></i></div>
+                <div class="smart-flow-item center">
+                  <span class="smart-flow-tag"><i data-lucide="brain-circuit"></i> Analyze</span>
+                </div>
+                <div class="smart-flow-arrow"><i data-lucide="arrow-right"></i></div>
+                <div class="smart-flow-item">
+                  <span class="smart-flow-tag"><i data-lucide="zap"></i> Act</span>
+                </div>
+              </div>
+              <div class="smart-track">
+                <div class="smart-track-fill"></div>
+                <span>Learning 78% complete</span>
+              </div>
+            </div>
+
+            <p class="project-desc">
+              A powerful smart-core engine that injects intelligence into any
+              application. Neo-Smart Core powers adaptive decision-making,
+              predictive processing and smart-sync behaviour — giving software
+              the ability to think, learn and operate efficiently.
+            </p>
+            <ul class="project-features">
+              <li><i data-lucide="check-circle"></i> Adaptive decision engine</li>
+              <li><i data-lucide="check-circle"></i> Predictive processing models</li>
+              <li><i data-lucide="check-circle"></i> Smart sync & offline logic</li>
+              <li><i data-lucide="check-circle"></i> Lightweight modular design</li>
+            </ul>
+            <div class="project-tags">
+              <span>Artificial Intelligence</span>
+              <span>Automation</span>
+              <span>Core Engine</span>
+            </div>
+          </article>
+
+          <!-- Church Applications -->
+          <article class="project-card reveal" style="transition-delay: 200ms">
+            <div class="project-top">
+              <div class="project-icon icon-purple">
+                <i data-lucide="church"></i>
+              </div>
+              <span class="project-status">Community Apps</span>
+            </div>
+            <h3 class="project-title">Church Applications</h3>
+            <p class="project-sub">Digital Management for Faith Communities</p>
+
+            <!-- Church App Demo: phone -->
+            <div class="demo demo-church">
+              <div class="phone">
+                <div class="phone-notch"></div>
+                <div class="phone-screen">
+                  <div class="church-header">
+                    <div>
+                      <p class="church-church">Christ the King Parish</p>
+                      <p class="church-welcome">Karibu sana · Welcome</p>
+                    </div>
+                    <div class="church-avatar">
+                      <i data-lucide="user"></i>
+                    </div>
+                  </div>
+                  <div class="church-sermon">
+                    <p class="church-label">Today's Service</p>
+                    <p class="church-title">Sunday Fellowship · 09:00</p>
+                    <div class="church-cta">Join Live <i data-lucide="play"></i></div>
+                  </div>
+                  <div class="church-row">
+                    <div class="church-mini">
+                      <i data-lucide="heart"></i>
+                      <span>Offering</span>
+                    </div>
+                    <div class="church-mini">
+                      <i data-lucide="calendar"></i>
+                      <span>Events</span>
+                    </div>
+                    <div class="church-mini">
+                      <i data-lucide="users"></i>
+                      <span>Members</span>
+                    </div>
+                  </div>
+                  <div class="church-updates">
+                    <p class="church-label">Updates</p>
+                    <div class="church-update">📢 Choir practice — Saturday 14:00</div>
+                    <div class="church-update">💒 Thanksgiving service — next Sunday</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <p class="project-desc">
+              A complete suite of applications that helps churches and faith
+              organizations manage everything in one place — members,
+              contributions, events, announcements and community engagement —
+              through simple, powerful digital tools.
+            </p>
+            <ul class="project-features">
+              <li><i data-lucide="check-circle"></i> Member & family management</li>
+              <li><i data-lucide="check-circle"></i> Contributions & giving records</li>
+              <li><i data-lucide="check-circle"></i> Events, services & announcements</li>
+              <li><i data-lucide="check-circle"></i> Beautiful mobile-friendly UI</li>
+            </ul>
+            <div class="project-tags">
+              <span>Web & Mobile</span>
+              <span>Data Management</span>
+              <span>Community</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== SERVICES ===== -->
+    <section id="services" class="section section-alt">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-eyebrow">What We Do</span>
+          <h2 class="section-title">Full-Stack <span class="gradient-text">Capabilities</span></h2>
+          <p class="section-desc">
+            From concept to deployment, FastLine Technologies handles the entire
+            product lifecycle with uncompromising quality.
+          </p>
+        </div>
+
+        <div class="services-grid">
+          <div class="service-card reveal">
+            <div class="service-icon"><i data-lucide="globe"></i></div>
+            <h3>Web Development</h3>
+            <p>Modern, fast and responsive websites and web platforms engineered for performance and conversion.</p>
+          </div>
+          <div class="service-card reveal" style="transition-delay: 80ms">
+            <div class="service-icon icon-teal"><i data-lucide="smartphone"></i></div>
+            <h3>Mobile Applications</h3>
+            <p>Native-quality mobile experiences focused on smooth UX, offline resilience and smart data usage.</p>
+          </div>
+          <div class="service-card reveal" style="transition-delay: 160ms">
+            <div class="service-icon icon-purple"><i data-lucide="monitor-dot"></i></div>
+            <h3>Desktop & OS Systems</h3>
+            <p>Enterprise operating systems and desktop software built for stability, security and scale.</p>
+          </div>
+          <div class="service-card reveal" style="transition-delay: 240ms">
+            <div class="service-icon icon-orange"><i data-lucide="bot"></i></div>
+            <h3>AI & Automation</h3>
+            <p>Smart cores, automation pipelines and intelligent workflows that save time and reduce cost.</p>
+          </div>
+          <div class="service-card reveal" style="transition-delay: 320ms">
+            <div class="service-icon"><i data-lucide="database"></i></div>
+            <h3>Database & Backend</h3>
+            <p>Secure, scalable backends, real-time sync and data architectures built to last.</p>
+          </div>
+          <div class="service-card reveal" style="transition-delay: 400ms">
+            <div class="service-icon icon-teal"><i data-lucide="shield-check"></i></div>
+            <h3>Security & Privacy</h3>
+            <p>End-to-end encryption, secure storage and privacy-first design in everything we ship.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== ABOUT FOUNDER ===== -->
+    <section id="about" class="section">
       <div class="container">
         <div class="about-grid">
-          <!-- Photo -->
           <div class="about-image-wrap reveal">
             <div class="about-photo-card">
               <img
                 src="C.E.O FastLine.png"
-                alt="Founder"
+                alt="Josephat J. Athanas — Founder & CEO of JSL FastLine"
                 referrerpolicy="no-referrer"
               />
               <div class="about-photo-overlay"></div>
               <div class="about-photo-caption">
-                <h4>Josephat J Athanas.<br />#Founder &amp; CEO</h4>
-                <p>JSL FastLine Brand Company</p>
+                <h4>Josephat J. Athanas</h4>
+                <p>Founder &amp; CEO</p>
               </div>
             </div>
             <div class="about-badge">
-              <i data-lucide="award"></i>
+              <i data-lucide="crown"></i>
             </div>
           </div>
 
-          <!-- Text -->
-          <div class="reveal" style="transition-delay: 200ms">
+          <div class="reveal" style="transition-delay: 150ms">
             <span class="about-label">About the Founder</span>
             <h2 class="about-title">
-              Visionary Leadership for a
-              <span>Connected World.</span>
+              One Engineer. <span>One Vision.</span> World-Class Products.
             </h2>
             <p class="about-desc">
-              The driving force behind JSL FastLine is a passion for digital
-              equity. Born from the challenges of connectivity in diverse
-              regions, our founder envisioned a world where technology doesn't
-              stop at the edge of a Wi-Fi signal.
+              JSL FastLine is the product of a single, relentless builder —
+              Josephat J. Athanas. With a decade of hands-on experience in
+              network engineering and software development, he architects,
+              designs and ships every project personally.
             </p>
             <p class="about-desc">
-              With a background in Network engineering and a deep understanding
-              of local market needs, the mission is clear: to build a complete
-              digital ecosystem that empowers every individual, regardless of
-              their data balance or signal strength.
+              Working independently means every line of code, every pixel and
+              every decision carries the same standard: excellence. Clients get
+              direct communication, complete ownership and a product crafted
+              with genuine dedication from day one.
             </p>
 
             <div class="about-stats">
@@ -690,14 +528,14 @@
                 <div class="stat-label">Years Experience</div>
               </div>
               <div class="stat-card">
-                <div class="stat-number">500k+</div>
-                <div class="stat-label">Lines of Code</div>
+                <div class="stat-number">100%</div>
+                <div class="stat-label">Direct CEO Communication</div>
               </div>
             </div>
 
             <div class="about-actions">
-              <a href="team.html" class="btn-link">
-                View Portfolio <i data-lucide="external-link"></i>
+              <a href="#contact" class="btn-link">
+                Work With Me <i data-lucide="arrow-up-right"></i>
               </a>
               <div class="passion-tag">
                 <i data-lucide="heart"></i>
@@ -709,147 +547,171 @@
       </div>
     </section>
 
-    <!-- ===== FEATURES SECTION ===== -->
-    <section id="features">
+    <!-- ===== TECHNOLOGY ===== -->
+    <section id="tech" class="section section-alt">
       <div class="container">
         <div class="section-header reveal">
-          <h2 class="section-title">Core Value Proposition</h2>
+          <span class="section-eyebrow">The Toolbox</span>
+          <h2 class="section-title">Technologies I <span class="gradient-text">Master</span></h2>
           <p class="section-desc">
-            All-in-one platform optimized for low-connectivity environments,
-            combining social networking with essential utilities.
+            A modern, battle-tested stack selected to deliver fast, secure and
+            scalable products.
           </p>
         </div>
 
-        <div class="features-grid">
-          <!-- Feature 1 -->
-          <div class="feature-card reveal">
-            <div class="feature-number">01</div>
-            <div class="feature-icon-wrap">
-              <i data-lucide="message-square" class="icon-blue"></i>
-            </div>
-            <h3 class="feature-title">Messaging</h3>
-            <p class="feature-desc">
-              Connect with friends and family even when you're offline. Messages
-              are queued and sent automatically when you're back online.
-            </p>
-          </div>
+        <div class="tech-cloud reveal">
+          <span><i data-lucide="code-2"></i> JavaScript / TypeScript</span>
+          <span><i data-lucide="file-code"></i> Node.js</span>
+          <span><i data-lucide="terminal"></i> Python</span>
+          <span><i data-lucide="braces"></i> React</span>
+          <span><i data-lucide="layout"></i> HTML5 & CSS3</span>
+          <span><i data-lucide="flame"></i> Firebase</span>
+          <span><i data-lucide="database"></i> SQL / NoSQL</span>
+          <span><i data-lucide="lock"></i> AES Encryption</span>
+          <span><i data-lucide="wifi-off"></i> Offline-First</span>
+          <span><i data-lucide="cpu"></i> Automation</span>
+          <span><i data-lucide="server"></i> Linux Systems</span>
+          <span><i data-lucide="git-branch"></i> Git & DevOps</span>
+          <span><i data-lucide="plug-zap"></i> REST & APIs</span>
+          <span><i data-lucide="smartphone"></i> Responsive Design</span>
+        </div>
+      </div>
+    </section>
 
-          <!-- Feature 2 -->
-          <div class="feature-card reveal" style="transition-delay: 100ms">
-            <div class="feature-number">02</div>
-            <div class="feature-icon-wrap">
-              <i data-lucide="shopping-bag" class="icon-teal"></i>
-            </div>
-            <h3 class="feature-title">Marketplace</h3>
-            <p class="feature-desc">
-              Discover local products and services near you. Browse, chat with
-              sellers, and transact without needing a constant internet
-              connection.
-            </p>
-          </div>
+    <!-- ===== PROCESS ===== -->
+    <section id="process" class="section">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-eyebrow">How We Work</span>
+          <h2 class="section-title">From Idea to <span class="gradient-text">Launch</span></h2>
+          <p class="section-desc">
+            A proven, transparent process that keeps you in control at every
+            stage.
+          </p>
+        </div>
 
-          <!-- Feature 3 -->
-          <div class="feature-card reveal" style="transition-delay: 200ms">
-            <div class="feature-number">03</div>
-            <div class="feature-icon-wrap">
-              <i data-lucide="share-2" class="icon-purple"></i>
-            </div>
-            <h3 class="feature-title">File Sharing</h3>
-            <p class="feature-desc">
-              Share files, photos, and videos with nearby users using our
-              optimized local discovery and peer-to-peer transfer technology.
-            </p>
+        <div class="process-grid">
+          <div class="process-step reveal">
+            <div class="process-number">01</div>
+            <div class="process-icon"><i data-lucide="search"></i></div>
+            <h3>Discover</h3>
+            <p>We discuss your vision, requirements and goals to define clear scope and success criteria.</p>
           </div>
-
-          <!-- Feature 4 -->
-          <div class="feature-card reveal" style="transition-delay: 300ms">
-            <div class="feature-number">04</div>
-            <div class="feature-icon-wrap">
-              <i data-lucide="cpu" class="icon-orange"></i>
-            </div>
-            <h3 class="feature-title">AI Assistance</h3>
-            <p class="feature-desc">
-              A hybrid AI system that provides lightweight assistance offline
-              and connects to advanced models when online for deeper insights.
-            </p>
+          <div class="process-step reveal" style="transition-delay: 100ms">
+            <div class="process-number">02</div>
+            <div class="process-icon icon-teal"><i data-lucide="pen-tool"></i></div>
+            <h3>Design</h3>
+            <p>Architecture, UI/UX and system flow are designed with performance and scalability in mind.</p>
+          </div>
+          <div class="process-step reveal" style="transition-delay: 200ms">
+            <div class="process-number">03</div>
+            <div class="process-icon icon-purple"><i data-lucide="hammer"></i></div>
+            <h3>Build</h3>
+            <p>Clean, secure, well-tested code shipped in focused milestones with regular updates.</p>
+          </div>
+          <div class="process-step reveal" style="transition-delay: 300ms">
+            <div class="process-number">04</div>
+            <div class="process-icon icon-orange"><i data-lucide="rocket"></i></div>
+            <h3>Launch & Support</h3>
+            <p>Deployment, monitoring and ongoing maintenance so your product keeps getting better.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ===== TECH SECTION ===== -->
-    <section id="tech">
+    <!-- ===== CTA BANNER ===== -->
+    <section class="cta-banner reveal">
       <div class="container">
-        <div class="tech-card reveal">
-          <div class="tech-glow"></div>
-          <div class="tech-inner">
-            <!-- Left: Description -->
-            <div>
-              <h2 class="tech-title">
-                The Engine Behind <br />
-                <span>Offline Freedom</span>
-              </h2>
-              <div class="tech-features">
-                <div class="tech-feature">
-                  <div class="tech-feature-icon teal">
-                    <i data-lucide="zap"></i>
-                  </div>
-                  <div>
-                    <h4 class="tech-feature-title">Queue-Based Sync</h4>
-                    <p class="tech-feature-desc">
-                      Every action is stored locally first and added to a smart
-                      sync queue that triggers instantly when a connection is
-                      detected.
-                    </p>
-                  </div>
+        <div class="cta-banner-inner">
+          <div class="cta-banner-glow"></div>
+          <h2>Have an idea? Let's build it together.</h2>
+          <p>
+            Reach out directly to the Founder &amp; CEO — you'll always deal with
+            the person who actually builds your product.
+          </p>
+          <a href="#contact" class="btn-hero-primary">
+            Start a Conversation <i data-lucide="arrow-right"></i>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CONTACT ===== -->
+    <section id="contact" class="section contact-section">
+      <div class="container">
+        <div class="contact-layout">
+          <div class="contact-intro reveal">
+            <span class="section-eyebrow">Contact Us</span>
+            <h2 class="contact-title">
+              Let's Create Something <span class="gradient-text">Impactful</span>
+            </h2>
+            <p class="contact-desc">
+              Whether it's a new product, an enterprise system, or a custom
+              application — a direct line to the person building it. Message the
+              CEO straight to his inbox.
+            </p>
+
+            <div class="contact-channels">
+              <a href="mailto:jslfastline58@gmail.com?subject=Project%20Inquiry%20%7C%20FastLine%20Technologies" class="contact-channel">
+                <div class="channel-icon"><i data-lucide="mail"></i></div>
+                <div>
+                  <span class="channel-label">Email the CEO</span>
+                  <span class="channel-value">jslfastline58@gmail.com</span>
                 </div>
-                <div class="tech-feature">
-                  <div class="tech-feature-icon blue">
-                    <i data-lucide="search"></i>
-                  </div>
-                  <div>
-                    <h4 class="tech-feature-title">Local Discovery</h4>
-                    <p class="tech-feature-desc">
-                      Prioritizes nearby users and trending local content, using
-                      device location and cached regional data for faster
-                      loading.
-                    </p>
-                  </div>
+              </a>
+              <a
+                href="https://wa.me/255718573799?text=Hello%20FastLine%20Technologies%2C%20I%27d%20like%20to%20discuss%20a%20project."
+                target="_blank"
+                rel="noopener"
+                class="contact-channel"
+              >
+                <div class="channel-icon icon-teal"><i data-lucide="message-circle"></i></div>
+                <div>
+                  <span class="channel-label">WhatsApp (Fastest Reply)</span>
+                  <span class="channel-value">0718 573 799</span>
                 </div>
-                <div class="tech-feature">
-                  <div class="tech-feature-icon purple">
-                    <i data-lucide="shield"></i>
-                  </div>
-                  <div>
-                    <h4 class="tech-feature-title">Secure &amp; Private</h4>
-                    <p class="tech-feature-desc">
-                      End-to-end encryption for chats and robust data privacy
-                      controls ensure your offline interactions remain yours
-                      alone.
-                    </p>
-                  </div>
+              </a>
+              <a href="tel:+255718573799" class="contact-channel">
+                <div class="channel-icon icon-orange"><i data-lucide="phone"></i></div>
+                <div>
+                  <span class="channel-label">Phone</span>
+                  <span class="channel-value">+255 718 573 799</span>
+                </div>
+              </a>
+              <div class="contact-channel static">
+                <div class="channel-icon icon-purple"><i data-lucide="map-pin"></i></div>
+                <div>
+                  <span class="channel-label">Based In</span>
+                  <span class="channel-value">Tanzania · Serving Worldwide</span>
                 </div>
               </div>
             </div>
+          </div>
 
-            <!-- Right: Stack Panel -->
-            <div class="tech-stack-panel">
-              <div class="tech-stack-row">
-                <span class="tech-stack-label">Offline Storage</span>
-                <span class="tech-stack-value text-primary-c">IndexedDB</span>
+          <div class="contact-card reveal" style="transition-delay: 150ms">
+            <div class="contact-card-header">
+              <div class="contact-card-avatar">
+                <img src="RoundIcon.png" alt="FastLine Logo" />
               </div>
-              <div class="tech-stack-row">
-                <span class="tech-stack-label">Real-time Sync</span>
-                <span class="tech-stack-value text-primary-c">Firebase</span>
+              <div>
+                <h3>Josephat J. Athanas</h3>
+                <p>Founder &amp; CEO</p>
               </div>
-              <div class="tech-stack-row">
-                <span class="tech-stack-label">Media Compression</span>
-                <span class="tech-stack-value text-orange">Auto-Optimize</span>
-              </div>
-              <div class="tech-stack-row">
-                <span class="tech-stack-label">AI Processing</span>
-                <span class="tech-stack-value text-purple">Hybrid Model</span>
-              </div>
+            </div>
+            <p class="contact-card-msg">
+              Thank you for your interest in FastLine Technologies. Send me a
+              message and I'll personally respond — usually within 24 hours.
+            </p>
+            <a
+              href="mailto:jslfastline58@gmail.com?subject=Project%20Inquiry%20%7C%20FastLine%20Technologies"
+              class="btn-primary contact-card-btn"
+            >
+              <i data-lucide="send"></i> Message the CEO
+            </a>
+            <div class="contact-card-socials">
+              <a href="https://x.com/jslfastline" target="_blank" rel="noopener" aria-label="Twitter / X"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231-5.614 0zM16.083 19.77h1.833L7.084 4.126H5.117l10.966 15.644z"/></svg></a>
+              <a href="https://github.com/jslfastline" target="_blank" rel="noopener" aria-label="GitHub"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.386-1.333-1.756-1.333-1.756-1.09-.745.082-.73.082-.73 1.205.085 1.84 1.238 1.84 1.238 1.07 1.834 2.807 1.304 3.492.997.108-.775.418-1.305.762-1.605-2.665-.305-5.467-1.334-5.467-5.93 0-1.31.468-2.38 1.235-3.22-.123-.304-.535-1.526.117-3.18 0 0 1.008-.322 3.3 1.23.957-.266 1.983-.4 3.003-.404 1.02.005 2.047.138 3.006.404 2.29-1.552 3.297-1.23 3.297-1.23.653 1.654.24 2.876.118 3.18.768.84 1.233 1.91 1.233 3.22 0 4.606-2.807 5.622-5.48 5.92.43.37.813 1.102.813 2.22 0 1.604-.014 2.898-.014 3.29 0 .322.215.696.825.577C20.565 21.797 24 17.3 24 12c0-6.63-5.37-12-12-12z"/></svg></a>
+              <a href="https://www.linkedin.com/feed/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 1 1 0-4.124 2.062 2.062 0 0 1 0 4.124zM7.119 20.452H3.555V9h3.564v11.452z"/></svg></a>
             </div>
           </div>
         </div>
@@ -862,38 +724,38 @@
         <div class="footer-grid">
           <div class="footer-brand-section">
             <div class="footer-brand-logo">
-              <span>JSL FastLine</span>
               <div class="footer-logo-icon">
-                <img
-                  src="RoundIcon.png"
-                  alt="Logo"
-                  referrerpolicy="no-referrer"
-                />
+                <img src="RoundIcon.png" alt="Logo" referrerpolicy="no-referrer" />
               </div>
+              <span>FastLine Technologies</span>
             </div>
             <p class="footer-tagline">
-              A complete digital ecosystem for communication, interaction, and
-              daily life — designed for low-connectivity environments.
+              An independent software engineering studio delivering enterprise
+              platforms, intelligent systems and bespoke applications — built
+              with precision, passion and pride.
             </p>
+            <a href="mailto:jslfastline58@gmail.com" class="footer-email">
+              <i data-lucide="mail"></i> jslfastline58@gmail.com
+            </a>
           </div>
 
           <div class="footer-col">
             <h5>Platform</h5>
             <ul>
-              <li><a href="#">Home Feed</a></li>
-              <li><a href="#">Explore</a></li>
-              <li><a href="#">Marketplace</a></li>
-              <li><a href="#">Smart AI</a></li>
+              <li><a href="#projects">FeMOS</a></li>
+              <li><a href="#projects">Neo-Smart Core</a></li>
+              <li><a href="#projects">Church Applications</a></li>
+              <li><a href="#services">Services</a></li>
             </ul>
           </div>
 
           <div class="footer-col">
             <h5>Company</h5>
             <ul>
-              <li><a href="about.html">About Us</a></li>
-              <li><a href="growth.html">Growth Strategy</a></li>
-              <li><a href="careers.html">Careers</a></li>
-              <li><a href="contact.html">Contact</a></li>
+              <li><a href="#about">About the Founder</a></li>
+              <li><a href="#process">Process</a></li>
+              <li><a href="about.html">Company Story</a></li>
+              <li><a href="#contact">Contact</a></li>
             </ul>
           </div>
 
@@ -908,7 +770,7 @@
         </div>
 
         <div class="footer-bottom">
-          <p>&copy; 2026 JSL FastLine. All Rights Reserved.</p>
+          <p>&copy; 2026 JSL FastLine · fastline.co.tz. All Rights Reserved.</p>
           <div class="footer-socials">
             <a href="https://x.com/jslfastline">Twitter</a>
             <a href="https://github.com/jslfastline">GitHub</a>
@@ -918,51 +780,29 @@
       </div>
     </footer>
 
-    <!-- ===== BETA ACCESS MODAL ===== -->
-    <div id="beta-modal" class="modal">
-      <div class="modal-overlay"></div>
-      <div class="modal-content beta-modal-content">
-        <div class="modal-header beta-header">
-          <div class="beta-icon-container">
-            <img
-              src="RoundIcon.png"
-              alt="JSL FastLine Logo"
-              class="beta-icon"
-            />
-          </div>
-          <h2>JSL FastLine Beta Access</h2>
-          <button class="modal-close" data-modal="beta-modal">
-            <i data-lucide="x"></i>
-          </button>
-        </div>
-        <div class="modal-body beta-body">
-          <div class="beta-status">
-            <div class="beta-status-icon">🚧</div>
-            <h3>Project in Progress</h3>
-          </div>
-          <p class="beta-message">
-            Thank you for your interest in joining the JSL FastLine Beta.
-          </p>
-          <p class="beta-message">
-            We're currently refining and enhancing the platform to deliver a
-            fast, reliable, and innovative experience. The system is not yet
-            open for public testing.
-          </p>
-          <div class="beta-next-steps">
-            <h4>📩 What happens next?</h4>
-            <p>
-              You'll be among the first to get notified as soon as the Beta
-              version is ready for testing.
-            </p>
-          </div>
-          <p class="beta-appreciation">
-            We truly appreciate your interest and support as we build something
-            impactful.
-          </p>
-          <div class="beta-signature">— JSL FastLine Technologies</div>
-        </div>
-      </div>
+    <!-- ===== FLOATING CONTACT ===== -->
+    <div class="floating-stack">
+      <a
+        href="https://wa.me/255718573799?text=Hello%20FastLine%20Technologies%2C%20I%27d%20like%20to%20discuss%20a%20project."
+        target="_blank"
+        rel="noopener"
+        class="floating-fab fab-whatsapp"
+        aria-label="WhatsApp the CEO"
+      >
+        <i data-lucide="message-circle"></i>
+        <span class="floating-label">WhatsApp the CEO</span>
+      </a>
+      <a
+        href="mailto:jslfastline58@gmail.com?subject=FastLine%20Project%20Inquiry"
+        class="floating-fab"
+        aria-label="Email the CEO"
+      >
+        <i data-lucide="mail"></i>
+        <span class="floating-label">Email the CEO</span>
+      </a>
     </div>
+
+    <!-- ===== BETA ACCESS MODAL ===== -->
 
     <script src="script.js"></script>
   </body>

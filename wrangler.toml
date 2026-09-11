@@ -1,0 +1,5 @@
+name = "fastline-portfolio"
+compatibility_date = "2025-01-01"
+
+# Static portfolio site — no build step. CI exports tracked files into dist/.
+pages_build_output_dir = "dist"

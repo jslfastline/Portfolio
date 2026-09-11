@@ -1,0 +1,11 @@
+/about /about.html 200
+/contact /contact.html 200
+/privacy /privacy.html 200
+/terms /terms.html 200
+/security /security.html 200
+
+/team.html /#about 301
+/careers.html /index.html#contact 301
+/growth.html /index.html#services 301
+/signup.html /index.html#contact 301
+/login.html /index.html#contact 301
