@@ -106,9 +106,7 @@ function updateMobileNavbarVisibility() {
 
   const currentScrollY = window.scrollY;
 
-  if (currentScrollY <= 20) {
-    navbar.classList.add('nav-hidden-mobile');
-  } else if (currentScrollY > lastScrollY) {
+  if (currentScrollY > lastScrollY && currentScrollY > 80) {
     navbar.classList.add('nav-hidden-mobile');
   } else {
     navbar.classList.remove('nav-hidden-mobile');
