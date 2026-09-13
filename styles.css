@@ -3416,6 +3416,11 @@ body.dark .project-card:hover {
   justify-content: center;
 }
 .project-icon svg { width: 30px; height: 30px; }
+.project-icon img {
+  width: 36px; height: 36px;
+  object-fit: contain;
+  border-radius: 8px;
+}
 .project-icon.icon-teal { background: rgba(0, 229, 204, 0.12); color: var(--secondary); }
 .project-icon.icon-purple { background: rgba(168, 85, 247, 0.14); color: #A855F7; }
 .project-icon.icon-orange { background: rgba(249, 115, 22, 0.14); color: #F97316; }
@@ -3497,6 +3502,23 @@ body.dark .project-tags span {
 
 /* ===== DEMOS ===== */
 .demo { margin: 30px 0; }
+
+/* Real product screenshot stage (FeMOS phone dashboard) */
+.screenshot-frame {
+  max-width: 340px;
+  margin: 0 auto;
+  padding: 12px;
+  border-radius: 30px;
+  background: linear-gradient(165deg, #0e1630, #1c2338);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.4), inset 0 0 0 1px rgba(255, 255, 255, 0.05);
+}
+.screenshot-frame img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 20px;
+}
 
 /* Browser chrome */
 .browser {
@@ -3665,6 +3687,7 @@ body.dark .project-tags span {
   justify-content: center;
 }
 .smart-node-icon svg { width: 20px; height: 20px; }
+.smart-node-icon img { width: 24px; height: 24px; object-fit: contain; }
 .smart-status { color: #fff; font-weight: 700; font-size: 0.85rem; }
 .smart-metric {
   font-family: 'JetBrains Mono', monospace;
@@ -4800,6 +4823,15 @@ body.dark .join-team-content p {
      (line-3130 .nav-actions{display:flex} overrides the base media query) */
   .nav-actions { display: none !important; }
 
+  /* Capability cards: 2 per row on phones */
+  .services-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
+  .service-media { height: 112px; }
+  .service-body { padding: 0 16px 24px; }
+  .service-icon { width: 44px; height: 44px; border-radius: 12px; margin: -22px 0 14px; }
+  .service-icon svg { width: 20px; height: 20px; }
+  .service-card h3 { font-size: 0.98rem; }
+  .service-card p { font-size: 0.82rem; line-height: 1.6; }
+
   #navbar { padding: 14px 0; }
   #navbar.scrolled { padding: 10px 0; }
   .nav-logo-icon { width: 36px; height: 36px; border-radius: 10px; }
@@ -4893,5 +4925,12 @@ body.dark .join-team-content p {
   .channel-value { font-size: 0.9rem; word-break: break-all; }
   .phone { width: 170px; }
   .about-badge { width: 64px; height: 64px; border-radius: 18px; }
+  .services-grid { gap: 12px; }
+  .service-media { height: 92px; }
+  .service-body { padding: 0 12px 20px; }
+  .service-icon { width: 40px; height: 40px; margin: -20px 0 12px; border-radius: 11px; }
+  .service-card h3 { font-size: 0.88rem; }
+  .service-card p { font-size: 0.75rem; line-height: 1.55; }
+  .screenshot-frame { max-width: 280px; padding: 9px; border-radius: 24px; }
 }
 
