@@ -5062,95 +5062,44 @@ body.dark .project-tagline { color: var(--secondary); }
   z-index: 0;
 }
 
-/* JSL FastLine phone demo */
+/* JSL FastLine phone demo — brand lockup only */
 .demo-jsl { display: flex; justify-content: center; }
 .jsl-screen {
   display: flex;
   flex-direction: column;
-  gap: 8px;
-  background: linear-gradient(180deg, #0d1224, #131a30);
-  color: #fff;
-  padding: 12px;
-}
-.jsl-brand {
-  font-size: 0.78rem;
-  font-weight: 800;
-  letter-spacing: 0.04em;
-  color: var(--secondary);
-  margin-bottom: 4px;
-}
-.jsl-goal {
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 14px;
-  padding: 12px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px;
-}
-.jsl-eyebrow {
-  font-size: 0.58rem;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: var(--secondary);
-}
-.jsl-goal-text { font-size: 0.78rem; font-weight: 700; margin-top: 4px; }
-.jsl-ring {
-  width: 58px;
-  height: 58px;
-  border-radius: 50%;
-  flex-shrink: 0;
-  background: conic-gradient(#00E5CC 0deg 235deg, rgba(255, 255, 255, 0.1) 235deg 360deg);
-  display: flex;
   align-items: center;
   justify-content: center;
+  text-align: center;
+  gap: 8px;
+  background: linear-gradient(160deg, #0d1224, #15203f);
+  color: #fff;
 }
-.jsl-ring span {
-  width: 46px;
-  height: 46px;
-  border-radius: 50%;
-  background: #0d1224;
+.jsl-logo {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  gap: 2px;
+}
+.jsl-logo-mark {
+  font-family: 'Sora', sans-serif;
+  font-size: 1.6rem;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+  color: #0A84FF;
+}
+.jsl-logo-word {
   font-size: 0.8rem;
-  font-weight: 800;
-  color: var(--secondary);
-  line-height: 1.1;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
 }
-.jsl-ring-small { font-size: 0.5rem; font-weight: 600; color: rgba(255, 255, 255, 0.6); }
-.jsl-card {
-  padding: 10px 12px;
-  border-radius: 12px;
-  background: rgba(10, 132, 255, 0.12);
-  border: 1px solid rgba(10, 132, 255, 0.25);
-  font-size: 0.68rem;
-  color: rgba(255, 255, 255, 0.9);
-  line-height: 1.4;
+.jsl-slogan {
+  font-size: 0.6rem;
+  color: rgba(255, 255, 255, 0.6);
+  letter-spacing: 0.06em;
+  margin-top: 4px;
 }
-.jsl-card-odd {
-  background: rgba(0, 229, 204, 0.08);
-  border-color: rgba(0, 229, 204, 0.25);
-  display: flex;
-  align-items: center;
-  gap: 6px;
-}
-.jsl-card-odd svg { width: 13px; height: 13px; color: var(--secondary); flex-shrink: 0; }
-.jsl-tabs {
-  margin-top: auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 14px;
-  padding: 8px 12px;
-}
-.jsl-tab { color: rgba(255, 255, 255, 0.45); display: flex; }
-.jsl-tab svg { width: 18px; height: 18px; }
-.jsl-tab.active { color: #0A84FF; }
 
 /* Impact + project modern responsive */
 @media (max-width: 768px) {
