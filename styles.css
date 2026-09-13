@@ -4934,3 +4934,233 @@ body.dark .join-team-content p {
   .screenshot-frame { max-width: 280px; padding: 9px; border-radius: 24px; }
 }
 
+/* ===== MODERN SYSTEM FEATURES ===== */
+
+/* Scroll progress bar */
+#scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  width: 0;
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
+  z-index: 1000;
+  border-radius: 0 3px 3px 0;
+}
+
+/* Custom scrollbar & selection */
+::-webkit-scrollbar { width: 10px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, rgba(10,132,255,0.5), rgba(0,229,204,0.5));
+  border-radius: 999px;
+}
+::selection { background: rgba(10,132,255,0.25); }
+
+/* Impact metrics band */
+.impact-band {
+  padding: 48px 0;
+  background: linear-gradient(135deg, rgba(10,132,255,0.06), rgba(0,229,204,0.06));
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+body.dark .impact-band {
+  background: linear-gradient(135deg, rgba(10,132,255,0.05), rgba(0,229,204,0.05));
+  border-color: rgba(255, 255, 255, 0.08);
+}
+.impact-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+.impact-stat { text-align: center; padding: 12px 16px; }
+.impact-value {
+  display: block;
+  font-family: 'Sora', sans-serif;
+  font-size: clamp(2.2rem, 4vw, 3.2rem);
+  font-weight: 900;
+  line-height: 1.1;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.impact-label {
+  display: block;
+  font-weight: 700;
+  margin-top: 6px;
+  color: var(--text-dark);
+  font-size: 0.95rem;
+}
+body.dark .impact-label { color: #fff; }
+.impact-sub {
+  display: block;
+  color: var(--gray);
+  font-size: 0.78rem;
+  margin-top: 4px;
+}
+
+/* Chip / badge rows */
+.project-badges { display: flex; flex-wrap: wrap; gap: 8px; margin: 8px 0 18px; }
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: rgba(10, 132, 255, 0.1);
+  color: var(--primary);
+  white-space: nowrap;
+}
+body.dark .chip { background: rgba(0, 229, 204, 0.08); color: var(--secondary); }
+.chip svg { width: 12px; height: 12px; }
+.chip-blue { background: rgba(10, 132, 255, 0.12); color: #0A84FF; }
+.chip-teal { background: rgba(0, 229, 204, 0.12); color: #00B8A9; }
+body.dark .chip-teal { color: var(--secondary); }
+.chip-purple { background: rgba(168, 85, 247, 0.12); color: #A855F7; }
+.chip-orange { background: rgba(249, 115, 22, 0.12); color: #F97316; }
+.project-chips {
+  margin: 6px 0 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.chip-label {
+  font-size: 0.66rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--gray);
+}
+body.dark .chip-label { color: var(--gray-light); }
+.chips { display: flex; flex-wrap: wrap; gap: 6px; }
+
+/* Project tagline */
+.project-tagline {
+  font-style: italic;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--primary);
+  margin: 6px 0 14px;
+  letter-spacing: 0.02em;
+}
+body.dark .project-tagline { color: var(--secondary); }
+
+/* FeMOS featured card ambient glow */
+.project-featured::before {
+  content: '';
+  position: absolute;
+  top: -40px;
+  right: -40px;
+  width: 340px;
+  height: 340px;
+  background: radial-gradient(circle, rgba(0, 229, 204, 0.14), transparent 70%);
+  filter: blur(40px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* JSL FastLine phone demo */
+.demo-jsl { display: flex; justify-content: center; }
+.jsl-screen {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  background: linear-gradient(180deg, #0d1224, #131a30);
+  color: #fff;
+  padding: 12px;
+}
+.jsl-brand {
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  color: var(--secondary);
+  margin-bottom: 4px;
+}
+.jsl-goal {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 14px;
+  padding: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+.jsl-eyebrow {
+  font-size: 0.58rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--secondary);
+}
+.jsl-goal-text { font-size: 0.78rem; font-weight: 700; margin-top: 4px; }
+.jsl-ring {
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  background: conic-gradient(#00E5CC 0deg 235deg, rgba(255, 255, 255, 0.1) 235deg 360deg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.jsl-ring span {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: #0d1224;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  font-weight: 800;
+  color: var(--secondary);
+  line-height: 1.1;
+}
+.jsl-ring-small { font-size: 0.5rem; font-weight: 600; color: rgba(255, 255, 255, 0.6); }
+.jsl-card {
+  padding: 10px 12px;
+  border-radius: 12px;
+  background: rgba(10, 132, 255, 0.12);
+  border: 1px solid rgba(10, 132, 255, 0.25);
+  font-size: 0.68rem;
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.4;
+}
+.jsl-card-odd {
+  background: rgba(0, 229, 204, 0.08);
+  border-color: rgba(0, 229, 204, 0.25);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.jsl-card-odd svg { width: 13px; height: 13px; color: var(--secondary); flex-shrink: 0; }
+.jsl-tabs {
+  margin-top: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+  padding: 8px 12px;
+}
+.jsl-tab { color: rgba(255, 255, 255, 0.45); display: flex; }
+.jsl-tab svg { width: 18px; height: 18px; }
+.jsl-tab.active { color: #0A84FF; }
+
+/* Impact + project modern responsive */
+@media (max-width: 768px) {
+  .impact-grid { grid-template-columns: repeat(2, 1fr); gap: 18px; }
+  .impact-band { padding: 36px 0; }
+}
+@media (max-width: 480px) {
+  .impact-value { font-size: 2rem; }
+  .impact-stat { padding: 8px 6px; }
+  .project-badges { gap: 6px; }
+  .chip { padding: 5px 10px; font-size: 0.66rem; }
+}
+

@@ -18,9 +18,10 @@
       rel="stylesheet"
     />
     <script src="https://unpkg.com/lucide@latest"></script>
-    <link rel="stylesheet" href="styles.css?v=9735748" />
+    <link rel="stylesheet" href="styles.css?v=202606" />
   </head>
   <body>
+    <div id="scroll-progress"></div>
     <!-- ===== NAVIGATION ===== -->
     <nav id="navbar">
       <div class="container nav-inner">
@@ -188,12 +189,40 @@
       </div>
     </div>
 
+    <!-- ===== IMPACT METRICS ===== -->
+    <section class="impact-band">
+      <div class="container">
+        <div class="impact-grid reveal">
+          <div class="impact-stat">
+            <span class="impact-value" data-count="3" data-suffix="+">0+</span>
+            <span class="impact-label">Pilot Universities</span>
+            <span class="impact-sub">MUST · UDSM · UDOM</span>
+          </div>
+          <div class="impact-stat">
+            <span class="impact-value" data-count="3">0+</span>
+            <span class="impact-label">Core Campus Modules</span>
+            <span class="impact-sub">Attendance · Announcements · Identity</span>
+          </div>
+          <div class="impact-stat">
+            <span class="impact-value" data-count="5">0+</span>
+            <span class="impact-label">Anti-Fraud Layers</span>
+            <span class="impact-sub">Rotating QR · Geofence · Fingerprint</span>
+          </div>
+          <div class="impact-stat">
+            <span class="impact-value" data-count="100" data-suffix="%">0%</span>
+            <span class="impact-label">Offline-First Design</span>
+            <span class="impact-sub">Works with zero internet</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- ===== PROJECTS ===== -->
     <section id="projects" class="section">
       <div class="container">
         <div class="section-header reveal">
-          <span class="section-eyebrow">What the Company Has Built</span>
-          <h2 class="section-title">Flagship <span class="gradient-text">Projects</span></h2>
+          <span class="section-eyebrow">Flagships &amp; Platforms</span>
+          <h2 class="section-title">What We Have <span class="gradient-text">Built</span></h2>
           <p class="section-desc">
             Real systems engineered end-to-end by FastLine Technologies. Every
             product is architected for performance, security and real-world
@@ -214,24 +243,56 @@
                   <span class="project-flag">Flagship Product</span>
                 </div>
                 <h3 class="project-title">FeMOS</h3>
-                <p class="project-sub">FastLine Enterprise Modern Operating System</p>
+                <p class="project-sub">FastLine Enterprises Modern Operation System · Campus Edition</p>
+                <div class="project-badges">
+                  <span class="chip chip-blue"><i data-lucide="smartphone"></i> PWA</span>
+                  <span class="chip chip-teal"><i data-lucide="wifi-off"></i> Offline-First</span>
+                  <span class="chip chip-purple"><i data-lucide="building-2"></i> Multi-University</span>
+                  <span class="chip chip-orange"><i data-lucide="shield"></i> Anti-Fraud</span>
+                </div>
                 <p class="project-desc">
-                  A modern, enterprise-grade operating system engineered to power
-                  businesses end-to-end. FeMOS connects productivity, workflow
-                  automation, data management and system operations into a single
-                  secure platform — built for reliability, speed and scale.
+                  FeMOS is the operating system of an entire university campus. A
+                  next-generation Progressive Web Application for Tanzanian higher
+                  education institutions, it replaces paper-based attendance and
+                  WhatsApp announcements with one unified, offline-capable,
+                  tamper-proof intelligence platform — connecting students,
+                  lecturers and administrators even when the internet fails.
                 </p>
                 <ul class="project-features">
-                  <li><i data-lucide="check-circle"></i> Unified enterprise dashboard</li>
-                  <li><i data-lucide="check-circle"></i> Secure multi-user architecture</li>
-                  <li><i data-lucide="check-circle"></i> Automation-first workflows</li>
-                  <li><i data-lucide="check-circle"></i> Optimized, low-footprint core</li>
+                  <li><i data-lucide="check-circle"></i> <strong>Smart Attendance</strong> — real-time, fraud-proof sign-in with timestamps &amp; live lecturer dashboards</li>
+                  <li><i data-lucide="check-circle"></i> <strong>Smart Announcements</strong> — mandatory read-acknowledgment with an offline delivery queue</li>
+                  <li><i data-lucide="check-circle"></i> <strong>Student Unique Identity</strong> — permanent FEMOS campus ID codes with QR &amp; NFC support</li>
+                  <li><i data-lucide="check-circle"></i> <strong>Edge Servers</strong> — per-campus infrastructure (works on campus WiFi, zero internet)</li>
+                  <li><i data-lucide="check-circle"></i> <strong>Anti-Fraud</strong> — rotating QR, geofencing, device fingerprinting &amp; one-device-one-sign-in</li>
                 </ul>
+                <div class="project-chips">
+                  <span class="chip-label">Core Modules</span>
+                  <div class="chips">
+                    <span class="chip">Attendance</span>
+                    <span class="chip">Announcements</span>
+                    <span class="chip">Identity</span>
+                  </div>
+                  <span class="chip-label">Planned</span>
+                  <div class="chips">
+                    <span class="chip">Timetable</span>
+                    <span class="chip">AI Tutor</span>
+                    <span class="chip">Smart Library</span>
+                    <span class="chip">Career Center</span>
+                  </div>
+                  <span class="chip-label">Pilot Universities</span>
+                  <div class="chips">
+                    <span class="chip">MUST</span>
+                    <span class="chip">UDSM</span>
+                    <span class="chip">UDOM</span>
+                  </div>
+                </div>
                 <div class="project-tags">
-                  <span>Operating Systems</span>
-                  <span>Enterprise</span>
-                  <span>Automation</span>
-                  <span>Security</span>
+                  <span>PWA</span>
+                  <span>Node.js</span>
+                  <span>PostgreSQL</span>
+                  <span>Redis</span>
+                  <span>WebSockets</span>
+                  <span>IndexedDB</span>
                 </div>
               </div>
 
@@ -241,6 +302,75 @@
                   <img src="https://res.cloudinary.com/j8zmetxr/image/upload/v1789212897/FeMOS_phone_nobg_pmxxay.png" alt="FeMOS dashboard on phone">
                 </div>
               </div>
+            </div>
+          </article>
+
+          <!-- JSL FastLine Platform -->
+          <article class="project-card reveal" style="transition-delay: 50ms">
+            <div class="project-top">
+              <div class="project-icon icon-teal">
+                <i data-lucide="smartphone"></i>
+              </div>
+              <span class="project-status">Flagship Mobile Platform</span>
+            </div>
+            <h3 class="project-title">JSL FastLine</h3>
+            <p class="project-sub">Offline-First AI-Powered Social &amp; Growth Platform</p>
+            <div class="project-tagline">«Fast Connection, Smart Future.»</div>
+
+            <!-- JSL FastLine Demo: 5-tab growth phone -->
+            <div class="demo demo-jsl">
+              <div class="phone">
+                <div class="phone-notch"></div>
+                <div class="phone-screen jsl-screen">
+                  <div class="jsl-brand">JSL FastLine</div>
+                  <div class="jsl-goal">
+                    <span class="jsl-eyebrow">Grow · Goal-Weighted Feed</span>
+                    <p class="jsl-goal-text">Pass Form 6 Chemistry</p>
+                    <div class="jsl-ring"><span>45<span class="jsl-ring-small">min</span></span></div>
+                  </div>
+                  <div class="jsl-card">AI Coach: “You learn best 7–8pm. Quiz tonight — keep your 4-day streak.”</div>
+                  <div class="jsl-card jsl-card-odd">Truth Layer · Verified Human <i data-lucide="badge-check"></i></div>
+                  <div class="jsl-tabs">
+                    <span class="jsl-tab"><i data-lucide="home"></i></span>
+                    <span class="jsl-tab"><i data-lucide="message-circle"></i></span>
+                    <span class="jsl-tab active"><i data-lucide="trending-up"></i></span>
+                    <span class="jsl-tab"><i data-lucide="users"></i></span>
+                    <span class="jsl-tab"><i data-lucide="user"></i></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <p class="project-desc">
+              Tanzania’s first offline-first, AI-augmented social and learning
+              platform. JSL FastLine combines community connection, real-time
+              knowledge sharing, behavioural wellness and a proprietary
+              anti-addiction architecture into one mobile app — built for the
+              reality of African handsets, data costs and intermittent connectivity.
+            </p>
+            <ul class="project-features">
+              <li><i data-lucide="check-circle"></i> <strong>5 Deeply-Integrated Tabs</strong> — Home · Chats · Grow · Groups · Profile</li>
+              <li><i data-lucide="check-circle"></i> <strong>Offline Engine + JSL Mesh</strong> — fully functional at zero signal; P2P Bluetooth/WiFi Direct</li>
+              <li><i data-lucide="check-circle"></i> <strong>On-device AI Coach</strong> — offline TensorFlow Lite + cloud LLM hybrid</li>
+              <li><i data-lucide="check-circle"></i> <strong>Truth Layer</strong> — verified human / AI / disputed badges on every post</li>
+              <li><i data-lucide="check-circle"></i> <strong>Focus Mode</strong> — the app actively limits itself &amp; tells you to put it down</li>
+              <li><i data-lucide="check-circle"></i> <strong>Wisdom Economy &amp; JSL ID</strong> — community-verified skills, tokens &amp; a portable digital identity</li>
+            </ul>
+            <div class="project-chips">
+              <span class="chip-label">Status</span>
+              <div class="chips">
+                <span class="chip">Proposal v1.0</span>
+                <span class="chip">June 2026</span>
+                <span class="chip">React Native / Expo</span>
+              </div>
+            </div>
+            <div class="project-tags">
+              <span>React Native</span>
+              <span>Expo</span>
+              <span>TypeScript</span>
+              <span>Firebase</span>
+              <span>WatermelonDB</span>
+              <span>TensorFlow Lite</span>
             </div>
           </article>
 

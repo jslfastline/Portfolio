@@ -89,6 +89,17 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
+// ===== Scroll Progress Bar =====
+const scrollProgress = document.getElementById('scroll-progress');
+function updateScrollProgress() {
+  if (!scrollProgress) return;
+  const scrollable = document.documentElement.scrollHeight - window.innerHeight;
+  const progress = scrollable > 0 ? (window.scrollY / scrollable) * 100 : 0;
+  scrollProgress.style.width = progress + '%';
+}
+window.addEventListener('scroll', updateScrollProgress, { passive: true });
+window.addEventListener('load', updateScrollProgress);
+
 // ===== Navbar Scroll Effect =====
 const navbar = document.getElementById('navbar');
 let lastScrollY = window.scrollY;
@@ -149,6 +160,7 @@ const counterObserver = new IntersectionObserver(
       const el = entry.target;
       const target = parseInt(el.getAttribute('data-count'), 10);
       if (isNaN(target)) return;
+      const suffix = el.getAttribute('data-suffix') || '+';
 
       let current = 0;
       const duration = 1400;
@@ -158,11 +170,11 @@ const counterObserver = new IntersectionObserver(
         const progress = Math.min((now - start) / duration, 1);
         const eased = 1 - Math.pow(1 - progress, 3);
         current = Math.round(eased * target);
-        el.textContent = current + '+';
+        el.textContent = current + suffix;
         if (progress < 1) {
           requestAnimationFrame(step);
         } else {
-          el.textContent = target + '+';
+          el.textContent = target + suffix;
         }
       };
 
@@ -173,7 +185,11 @@ const counterObserver = new IntersectionObserver(
   { threshold: 0.4 }
 );
 
-document.querySelectorAll('[data-count]').forEach((el) => counterObserver.observe(el));
+document.querySelectorAll('[data-count]').forEach((el) => {
+  const suffix = el.getAttribute('data-suffix') || '+';
+  el.dataset.suffix = suffix;
+  counterObserver.observe(el);
+});
 
 // ===== FAQ Toggle Functionality =====
 document.querySelectorAll('.faq-toggle').forEach(toggle => {
