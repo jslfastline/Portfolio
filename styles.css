@@ -5062,43 +5062,22 @@ body.dark .project-tagline { color: var(--secondary); }
   z-index: 0;
 }
 
-/* JSL FastLine phone demo — brand lockup only */
+/* JSL FastLine phone demo — brand logo only */
 .demo-jsl { display: flex; justify-content: center; }
 .jsl-screen {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  text-align: center;
-  gap: 8px;
   background: linear-gradient(160deg, #0d1224, #15203f);
   color: #fff;
 }
-.jsl-logo {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 2px;
-}
-.jsl-logo-mark {
-  font-family: 'Sora', sans-serif;
-  font-size: 1.6rem;
-  font-weight: 900;
-  letter-spacing: 0.12em;
-  color: #0A84FF;
-}
-.jsl-logo-word {
-  font-size: 0.8rem;
-  font-weight: 700;
-  color: #fff;
-  letter-spacing: 0.3em;
-  text-transform: uppercase;
-}
-.jsl-slogan {
-  font-size: 0.6rem;
-  color: rgba(255, 255, 255, 0.6);
-  letter-spacing: 0.06em;
-  margin-top: 4px;
+.jsl-logo-img {
+  width: 78%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 22px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45), 0 0 0 1px rgba(255, 255, 255, 0.06);
 }
 
 /* Impact + project modern responsive */
