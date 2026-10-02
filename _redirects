@@ -4,6 +4,11 @@
 /terms /terms.html 200
 /security /security.html 200
 
+/projects/femos /projects/femos.html 200
+/projects/neo-smartcore /projects/neo-smartcore.html 200
+/projects/fit /projects/fit.html 200
+/projects/jsl-fastline /projects/jsl-fastline.html 200
+
 /team.html /#about 301
 /careers.html /index.html#contact 301
 /growth.html /index.html#services 301

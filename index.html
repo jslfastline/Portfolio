@@ -1,781 +1,608 @@
 <!doctype html>
-<html lang="en" id="html-root">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FastLine Technologies | Building What's Next</title>
     <meta
       name="description"
-      content="FastLine Technologies (JSL FastLine) — engineering digital products, enterprise systems and intelligent software. Explore FeMOS, Neo-Smart Core and bespoke applications built by Founder & CEO, Josephat J. Athanas."
+      content="FastLine Technologies is a technology and innovation ecosystem founded and engineered by Jay Bros, building digital products, intelligent systems and emerging technologies."
     />
-    <title>JSL FastLine | FastLine Technologies — Digital Products & Enterprise Systems</title>
+    <meta name="keywords" content="FastLine Technologies, FastLine Technology, JSL FastLine, Jay Bros, Technology Innovation Tanzania, Software Engineering Tanzania, Digital Systems Tanzania" />
+    <link rel="canonical" href="https://fastline.co.tz/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="FastLine Technologies" />
+    <meta property="og:title" content="FastLine Technologies | Building What's Next" />
+    <meta property="og:description" content="A technology and innovation ecosystem founded and engineered by Jay Bros — digital products, intelligent systems and emerging technologies." />
+    <meta property="og:url" content="https://fastline.co.tz/" />
+    <meta property="og:image" content="https://fastline.co.tz/assets/images/og.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="FastLine Technologies | Building What's Next" />
+    <meta name="twitter:description" content="A technology and innovation ecosystem founded and engineered by Jay Bros." />
+    <meta name="twitter:image" content="https://fastline.co.tz/assets/images/og.jpg" />
     <link rel="shortcut icon" href="favicon-32.png" type="image/x-icon" />
     <link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png" />
     <link rel="icon" type="image/png" sizes="192x192" href="favicon-192.png" />
     <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800;900&family=DM+Sans:wght@400;500;700&family=JetBrains+Mono:wght@400;500;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700;800;900&family=DM+Sans:wght@400;500;700&display=swap"
       rel="stylesheet"
     />
     <script src="https://unpkg.com/lucide@latest"></script>
-    <link rel="stylesheet" href="styles.css?v=202609" />
+    <link rel="stylesheet" href="site.css?v=202610" />
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "FastLine Technologies",
+      "slogan": "Fast Connections, Smart Future.",
+      "url": "https://fastline.co.tz/",
+      "email": "jslfastline58@gmail.com",
+      "founder": {
+        "@type": "Person",
+        "name": "Jay Bros",
+        "jobTitle": "Founder, Software Engineer, Innovator"
+      },
+      "knowsAbout": [
+        "Software Engineering",
+        "Digital Systems",
+        "Intelligent Technology",
+        "Automation",
+        "Networking",
+        "Digital Products",
+        "Emerging Technology"
+      ]
+    }
+    </script>
   </head>
   <body>
-    <div id="scroll-progress"></div>
-    <!-- ===== NAVIGATION ===== -->
-    <nav id="navbar">
-      <div class="container nav-inner">
-        <a href="#home" class="nav-logo">
-          <div class="nav-logo-icon">
-            <img src="RoundIcon.png" alt="FastLine Logo" referrerpolicy="no-referrer" />
-          </div>
-          <span class="nav-logo-text">FastLine <em>Technologies</em></span>
-        </a>
+    <div id="progress"></div>
+    <div id="cursor-glow" aria-hidden="true"></div>
 
+    <!-- ================= NAVBAR ================= -->
+    <nav id="navbar" aria-label="Primary">
+      <div class="container nav-inner">
+        <a href="#home" class="brand" aria-label="FastLine Technologies — home">
+          <span class="brand__mark"><img src="RoundIcon.png" alt="" referrerpolicy="no-referrer" loading="lazy" /></span>
+          <span class="brand__txt">
+            <span class="brand__name">FastLine Technologies</span>
+            <span class="brand__tag">Technology · Innovation · Digital Systems</span>
+          </span>
+        </a>
         <ul class="nav-links">
           <li><a href="#home">Home</a></li>
           <li><a href="#projects">Projects</a></li>
-          <li><a href="#services">Services</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#tech">Technology</a></li>
+          <li><a href="#lab">Innovation</a></li>
+          <li><a href="#media">Media</a></li>
+          <li><a href="#builder">About</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
-
-        <div class="nav-actions">
-          <button id="theme-toggle" class="btn-theme" aria-label="Toggle theme">
-            <i data-lucide="sun" class="icon-sun"></i>
-            <i data-lucide="moon" class="icon-moon"></i>
-          </button>
-          <a href="#contact" class="btn-primary">Start a Project</a>
-        </div>
-
-        <!-- Mobile controls -->
-        <div class="nav-mobile-btns">
-          <button
-            id="theme-toggle-mobile"
-            class="btn-theme"
-            aria-label="Toggle theme"
-          >
-            <i data-lucide="sun" class="icon-sun"></i>
-            <i data-lucide="moon" class="icon-moon"></i>
-          </button>
-          <button id="menu-toggle" aria-label="Open menu">
-            <i data-lucide="menu"></i>
-          </button>
-        </div>
-      </div>
-
-      <!-- Mobile Menu -->
-      <div id="mobile-menu">
-        <a href="#home">Home</a>
-        <a href="#projects">Projects</a>
-        <a href="#services">Services</a>
-        <a href="#about">About</a>
-        <a href="#tech">Technology</a>
-        <a href="#contact">Contact</a>
-        <a href="#contact" class="btn-primary">Start a Project</a>
+        <a href="#contact" class="btn btn--primary">Start a Project</a>
+        <button class="nav-burger" id="nav-burger" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
       </div>
     </nav>
 
-    <!-- ===== HERO ===== -->
-    <section id="home" class="hero">
-      <div class="hero-orb hero-orb-one"></div>
-      <div class="hero-orb hero-orb-two"></div>
-      <div class="hero-grid-overlay"></div>
-
-      <div class="container">
-        <div class="hero-layout">
-          <div class="hero-content reveal">
-            <span class="hero-badge">
-              <span class="badge-dot"></span>
-              Engineering Digital Excellence
-            </span>
-
-            <h1 class="hero-title">
-              FastLine <span class="gradient-text">Technologies</span>
-            </h1>
-            <h2 class="hero-subtitle">
-              From operating systems to intelligent software — we build the
-              digital future.
-            </h2>
-            <p class="hero-desc">
-              JSL FastLine is an independent software engineering studio led by
-              its Founder &amp; CEO, delivering enterprise-grade platforms,
-              smart-core systems and bespoke applications — designed, engineered
-              and shipped by one passionate builder with a full-stack mindset.
-            </p>
-
-            <div class="hero-actions">
-              <a href="#projects" class="btn-hero-primary">
-                Explore Projects <i data-lucide="arrow-right"></i>
-              </a>
-              <a href="#contact" class="btn-hero-secondary">
-                <i data-lucide="mail"></i> Talk to the CEO
-              </a>
-            </div>
-
-            <div class="hero-stats">
-              <div class="hero-stat">
-                <span class="hero-stat-number" data-count="10">0+</span>
-                <span class="hero-stat-label">Years Experience</span>
-              </div>
-              <div class="hero-stat">
-                <span class="hero-stat-number" data-count="25">0+</span>
-                <span class="hero-stat-label">Products Shipped</span>
-              </div>
-              <div class="hero-stat">
-                <span class="hero-stat-number" data-count="100">0%</span>
-                <span class="hero-stat-label">Client Commitment</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Terminal-style brand card -->
-          <div class="hero-visual reveal" style="transition-delay: 150ms">
-            <div class="terminal-card">
-              <div class="terminal-titlebar">
-                <div class="mockup-dots">
-                  <div class="dot dot-red"></div>
-                  <div class="dot dot-orange"></div>
-                  <div class="dot dot-green"></div>
-                </div>
-                <span class="terminal-title">fastline@core: ~/build</span>
-              </div>
-              <div class="terminal-body">
-                <p><span class="terminal-prompt">$</span> fastline init --vision</p>
-                <p class="terminal-out">"Fast connections, smart future."</p>
-                <p><span class="terminal-prompt">$</span> cargo build --target feMOS</p>
-                <p class="terminal-out ok">✔ Enterprise OS compiled · 0 errors</p>
-                <p><span class="terminal-prompt">$</span> neural core sync</p>
-                <p class="terminal-out ok">✔ Neo-Smart Core online · 24ms latency</p>
-                <p><span class="terminal-prompt">$</span> deploy to production →</p>
-                <div class="terminal-loading">
-                  <div class="terminal-bar"></div>
-                  <span>Deploying to fastline.co.tz…</span>
-                </div>
-              </div>
-            </div>
-
-            <div class="floating-chip chip-one">
-              <i data-lucide="cpu"></i> FeMOS
-            </div>
-            <div class="floating-chip chip-two">
-              <i data-lucide="brain-circuit"></i> Neo-Smart Core
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===== MARQUEE ===== -->
-    <div class="marquee">
-      <div class="marquee-track">
-        <span>Web Applications</span><i data-lucide="zap"></i>
-        <span>Desktop & OS Systems</span><i data-lucide="monitor"></i>
-        <span>Mobile Apps</span><i data-lucide="smartphone"></i>
-        <span>AI & Automation</span><i data-lucide="bot"></i>
-        <span>Enterprise Software</span><i data-lucide="server"></i>
-        <span>API Integration</span><i data-lucide="plug"></i>
-        <span>Cloud & Databases</span><i data-lucide="cloud"></i>
-        <span>System Security</span><i data-lucide="shield-check"></i>
-        <span>Web Applications</span><i data-lucide="zap"></i>
-        <span>Desktop & OS Systems</span><i data-lucide="monitor"></i>
-        <span>Mobile Apps</span><i data-lucide="smartphone"></i>
-        <span>AI & Automation</span><i data-lucide="bot"></i>
-        <span>Enterprise Software</span><i data-lucide="server"></i>
-        <span>API Integration</span><i data-lucide="plug"></i>
-        <span>Cloud & Databases</span><i data-lucide="cloud"></i>
-        <span>System Security</span><i data-lucide="shield-check"></i>
-      </div>
+    <div id="m-nav" aria-hidden="true">
+      <a href="#home">01 <small>Home</small></a>
+      <a href="#projects">02 <small>Projects</small></a>
+      <a href="#lab">03 <small>Innovation</small></a>
+      <a href="#media">04 <small>Media</small></a>
+      <a href="#builder">05 <small>About</small></a>
+      <a href="#contact">06 <small>Contact</small></a>
+      <a href="#contact" class="btn btn--primary">Start a Project</a>
     </div>
 
-    <!-- ===== IMPACT METRICS ===== -->
-    <section class="impact-band">
-      <div class="container">
-        <div class="impact-grid reveal">
-          <div class="impact-stat">
-            <span class="impact-value" data-count="3" data-suffix="+">0+</span>
-            <span class="impact-label">Pilot Universities</span>
-            <span class="impact-sub">MUST · UDSM · UDOM</span>
+    <!-- ================= HERO ================= -->
+    <header id="home" class="hero" style="position: relative; min-height: 100svh; display: flex; align-items: center; overflow: hidden; isolation: isolate; background: #020617;">
+      <img
+        src="assets/images/brand-poster-1920.jpg"
+        alt=""
+        aria-hidden="true"
+        style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0; opacity: 0.38;"
+      />
+      <video
+        id="hero-video"
+        autoplay
+        muted
+        loop
+        playsinline
+        preload="metadata"
+        style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0; opacity: 0; transition: opacity 1.4s ease;"
+        src="https://res.cloudinary.com/dlv2esvfc/video/upload/v1790956219/Technology_brand_film_loop_20261002184452_ytncv8.mp4"
+      ></video>
+      <div class="hero-backdrop" style="position: absolute; inset: 0; z-index: 1; pointer-events: none; background: linear-gradient(rgba(2,6,23,0.38) 0%, rgba(2,6,23,0.24) 45%, var(--bg-0) 100%);"></div>
+      <div style="position: absolute; inset: 0; z-index: 2; pointer-events: none; background: linear-gradient(90deg, rgba(2,6,23,0.9) 0%, rgba(2,6,23,0.45) 55%, rgba(2,6,23,0.16) 100%);"></div>
+      <div style="position: absolute; left: 0; right: 0; bottom: 0; height: 24vh; z-index: 2; pointer-events: none; background: linear-gradient(180deg, transparent, #020617);"></div>
+
+      <div class="container" style="position: relative; z-index: 4; width: 100%;">
+        <div style="max-width: 720px;">
+          <button id="sound-toggle" class="js-sound" style="position: absolute; right: 0; top: 8px;">
+            <span class="st-state" aria-hidden="true"></span> Sound Off
+          </button>
+          <span class="eyebrow" style="margin-bottom: 28px;">FastLine Technologies</span>
+          <h1 class="h-display" style="margin: 0 0 26px;">
+            <span class="line" style="display: block;">Building</span>
+            <span class="line grad" style="display: block;">What's Next.</span>
+          </h1>
+          <p class="hero__sub" style="font-size: 1.15rem; color: var(--muted); margin: 0 0 34px;">Technology <i></i> Innovation <i></i> Digital Systems</p>
+          <div class="hero__founder" style="border-top: 1px solid var(--line-soft); padding-top: 24px; max-width: 460px; margin-bottom: 40px;">
+            <p style="font-size: 0.68rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--faint); margin-bottom: 10px;">Founded &amp; Engineered by</p>
+            <p class="who" style="font-family: 'Sora', sans-serif; font-weight: 800; font-size: clamp(1.5rem, 3vw, 2.1rem); line-height: 1.15;">JAY BROS</p>
+            <p style="font-size: 0.82rem; color: var(--muted); letter-spacing: 0.12em; text-transform: uppercase; margin-top: 8px;">Founder · Software Engineer · Innovator</p>
           </div>
-          <div class="impact-stat">
-            <span class="impact-value" data-count="3">0+</span>
-            <span class="impact-label">Core Campus Modules</span>
-            <span class="impact-sub">Attendance · Announcements · Identity</span>
+          <div class="hero__actions" style="display: flex; align-items: center; gap: 16px; flex-wrap: wrap; margin-bottom: 44px;">
+            <a href="#projects" class="btn btn--primary">Explore Projects <i data-lucide="arrow-right"></i></a>
+            <button class="btn btn--ghost js-watch-share" data-video="brand">Watch Showreel <i data-lucide="play"></i></button>
           </div>
-          <div class="impact-stat">
-            <span class="impact-value" data-count="5">0+</span>
-            <span class="impact-label">Anti-Fraud Layers</span>
-            <span class="impact-sub">Rotating QR · Geofence · Fingerprint</span>
-          </div>
-          <div class="impact-stat">
-            <span class="impact-value" data-count="100" data-suffix="%">0%</span>
-            <span class="impact-label">Offline-First Design</span>
-            <span class="impact-sub">Works with zero internet</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===== PROJECTS ===== -->
-    <section id="projects" class="section">
-      <div class="container">
-        <div class="section-header reveal">
-          <span class="section-eyebrow">What the Company Has Built</span>
-          <h2 class="section-title">Flagship <span class="gradient-text">Projects</span></h2>
-          <p class="section-desc">
-            Real systems engineered end-to-end by FastLine Technologies. Every
-            product is architected for performance, security and real-world
-            impact.
-          </p>
-        </div>
-
-        <div class="projects-grid">
-          <!-- FeMOS (Featured) -->
-          <article class="project-card project-featured reveal">
-            <div class="project-card-glow"></div>
-            <div class="project-layout">
-              <div class="project-info">
-                <div class="project-top">
-                  <div class="project-icon">
-                    <img src="https://res.cloudinary.com/j8zmetxr/image/upload/v1785401966/FeOS_fem2ge.png" alt="FeMOS logo" class="project-logo">
-                  </div>
-                  <span class="project-flag">Flagship Product</span>
-                </div>
-                <h3 class="project-title">FeMOS</h3>
-                <p class="project-sub">FastLine Enterprises Modern Operation System · Campus Edition</p>
-                <div class="project-badges">
-                  <span class="chip chip-blue"><i data-lucide="smartphone"></i> PWA</span>
-                  <span class="chip chip-teal"><i data-lucide="wifi-off"></i> Offline-First</span>
-                  <span class="chip chip-purple"><i data-lucide="building-2"></i> Multi-University</span>
-                  <span class="chip chip-orange"><i data-lucide="shield"></i> Anti-Fraud</span>
-                </div>
-                <p class="project-desc">
-                  FeMOS is the operating system of an entire university campus. A
-                  next-generation Progressive Web Application for Tanzanian higher
-                  education institutions, it replaces paper-based attendance and
-                  WhatsApp announcements with one unified, offline-capable,
-                  tamper-proof intelligence platform — connecting students,
-                  lecturers and administrators even when the internet fails.
-                </p>
-                <ul class="project-features">
-                  <li><i data-lucide="check-circle"></i> <strong>Smart Attendance</strong> — real-time, fraud-proof sign-in with timestamps &amp; live lecturer dashboards</li>
-                  <li><i data-lucide="check-circle"></i> <strong>Smart Announcements</strong> — mandatory read-acknowledgment with an offline delivery queue</li>
-                  <li><i data-lucide="check-circle"></i> <strong>Student Unique Identity</strong> — permanent FEMOS campus ID codes with QR &amp; NFC support</li>
-                  <li><i data-lucide="check-circle"></i> <strong>Edge Servers</strong> — per-campus infrastructure (works on campus WiFi, zero internet)</li>
-                  <li><i data-lucide="check-circle"></i> <strong>Anti-Fraud</strong> — rotating QR, geofencing, device fingerprinting &amp; one-device-one-sign-in</li>
-                </ul>
-                <div class="project-chips">
-                  <span class="chip-label">Core Modules</span>
-                  <div class="chips">
-                    <span class="chip">Attendance</span>
-                    <span class="chip">Announcements</span>
-                    <span class="chip">Identity</span>
-                  </div>
-                  <span class="chip-label">Planned</span>
-                  <div class="chips">
-                    <span class="chip">Timetable</span>
-                    <span class="chip">AI Tutor</span>
-                    <span class="chip">Smart Library</span>
-                    <span class="chip">Career Center</span>
-                  </div>
-                  <span class="chip-label">Pilot Universities</span>
-                  <div class="chips">
-                    <span class="chip">MUST</span>
-                    <span class="chip">UDSM</span>
-                    <span class="chip">UDOM</span>
-                  </div>
-                </div>
-                <div class="project-tags">
-                  <span>PWA</span>
-                  <span>Node.js</span>
-                  <span>PostgreSQL</span>
-                  <span>Redis</span>
-                  <span>WebSockets</span>
-                  <span>IndexedDB</span>
-                </div>
-              </div>
-
-              <!-- FeMOS Demo: real dashboard screenshot on phone -->
-              <div class="demo demo-femos">
-                <div class="screenshot-frame">
-                  <img src="https://res.cloudinary.com/j8zmetxr/image/upload/v1789212897/FeMOS_phone_nobg_pmxxay.png" alt="FeMOS dashboard on phone">
-                </div>
-              </div>
-            </div>
-          </article>
-
-          <!-- JSL FastLine Platform -->
-          <article class="project-card reveal" style="transition-delay: 50ms">
-            <div class="project-top">
-              <div class="project-icon icon-teal">
-                <img src="https://res.cloudinary.com/j8zmetxr/image/upload/v1786904172/wgq58kbtbhxhmm3vyuwb.jpg" alt="JSL FastLine logo" class="project-logo">
-              </div>
-              <span class="project-status">Flagship Mobile Platform</span>
-            </div>
-            <h3 class="project-title">JSL FastLine</h3>
-            <p class="project-sub">Offline-First AI-Powered Social &amp; Growth Platform</p>
-            <div class="project-tagline">Fast Connection, Smart Future.</div>
-
-            <!-- JSL FastLine Demo: brand logo -->
-            <div class="demo demo-jsl">
-              <div class="phone">
-                <div class="phone-notch"></div>
-                <div class="phone-screen jsl-screen">
-                  <img src="https://res.cloudinary.com/j8zmetxr/image/upload/v1786904172/wgq58kbtbhxhmm3vyuwb.jpg" alt="JSL FastLine logo" class="jsl-logo-img">
-                </div>
-              </div>
-            </div>
-
-            <p class="project-desc">
-              Tanzania’s first offline-first, AI-augmented social and learning
-              platform. JSL FastLine combines community connection, real-time
-              knowledge sharing, behavioural wellness and a proprietary
-              anti-addiction architecture into one mobile app — built for the
-              reality of African handsets, data costs and intermittent connectivity.
-            </p>
-            <ul class="project-features">
-              <li><i data-lucide="check-circle"></i> <strong>5 Deeply-Integrated Tabs</strong> — Home · Chats · Grow · Groups · Profile</li>
-              <li><i data-lucide="check-circle"></i> <strong>Offline Engine + JSL Mesh</strong> — fully functional at zero signal; P2P Bluetooth/WiFi Direct</li>
-              <li><i data-lucide="check-circle"></i> <strong>On-device AI Coach</strong> — offline TensorFlow Lite + cloud LLM hybrid</li>
-              <li><i data-lucide="check-circle"></i> <strong>Truth Layer</strong> — verified human / AI / disputed badges on every post</li>
-              <li><i data-lucide="check-circle"></i> <strong>Focus Mode</strong> — the app actively limits itself &amp; tells you to put it down</li>
-              <li><i data-lucide="check-circle"></i> <strong>Wisdom Economy &amp; JSL ID</strong> — community-verified skills, tokens &amp; a portable digital identity</li>
-            </ul>
-            <div class="project-chips">
-              <span class="chip-label">Status</span>
-              <div class="chips">
-                <span class="chip">Proposal v1.0</span>
-                <span class="chip">June 2026</span>
-                <span class="chip">React Native / Expo</span>
-              </div>
-            </div>
-            <div class="project-tags">
-              <span>React Native</span>
-              <span>Expo</span>
-              <span>TypeScript</span>
-              <span>Firebase</span>
-              <span>WatermelonDB</span>
-              <span>TensorFlow Lite</span>
-            </div>
-          </article>
-
-          <!-- Neo-Smart Core -->
-          <article class="project-card reveal" style="transition-delay: 100ms">
-            <div class="project-top">
-              <div class="project-icon icon-teal">
-                <img src="https://res.cloudinary.com/j8zmetxr/image/upload/v1789212918/NeoSmartCore_Icon_1024_zj2ycl.png" alt="Neo-Smart Core logo" class="project-logo">
-              </div>
-              <span class="project-status">Smart Core</span>
-            </div>
-            <h3 class="project-title">Neo-Smart Core</h3>
-            <p class="project-sub">Intelligent Automation & AI Engine</p>
-
-            <!-- Neo-Smart Demo: pipeline -->
-            <div class="demo demo-smart">
-              <div class="smart-node">
-                <div class="smart-node-icon">
-                  <img src="https://res.cloudinary.com/j8zmetxr/image/upload/v1789212918/NeoSmartCore_Icon_transparent_1024_obfxg6.png" alt="" class="smart-node-logo">
-                </div>
-                <span class="smart-status">Core Online</span>
-                <span class="smart-metric">24ms</span>
-              </div>
-              <div class="smart-flow">
-                <div class="smart-flow-item">
-                  <span class="smart-flow-tag"><i data-lucide="download"></i> Input</span>
-                </div>
-                <div class="smart-flow-arrow"><i data-lucide="arrow-right"></i></div>
-                <div class="smart-flow-item center">
-                  <span class="smart-flow-tag"><i data-lucide="brain-circuit"></i> Analyze</span>
-                </div>
-                <div class="smart-flow-arrow"><i data-lucide="arrow-right"></i></div>
-                <div class="smart-flow-item">
-                  <span class="smart-flow-tag"><i data-lucide="zap"></i> Act</span>
-                </div>
-              </div>
-              <div class="smart-track">
-                <div class="smart-track-fill"></div>
-                <span>Learning 78% complete</span>
-              </div>
-            </div>
-
-            <p class="project-desc">
-              A powerful smart-core engine that injects intelligence into any
-              application. Neo-Smart Core powers adaptive decision-making,
-              predictive processing and smart-sync behaviour — giving software
-              the ability to think, learn and operate efficiently.
-            </p>
-            <ul class="project-features">
-              <li><i data-lucide="check-circle"></i> Adaptive decision engine</li>
-              <li><i data-lucide="check-circle"></i> Predictive processing models</li>
-              <li><i data-lucide="check-circle"></i> Smart sync & offline logic</li>
-              <li><i data-lucide="check-circle"></i> Lightweight modular design</li>
-            </ul>
-            <div class="project-tags">
-              <span>Artificial Intelligence</span>
-              <span>Automation</span>
-              <span>Core Engine</span>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===== SERVICES ===== -->
-    <section id="services" class="section section-alt">
-      <div class="container">
-        <div class="section-header reveal">
-          <span class="section-eyebrow">What We Do</span>
-          <h2 class="section-title">Full-Stack <span class="gradient-text">Capabilities</span></h2>
-          <p class="section-desc">
-            From concept to deployment, FastLine Technologies handles the entire
-            product lifecycle with uncompromising quality.
-          </p>
-        </div>
-
-        <div class="services-grid">
-          <div class="service-card reveal">
-            <div class="service-media">
-              <img src="assets/images/service-web.jpg" alt="Web Development" loading="lazy">
-            </div>
-            <div class="service-body">
-              <div class="service-icon"><i data-lucide="globe"></i></div>
-              <h3>Web Development</h3>
-              <p>Modern, fast and responsive websites and web platforms engineered for performance and conversion.</p>
-            </div>
-          </div>
-          <div class="service-card reveal" style="transition-delay: 80ms">
-            <div class="service-media">
-              <img src="assets/images/service-mobile.jpg" alt="Mobile Applications" loading="lazy">
-            </div>
-            <div class="service-body">
-              <div class="service-icon icon-teal"><i data-lucide="smartphone"></i></div>
-              <h3>Mobile Applications</h3>
-              <p>Native-quality mobile experiences focused on smooth UX, offline resilience and smart data usage.</p>
-            </div>
-          </div>
-          <div class="service-card reveal" style="transition-delay: 160ms">
-            <div class="service-media">
-              <img src="assets/images/service-desktop.jpg" alt="Desktop & OS Systems" loading="lazy">
-            </div>
-            <div class="service-body">
-              <div class="service-icon icon-purple"><i data-lucide="monitor-dot"></i></div>
-              <h3>Desktop & OS Systems</h3>
-              <p>Enterprise operating systems and desktop software built for stability, security and scale.</p>
-            </div>
-          </div>
-          <div class="service-card reveal" style="transition-delay: 240ms">
-            <div class="service-media">
-              <img src="assets/images/service-ai.jpg" alt="AI & Automation" loading="lazy">
-            </div>
-            <div class="service-body">
-              <div class="service-icon icon-orange"><i data-lucide="bot"></i></div>
-              <h3>AI & Automation</h3>
-              <p>Smart cores, automation pipelines and intelligent workflows that save time and reduce cost.</p>
-            </div>
-          </div>
-          <div class="service-card reveal" style="transition-delay: 320ms">
-            <div class="service-media">
-              <img src="assets/images/service-database.jpg" alt="Database & Backend" loading="lazy">
-            </div>
-            <div class="service-body">
-              <div class="service-icon"><i data-lucide="database"></i></div>
-              <h3>Database & Backend</h3>
-              <p>Secure, scalable backends, real-time sync and data architectures built to last.</p>
-            </div>
-          </div>
-          <div class="service-card reveal" style="transition-delay: 400ms">
-            <div class="service-media">
-              <img src="assets/images/service-security.jpg" alt="Security & Privacy" loading="lazy">
-            </div>
-            <div class="service-body">
-              <div class="service-icon icon-teal"><i data-lucide="shield-check"></i></div>
-              <h3>Security & Privacy</h3>
-              <p>End-to-end encryption, secure storage and privacy-first design in everything we ship.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===== ABOUT FOUNDER ===== -->
-    <section id="about" class="section">
-      <div class="container">
-        <div class="about-grid">
-          <div class="about-image-wrap reveal">
-            <div class="about-photo-card">
-              <img
-                src="C.E.O FastLine.png"
-                alt="Josephat J. Athanas — Founder & CEO of JSL FastLine"
-                referrerpolicy="no-referrer"
-              />
-              <div class="about-photo-overlay"></div>
-              <div class="about-photo-caption">
-                <h4>Josephat J. Athanas</h4>
-                <p>Founder &amp; CEO</p>
-              </div>
-            </div>
-            <div class="about-badge">
-              <i data-lucide="crown"></i>
-            </div>
-          </div>
-
-          <div class="reveal" style="transition-delay: 150ms">
-            <span class="about-label">About the Founder</span>
-            <h2 class="about-title">
-              One Engineer. <span>One Vision.</span> World-Class Products.
-            </h2>
-            <p class="about-desc">
-              JSL FastLine is the product of a single, relentless builder —
-              Josephat J. Athanas. With a decade of hands-on experience in
-              network engineering and software development, he architects,
-              designs and ships every project personally.
-            </p>
-            <p class="about-desc">
-              Working independently means every line of code, every pixel and
-              every decision carries the same standard: excellence. Clients get
-              direct communication, complete ownership and a product crafted
-              with genuine dedication from day one.
-            </p>
-
-            <div class="about-stats">
-              <div class="stat-card">
-                <div class="stat-number">3+</div>
-                <div class="stat-label">Years Experience</div>
-              </div>
-              <div class="stat-card">
-                <div class="stat-number">100%</div>
-                <div class="stat-label">Direct CEO Communication</div>
-              </div>
-            </div>
-
-            <div class="about-actions">
-              <a href="#contact" class="btn-link">
-                Work With Me <i data-lucide="arrow-up-right"></i>
-              </a>
-              <div class="passion-tag">
-                <i data-lucide="heart"></i>
-                Built with Passion
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===== TECHNOLOGY ===== -->
-    <section id="tech" class="section section-alt">
-      <div class="container">
-        <div class="section-header reveal">
-          <span class="section-eyebrow">The Toolbox</span>
-          <h2 class="section-title">Technologies I <span class="gradient-text">Master</span></h2>
-          <p class="section-desc">
-            A modern, battle-tested stack selected to deliver fast, secure and
-            scalable products.
-          </p>
-        </div>
-
-        <div class="tech-cloud reveal">
-          <span><i data-lucide="code-2"></i> JavaScript / TypeScript</span>
-          <span><i data-lucide="file-code"></i> Node.js</span>
-          <span><i data-lucide="terminal"></i> Python</span>
-          <span><i data-lucide="braces"></i> React</span>
-          <span><i data-lucide="layout"></i> HTML5 & CSS3</span>
-          <span><i data-lucide="flame"></i> Firebase</span>
-          <span><i data-lucide="database"></i> SQL / NoSQL</span>
-          <span><i data-lucide="lock"></i> AES Encryption</span>
-          <span><i data-lucide="wifi-off"></i> Offline-First</span>
-          <span><i data-lucide="cpu"></i> Automation</span>
-          <span><i data-lucide="server"></i> Linux Systems</span>
-          <span><i data-lucide="git-branch"></i> Git & DevOps</span>
-          <span><i data-lucide="plug-zap"></i> REST & APIs</span>
-          <span><i data-lucide="smartphone"></i> Responsive Design</span>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===== PROCESS ===== -->
-    <section id="process" class="section">
-      <div class="container">
-        <div class="section-header reveal">
-          <span class="section-eyebrow">How We Work</span>
-          <h2 class="section-title">From Idea to <span class="gradient-text">Launch</span></h2>
-          <p class="section-desc">
-            A proven, transparent process that keeps you in control at every
-            stage.
-          </p>
-        </div>
-
-        <div class="process-grid">
-          <div class="process-step reveal">
-            <div class="process-number">01</div>
-            <div class="process-icon"><i data-lucide="search"></i></div>
-            <h3>Discover</h3>
-            <p>We discuss your vision, requirements and goals to define clear scope and success criteria.</p>
-          </div>
-          <div class="process-step reveal" style="transition-delay: 100ms">
-            <div class="process-number">02</div>
-            <div class="process-icon icon-teal"><i data-lucide="pen-tool"></i></div>
-            <h3>Design</h3>
-            <p>Architecture, UI/UX and system flow are designed with performance and scalability in mind.</p>
-          </div>
-          <div class="process-step reveal" style="transition-delay: 200ms">
-            <div class="process-number">03</div>
-            <div class="process-icon icon-purple"><i data-lucide="hammer"></i></div>
-            <h3>Build</h3>
-            <p>Clean, secure, well-tested code shipped in focused milestones with regular updates.</p>
-          </div>
-          <div class="process-step reveal" style="transition-delay: 300ms">
-            <div class="process-number">04</div>
-            <div class="process-icon icon-orange"><i data-lucide="rocket"></i></div>
-            <h3>Launch & Support</h3>
-            <p>Deployment, monitoring and ongoing maintenance so your product keeps getting better.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===== CTA BANNER ===== -->
-    <section class="cta-banner reveal">
-      <div class="container">
-        <div class="cta-banner-inner">
-          <div class="cta-banner-glow"></div>
-          <h2>Have an idea? Let's build it together.</h2>
-          <p>
-            Reach out directly to the Founder &amp; CEO — you'll always deal with
-            the person who actually builds your product.
-          </p>
-          <a href="#contact" class="btn-hero-primary">
-            Start a Conversation <i data-lucide="arrow-right"></i>
+          <a href="#builder" class="hero__scroll" style="display: inline-flex; align-items: center; gap: 12px; font-family: 'Sora', sans-serif; font-size: 0.7rem; letter-spacing: 0.26em; text-transform: uppercase; color: var(--muted);">
+            <span class="cue" style="width: 22px; height: 34px; border: 1px solid var(--line); border-radius: 12px; display: inline-grid; place-items: start center; padding-top: 6px; border-top-width: 1px;">&nbsp;</span>
+            Scroll to Discover
           </a>
         </div>
       </div>
-    </section>
+    </header>
 
-    <!-- ===== CONTACT ===== -->
-    <section id="contact" class="section contact-section">
+    <!-- ================= MARQUEE ================= -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee__track">
+        <span>Web Systems<i data-lucide="globe"></i></span><span>Desktop &amp; OS<i data-lucide="monitor"></i></span><span>Mobile Platforms<i data-lucide="smartphone"></i></span><span>AI &amp; Automation<i data-lucide="cpu"></i></span><span>Enterprise Systems<i data-lucide="server"></i></span><span>Identity Technology<i data-lucide="scan-qr"></i></span><span>Networking<i data-lucide="radio"></i></span><span>Digital Products<i data-lucide="package"></i></span><span>Emerging Tech<i data-lucide="sparkles"></i></span>
+        <span>Web Systems<i data-lucide="globe"></i></span><span>Desktop &amp; OS<i data-lucide="monitor"></i></span><span>Mobile Platforms<i data-lucide="smartphone"></i></span><span>AI &amp; Automation<i data-lucide="cpu"></i></span><span>Enterprise Systems<i data-lucide="server"></i></span><span>Identity Technology<i data-lucide="scan-qr"></i></span><span>Networking<i data-lucide="radio"></i></span><span>Digital Products<i data-lucide="package"></i></span><span>Emerging Tech<i data-lucide="sparkles"></i></span>
+      </div>
+    </div>
+
+    <!-- ================= THE BUILDER ================= -->
+    <section id="builder" class="section">
       <div class="container">
-        <div class="contact-layout">
-          <div class="contact-intro reveal">
-            <span class="section-eyebrow">Contact Us</span>
-            <h2 class="contact-title">
-              Let's Create Something <span class="gradient-text">Impactful</span>
-            </h2>
-            <p class="contact-desc">
-              Whether it's a new product, an enterprise system, or a custom
-              application — a direct line to the person building it. Message the
-              CEO straight to his inbox.
-            </p>
-
-            <div class="contact-channels">
-              <a href="mailto:jslfastline58@gmail.com?subject=Project%20Inquiry%20%7C%20FastLine%20Technologies" class="contact-channel">
-                <div class="channel-icon"><i data-lucide="mail"></i></div>
-                <div>
-                  <span class="channel-label">Email the CEO</span>
-                  <span class="channel-value">jslfastline58@gmail.com</span>
-                </div>
-              </a>
-              <a
-                href="https://wa.me/255718573799?text=Hello%20FastLine%20Technologies%2C%20I%27d%20like%20to%20discuss%20a%20project."
-                target="_blank"
-                rel="noopener"
-                class="contact-channel"
-              >
-                <div class="channel-icon icon-teal"><i data-lucide="message-circle"></i></div>
-                <div>
-                  <span class="channel-label">WhatsApp (Fastest Reply)</span>
-                  <span class="channel-value">0718 573 799</span>
-                </div>
-              </a>
-              <a href="tel:+255718573799" class="contact-channel">
-                <div class="channel-icon icon-orange"><i data-lucide="phone"></i></div>
-                <div>
-                  <span class="channel-label">Phone</span>
-                  <span class="channel-value">+255 718 573 799</span>
-                </div>
-              </a>
-              <div class="contact-channel static">
-                <div class="channel-icon icon-purple"><i data-lucide="map-pin"></i></div>
-                <div>
-                  <span class="channel-label">Based In</span>
-                  <span class="channel-value">Tanzania · Serving Worldwide</span>
-                </div>
-              </div>
+        <div class="section-head reveal">
+          <span class="eyebrow">The Builder</span>
+          <h2 class="h-large">The Builder Behind FastLine</h2>
+        </div>
+        <div class="builder-grid">
+          <div class="builder-photo reveal" data-d="1">
+            <div class="builder-photo__frame">
+              <img src="C.E.O FastLine.png" alt="Jay Bros — Founder & Software Engineer" referrerpolicy="no-referrer" loading="lazy" />
+            </div>
+            <div class="builder-photo__ring" aria-hidden="true"></div>
+            <div class="builder-photo__label">
+              <p class="n" style="font-family:'Sora'; font-weight:800; font-size:1.4rem;">JAY BROS</p>
+              <p class="r">Founder · Engineer · Innovator</p>
             </div>
           </div>
-
-          <div class="contact-card reveal" style="transition-delay: 150ms">
-            <div class="contact-card-header">
-              <div class="contact-card-avatar">
-                <img src="RoundIcon.png" alt="FastLine Logo" />
-              </div>
-              <div>
-                <h3>Josephat J. Athanas</h3>
-                <p>Founder &amp; CEO</p>
-              </div>
+          <div class="reveal" data-d="2">
+            <div class="builder-name">
+              <h2 class="h-large grad" style="letter-spacing:-0.02em;">Jay Bros</h2>
+              <span class="flag" style="font-family:'Sora'; font-size:0.7rem; letter-spacing:0.26em; text-transform:uppercase; color:var(--accent);">The Person Behind the Brand</span>
             </div>
-            <p class="contact-card-msg">
-              Thank you for your interest in FastLine Technologies. Send me a
-              message and I'll personally respond — usually within 24 hours.
+            <p class="builder-role">Founder · Software Engineer · Innovator</p>
+            <p class="builder-bio">
+              I build technology around real problems — from business systems and
+              education platforms to intelligent digital products, connected
+              technologies and emerging ideas.
             </p>
-            <a
-              href="mailto:jslfastline58@gmail.com?subject=Project%20Inquiry%20%7C%20FastLine%20Technologies"
-              class="btn-primary contact-card-btn"
-            >
-              <i data-lucide="send"></i> Message the CEO
-            </a>
-            <div class="contact-card-socials">
-              <a href="https://x.com/jslfastline" target="_blank" rel="noopener" aria-label="Twitter / X"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231-5.614 0zM16.083 19.77h1.833L7.084 4.126H5.117l10.966 15.644z"/></svg></a>
-              <a href="https://github.com/jslfastline" target="_blank" rel="noopener" aria-label="GitHub"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.386-1.333-1.756-1.333-1.756-1.09-.745.082-.73.082-.73 1.205.085 1.84 1.238 1.84 1.238 1.07 1.834 2.807 1.304 3.492.997.108-.775.418-1.305.762-1.605-2.665-.305-5.467-1.334-5.467-5.93 0-1.31.468-2.38 1.235-3.22-.123-.304-.535-1.526.117-3.18 0 0 1.008-.322 3.3 1.23.957-.266 1.983-.4 3.003-.404 1.02.005 2.047.138 3.006.404 2.29-1.552 3.297-1.23 3.297-1.23.653 1.654.24 2.876.118 3.18.768.84 1.233 1.91 1.233 3.22 0 4.606-2.807 5.622-5.48 5.92.43.37.813 1.102.813 2.22 0 1.604-.014 2.898-.014 3.29 0 .322.215.696.825.577C20.565 21.797 24 17.3 24 12c0-6.63-5.37-12-12-12z"/></svg></a>
-              <a href="https://www.linkedin.com/feed/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 1 1 0-4.124 2.062 2.062 0 0 1 0 4.124zM7.119 20.452H3.555V9h3.564v11.452z"/></svg></a>
+            <p class="builder-bio" style="margin-bottom: 26px; font-size: 0.92rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--faint);">My approach is simple:</p>
+            <ul class="builder-method">
+              <li><em>01</em> Understand the problem.</li>
+              <li><em>02</em> Design the system.</li>
+              <li><em>03</em> Build the solution.</li>
+              <li><em>04</em> Test it in the real world.</li>
+              <li><em>05</em> Keep improving.</li>
+            </ul>
+            <div class="builder-focus">
+              <span class="k">Focus</span>
+              <ul>
+                <li>Software Engineering</li>
+                <li>Digital Systems</li>
+                <li>Intelligent Technology</li>
+                <li>Automation</li>
+                <li>Networking</li>
+                <li>Digital Products</li>
+                <li>Emerging Technology</li>
+              </ul>
             </div>
+            <a href="#universe" class="btn btn--line">Explore the Journey <i data-lucide="arrow-down-right"></i></a>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ===== FOOTER ===== -->
+    <!-- ================= THE VISION ================= -->
+    <section id="vision" class="section" style="background: var(--bg-1); border-block: 1px solid var(--line-soft); overflow: hidden; position: relative;">
+      <canvas id="vision-canvas" aria-hidden="true"></canvas>
+      <div class="container" style="position: relative; z-index: 2;">
+        <div class="vision-layout">
+          <div class="reveal">
+            <span class="eyebrow" style="margin-bottom: 22px;">The Vision</span>
+            <p class="vision-statement">
+              Technology should do more than exist.
+              <span class="line-2 grad" style="display: block;">It should solve.</span>
+            </p>
+          </div>
+          <div class="vision-side reveal" data-d="2">
+            <span class="tag">FastLine Technologies</span>
+            <p>
+              FastLine Technologies is a growing technology and innovation
+              ecosystem focused on turning ideas into useful digital products,
+              intelligent systems and emerging technologies.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= THE FASTLINE UNIVERSE ================= -->
+    <section id="universe" class="section">
+      <div class="container">
+        <div class="section-head center reveal">
+          <span class="eyebrow">The Ecosystem</span>
+          <h2 class="h-large">The FastLine Universe</h2>
+          <p class="lead">A growing ecosystem of products, platforms and experiments.</p>
+        </div>
+        <div class="universe-map reveal" id="universe-map" data-d="1">
+          <svg class="lines" id="universe-lines" preserveAspectRatio="none" aria-hidden="true"></svg>
+          <div class="node node--center node--pulse" data-key="fastline" style="left: 50%; top: 50%;">
+            <span class="node__core node__core--brand">FASTLINE</span>
+            <span class="node__halo" aria-hidden="true"></span>
+          </div>
+          <div id="universe-nodes"></div>
+          <div class="node-pop" id="node-pop" role="dialog" aria-live="polite"></div>
+        </div>
+        <p class="reveal" style="text-align: center; color: var(--faint); font-size: 0.82rem; letter-spacing: 0.1em; margin-top: 22px;">
+          Hover a node to explore — each product opens into its own page.
+        </p>
+      </div>
+    </section>
+
+    <!-- ================= BUILT, NOT JUST IMAGINED ================= -->
+    <section id="projects" class="section">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Proof</span>
+          <h2 class="h-large">Built, Not Just Imagined.</h2>
+          <p class="lead">Every product below is engineered end-to-end by FastLine Technologies — architected, coded and tested as a working system.</p>
+        </div>
+
+        <div class="projects-list">
+
+          <!-- FeMOS -->
+          <article class="project reveal" id="p-femos">
+            <div class="project__visual reveal" data-d="1">
+              <div class="project__media project__media--phone" data-parallax="0.06">
+                <span class="project__index">01 — FeMOS</span>
+                <span class="project__status st-in-dev">In Development</span>
+                <img src="https://res.cloudinary.com/j8zmetxr/image/upload/v1789212897/FeMOS_phone_nobg_pmxxay.png" alt="FeMOS campus attendance dashboard on a phone" loading="lazy" />
+                <span class="grain"></span>
+              </div>
+            </div>
+            <div class="reveal" data-d="2">
+              <p class="project__cat">Campus Operating System</p>
+              <h3 class="h-title">FeMOS</h3>
+              <p class="project__sub">Smart Attendance &amp; Identification</p>
+              <p class="project__desc">
+                An operating system for an entire campus. FeMOS replaces paper
+                attendance and scattered announcements with one unified,
+                offline-capable platform for students, lecturers and
+                administrators — and makes attendance impossible to fake.
+              </p>
+              <div class="project__stack">
+                <span>PWA</span><span>Node.js</span><span>PostgreSQL</span><span>Redis</span><span>WebSockets</span><span>IndexedDB</span>
+              </div>
+              <div class="project__actions">
+                <a href="projects/femos.html" class="btn btn--primary">Explore FeMOS <i data-lucide="arrow-right"></i></a>
+              </div>
+              <p class="project__note"><i data-lucide="info"></i> Pilot universities: MUST · UDSM · UDOM</p>
+            </div>
+          </article>
+
+          <!-- Neo SmartCore -->
+          <article class="project reveal" id="p-neo">
+            <div class="project__visual reveal" data-d="1">
+              <div class="project__media" data-parallax="0.05">
+                <span class="project__index">02 — Neo SmartCore</span>
+                <span class="project__status st-prototype">Prototype</span>
+                <img src="https://res.cloudinary.com/j8zmetxr/image/upload/v1789212918/NeoSmartCore_Icon_1024_zj2ycl.png" alt="Neo SmartCore engine logo" loading="lazy" style="object-fit: contain; padding: 10%; background: radial-gradient(80% 80% at 50% 30%, rgba(56,189,248,0.12), transparent);" />
+                <span class="grain"></span>
+              </div>
+            </div>
+            <div class="reveal" data-d="2">
+              <p class="project__cat">Business Operations Intelligence</p>
+              <h3 class="h-title">Neo SmartCore</h3>
+              <p class="project__sub">Business Operations Intelligence</p>
+              <p class="project__desc">
+                A business management system designed for operational visibility,
+                stock monitoring, daily reporting and business control — a
+                reusable intelligence core that makes software think, learn and
+                act on the data it already holds.
+              </p>
+              <div class="project__stack">
+                <span>AI Engine</span><span>Automation</span><span>Core Engine</span><span>Data Intelligence</span>
+              </div>
+              <div class="project__actions">
+                <a href="projects/neo-smartcore.html" class="btn btn--primary">Explore Neo SmartCore <i data-lucide="arrow-right"></i></a>
+              </div>
+              <p class="project__note"><i data-lucide="info"></i> Reusable core engine — designed to plug into any application</p>
+            </div>
+          </article>
+
+          <!-- FIT -->
+          <article class="project reveal" id="p-fit">
+            <div class="project__visual reveal" data-d="1">
+              <div class="project__media" data-parallax="0.05" style="display: grid; place-items: center; background: radial-gradient(70% 70% at 50% 35%, rgba(34,211,238,0.1), transparent)" data-qr-art>
+                <span class="project__index">03 — FIT</span>
+                <span class="project__status st-concept">Concept</span>
+                <svg viewBox="0 0 200 200" role="img" aria-label="FIT identification technology visual" style="width: 62%; height: auto;">
+                  <rect x="4" y="4" width="84" height="84" rx="8" fill="rgba(34,211,238,0.06)" stroke="rgba(34,211,238,0.5)" stroke-width="1.5"/>
+                  <g fill="#22D3EE">
+                    <rect x="16" y="16" width="18" height="18" rx="2"/><rect x="44" y="16" width="10" height="10" rx="2"/><rect x="64" y="16" width="14" height="14" rx="2"/>
+                    <rect x="16" y="44" width="10" height="10" rx="2"/><rect x="56" y="44" width="22" height="10" rx="2"/><rect x="16" y="64" width="14" height="14" rx="2"/><rect x="44" y="64" width="20" height="10" rx="2"/>
+                  </g>
+                  <rect x="112" y="4" width="84" height="84" rx="8" fill="rgba(56,189,248,0.05)" stroke="rgba(56,189,248,0.45)" stroke-width="1.5"/>
+                  <g fill="#38BDF8">
+                    <rect x="124" y="16" width="18" height="18" rx="2"/><rect x="152" y="16" width="10" height="10" rx="2"/><rect x="172" y="16" width="14" height="14" rx="2"/>
+                    <rect x="124" y="44" width="10" height="10" rx="2"/><rect x="144" y="44" width="22" height="10" rx="2"/><rect x="178" y="64" width="10" height="10" rx="2"/>
+                  </g>
+                  <g transform="translate(112,112)" fill="#94A3B8">
+                    <rect x="12" y="12" width="18" height="18" rx="2"/><rect x="40" y="12" width="10" height="10" rx="2"/><rect x="12" y="40" width="10" height="10" rx="2"/><rect x="40" y="40" width="10" height="10" rx="2"/>
+                  </g>
+                  <circle cx="20" cy="184" r="14" fill="none" stroke="#38BDF8" stroke-width="1.5"/>
+                  <circle cx="20" cy="184" r="5" fill="#38BDF8"/>
+                  <circle cx="180" cy="184" r="14" fill="none" stroke="#22D3EE" stroke-width="1.5"/>
+                  <circle cx="180" cy="184" r="5" fill="#22D3EE"/>
+                </svg>
+                <span class="grain"></span>
+              </div>
+            </div>
+            <div class="reveal" data-d="2">
+              <p class="project__cat">Identification &amp; Attendance Technology</p>
+              <h3 class="h-title">FIT</h3>
+              <p class="project__sub">FastLine Identifying Technology</p>
+              <p class="project__desc">
+                An identification and attendance technology ecosystem that
+                combines digital identity, device interaction and QR-based
+                workflows into one verifiable system — one identity layer the
+                whole universe can reuse.
+              </p>
+              <div class="project__stack">
+                <span>Digital Identity</span><span>QR Verif</span><span>Device Interaction</span>
+              </div>
+              <div class="project__actions">
+                <a href="projects/fit.html" class="btn btn--primary">Explore FIT <i data-lucide="arrow-right"></i></a>
+              </div>
+              <p class="project__note"><i data-lucide="info"></i> Concept — early architecture, not yet a released product</p>
+            </div>
+          </article>
+
+          <!-- JSL FastLine -->
+          <article class="project reveal" id="p-jsl">
+            <div class="project__visual reveal" data-d="1">
+              <div class="project__media" data-parallax="0.05">
+                <span class="project__index">04 — JSL FastLine</span>
+                <span class="project__status st-concept">Concept</span>
+                <img src="https://res.cloudinary.com/j8zmetxr/image/upload/v1786904172/wgq58kbtbhxhmm3vyuwb.jpg" alt="JSL FastLine logo" loading="lazy" />
+                <span class="grain"></span>
+              </div>
+            </div>
+            <div class="reveal" data-d="2">
+              <p class="project__cat">Low-Connectivity Digital Ecosystem</p>
+              <h3 class="h-title">JSL FastLine</h3>
+              <p class="project__sub">Low-Connectivity Digital Ecosystem</p>
+              <p class="project__desc">
+                A mobile platform designed for the reality of African handsets,
+                data costs and intermittent connectivity — communication, growth
+                tools and an on-device AI coach that work even at zero signal.
+              </p>
+              <div class="project__stack">
+                <span>React Native</span><span>Expo</span><span>TypeScript</span><span>WatermelonDB</span><span>TensorFlow Lite</span>
+              </div>
+              <div class="project__actions">
+                <a href="projects/jsl-fastline.html" class="btn btn--primary">Explore the Vision <i data-lucide="arrow-right"></i></a>
+              </div>
+              <p class="project__note"><i data-lucide="info"></i> Proposal v1.0 — complete architecture, entering build phase</p>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= FASTLINE MEDIA ================= -->
+    <section id="media" class="section" style="background: var(--bg-2); border-block: 1px solid var(--line-soft);">
+      <div class="container">
+        <div class="section-head center reveal">
+          <span class="eyebrow">FastLine Media</span>
+          <h2 class="h-large">Ideas, Products &amp; Experiments</h2>
+          <p class="lead">Captured in motion. New films drop here as they are produced.</p>
+        </div>
+        <div class="filters reveal" id="media-filters" data-d="1"></div>
+        <div class="media-grid reveal" id="media-grid" data-d="2"></div>
+      </div>
+    </section>
+
+    <!-- ================= FASTLINE RHYTHM ================= -->
+    <section id="rhythm" class="section">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">FastLine Rhythm</span>
+          <h2 class="h-large">Listen to Our Rhythm</h2>
+          <p class="lead">Every technology has a rhythm. This is ours.</p>
+        </div>
+        <div class="rhythm-grid">
+          <div class="player reveal" data-d="1">
+            <div class="player__glow"></div>
+            <div class="player__top">
+              <div class="player__title">FASTLINE SONIC IDENTITY<small>Brand · Sound · Motion</small></div>
+              <span class="player__status" id="rhythm-status">Prep</span>
+            </div>
+            <div class="waveform" id="waveform" aria-hidden="true"></div>
+            <div class="player__controls">
+              <button class="play-btn" id="rhythm-play" aria-label="Play sonic identity">
+                <svg class="icon-play" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.14v13.72c0 .8.87 1.3 1.56.9l10.4-6.86a1.05 1.05 0 0 0 0-1.8L9.56 4.24A1.04 1.04 0 0 0 8 5.14Z"/></svg>
+                <svg class="icon-pause" viewBox="0 0 24 24" fill="currentColor"><path d="M7 5h3v14H7zM14 5h3v14h-3z"/></svg>
+              </button>
+              <div class="progress">
+                <div class="progress__bar"><div class="progress__fill" id="rhythm-fill"></div></div>
+                <div class="progress__meta"><span id="rhythm-cur">0:00</span><span id="rhythm-total" class="rhythm-total">Sonic reel</span></div>
+              </div>
+            </div>
+            <div class="player__foot">
+              <div class="vol"><i data-lucide="volume-2"></i><span class="meter"><i></i></span></div>
+              <span class="player__note" id="rhythm-note">Recording in progress — the track will land here.</span>
+            </div>
+          </div>
+          <div class="outro-card reveal" data-d="2">
+            <div class="flame"></div>
+            <span class="eyebrow" style="margin-bottom: 16px;">The Signal</span>
+            <h3>SEE THE SIGNAL</h3>
+            <p>A visual and sonic signature for FastLine Technologies — the brand motion you'll recognise across the universe.</p>
+            <div class="outro-signal" aria-hidden="true">
+              <span class="ring"></span><span class="ring r2"></span><span class="ring r3"></span>
+              <span class="mark">FL</span>
+            </div>
+            <button class="btn btn--ghost js-signal">Watch the Outro <i data-lucide="clapperboard"></i></button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= THE INNOVATION LAB ================= -->
+    <section id="lab" class="section" style="background: var(--bg-1); border-block: 1px solid var(--line-soft);">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Innovation Lab</span>
+          <h2 class="h-large">Where Experiments Become Possibilities</h2>
+          <p class="lead">Not everything at FastLine is a finished application. Some things are being researched, tried and tested. Honesty about stage is part of the brand.</p>
+        </div>
+        <div class="lab-grid">
+          <div class="lab-item reveal">
+            <div class="lab-item__top"><span class="lab-item__icon"><i data-lucide="brain-circuit"></i></span><span class="st st-research">Research</span></div>
+            <div><h3>AI Systems</h3><p>Practical intelligence applied to real workflows — not decorative AI, but models with a job to do.</p></div>
+          </div>
+          <div class="lab-item reveal" data-d="1">
+            <div class="lab-item__top"><span class="lab-item__icon"><i data-lucide="radio"></i></span><span class="st st-experiment">Experiment</span></div>
+            <div><h3>Connected Technology</h3><p>Networks and devices that talk to each other, including in places where the internet is absent.</p></div>
+          </div>
+          <div class="lab-item reveal" data-d="2">
+            <div class="lab-item__top"><span class="lab-item__icon"><i data-lucide="wifi-off"></i></span><span class="st st-experiment">Experiment</span></div>
+            <div><h3>Low-Connectivity Systems</h3><p>Software engineered from the offline up — functionality first, connection as an upgrade.</p></div>
+          </div>
+          <div class="lab-item reveal" data-d="1">
+            <div class="lab-item__top"><span class="lab-item__icon"><i data-lucide="zap"></i></span><span class="st st-proto">Prototype</span></div>
+            <div><h3>Automation</h3><p>Turning repetitive operations into systems that run themselves and flag only what matters.</p></div>
+          </div>
+          <div class="lab-item reveal" data-d="2">
+            <div class="lab-item__top"><span class="lab-item__icon"><i data-lucide="scan-qr"></i></span><span class="st st-proto">Prototype</span></div>
+            <div><h3>Digital Identity</h3><p>Portable, verifiable identity — the layer that makes attendance, access and trust work.</p></div>
+          </div>
+          <div class="lab-item reveal" data-d="3">
+            <div class="lab-item__top"><span class="lab-item__icon"><i data-lucide="smart-device"></i></span><span class="st st-dev">In Dev</span></div>
+            <div><h3>Smart Devices</h3><p>Hardware-adjacent experiments: device interaction, proximity and physical-world endpoints.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= WHAT'S NEXT ================= -->
+    <section id="next" class="section">
+      <div class="container">
+        <div class="next-layout">
+          <div class="next-stick reveal">
+            <span class="eyebrow" style="margin-bottom: 18px;">What's Next?</span>
+            <h2 class="h-large" style="margin-bottom: 20px;">The Current Products Are Only Part of the Story.</h2>
+            <p class="lead">Exploration continues quietly in several directions. What appears here is honest scope — not announced hype.</p>
+          </div>
+          <div class="next-list">
+            <div class="next-item reveal"><span class="next-item__l"><i data-lucide="layout-grid"></i><span><h4>Intelligent Business Systems</h4><p>Operations, reporting and control for real businesses.</p></span></span><span class="mark">Exploring</span></div>
+            <div class="next-item reveal" data-d="1"><span class="next-item__l"><i data-lucide="badge-check"></i><span><h4>Connected Identity</h4><p>One verifiable identity across every FastLine surface.</p></span></span><span class="mark">Exploring</span></div>
+            <div class="next-item reveal" data-d="2"><span class="next-item__l"><i data-lucide="wand-2"></i><span><h4>AI-Powered Tools</h4><p>Helpful intelligence inside the products people already use.</p></span></span><span class="mark">Building</span></div>
+            <div class="next-item reveal" data-d="3"><span class="next-item__l"><i data-lucide="signal"></i><span><h4>Low-Connectivity Platforms</h4><p>Software that serves people the internet forgets.</p></span></span><span class="mark">Core Focus</span></div>
+            <div class="next-item reveal" data-d="4"><span class="next-item__l"><i data-lucide="cpu"></i><span><h4>Smart Devices</h4><p>Where software meets the physical world.</p></span></span><span class="mark">Tinkering</span></div>
+            <div class="next-item reveal" data-d="5"><span class="next-item__l"><i data-lucide="workflow"></i><span><h4>Automation</h4><p>Systems that handle the routine so people keep the judgement.</p></span></span><span class="mark">Exploring</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= A NOTE FROM THE BUILDER ================= -->
+    <section id="note" class="section" style="background: var(--bg-1); border-block: 1px solid var(--line-soft);">
+      <div class="container">
+        <div class="note-content reveal">
+          <p class="note-mark">"</p>
+          <p class="note-text">
+            I believe technology becomes meaningful when <em>it solves something real</em>.
+            FastLine started from a simple idea: build systems that are useful today,
+            while exploring what technology can become tomorrow. Every project is part
+            of that journey.
+          </p>
+          <div class="note-sign">Jay Bros<small>Founder, FastLine Technologies</small></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= CONTACT / FINAL CTA ================= -->
+    <section id="contact" class="section">
+      <div class="container">
+        <div class="final-cta reveal">
+          <span class="eyebrow" style="justify-content: center; margin-bottom: 18px;">Contact</span>
+          <h2 class="h-large">Let's Build Something That Matters.</h2>
+          <p>Have an idea, a problem or a system that needs to exist? Let's turn it into something real.</p>
+          <div class="actions" style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+            <a href="mailto:jslfastline58@gmail.com?subject=Project%20Inquiry%20%7C%20FastLine%20Technologies" class="btn btn--primary">Start a Project <i data-lucide="arrow-right"></i></a>
+            <a href="#projects" class="btn btn--ghost">Explore Projects <i data-lucide="compass"></i></a>
+          </div>
+          <div style="display: flex; flex-wrap: wrap; gap: 14px; justify-content: center; margin-top: 44px;">
+            <a class="btn btn--line" href="mailto:jslfastline58@gmail.com?subject=Project%20Inquiry%20%7C%20FastLine%20Technologies" style="font-size: 0.8rem;">jslfastline58@gmail.com <i data-lucide="mail"></i></a>
+            <a class="btn btn--line" href="https://wa.me/255718573799?text=Hello%20FastLine%20Technologies%2C%20I%27d%20like%20to%20discuss%20a%20project." target="_blank" rel="noopener" style="font-size: 0.8rem;">WhatsApp · 0718 573 799 <i data-lucide="message-circle"></i></a>
+            <a class="btn btn--line" href="tel:+255718573799" style="font-size: 0.8rem;">+255 718 573 799 <i data-lucide="phone"></i></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= OUTRO ================= -->
+    <section id="outro">
+      <div class="container">
+        <div class="outro-beats" aria-hidden="true"><i></i></div>
+        <p class="outro-sig">FASTLINE TECHNOLOGIES</p>
+        <p class="outro-sub">Fast Connections, Smart Future.</p>
+      </div>
+    </section>
+
+    <!-- ================= FOOTER ================= -->
     <footer>
       <div class="container">
         <div class="footer-grid">
-          <div class="footer-brand-section">
-            <div class="footer-brand-logo">
-              <div class="footer-logo-icon">
-                <img src="RoundIcon.png" alt="Logo" referrerpolicy="no-referrer" />
-              </div>
-              <span>FastLine Technologies</span>
-            </div>
-            <p class="footer-tagline">
-              An independent software engineering studio delivering enterprise
-              platforms, intelligent systems and bespoke applications — built
-              with precision, passion and pride.
-            </p>
-            <a href="mailto:jslfastline58@gmail.com" class="footer-email">
-              <i data-lucide="mail"></i> jslfastline58@gmail.com
+          <div class="footer-brand">
+            <a href="#home" class="brand" aria-label="FastLine Technologies">
+              <span class="brand__mark"><img src="RoundIcon.png" alt="" referrerpolicy="no-referrer" loading="lazy" /></span>
+              <span class="brand__txt"><span class="brand__name">FastLine Technologies</span></span>
             </a>
+            <p>Technology · Innovation · Digital Systems. Fast Connections, Smart Future.</p>
+            <span class="sig">Founded &amp; Engineered by Jay Bros</span>
           </div>
-
-          <div class="footer-col">
-            <h5>Platform</h5>
+          <div>
+            <h5>Products</h5>
             <ul>
-              <li><a href="#projects">FeMOS</a></li>
-              <li><a href="#projects">Neo-Smart Core</a></li>
-              <li><a href="#projects">JSL FastLine</a></li>
-              <li><a href="#services">Services</a></li>
+              <li><a href="projects/femos.html">FeMOS</a></li>
+              <li><a href="projects/neo-smartcore.html">Neo SmartCore</a></li>
+              <li><a href="projects/fit.html">FIT</a></li>
+              <li><a href="projects/jsl-fastline.html">JSL FastLine</a></li>
             </ul>
           </div>
-
-          <div class="footer-col">
-            <h5>Company</h5>
+          <div>
+            <h5>Explore</h5>
             <ul>
-              <li><a href="#about">About the Founder</a></li>
-              <li><a href="#process">Process</a></li>
+              <li><a href="#projects">Projects</a></li>
+              <li><a href="#lab">Innovation Lab</a></li>
+              <li><a href="#media">Media</a></li>
+              <li><a href="#next">What's Next</a></li>
               <li><a href="about.html">Company Story</a></li>
-              <li><a href="#contact">Contact</a></li>
             </ul>
           </div>
-
-          <div class="footer-col">
+          <div>
             <h5>Legal</h5>
             <ul>
               <li><a href="Privacy.html">Privacy Policy</a></li>
@@ -784,42 +611,39 @@
             </ul>
           </div>
         </div>
-
         <div class="footer-bottom">
-          <p>&copy; 2026 JSL FastLine · fastline.co.tz. All Rights Reserved.</p>
+          <p>&copy; 2026 FastLine Technologies · fastline.co.tz</p>
           <div class="footer-socials">
-            <a href="https://x.com/jslfastline">Twitter</a>
-            <a href="https://github.com/jslfastline">GitHub</a>
-            <a href="https://www.linkedin.com/feed/">LinkedIn</a>
+            <a href="https://x.com/jslfastline" target="_blank" rel="noopener" aria-label="X (Twitter)"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231-5.614 0zM16.083 19.77h1.833L7.084 4.126H5.117l10.966 15.644z"/></svg></a>
+            <a href="https://github.com/jslfastline" target="_blank" rel="noopener" aria-label="GitHub"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.39.6.11.82-.26.82-.58 0-.28-.01-1.04-.02-2.04-3.34.73-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.09-.75.08-.74.08-.74 1.2.09 1.84 1.24 1.84 1.24 1.07 1.83 2.81 1.3 3.5.99.1-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.13-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.3-1.55 3.3-1.23 3.3-1.23.66 1.66.25 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.6-2.8 5.63-5.48 5.92.43.37.82 1.1.82 2.22 0 1.6-.01 2.9-.01 3.29 0 .32.21.7.82.58A12 12 0 0 0 24 12C24 5.37 18.63 0 12 0Z"/></svg></a>
+            <a href="https://www.linkedin.com/feed/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.4v1.56h.05c.47-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45z"/></svg></a>
           </div>
         </div>
       </div>
     </footer>
 
-    <!-- ===== FLOATING CONTACT ===== -->
-    <div class="floating-stack">
-      <a
-        href="https://wa.me/255718573799?text=Hello%20FastLine%20Technologies%2C%20I%27d%20like%20to%20discuss%20a%20project."
-        target="_blank"
-        rel="noopener"
-        class="floating-fab fab-whatsapp"
-        aria-label="WhatsApp the CEO"
-      >
-        <i data-lucide="message-circle"></i>
-        <span class="floating-label">WhatsApp the CEO</span>
-      </a>
-      <a
-        href="mailto:jslfastline58@gmail.com?subject=FastLine%20Project%20Inquiry"
-        class="floating-fab"
-        aria-label="Email the CEO"
-      >
-        <i data-lucide="mail"></i>
-        <span class="floating-label">Email the CEO</span>
-      </a>
+    <!-- Floating WhatsApp -->
+    <a id="fab" href="https://wa.me/255718573799?text=Hello%20FastLine%20Technologies" target="_blank" rel="noopener" aria-label="Chat on WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.16-.17.2-.35.22-.64.08-.3-.15-1.26-.47-2.4-1.48-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.6.13-.14.3-.35.44-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.5 0 1.47 1.07 2.9 1.22 3.1.15.2 2.1 3.2 5.09 4.49.71.3 1.27.49 1.7.63.72.23 1.37.2 1.88.12.58-.09 1.76-.72 2-1.42.25-.7.25-1.3.18-1.42-.08-.13-.28-.2-.58-.35zM12.05 21.79h-.01a9.7 9.7 0 0 1-4.94-1.35l-.36-.21-3.66.96.98-3.57-.24-.37a9.69 9.69 0 0 1-1.48-5.18c0-5.35 4.35-9.7 9.71-9.7a9.65 9.65 0 0 1 9.7 9.7c0 5.36-4.35 9.71-9.7 9.71zm8.14-17.85A11.66 11.66 0 0 0 12.05 0C5.5 0 .15 5.35.15 11.92c0 2.1.55 4.15 1.59 5.95L.07 24l6.3-1.65a11.9 11.9 0 0 0 5.68 1.45h.01c6.55 0 11.9-5.35 11.9-11.92 0-3.18-1.24-6.17-3.49-8.42z"/></svg></a>
+
+    <!-- ================= VIDEO MODAL ================= -->
+    <div id="video-modal" class="hidden" role="dialog" aria-modal="true" aria-label="Video player">
+      <div class="modal-back"></div>
+      <div class="modal-box">
+        <button class="modal-close" id="video-close" aria-label="Close video"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6 6 18M6 6l12 12"/></svg></button>
+        <video id="modal-video" controls playsinline preload="none"></video>
+      </div>
     </div>
 
-    <!-- ===== BETA ACCESS MODAL ===== -->
+    <!-- ================= SIGNAL OVERLAY ================= -->
+    <div id="signal-overlay" class="hidden" aria-hidden="true">
+      <div class="signal-stage">
+        <div class="signal-ring r1"></div><div class="signal-ring r2"></div><div class="signal-ring r3"></div>
+        <p class="signal-text">FASTLINE TECHNOLOGIES</p>
+        <p class="signal-sub">Fast Connections, Smart Future.</p>
+      </div>
+    </div>
 
-    <script src="script.js"></script>
+    <script src="data/projects.js"></script>
+    <script src="site.js?v=202610"></script>
   </body>
 </html>
