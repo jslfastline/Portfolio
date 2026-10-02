@@ -1,338 +1,251 @@
 <!doctype html>
-<html lang="en" id="html-root">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>About Us - JSL FastLine</title>
+    <title>FastLine Technologies | Our Story</title>
+    <meta
+      name="description"
+      content="The story of FastLine Technologies — a technology and innovation ecosystem founded and engineered by Jay Bros, building digital products, intelligent systems and emerging technologies."
+    />
+    <meta name="keywords" content="FastLine Technologies, FastLine Technology, JSL FastLine, Jay Bros, Technology Innovation Tanzania, Software Engineering Tanzania, Digital Systems Tanzania" />
+    <link rel="canonical" href="https://fastline.co.tz/about.html" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="FastLine Technologies" />
+    <meta property="og:title" content="FastLine Technologies | Our Story" />
+    <meta property="og:description" content="A technology and innovation ecosystem founded and engineered by Jay Bros — digital products, intelligent systems and emerging technologies." />
+    <meta property="og:url" content="https://fastline.co.tz/about.html" />
+    <meta property="og:image" content="https://fastline.co.tz/assets/images/og.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="FastLine Technologies | Our Story" />
+    <meta name="twitter:description" content="A technology and innovation ecosystem founded and engineered by Jay Bros." />
+    <meta name="twitter:image" content="https://fastline.co.tz/assets/images/og.jpg" />
     <link rel="shortcut icon" href="favicon-32.png" type="image/x-icon" />
     <link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png" />
     <link rel="icon" type="image/png" sizes="192x192" href="favicon-192.png" />
     <link rel="apple-touch-icon" href="apple-touch-icon.png" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800;900&family=DM+Sans:wght@400;500;700&display=swap"
-      rel="stylesheet"
-    />
     <script src="https://unpkg.com/lucide@latest"></script>
-    <link rel="stylesheet" href="styles.css?v=202609" />
+    <link rel="stylesheet" href="site.css?v=202614" />
   </head>
   <body>
-    <!-- ===== NAVIGATION ===== -->
-    <nav id="navbar">
+    <div id="progress"></div>
+    <div id="cursor-glow" aria-hidden="true"></div>
+
+    <nav id="navbar" aria-label="Primary">
       <div class="container nav-inner">
-        <div class="nav-logo">
-          <span class="nav-logo-text">JSL FastLine</span>
-          <div class="nav-logo-icon">
-            <img src="RoundIcon.png" alt="Logo" referrerpolicy="no-referrer" />
-          </div>
-        </div>
-
+        <a href="index.html" class="brand" aria-label="FastLine Technologies — home">
+          <span class="brand__mark"><img src="RoundIcon.png" alt="" referrerpolicy="no-referrer" loading="lazy" /></span>
+          <span class="brand__txt">
+            <span class="brand__name">FastLine Technologies</span>
+            <span class="brand__tag">Technology · Innovation · Digital Systems</span>
+          </span>
+        </a>
         <ul class="nav-links">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="index.html#vision">Vision</a></li>
-          <li><a href="index.html#features">Features</a></li>
-          <li><a href="index.html#about">About</a></li>
-          <li><a href="index.html#tech">Technology</a></li>
+          <li><a href="index.html#home">Home</a></li>
+          <li><a href="index.html#projects">Projects</a></li>
+          <li><a href="index.html#lab">Innovation</a></li>
+          <li><a href="index.html#media">Media</a></li>
+          <li><a href="about.html" class="active">About</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
         </ul>
-
-        <button id="theme-toggle" class="btn-theme" aria-label="Toggle theme">
-          <i data-lucide="sun" class="icon-sun"></i>
-          <i data-lucide="moon" class="icon-moon"></i>
-        </button>
-
-        <button
-          onclick="window.location.href = 'mailto:jslfastline58@gmail.com?subject=Hello%20FastLine%20Technologies'"
-          class="btn-primary"
-        >
-          Contact Us
-        </button>
-
-        <!-- Mobile controls -->
-        <div class="nav-mobile-btns">
-          <button
-            id="theme-toggle-mobile"
-            class="btn-theme"
-            aria-label="Toggle theme"
-          >
-            <i data-lucide="sun" class="icon-sun"></i>
-            <i data-lucide="moon" class="icon-moon"></i>
-          </button>
-          <button id="menu-toggle" aria-label="Open menu">
-            <i data-lucide="menu"></i>
-          </button>
-        </div>
-      </div>
-
-      <!-- Mobile Menu -->
-      <div id="mobile-menu">
-        <a href="index.html">Home</a>
-        <a href="index.html#vision">Vision</a>
-        <a href="index.html#features">Features</a>
-        <a href="index.html#about">About</a>
-        <a href="index.html#tech">Technology</a>
-        <button
-          onclick="window.location.href = 'mailto:jslfastline58@gmail.com?subject=Hello%20FastLine%20Technologies'"
-          class="btn-primary"
-        >
-          Contact Us
+        <a href="index.html#contact" class="btn btn--primary">Start a Project</a>
+        <button class="nav-burger" id="nav-burger" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
         </button>
       </div>
     </nav>
 
-    <!-- ===== HERO SECTION ===== -->
-    <section class="about-hero">
-      <div class="container">
-        <div class="about-hero-content">
-          <div class="about-hero-badge">
-            <i data-lucide="sparkles"></i>
-            Our Story
-          </div>
-          <h1 class="about-hero-title">
-            Pioneering the Future of <br />
-            <span class="gradient-text">Offline Connectivity</span>
-          </h1>
-          <p class="about-hero-desc">
-            JSL FastLine was born from a simple yet powerful vision: to create a
-            world where digital connectivity transcends the limitations of
-            traditional internet infrastructure. We're building the foundation
-            for a truly connected future.
-          </p>
-        </div>
-        <div class="about-hero-visual">
-          <div class="hero-glow"></div>
-          <div class="about-hero-stats">
-            <div class="stat-item">
-              <div class="stat-number">2026</div>
-              <div class="stat-label">Founded</div>
-            </div>
-            <div class="stat-item">
-              <div class="stat-number">3+</div>
-              <div class="stat-label">Years Experience</div>
-            </div>
-            <div class="stat-item">
-              <div class="stat-number">25+</div>
-              <div class="stat-label">Products Shipped</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===== MISSION & VISION ===== -->
-    <section class="mission-section">
-      <div class="container">
-        <div class="mission-grid">
-          <div class="mission-card reveal">
-            <div class="mission-icon">
-              <i data-lucide="target"></i>
-            </div>
-            <h3>Our Mission</h3>
-            <p>
-              To democratize digital connectivity by creating innovative
-              offline-first technologies that empower communities worldwide,
-              regardless of infrastructure limitations or connectivity
-              challenges.
-            </p>
-          </div>
-
-          <div class="mission-card reveal" style="transition-delay: 100ms">
-            <div class="mission-icon">
-              <i data-lucide="eye"></i>
-            </div>
-            <h3>Our Vision</h3>
-            <p>
-              A world where every person has access to powerful digital tools
-              and seamless connectivity, breaking down barriers between online
-              and offline experiences through intelligent, adaptive technology.
-            </p>
-          </div>
-
-          <div class="mission-card reveal" style="transition-delay: 200ms">
-            <div class="mission-icon">
-              <i data-lucide="heart"></i>
-            </div>
-            <h3>Our Values</h3>
-            <p>
-              Innovation, accessibility, and human-centric design drive
-              everything we do. We believe technology should serve humanity, not
-              the other way around.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===== FOUNDER SECTION ===== -->
-    <section class="founder-section">
-      <div class="container">
-        <div class="founder-card">
-          <div class="founder-image">
-            <img src="C.E.O FastLine.png" alt="Josephat J Athanas - Founder & CEO" />
-            <div class="founder-badge">
-              <i data-lucide="crown"></i>
-            </div>
-          </div>
-          <div class="founder-content">
-            <h2>Josephat J. Athanas</h2>
-            <h3>Founder &amp; CEO</h3>
-            <p>
-              JSL FastLine is built on a single promise: world-class software,
-              crafted with total ownership. As an independent engineer, every
-              product — from FeMOS to Neo-Smart Core — is designed, coded and
-              shipped personally, ensuring uncompromising quality and direct
-              communication at every step.
-            </p>
-            <div class="founder-stats">
-              <div class="stat">
-                <span class="stat-number">3+</span>
-                <span class="stat-label">Years Experience</span>
-              </div>
-              <div class="stat">
-                <span class="stat-number">100%</span>
-                <span class="stat-label">Direct CEO Communication</span>
-              </div>
-              <div class="stat">
-                <span class="stat-number">25+</span>
-                <span class="stat-label">Products Shipped</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===== TIMELINE SECTION ===== -->
-    <section class="timeline-section">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Our Journey</h2>
-          <p class="section-subtitle">
-            From concept to reality: the evolution of JSL FastLine
-          </p>
-        </div>
-
-        <div class="timeline">
-          <div class="timeline-item reveal">
-            <div class="timeline-dot"></div>
-            <div class="timeline-content">
-              <div class="timeline-year">2024</div>
-              <h4>Research & Planning</h4>
-              <p>
-                Extensive research into offline connectivity challenges and
-                peer-to-peer technologies. Initial concept development and
-                market analysis.
-              </p>
-            </div>
-          </div>
-
-          <div class="timeline-item reveal" style="transition-delay: 100ms">
-            <div class="timeline-dot"></div>
-            <div class="timeline-content">
-              <div class="timeline-year">2025</div>
-              <h4>Prototype Development</h4>
-              <p>
-                Core technology development, AI integration, and initial user
-                testing. First working prototypes of the offline-first platform.
-              </p>
-            </div>
-          </div>
-
-          <div class="timeline-item reveal" style="transition-delay: 200ms">
-            <div class="timeline-dot"></div>
-            <div class="timeline-content">
-              <div class="timeline-year">2026</div>
-              <h4>Flagship Products & Expansion</h4>
-              <p>
-                Launch of signature systems including FeMOS and Neo-Smart Core,
-                alongside the offline-first JSL FastLine platform — real products
-                solving real problems across industries.
-              </p>
-            </div>
-          </div>
-
-          <div class="timeline-item reveal" style="transition-delay: 300ms">
-            <div class="timeline-dot"></div>
-            <div class="timeline-content">
-              <div class="timeline-year">2027</div>
-              <h4>Global Expansion</h4>
-              <p>
-                Full platform launch with enterprise partnerships and expanded
-                feature set. Scaling to millions of users worldwide.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===== CTA SECTION ===== -->
-    <section class="about-cta">
-      <div class="container">
-        <div class="cta-content">
-          <h2>Join Our Mission</h2>
-          <p>
-            Be part of the revolution in offline connectivity. Help us build a
-            more connected world.
-          </p>
-          <div class="cta-actions">
-            <a href="index.html#projects" class="btn-primary">
-              View Our Projects
-              <i data-lucide="arrow-right"></i>
-            </a>
-            <a href="mailto:jslfastline58@gmail.com?subject=Inquiry%20%7C%20FastLine%20Technologies" class="btn-secondary">
-              Contact the CEO
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===== BETA ACCESS MODAL ===== -->
-    <div id="beta-modal" class="modal">
-      <div class="modal-overlay"></div>
-      <div class="modal-content beta-modal-content">
-        <div class="modal-header beta-header">
-          <div class="beta-icon-container">
-            <img
-              src="RoundIcon.png"
-              alt="JSL FastLine Logo"
-              class="beta-icon"
-            />
-          </div>
-          <h2>JSL FastLine Beta Access</h2>
-          <button class="modal-close" data-modal="beta-modal">
-            <i data-lucide="x"></i>
-          </button>
-        </div>
-        <div class="modal-body beta-body">
-          <div class="beta-status">
-            <div class="beta-status-icon">🚧</div>
-            <h3>Project in Progress</h3>
-          </div>
-          <p class="beta-message">
-            Thank you for your interest in joining the JSL FastLine Beta.
-          </p>
-          <p class="beta-message">
-            We're currently refining and enhancing the platform to deliver a
-            fast, reliable, and innovative experience. The system is not yet
-            open for public testing.
-          </p>
-          <div class="beta-next-steps">
-            <h4>📩 What happens next?</h4>
-            <p>
-              You'll be among the first to get notified as soon as the Beta
-              version is ready for testing.
-            </p>
-          </div>
-          <p class="beta-appreciation">
-            We truly appreciate your interest and support as we build something
-            impactful.
-          </p>
-          <div class="beta-signature">— JSL FastLine Technologies</div>
-        </div>
-      </div>
+    <div id="m-nav" aria-hidden="true">
+      <a href="index.html#home">01 <small>Home</small></a>
+      <a href="index.html#projects">02 <small>Projects</small></a>
+      <a href="index.html#lab">03 <small>Innovation</small></a>
+      <a href="index.html#media">04 <small>Media</small></a>
+      <a href="about.html">05 <small>About</small></a>
+      <a href="index.html#contact">06 <small>Contact</small></a>
+      <a href="index.html#contact" class="btn btn--primary">Start a Project</a>
     </div>
 
-    <script src="script.js"></script>
+    <header class="p-hero">
+      <div class="container p-wrap reveal in">
+        <span class="eyebrow p-eyebrow">Our Story</span>
+        <h1 class="p-title">FastLine <span class="grad">Technologies</span></h1>
+        <p class="p-sub">A technology and innovation ecosystem founded and engineered by Jay Bros — building digital products, intelligent systems and emerging technologies.</p>
+        <div class="p-meta">
+          <span class="chip plain">Innovation Ecosystem</span>
+          <span class="chip plain">Founded &amp; Engineered by Jay Bros</span>
+          <span class="chip plain">Fast Connections · Smart Future</span>
+        </div>
+      </div>
+    </header>
+
+    <section class="p-section">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">FastLine Technologies</span>
+          <h2 class="h-large">The Story</h2>
+        </div>
+        <div class="p-grid-3">
+          <div class="p-card reveal" data-d="0">
+            <span class="p-card__k"><i data-lucide="sparkles"></i> The Origin</span>
+            <h3>Simple conviction</h3>
+            <p>FastLine began with a simple idea: technology becomes meaningful when it solves something real. It started with systems that are useful today, while exploring what technology can become tomorrow.</p>
+          </div>
+          <div class="p-card reveal" data-d="1">
+            <span class="p-card__k"><i data-lucide="hammer"></i> The Build</span>
+            <h3>Built by hand</h3>
+            <p>Every product — from FeMOS to Neo SmartCore — is designed, coded and shipped personally. That means uncompromising quality, direct communication and full ownership at every step.</p>
+          </div>
+          <div class="p-card reveal" data-d="2">
+            <span class="p-card__k"><i data-lucide="compass"></i> The Direction</span>
+            <h3>Still building</h3>
+            <p>We keep moving across campus operating systems, business operations intelligence, identification technology and low-connectivity digital tools for the real world.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="p-section p-section--dim">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">FastLine Technologies</span>
+          <h2 class="h-large">How We Work</h2>
+        </div>
+        <div class="p-steps">
+          <div class="p-step reveal" data-d="0"><span class="p-step__n">01</span><p>Understand the problem.</p></div>
+          <div class="p-step reveal" data-d="1"><span class="p-step__n">02</span><p>Design the system.</p></div>
+          <div class="p-step reveal" data-d="2"><span class="p-step__n">03</span><p>Build the solution.</p></div>
+          <div class="p-step reveal" data-d="3"><span class="p-step__n">04</span><p>Test it in the real world — then keep improving.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="p-section">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">The Builder</span>
+          <h2 class="h-large">The Builder Behind FastLine</h2>
+        </div>
+        <div class="builder-grid">
+          <div class="builder-photo reveal" data-d="1">
+            <div class="builder-photo__frame">
+              <img src="C.E.O FastLine.png" alt="Jay Bros — Founder & Software Engineer" referrerpolicy="no-referrer" loading="lazy" />
+            </div>
+            <div class="builder-photo__ring" aria-hidden="true"></div>
+            <div class="builder-photo__label">
+              <p class="n" style="font-family:'Times New Roman'; font-weight:800; font-size:1.4rem;">Jay Bros</p>
+              <p class="r">Founder · Engineer · Innovator</p>
+            </div>
+          </div>
+          <div class="reveal" data-d="2">
+            <div class="builder-name">
+              <h2 class="h-large grad" style="letter-spacing:-0.02em;">Jay Bros</h2>
+              <span class="flag" style="font-family:'Times New Roman'; font-size:0.7rem; letter-spacing:0.26em; text-transform:uppercase; color:var(--accent);">The Person Behind the Brand</span>
+            </div>
+            <p class="builder-role">Founder · Software Engineer · Innovator</p>
+            <p class="builder-bio">
+              I build technology around real problems — from business systems and
+              education platforms to intelligent digital products, connected
+              technologies and emerging ideas.
+            </p>
+            <div class="builder-focus">
+              <span class="k">Focus</span>
+              <ul>
+                <li>Software Engineering</li>
+                <li>Digital Systems</li>
+                <li>Intelligent Technology</li>
+                <li>Automation</li>
+                <li>Networking</li>
+                <li>Digital Products</li>
+                <li>Emerging Technology</li>
+              </ul>
+            </div>
+            <a href="index.html#contact" class="btn btn--line">Start a Project <i data-lucide="arrow-down-right"></i></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="p-section p-section--dim">
+      <div class="container">
+        <div class="note-content reveal">
+          <p class="note-mark">"</p>
+          <p class="note-text">
+            I believe technology becomes meaningful when <em>it solves something real</em>.
+            FastLine started from a simple idea: build systems that are useful today,
+            while exploring what technology can become tomorrow. Every project is part
+            of that journey.
+          </p>
+          <p class="note-quote">"Within Evry Human ,It Lies A Power So Vast And Mysterious That Awakens Only,When You Dare to Believe That You Can."</p>
+          <div class="note-sign">Jay Bros<small>Founder, FastLine Technologies</small></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="p-cta">
+      <div class="container">
+        <h2>Build something worth counting on.</h2>
+        <p>Tell us what you want to build — from campus systems to full platforms. We take ideas from paper to product.</p>
+        <div class="hero__actions">
+          <a href="index.html#contact" class="btn btn--primary">Start a Project <i data-lucide="arrow-right"></i></a>
+          <a href="index.html#projects" class="btn btn--ghost">Explore Projects</a>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <a href="index.html" class="brand" aria-label="FastLine Technologies">
+              <span class="brand__mark"><img src="RoundIcon.png" alt="" referrerpolicy="no-referrer" loading="lazy" /></span>
+              <span class="brand__txt"><span class="brand__name">FastLine Technologies</span></span>
+            </a>
+            <p>Technology · Innovation · Digital Systems. Fast Connections, Smart Future.</p>
+            <span class="sig">Founded &amp; Engineered by Jay Bros</span>
+          </div>
+          <div>
+            <h5>Products</h5>
+            <ul>
+              <li><a href="projects/femos.html">FeMOS</a></li>
+              <li><a href="projects/neo-smartcore.html">Neo SmartCore</a></li>
+              <li><a href="projects/fit.html">FIT</a></li>
+              <li><a href="projects/jsl-fastline.html">JSL FastLine</a></li>
+            </ul>
+          </div>
+          <div>
+            <h5>Explore</h5>
+            <ul>
+              <li><a href="index.html#projects">Projects</a></li>
+              <li><a href="index.html#lab">Innovation Lab</a></li>
+              <li><a href="index.html#media">Media</a></li>
+              <li><a href="index.html#next">What's Next</a></li>
+              <li><a href="about.html">Company Story</a></li>
+            </ul>
+          </div>
+          <div>
+            <h5>Legal</h5>
+            <ul>
+              <li><a href="Privacy.html">Privacy Policy</a></li>
+              <li><a href="Terms.html">Terms of Service</a></li>
+              <li><a href="Security.html">Security</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2026 FastLine Technologies · fastline.co.tz</p>
+          <div class="footer-socials">
+            <a href="https://x.com/jslfastline" target="_blank" rel="noopener" aria-label="X (Twitter)"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231-5.614 0zM16.083 19.77h1.833L7.084 4.126H5.117l10.966 15.644z"/></svg></a>
+            <a href="https://github.com/jslfastline" target="_blank" rel="noopener" aria-label="GitHub"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.39.6.11.82-.26.82-.58 0-.28-.01-1.04-.02-2.04-3.34.73-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.09-.75.08-.74.08-.74 1.2.09 1.84 1.24 1.84 1.24 1.07 1.83 2.81 1.3 3.5.99.1-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.13-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.3-1.55 3.3-1.23 3.3-1.23.66 1.66.25 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.6-2.8 5.63-5.48 5.92.43.37.82 1.1.82 2.22 0 1.6-.01 2.9-.01 3.29 0 .32.21.7.82.58A12 12 0 0 0 24 12C24 5.37 18.63 0 12 0Z"/></svg></a>
+            <a href="https://www.linkedin.com/feed/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.4v1.56h.05c.47-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45z"/></svg></a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <a id="fab" href="https://wa.me/255718573799?text=Hello%20FastLine%20Technologies" target="_blank" rel="noopener" aria-label="Chat on WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.16-.17.2-.35.22-.64.08-.3-.15-1.26-.47-2.4-1.48-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.6.13-.14.3-.35.44-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.5 0 1.47 1.07 2.9 1.22 3.1.15.2 2.1 3.2 5.09 4.49.71.3 1.27.49 1.7.63.72.23 1.37.2 1.88.12.58-.09 1.76-.72 2-1.42.25-.7.25-1.3.18-1.42-.08-.13-.28-.2-.58-.35zM12.05 21.79h-.01a9.7 9.7 0 0 1-4.94-1.35l-.36-.21-3.66.96.98-3.57-.24-.37a9.69 9.69 0 0 1-1.48-5.18c0-5.35 4.35-9.7 9.71-9.7a9.65 9.65 0 0 1 9.7 9.7c0 5.36-4.35 9.71-9.7 9.71zm8.14-17.85A11.66 11.66 0 0 0 12.05 0C5.5 0 .15 5.35.15 11.92c0 2.1.55 4.15 1.59 5.95L.07 24l6.3-1.65a11.9 11.9 0 0 0 5.68 1.45h.01c6.55 0 11.9-5.35 11.9-11.92 0-3.18-1.24-6.17-3.49-8.42z"/></svg></a>
+
+    <script src="data/projects.js"></script>
+    <script src="site.js?v=202614"></script>
   </body>
 </html>

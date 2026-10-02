@@ -1,5 +1,5 @@
 /**
- * FASTLINE TECHNOLOGIES — PROJECT DATA
+ * FastLine Technologies — Project Data
  * Single source of truth for every product on the network.
  * Add a new project by pushing a new object — the site renders it.
  * Only include real URLs. Missing optional fields are null (UI hides them).

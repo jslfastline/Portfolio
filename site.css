@@ -1,5 +1,5 @@
 /* ============================================================
-   FASTLINE TECHNOLOGIES — SITE DESIGN SYSTEM (2026)
+   FastLine Technologies — Site Design System (2026)
    Dark · Cinematic · Architectural · Minimal
    ============================================================ */
 
@@ -107,7 +107,7 @@ ul { list-style: none; }
   padding: 15px 30px;
   border-radius: 12px;
   font-family: 'Times New Roman', Times, serif; font-weight: 700; font-size: 0.82rem;
-  letter-spacing: 0.1em; text-transform: uppercase;
+  letter-spacing: 0.1em; text-transform: uppercase; white-space: nowrap;
   transition: transform 0.35s var(--ease), box-shadow 0.35s var(--ease), border-color 0.3s, background 0.3s, color 0.3s;
   will-change: transform;
 }
