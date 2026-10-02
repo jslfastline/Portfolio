@@ -118,16 +118,18 @@
   var soundBtn = document.getElementById('sound-toggle');
   if (soundBtn && heroVideo) {
     soundBtn.addEventListener('click', function () {
-      var muted = heroVideo.muted;
-      heroVideo.muted = !muted;
-      if (!muted) {
+      var wasMuted = heroVideo.muted;
+      heroVideo.muted = !wasMuted;
+      var audible = !heroVideo.muted; // true right after we unmute
+      if (audible) {
         var p = heroVideo.play();
         if (p && p.catch) p.catch(function () {});
+      } else {
+        heroVideo.pause();
       }
-      soundBtn.classList.toggle('on', muted === false);
-      soundBtn.childNodes.forEach(function (n) {
-        if (n.nodeType === 3) n.nodeValue = muted === false ? ' Sound On' : ' Sound Off';
-      });
+      soundBtn.classList.toggle('on', audible);
+      var lbl = soundBtn.querySelector('.st-label');
+      if (lbl) lbl.textContent = audible ? 'Sound On' : 'Sound Off';
     });
   }
 
@@ -162,16 +164,26 @@
     });
   }
 
-  document.querySelectorAll('.js-watch-share').forEach(function (btn) {
-    btn.addEventListener('click', function () { openVideo(BRAND_FILM); });
-  });
+  function resolveVideo(v) {
+    return v === 'brand' ? BRAND_FILM : v;
+  }
+
+  function bindVideoTriggers() {
+    document.addEventListener('click', function (e) {
+      var t = e.target.closest ? e.target.closest('[data-video]') : null;
+      if (!t) return;
+      var v = t.getAttribute('data-video');
+      if (v) openVideo(resolveVideo(v));
+    });
+  }
+  bindVideoTriggers();
 
   /* ---------- Media section ---------- */
   var PROJECTS = window.FASTLINE_PROJECTS || [];
   var MEDIA_ITEMS = [
     { title: 'FastLine Technologies — Brand Film', tag: 'Brand', cat: ['brand', 'vision'], thumb: BRAND_POSTER, videoUrl: BRAND_FILM },
     { title: 'FeMOS — Staff Attendance & Identification', tag: 'Product', cat: ['product'], thumb: PROJECTS[0] ? PROJECTS[0].thumbnail : null, videoUrl: null },
-    { title: 'Neo SmartCore — Operations Intelligence', tag: 'Product', cat: ['product'], thumb: PROJECTS[1] ? PROJECTS[1].thumbnail : null, videoUrl: null },
+    { title: 'Neo SmartCore — Operations Intelligence', tag: 'Product', cat: ['product'], thumb: PROJECTS[1] ? PROJECTS[1].thumbnail : null, videoUrl: PROJECTS[1] ? PROJECTS[1].videoUrl : null },
     { title: 'FIT — Identifying Technology', tag: 'Product', cat: ['product', 'demo'], thumb: null, videoUrl: null },
     { title: 'JSL FastLine — Low-Connectivity Ecosystem', tag: 'Vision', cat: ['vision'], thumb: PROJECTS[3] ? PROJECTS[3].thumbnail : null, videoUrl: null }
   ];
@@ -202,12 +214,6 @@
         );
       })
       .join('');
-    grid.querySelectorAll('.media-item').forEach(function (el) {
-      el.addEventListener('click', function () {
-        var v = el.getAttribute('data-video');
-        if (v) openVideo(v);
-      });
-    });
   }
 
   function renderFilters() {

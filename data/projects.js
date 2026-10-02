@@ -73,9 +73,8 @@ window.FASTLINE_PROJECTS = [
     technologies: ["AI Engine", "Automation", "Core Engine", "Data Intelligence"],
     thumbnail: "https://res.cloudinary.com/j8zmetxr/image/upload/v1789212918/NeoSmartCore_Icon_1024_zj2ycl.png",
     logo: "https://res.cloudinary.com/j8zmetxr/image/upload/v1789212918/NeoSmartCore_Icon_transparent_1024_obfxg6.png",
-    videoUrl: null,
-    poster: null,
-    liveUrl: null,
+videoUrl: "https://res.cloudinary.com/dlv2esvfc/video/upload/v1790959148/Smatco_duyug5.mp4",
+    poster: "https://res.cloudinary.com/dlv2esvfc/video/upload/w_1280,f_jpg,so_0/v1790959148/Smatco_duyug5.jpg",
     scope: "Prototype · Core engine",
   },
   {
