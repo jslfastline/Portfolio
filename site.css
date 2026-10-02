@@ -819,3 +819,81 @@ footer { background: var(--bg-1); border-top: 1px solid var(--line-soft); paddin
   .p-nav a.next { justify-content: flex-start; text-align: left; }
   .p-navgap { display: none; }
 }
+
+/* ==================================================================
+   LIVE FIXES & MODERN POLISH  (v202611)
+   ================================================================== */
+
+/* --- Hero: permanent clearance so content never slides under the fixed nav --- */
+.hero { padding-top: calc(var(--nav-h) + 28px); }
+
+/* --- Navbar: never overflow on phones (CTA lives inside the mobile menu) --- */
+@media (max-width: 640px) {
+  .nav-inner > .btn--primary { display: none; }
+  .brand { min-width: 0; gap: 10px; }
+  .brand__txt { min-width: 0; overflow: hidden; }
+  .brand__name { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+}
+@media (max-width: 380px) {
+  .brand__tag { display: none; }
+  .brand__mark { width: 34px; height: 34px; }
+  .brand__name { font-size: 0.95rem; }
+}
+
+/* --- Marquee: futuristic soft edges --- */
+.marquee {
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 7%, #000 93%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 7%, #000 93%, transparent);
+}
+
+/* --- Ambient gradient text shimmer --- */
+.grad {
+  background-size: 220% 100%;
+  animation: grad-shift 7s ease-in-out infinite alternate;
+}
+@keyframes grad-shift { 0% { background-position: 0% 50%; } 100% { background-position: 100% 50%; } }
+
+/* --- Section eyebrow: cyan accent sweep --- */
+.section-head:not(.center) .eyebrow::after {
+  content: ""; width: 46px; height: 1px;
+  background: linear-gradient(90deg, var(--cyan), transparent);
+}
+
+/* --- Card glow hover --- */
+.lab-item:hover { box-shadow: 0 26px 60px -26px rgba(56, 189, 248, 0.4); }
+.p-card, .p-step { transition: border-color 0.35s, transform 0.4s var(--ease), box-shadow 0.4s, background 0.35s; }
+.p-card:hover, .p-step:hover {
+  border-color: rgba(56, 189, 248, 0.38);
+  background: rgba(56, 189, 248, 0.03);
+  transform: translateY(-3px);
+  box-shadow: 0 22px 50px -26px rgba(56, 189, 248, 0.35);
+}
+.universe-map { box-shadow: inset 0 0 80px rgba(56, 189, 248, 0.05); }
+
+/* --- Futuristic selection + focus --- */
+::selection { background: rgba(56, 189, 248, 0.3); color: #fff; }
+a:focus-visible, button:focus-visible {
+  outline: 1.5px solid var(--accent); outline-offset: 3px; border-radius: 8px;
+}
+
+/* --- Project media: corner HUD marks --- */
+.project__media::before, .project__media::after {
+  content: ""; position: absolute; width: 26px; height: 26px; z-index: 2; opacity: 0.75; transition: opacity 0.4s;
+  border: 1px solid rgba(56, 189, 248, 0.55);
+}
+.project__media::before { top: 14px; left: 14px; border-right: 0; border-bottom: 0; }
+.project__media::after { bottom: 14px; right: 14px; border-left: 0; border-top: 0; }
+.project:hover .project__media::before, .project:hover .project__media::after { opacity: 1; }
+
+/* --- Media cards: soft glow on hover --- */
+.media-item:hover { border-color: rgba(56, 189, 248, 0.4); box-shadow: 0 30px 70px -30px rgba(56, 189, 248, 0.45); }
+
+/* --- Hero buttons: keep actions from ever touching the fade --- */
+.hero__actions { margin-bottom: 44px; }
+@media (max-width: 640px) {
+  .hero { padding-top: calc(var(--nav-h) + 16px); }
+  .marquee { padding: 14px 0; }
+}
+
+/* --- Harden horizontal clipping at the root --- */
+html, body { overflow-x: hidden; }
