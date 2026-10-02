@@ -468,11 +468,13 @@
 
   /* ---------- Rhythm (Sonic Identity) ---------- */
   var rhythmPlay = document.getElementById('rhythm-play');
+  var rhythmAudio = document.getElementById('rhythm-audio');
   var waveform = document.getElementById('waveform');
   var rhythmFill = document.getElementById('rhythm-fill');
   var rhythmNote = document.getElementById('rhythm-note');
   var rhythmStatus = document.getElementById('rhythm-status');
   var rhythmCur = document.getElementById('rhythm-cur');
+  var rhythmTotal = document.getElementById('rhythm-total');
 
   if (waveform) {
     var bars = 44;
@@ -487,43 +489,44 @@
   }
 
   var playingRhythm = false;
-  var rhythmTicker = null;
-  var rhythmT = 0;
 
-  function shieldId() {
-    // A crafted touch: the sonic identity track is published through the
-    // brand reel. Keep this minimal until the standalone track is released.
-    if (rhythmNote) rhythmNote.textContent = 'Sonic identity — preview animating · final track to be released.';
-    if (rhythmStatus) {
-      rhythmStatus.textContent = 'Previewing';
-      rhythmStatus.classList.add('live');
-    }
+  function rhythmFmt(s) {
+    if (isNaN(s) || s < 0) s = 0;
+    var m = Math.floor(s / 60), sec = Math.floor(s % 60);
+    return m + ':' + (sec < 10 ? '0' : '') + sec;
   }
 
-  if (rhythmPlay) {
+  if (rhythmPlay && rhythmAudio) {
+    rhythmAudio.addEventListener('loadedmetadata', function () {
+      if (rhythmTotal) rhythmTotal.textContent = rhythmFmt(rhythmAudio.duration);
+      if (rhythmNote) rhythmNote.textContent = 'Fast Connections — FastLine Sonic Identity';
+    });
+    rhythmAudio.addEventListener('timeupdate', function () {
+      var d = rhythmAudio.duration || 0, t = rhythmAudio.currentTime || 0;
+      if (rhythmFill) rhythmFill.style.width = (d ? (t / d) * 100 : 0).toFixed(1) + '%';
+      if (rhythmCur) rhythmCur.textContent = rhythmFmt(t);
+    });
+    rhythmAudio.addEventListener('ended', function () {
+      playingRhythm = false;
+      rhythmPlay.classList.remove('playing');
+      waveform.classList.remove('is-playing');
+      if (rhythmStatus) { rhythmStatus.textContent = 'Ended'; rhythmStatus.classList.remove('live'); }
+    });
+
     rhythmPlay.addEventListener('click', function () {
-      playingRhythm = !playingRhythm;
-      rhythmPlay.classList.toggle('playing', playingRhythm);
-      waveform.classList.toggle('is-playing', playingRhythm);
       if (playingRhythm) {
-        shieldId();
-        rhythmT = 0;
-        var start = null;
-        function tStep(now) {
-          if (start === null) start = now;
-          var p = Math.min((now - start) / 3600, 0.62); // cap ~62% (in progress)
-          rhythmT = p;
-          if (rhythmFill) rhythmFill.style.width = (p * 100).toFixed(1) + '%';
-          if (rhythmCur) rhythmCur.textContent = '0:' + String(Math.floor(p * 90)).padStart(2, '0');
-          if (playingRhythm) rhythmTicker = requestAnimationFrame(tStep);
-        }
-        rhythmTicker = requestAnimationFrame(tStep);
+        rhythmAudio.pause();
+        playingRhythm = false;
+        rhythmPlay.classList.remove('playing');
+        waveform.classList.remove('is-playing');
+        if (rhythmStatus) { rhythmStatus.textContent = 'Prep'; rhythmStatus.classList.remove('live'); }
       } else {
-        if (rhythmTicker) cancelAnimationFrame(rhythmTicker);
-        if (rhythmStatus) {
-          rhythmStatus.textContent = 'Prep';
-          rhythmStatus.classList.remove('live');
-        }
+        playingRhythm = true;
+        rhythmPlay.classList.add('playing');
+        waveform.classList.add('is-playing');
+        if (rhythmStatus) { rhythmStatus.textContent = 'Playing'; rhythmStatus.classList.add('live'); }
+        var pr = rhythmAudio.play();
+        if (pr && pr.catch) pr.catch(function () {});
       }
     });
   }

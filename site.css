@@ -934,3 +934,18 @@ html, body { overflow-x: hidden; }
     white-space: normal;
   }
 }
+
+/* --- Jay Bros quote --- */
+.note-quote {
+  font-style: italic;
+  font-size: clamp(1.15rem, 2.4vw, 1.7rem);
+  line-height: 1.7;
+  letter-spacing: 0.005em;
+  color: var(--ink);
+  max-width: 760px;
+  margin: 26px 0 0;
+}
+.note-quote::before { color: var(--accent); }
+
+/* --- Sonic identity audio element (hidden, controlled by JS) --- */
+#rhythm-audio { display: none; }
