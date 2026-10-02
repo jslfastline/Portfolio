@@ -953,6 +953,54 @@ html, body { overflow-x: hidden; }
 #rhythm-audio { display: none; }
 
 /* ==================================================================
+   CONTACT PAGE  (/contact)   v202617
+   ================================================================== */
+.contact-grid { display: grid; grid-template-columns: 1.4fr 1fr; gap: 22px; align-items: start; }
+.c-form {
+  border: 1px solid var(--line-soft); border-radius: 20px; padding: 36px 38px;
+  background: rgba(255,255,255,0.015);
+}
+.c-form h2 { font-family: 'Times New Roman', Times, serif; font-weight: 800; font-size: 1.5rem; margin: 0 0 6px; }
+.c-form > p { color: var(--muted); font-size: 0.95rem; line-height: 1.7; margin: 0 0 26px; }
+.field { display: flex; flex-direction: column; gap: 8px; margin-bottom: 18px; }
+.field label { font-family: 'Times New Roman', Times, serif; font-size: 0.7rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); }
+.field input, .field select, .field textarea {
+  width: 100%; box-sizing: border-box;
+  background: rgba(2,6,23,0.6); border: 1px solid var(--line); color: var(--ink);
+  font-family: 'Times New Roman', Times, serif; font-size: 1rem;
+  padding: 13px 16px; border-radius: 12px; outline: none;
+  transition: border-color 0.3s, box-shadow 0.3s; appearance: none;
+}
+.field select { background-image: linear-gradient(45deg, transparent 50%, var(--muted) 50%), linear-gradient(135deg, var(--muted) 50%, transparent 50%); background-position: calc(100% - 20px) 50%, calc(100% - 14px) 50%; background-size: 6px 6px; background-repeat: no-repeat; }
+.field input:focus, .field select:focus, .field textarea:focus { border-color: rgba(56,189,248,0.5); box-shadow: 0 0 0 3px rgba(56,189,248,0.12); }
+.field textarea { resize: vertical; min-height: 140px; }
+.field--row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.c-side { display: flex; flex-direction: column; gap: 22px; }
+.c-card { border: 1px solid var(--line-soft); border-radius: 18px; padding: 28px 26px; background: rgba(255,255,255,0.015); transition: border-color 0.35s, background 0.35s; }
+.c-card:hover { border-color: rgba(56,189,248,0.38); background: rgba(56,189,248,0.02); }
+.c-card .k { font-family: 'Times New Roman', Times, serif; font-size: 0.62rem; letter-spacing: 0.24em; text-transform: uppercase; color: var(--accent); display: flex; align-items: center; gap: 8px; margin-bottom: 10px; }
+.c-card h3 { font-family: 'Times New Roman', Times, serif; font-weight: 700; font-size: 1.1rem; margin: 0 0 8px; }
+.c-card p { color: var(--muted); font-size: 0.95rem; line-height: 1.75; margin: 0 0 14px; }
+.c-card a.c-link { color: var(--accent); font-size: 0.9rem; text-decoration: none; border-bottom: 1px solid rgba(56,189,248,0.35); }
+.offices-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 22px; }
+.office-card { border: 1px solid var(--line-soft); border-radius: 18px; padding: 30px 28px; background: rgba(255,255,255,0.015); }
+.office-card .k { font-family: 'Times New Roman', Times, serif; font-size: 0.62rem; letter-spacing: 0.24em; text-transform: uppercase; color: var(--accent); display: flex; align-items: center; gap: 8px; margin-bottom: 12px; }
+.office-card h3 { font-family: 'Times New Roman', Times, serif; font-weight: 700; font-size: 1.25rem; margin: 0 0 6px; }
+.office-card address { font-style: normal; color: var(--muted); font-size: 0.95rem; line-height: 1.75; margin: 0 0 16px; }
+.office-card address strong { color: var(--ink); font-weight: 600; }
+.office-links { display: flex; flex-direction: column; gap: 8px; }
+.office-links a { color: var(--accent); font-size: 0.88rem; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; width: fit-content; }
+@media (max-width: 900px) {
+  .contact-grid { grid-template-columns: 1fr; }
+  .offices-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 640px) {
+  .field--row { grid-template-columns: 1fr; gap: 0; }
+  .c-form { padding: 26px 22px; border-radius: 16px; }
+  .c-card, .office-card { padding: 24px 20px; border-radius: 16px; }
+}
+
+/* ==================================================================
    LEGAL & POLICY PAGES  (privacy / terms / security)   v202616
    ================================================================== */
 .legal-nav { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin: 0 0 48px; }

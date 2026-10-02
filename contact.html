@@ -1,483 +1,250 @@
 <!doctype html>
-<html lang="en" id="html-root">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Contact Us - JSL FastLine</title>
+    <title>Contact Us | FastLine Technologies</title>
+    <meta name="description" content="Reach FastLine Technologies directly — email, WhatsApp or the project form. Based in Tanzania, building for the world." />
+    <meta name="keywords" content="FastLine Technologies Contact, contact FastLine, Jay Bros, software project inquiry, Tanzania software company" />
+    <link rel="canonical" href="https://fastline.co.tz/contact" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="FastLine Technologies" />
+    <meta property="og:title" content="Contact Us | FastLine Technologies" />
+    <meta property="og:description" content="Reach FastLine Technologies directly — email, WhatsApp or the project form." />
+    <meta property="og:url" content="https://fastline.co.tz/contact" />
+    <meta property="og:image" content="https://fastline.co.tz/assets/images/og.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Contact Us | FastLine Technologies" />
+    <meta name="twitter:description" content="Reach FastLine Technologies directly — email, WhatsApp or the project form." />
+    <meta name="twitter:image" content="https://fastline.co.tz/assets/images/og.jpg" />
     <link rel="shortcut icon" href="favicon-32.png" type="image/x-icon" />
     <link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png" />
     <link rel="icon" type="image/png" sizes="192x192" href="favicon-192.png" />
     <link rel="apple-touch-icon" href="apple-touch-icon.png" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800;900&family=DM+Sans:wght@400;500;700&display=swap"
-      rel="stylesheet"
-    />
     <script src="https://unpkg.com/lucide@latest"></script>
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="site.css?v=202617" />
   </head>
   <body>
-    <!-- ===== NAVIGATION ===== -->
-    <nav id="navbar">
+    <div id="progress"></div>
+    <div id="cursor-glow" aria-hidden="true"></div>
+
+    <nav id="navbar" aria-label="Primary">
       <div class="container nav-inner">
-        <div class="nav-logo">
-          <span class="nav-logo-text">JSL FastLine</span>
-          <div class="nav-logo-icon">
-            <img src="RoundIcon.png" alt="Logo" referrerpolicy="no-referrer" />
-          </div>
-        </div>
-
+        <a href="/" class="brand" aria-label="FastLine Technologies — home">
+          <span class="brand__mark"><img src="RoundIcon.png" alt="" referrerpolicy="no-referrer" loading="lazy" /></span>
+          <span class="brand__txt">
+            <span class="brand__name">FastLine Technologies</span>
+          </span>
+        </a>
         <ul class="nav-links">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="index.html#vision">Vision</a></li>
-          <li><a href="index.html#features">Features</a></li>
-          <li><a href="index.html#about">About</a></li>
-          <li><a href="index.html#tech">Technology</a></li>
+          <li><a href="/#home">Home</a></li>
+          <li><a href="/#projects">Projects</a></li>
+          <li><a href="/#lab">Innovation</a></li>
+          <li><a href="/#media">Media</a></li>
+          <li><a href="/about">About</a></li>
+          <li><a href="/contact" class="active">Contact</a></li>
         </ul>
-
-        <button id="theme-toggle" class="btn-theme" aria-label="Toggle theme">
-          <i data-lucide="sun" class="icon-sun"></i>
-          <i data-lucide="moon" class="icon-moon"></i>
-        </button>
-
-        <button
-          onclick="window.location.href = 'mailto:jslfastline58@gmail.com?subject=Hello%20FastLine%20Technologies'"
-          class="btn-primary"
-        >
-          Contact Us
-        </button>
-
-        <!-- Mobile controls -->
-        <div class="nav-mobile-btns">
-          <button
-            id="theme-toggle-mobile"
-            class="btn-theme"
-            aria-label="Toggle theme"
-          >
-            <i data-lucide="sun" class="icon-sun"></i>
-            <i data-lucide="moon" class="icon-moon"></i>
-          </button>
-          <button id="menu-toggle" aria-label="Open menu">
-            <i data-lucide="menu"></i>
-          </button>
-        </div>
-      </div>
-
-      <!-- Mobile Menu -->
-      <div id="mobile-menu">
-        <a href="index.html">Home</a>
-        <a href="index.html#vision">Vision</a>
-        <a href="index.html#features">Features</a>
-        <a href="index.html#about">About</a>
-        <a href="index.html#tech">Technology</a>
-        <button
-          onclick="window.location.href = 'mailto:jslfastline58@gmail.com?subject=Hello%20FastLine%20Technologies'"
-          class="btn-primary"
-        >
-          Contact Us
+        <a href="/#contact" class="btn btn--primary">Start a Project</a>
+        <button class="nav-burger" id="nav-burger" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
         </button>
       </div>
     </nav>
 
-    <!-- ===== HERO SECTION ===== -->
-    <section class="contact-hero">
-      <div class="container">
-        <div class="contact-hero-content">
-          <div class="contact-hero-badge">
-            <i data-lucide="message-circle"></i>
-            Get in Touch
-          </div>
-          <h1 class="contact-hero-title">
-            Let's Build Something <br />
-            <span class="gradient-text">Amazing Together</span>
-          </h1>
-          <p class="contact-hero-desc">
-            Have a project in mind — a web app, an enterprise system, a mobile
-            solution, or something completely new? Reach out directly to the
-            Founder &amp; CEO and let's start a conversation.
-          </p>
-          <div class="contact-hero-quick">
-            <div class="quick-contact">
-              <i data-lucide="mail"></i>
-              <span>jslfastline58@gmail.com</span>
-            </div>
-            <div class="quick-contact">
-              <i data-lucide="phone"></i>
-              <span>+255 718 573 799</span>
-            </div>
-            <div class="quick-contact">
-              <i data-lucide="message-circle"></i>
-              <span>WhatsApp · 0718 573 799</span>
-            </div>
-          </div>
+    <div id="m-nav" aria-hidden="true">
+      <a href="/#home">01 <small>Home</small></a>
+      <a href="/#projects">02 <small>Projects</small></a>
+      <a href="/#lab">03 <small>Innovation</small></a>
+      <a href="/#media">04 <small>Media</small></a>
+      <a href="/about">05 <small>About</small></a>
+      <a href="/contact">06 <small>Contact</small></a>
+      <a href="/#contact" class="btn btn--primary">Start a Project</a>
+    </div>
+
+    <header class="p-hero">
+      <div class="container p-wrap reveal in">
+        <span class="eyebrow p-eyebrow">Contact</span>
+        <h1 class="p-title">Let's Build Something <span class="grad">Amazing</span></h1>
+        <p class="p-sub">Have a project in mind — a web app, an enterprise system, a mobile solution, or something completely new? Reach the Founder &amp; Engineer directly.</p>
+        <div class="p-meta">
+          <span class="chip plain">jslfastline58@gmail.com</span>
+          <span class="chip plain">+255 718 573 799</span>
+          <span class="chip plain">WhatsApp · 0718 573 799</span>
         </div>
-        <div class="contact-hero-visual">
-          <div class="contact-illustration">
-            <div
-              class="floating-element"
-              style="top: 15%; left: 10%; animation-delay: 0s"
-            >
-              <i data-lucide="send"></i>
+      </div>
+    </header>
+
+    <section class="p-section">
+      <div class="container">
+        <div class="contact-grid reveal">
+          <form class="c-form" id="contactForm" novalidate>
+            <h2>Send us a message</h2>
+            <p>Tell us about your project and we will get back to you as soon as possible.</p>
+            <div class="field field--row">
+              <div class="field">
+                <label for="c-name">Name *</label>
+                <input type="text" id="c-name" name="name" required placeholder="Your name" />
+              </div>
+              <div class="field">
+                <label for="c-email">Email Address *</label>
+                <input type="email" id="c-email" name="email" required placeholder="you@example.com" />
+              </div>
             </div>
-            <div
-              class="floating-element"
-              style="top: 50%; right: 20%; animation-delay: 1s"
-            >
-              <i data-lucide="headphones"></i>
+            <div class="field">
+              <label for="c-subject">Subject *</label>
+              <select id="c-subject" name="subject" required>
+                <option value="">Select a topic</option>
+                <option value="New Project">New Project Inquiry</option>
+                <option value="Partnership">Partnership Opportunities</option>
+                <option value="Support">Technical Support</option>
+                <option value="Press / Media">Press / Media</option>
+                <option value="Feedback">Feedback</option>
+              </select>
             </div>
-            <div
-              class="floating-element"
-              style="bottom: 25%; left: 15%; animation-delay: 2s"
-            >
-              <i data-lucide="users"></i>
+            <div class="field">
+              <label for="c-message">Message *</label>
+              <textarea id="c-message" name="message" required rows="6" placeholder="Tell us how we can help you..."></textarea>
+            </div>
+            <button type="submit" class="btn btn--primary">Send via WhatsApp <i data-lucide="send"></i></button>
+          </form>
+
+          <div class="c-side">
+            <div class="c-card reveal" data-d="0">
+              <span class="k"><i data-lucide="crown"></i> Direct to the Builder</span>
+              <h3>No middlemen</h3>
+              <p>You deal directly with the Founder &amp; Engineer who actually builds your product. No delays, no middlemen.</p>
+              <a class="c-link" href="mailto:jslfastline58@gmail.com">jslfastline58@gmail.com</a>
+            </div>
+            <div class="c-card reveal" data-d="1">
+              <span class="k"><i data-lucide="message-circle"></i> WhatsApp</span>
+              <h3>The fastest channel</h3>
+              <p>Chat directly about your project or idea — the quickest way to get a reply.</p>
+              <a class="c-link" href="https://wa.me/255718573799?text=Hello%20FastLine%20Technologies" target="_blank" rel="noopener">0718 573 799 · Open WhatsApp</a>
+            </div>
+            <div class="c-card reveal" data-d="2">
+              <span class="k"><i data-lucide="map-pin"></i> Based In</span>
+              <h3>Tanzania</h3>
+              <p>Proudly Tanzanian — delivering software products for clients and communities worldwide.</p>
+              <a class="c-link" href="/about">fastline.co.tz · Company Story</a>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ===== CONTACT FORM ===== -->
-    <section class="contact-form-section">
+    <section class="p-section p-section--dim">
       <div class="container">
-        <div class="contact-form-container">
-          <div class="contact-form-content">
-            <div class="section-header">
-              <h2 class="section-title">Send us a Message</h2>
-              <p class="section-subtitle">
-                We'd love to hear from you. Fill out the form below and we'll
-                get back to you as soon as possible.
-              </p>
-            </div>
-
-            <form class="contact-form" id="contactForm">
-              <div class="form-row">
-                <div class="form-group">
-                  <label for="firstName">First Name *</label>
-                  <input
-                    type="text"
-                    id="firstName"
-                    name="firstName"
-                    required
-                    placeholder="John"
-                  />
-                </div>
-                <div class="form-group">
-                  <label for="lastName">Last Name *</label>
-                  <input
-                    type="text"
-                    id="lastName"
-                    name="lastName"
-                    required
-                    placeholder="Doe"
-                  />
-                </div>
-              </div>
-
-              <div class="form-group">
-                <label for="email">Email Address *</label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  required
-                  placeholder="fastline@example.com"
-                />
-              </div>
-
-              <div class="form-group">
-                <label for="company">Company</label>
-                <input
-                  type="text"
-                  id="company"
-                  name="company"
-                  placeholder="Your Company Name"
-                />
-              </div>
-
-              <div class="form-group">
-                <label for="subject">Subject *</label>
-                <select id="subject" name="subject" required>
-                  <option value="">Select a topic</option>
-                  <option value="general">General Inquiry</option>
-                  <option value="support">Technical Support</option>
-                  <option value="partnership">Partnership Opportunities</option>
-                  <option value="press">Press/Media</option>
-                  <option value="careers">Careers</option>
-                  <option value="feedback">Feedback</option>
-                </select>
-              </div>
-
-              <div class="form-group">
-                <label for="message">Message *</label>
-                <textarea
-                  id="message"
-                  name="message"
-                  required
-                  rows="6"
-                  placeholder="Tell us how we can help you..."
-                ></textarea>
-              </div>
-
-              <div class="form-group checkbox-group">
-                <label class="checkbox-label">
-                  <input type="checkbox" name="newsletter" id="newsletter" />
-                  <span class="checkmark"></span>
-                  Subscribe to our newsletter for updates and insights
-                </label>
-              </div>
-
-              <button type="submit" class="btn-primary form-submit">
-                Send Message
-                <i data-lucide="send"></i>
-              </button>
-            </form>
-          </div>
-
-          <div class="contact-info">
-            <div class="contact-info-card">
-              <div class="contact-info-icon">
-                <i data-lucide="crown"></i>
-              </div>
-              <h3>Direct to the CEO</h3>
-              <p>
-                You deal directly with the Founder &amp; CEO — the engineer who
-                actually builds your product. No middlemen, no delays.
-              </p>
-              <a href="mailto:jslfastline58@gmail.com" class="contact-link">
-                jslfastline58@gmail.com
-              </a>
-            </div>
-
-            <div class="contact-info-card">
-              <div class="contact-info-icon">
-                <i data-lucide="message-circle"></i>
-              </div>
-              <h3>WhatsApp</h3>
-              <p>
-                The fastest way to reach us. Chat directly with the CEO about
-                your project or idea.
-              </p>
-              <a
-                href="https://wa.me/255718573799?text=Hello%20FastLine%20Technologies"
-                target="_blank"
-                rel="noopener"
-                class="contact-link"
-              >
-                0718 573 799 · Open WhatsApp
-              </a>
-            </div>
-
-            <div class="contact-info-card">
-              <div class="contact-info-icon">
-                <i data-lucide="map-pin"></i>
-              </div>
-              <h3>Based In</h3>
-              <p>
-                Proudly Tanzanian — delivering software products for clients and
-                communities worldwide.
-              </p>
-              <span class="contact-link">Tanzania · fastline.co.tz</span>
-            </div>
-          </div>
+        <div class="section-head reveal">
+          <span class="eyebrow">FastLine Technologies</span>
+          <h2 class="h-large">Where to Find Us</h2>
         </div>
-      </div>
-    </section>
-
-    <!-- ===== LOCATION ===== -->
-    <section class="offices-section">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Where to Find Us</h2>
-          <p class="section-subtitle">
-            Proudly based in Tanzania, building for the world
-          </p>
-        </div>
-
         <div class="offices-grid">
-          <div class="office-card reveal">
-            <div class="office-image" style="background: linear-gradient(135deg, var(--primary), var(--secondary));">
-              <div class="office-placeholder" style="color: #fff;">
-                <i data-lucide="map-pin"></i>
-              </div>
-            </div>
-            <div class="office-content">
-              <h3>FastLine Technologies</h3>
-              <p class="office-type">Headquarters &amp; Development</p>
-              <address>
-                Dar es Salaam, Tanzania<br />
-                Serving clients worldwide
-              </address>
-              <div class="office-contact">
-                <div class="office-phone">
-                  <i data-lucide="phone"></i>
-                  +255 718 573 799
-                </div>
-                <div class="office-email">
-                  <i data-lucide="mail"></i>
-                  jslfastline58@gmail.com
-                </div>
-              </div>
+          <div class="office-card reveal" data-d="0">
+            <span class="k"><i data-lucide="map-pin"></i> Headquarters</span>
+            <h3>FastLine Technologies</h3>
+            <address>
+              <strong>Dar es Salaam, Tanzania</strong><br />
+              Serving clients worldwide
+            </address>
+            <div class="office-links">
+              <a href="tel:+255718573799"><i data-lucide="phone"></i> +255 718 573 799</a>
+              <a href="mailto:jslfastline58@gmail.com"><i data-lucide="mail"></i> jslfastline58@gmail.com</a>
             </div>
           </div>
-
-          <div class="office-card reveal" style="transition-delay: 100ms">
-            <div class="office-image" style="background: linear-gradient(135deg, #25D366, #128C7E);">
-              <div class="office-placeholder" style="color: #fff;">
-                <i data-lucide="message-circle"></i>
-              </div>
-            </div>
-            <div class="office-content">
-              <h3>WhatsApp</h3>
-              <p class="office-type">Fastest Response Channel</p>
-              <address>
-                0718 573 799<br />
-                Reply within hours
-              </address>
-              <div class="office-contact">
-                <div class="office-phone">
-                  <i data-lucide="message-circle"></i>
-                  0718 573 799
-                </div>
-                <div class="office-email">
-                  <i data-lucide="arrow-up-right"></i>
-                  <a href="https://wa.me/255718573799" target="_blank" rel="noopener" class="contact-link">Open WhatsApp</a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="office-card reveal" style="transition-delay: 200ms">
-            <div class="office-image" style="background: linear-gradient(135deg, #0A84FF, #A855F7);">
-              <div class="office-placeholder" style="color: #fff;">
-                <i data-lucide="mail"></i>
-              </div>
-            </div>
-            <div class="office-content">
-              <h3>Email</h3>
-              <p class="office-type">Direct to the CEO</p>
-              <address>
-                jslfastline58@gmail.com<br />
-                Personal response expected
-              </address>
-              <div class="office-contact">
-                <div class="office-phone">
-                  <i data-lucide="mail"></i>
-                  jslfastline58@gmail.com
-                </div>
-                <div class="office-email" style="display: none;">&nbsp;</div>
-              </div>
+          <div class="office-card reveal" data-d="1">
+            <span class="k"><i data-lucide="message-circle"></i> Fastest Response</span>
+            <h3>WhatsApp</h3>
+            <address>
+              <strong>0718 573 799</strong><br />
+              Reply within hours
+            </address>
+            <div class="office-links">
+              <a href="https://wa.me/255718573799?text=Hello%20FastLine%20Technologies" target="_blank" rel="noopener"><i data-lucide="send"></i> Open WhatsApp Chat</a>
+              <a href="https://x.com/jslfastline" target="_blank" rel="noopener"><i data-lucide="at-sign"></i> @jslfastline on X</a>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ===== FAQ SECTION ===== -->
-    <section class="faq-section">
+    <section class="p-cta">
       <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Frequently Asked Questions</h2>
-          <p class="section-subtitle">Quick answers to common questions</p>
-        </div>
-
-        <div class="faq-grid">
-          <div class="faq-item reveal">
-            <div class="faq-question">
-              <h3>How do I start a project with FastLine Technologies?</h3>
-              <button class="faq-toggle">
-                <i data-lucide="chevron-down"></i>
-              </button>
-            </div>
-            <div class="faq-answer">
-              <p>
-                Getting started is easy! Reach out to the CEO directly by email
-                at jslfastline58@gmail.com or via WhatsApp at 0718 573 799. Share
-                your idea, and you'll get a clear plan, timeline and quote —
-                then we build it together.
-              </p>
-            </div>
-          </div>
-
-          <div class="faq-item reveal" style="transition-delay: 100ms">
-            <div class="faq-question">
-              <h3>What makes JSL FastLine different from other platforms?</h3>
-              <button class="faq-toggle">
-                <i data-lucide="chevron-down"></i>
-              </button>
-            </div>
-            <div class="faq-answer">
-              <p>
-                JSL FastLine is the world's first truly offline-first platform,
-                designed specifically for areas with limited or no internet
-                connectivity. Our distributed architecture ensures your data and
-                applications work seamlessly, regardless of network conditions.
-              </p>
-            </div>
-          </div>
-
-          <div class="faq-item reveal" style="transition-delay: 200ms">
-            <div class="faq-question">
-              <h3>Do you offer enterprise solutions?</h3>
-              <button class="faq-toggle">
-                <i data-lucide="chevron-down"></i>
-              </button>
-            </div>
-            <div class="faq-answer">
-              <p>
-                Yes! We offer comprehensive enterprise solutions including
-                custom deployments, dedicated support, advanced security
-                features, and integration with existing systems. Contact our
-                business team to discuss your specific requirements.
-              </p>
-            </div>
-          </div>
-
-          <div class="faq-item reveal" style="transition-delay: 300ms">
-            <div class="faq-question">
-              <h3>How secure is my data on JSL FastLine?</h3>
-              <button class="faq-toggle">
-                <i data-lucide="chevron-down"></i>
-              </button>
-            </div>
-            <div class="faq-answer">
-              <p>
-                Security is our top priority. We use end-to-end encryption,
-                zero-trust architecture, and distributed security protocols to
-                ensure your data remains private and secure. All data is
-                encrypted at rest and in transit, with no centralized points of
-                failure.
-              </p>
-            </div>
-          </div>
+        <h2>Start the conversation today.</h2>
+        <p>From campus systems to full platforms — ideas become products when you start.</p>
+        <div class="hero__actions">
+          <a href="https://wa.me/255718573799?text=Hello%20FastLine%20Technologies" target="_blank" rel="noopener" class="btn btn--primary">Chat on WhatsApp <i data-lucide="arrow-right"></i></a>
+          <a href="/#projects" class="btn btn--ghost">Explore Projects</a>
         </div>
       </div>
     </section>
 
-    <!-- ===== CTA SECTION ===== -->
-    <section class="contact-cta">
+    <footer>
       <div class="container">
-        <div class="cta-content">
-          <h2>Ready to Build Something Great?</h2>
-          <p>
-            Start a conversation with FastLine Technologies today — your idea
-            could be our next flagship product.
-          </p>
-          <div class="cta-actions">
-            <a
-              href="mailto:jslfastline58@gmail.com?subject=Project%20Inquiry%20%7C%20FastLine%20Technologies"
-              class="btn-primary"
-            >
-              Email the CEO
-              <i data-lucide="arrow-right"></i>
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <a href="/" class="brand" aria-label="FastLine Technologies">
+              <span class="brand__mark"><img src="RoundIcon.png" alt="" referrerpolicy="no-referrer" loading="lazy" /></span>
+              <span class="brand__txt"><span class="brand__name">FastLine Technologies</span></span>
             </a>
-            <a href="index.html#projects" class="btn-secondary">
-              View Our Projects
-            </a>
+            <p>Technology · Innovation · Digital Systems. Fast Connections, Smart Future.</p>
+            <span class="sig">Founded &amp; Engineered by Jay Bros</span>
+          </div>
+          <div>
+            <h5>Products</h5>
+            <ul>
+              <li><a href="/projects/femos">FeMOS</a></li>
+              <li><a href="/projects/neo-smartcore">Neo SmartCore</a></li>
+              <li><a href="/projects/fit">FIT</a></li>
+              <li><a href="/projects/jsl-fastline">JSL FastLine</a></li>
+            </ul>
+          </div>
+          <div>
+            <h5>Explore</h5>
+            <ul>
+              <li><a href="/#projects">Projects</a></li>
+              <li><a href="/#lab">Innovation Lab</a></li>
+              <li><a href="/#media">Media</a></li>
+              <li><a href="/#next">What's Next</a></li>
+              <li><a href="/about">Company Story</a></li>
+            </ul>
+          </div>
+          <div>
+            <h5>Legal</h5>
+            <ul>
+              <li><a href="/privacy">Privacy Policy</a></li>
+              <li><a href="/terms">Terms of Service</a></li>
+              <li><a href="/security">Security</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2026 FastLine Technologies · fastline.co.tz</p>
+          <div class="footer-socials">
+            <a href="https://x.com/jslfastline" target="_blank" rel="noopener" aria-label="X (Twitter)"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231-5.614 0zM16.083 19.77h1.833L7.084 4.126H5.117l10.966 15.644z"/></svg></a>
+            <a href="https://github.com/jslfastline" target="_blank" rel="noopener" aria-label="GitHub"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.39.6.11.82-.26.82-.58 0-.28-.01-1.04-.02-2.04-3.34.73-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.09-.75.08-.74.08-.74 1.2.09 1.84 1.24 1.84 1.24 1.07 1.83 2.81 1.3 3.5.99.1-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.13-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.3-1.55 3.3-1.23 3.3-1.23.66 1.66.25 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.6-2.8 5.63-5.48 5.92.43.37.82 1.1.82 2.22 0 1.6-.01 2.9-.01 3.29 0 .32.21.7.82.58A12 12 0 0 0 24 12C24 5.37 18.63 0 12 0Z"/></svg></a>
+            <a href="https://www.linkedin.com/feed/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.4v1.56h.05c.47-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45z"/></svg></a>
           </div>
         </div>
       </div>
-    </section>
+    </footer>
 
-    <script src="script.js"></script>
+    <a id="fab" href="https://wa.me/255718573799?text=Hello%20FastLine%20Technologies" target="_blank" rel="noopener" aria-label="Chat on WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.16-.17.2-.35.22-.64.08-.3-.15-1.26-.47-2.4-1.48-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.6.13-.14.3-.35.44-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.5 0 1.47 1.07 2.9 1.22 3.1.15.2 2.1 3.2 5.09 4.49.71.3 1.27.49 1.7.63.72.23 1.37.2 1.88.12.58-.09 1.76-.72 2-1.42.25-.7.25-1.3.18-1.42-.08-.13-.28-.2-.58-.35zM12.05 21.79h-.01a9.7 9.7 0 0 1-4.94-1.35l-.36-.21-3.66.96.98-3.57-.24-.37a9.69 9.69 0 0 1-1.48-5.18c0-5.35 4.35-9.7 9.71-9.7a9.65 9.65 0 0 1 9.7 9.7c0 5.36-4.35 9.71-9.7 9.71zm8.14-17.85A11.66 11.66 0 0 0 12.05 0C5.5 0 .15 5.35.15 11.92c0 2.1.55 4.15 1.59 5.95L.07 24l6.3-1.65a11.9 11.9 0 0 0 5.68 1.45h.01c6.55 0 11.9-5.35 11.9-11.92 0-3.18-1.24-6.17-3.49-8.42z"/></svg></a>
+
+    <script>
+      document.getElementById('contactForm').addEventListener('submit', function (e) {
+        e.preventDefault();
+        const name = this.name.value.trim();
+        const email = this.email.value.trim();
+        const subject = this.subject.value || 'Project Inquiry';
+        const message = this.message.value.trim();
+        const text = 'Hello FastLine Technologies,\n\nSubject: ' + subject +
+          '\nName: ' + name + '\nEmail: ' + email +
+          '\n\n' + message;
+        window.open('https://wa.me/255718573799?text=' + encodeURIComponent(text), '_blank', 'noopener');
+      });
+    </script>
+    <script src="data/projects.js"></script>
+    <script src="site.js?v=202617"></script>
   </body>
 </html>
