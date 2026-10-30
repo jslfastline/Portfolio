@@ -433,7 +433,7 @@
           if (p.x > w + 10) p.x = -10;
           ctx.beginPath();
           ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-          ctx.fillStyle = 'rgba(56,189,248,0.5)';
+          ctx.fillStyle = 'rgba(15,118,110,0.5)';
           ctx.fill();
           for (var j = i + 1; j < particles.length; j++) {
             var q = particles[j];
@@ -443,7 +443,7 @@
               ctx.beginPath();
               ctx.moveTo(p.x, p.y);
               ctx.lineTo(q.x, q.y);
-              ctx.strokeStyle = 'rgba(56,189,248,' + (0.18 * (1 - Math.sqrt(d2) / lineDist)).toFixed(3) + ')';
+              ctx.strokeStyle = 'rgba(15,118,110,' + (0.18 * (1 - Math.sqrt(d2) / lineDist)).toFixed(3) + ')';
               ctx.lineWidth = 1;
               ctx.stroke();
             }
