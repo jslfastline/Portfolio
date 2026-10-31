@@ -31,10 +31,9 @@
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png" />
     <link rel="icon" type="image/png" sizes="192x192" href="favicon-192.png" />
     <link rel="apple-touch-icon" href="apple-touch-icon.png" />
-    <script src="https://unpkg.com/lucide@latest"></script>
     <link rel="preload" as="font" type="font/woff2" href="assets/fonts/sora-700-v2.woff2" crossorigin />
     <link rel="preload" as="font" type="font/woff2" href="assets/fonts/inter-400-v2.woff2" crossorigin />
-    <link rel="stylesheet" href="site.css?v=202623" />
+    <link rel="stylesheet" href="site.css?v=202624" />
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -62,7 +61,6 @@
   </head>
   <body>
     <div id="progress"></div>
-    <div id="cursor-glow" aria-hidden="true"></div>
 
     <!-- ================= NAVBAR ================= -->
     <nav id="navbar" aria-label="Primary">
@@ -111,17 +109,14 @@
         </div>
       </div>
 
-      <a href="#builder" class="hero__scroll">
-        <span class="cue" aria-hidden="true"></span>
-        Scroll
-      </a>
+      <a href="#builder" class="hero__scroll">Scroll</a>
     </header>
 
     <!-- ================= MARQUEE ================= -->
     <div class="marquee" aria-hidden="true">
       <div class="marquee__track">
-        <span>Web Systems<i data-lucide="globe"></i></span><span>Desktop &amp; OS<i data-lucide="monitor"></i></span><span>Mobile Platforms<i data-lucide="smartphone"></i></span><span>AI &amp; Automation<i data-lucide="cpu"></i></span><span>Enterprise Systems<i data-lucide="server"></i></span><span>Identity Technology<i data-lucide="scan-qr"></i></span><span>Networking<i data-lucide="radio"></i></span><span>Digital Products<i data-lucide="package"></i></span><span>Emerging Tech<i data-lucide="sparkles"></i></span>
-        <span>Web Systems<i data-lucide="globe"></i></span><span>Desktop &amp; OS<i data-lucide="monitor"></i></span><span>Mobile Platforms<i data-lucide="smartphone"></i></span><span>AI &amp; Automation<i data-lucide="cpu"></i></span><span>Enterprise Systems<i data-lucide="server"></i></span><span>Identity Technology<i data-lucide="scan-qr"></i></span><span>Networking<i data-lucide="radio"></i></span><span>Digital Products<i data-lucide="package"></i></span><span>Emerging Tech<i data-lucide="sparkles"></i></span>
+        <span>Web Systems</span><span>Desktop &amp; OS</span><span>Mobile Platforms</span><span>AI &amp; Automation</span><span>Enterprise Systems</span><span>Identity Technology</span><span>Networking</span><span>Digital Products</span><span>Emerging Tech</span>
+        <span>Web Systems</span><span>Desktop &amp; OS</span><span>Mobile Platforms</span><span>AI &amp; Automation</span><span>Enterprise Systems</span><span>Identity Technology</span><span>Networking</span><span>Digital Products</span><span>Emerging Tech</span>
       </div>
     </div>
 
@@ -137,15 +132,14 @@
             <div class="builder-photo__frame">
               <img src="C.E.O FastLine.png" alt="Jay Bros — Founder & Software Engineer" referrerpolicy="no-referrer" loading="lazy" />
             </div>
-            <div class="builder-photo__ring" aria-hidden="true"></div>
             <div class="builder-photo__label">
-              <p class="n">Jay Bros</p>
+              <p class="n"><span class="jay-bros">Jay Bros</span></p>
               <p class="r">Founder · Engineer · Innovator</p>
             </div>
           </div>
           <div class="reveal" data-d="2">
             <div class="builder-name">
-              <h2 class="h-large">Jay Bros</h2>
+              <h2 class="h-large"><span class="jay-bros">Jay Bros</span></h2>
               <span class="flag">The Person Behind the Brand</span>
             </div>
             <p class="builder-role">Founder · Software Engineer · Innovator</p>
@@ -174,7 +168,7 @@
                 <li>Emerging Technology</li>
               </ul>
             </div>
-            <a href="#universe" class="btn btn--line">Explore the Journey <i data-lucide="arrow-down-right"></i></a>
+            <a href="#universe" class="btn btn--line">Explore the Journey </a>
           </div>
         </div>
       </div>
@@ -182,7 +176,6 @@
 
     <!-- ================= THE VISION ================= -->
     <section id="vision" class="section" style="background: var(--bg-1); border-block: 1px solid var(--line-soft); overflow: hidden; position: relative;">
-      <canvas id="vision-canvas" aria-hidden="true"></canvas>
       <div class="container" style="position: relative; z-index: 2;">
         <div class="vision-layout">
           <div class="reveal">
@@ -214,37 +207,37 @@
         </div>
         <div class="services-grid reveal" data-d="1">
           <article class="service">
-            <div class="service__top"><span class="service__icon"><i data-lucide="globe"></i></span><span class="service__num">01</span></div>
+            <div class="service__top"><span class="service__num">01</span></div>
             <h3>Web Systems</h3>
             <p>Fast, resilient websites, platforms and dashboards built for clarity, scale and daily use.</p>
             <span class="service__meta">Web · Platform</span>
           </article>
           <article class="service">
-            <div class="service__top"><span class="service__icon"><i data-lucide="monitor"></i></span><span class="service__num">02</span></div>
+            <div class="service__top"><span class="service__num">02</span></div>
             <h3>Software &amp; Desktop</h3>
             <p>Purpose-built applications and tools that turn operational friction into clean, reliable workflows.</p>
             <span class="service__meta">Software · Desktop</span>
           </article>
           <article class="service">
-            <div class="service__top"><span class="service__icon"><i data-lucide="smartphone"></i></span><span class="service__num">03</span></div>
+            <div class="service__top"><span class="service__num">03</span></div>
             <h3>Mobile Applications</h3>
             <p>Responsive mobile experiences and installable apps that stay usable on real networks and real devices.</p>
             <span class="service__meta">Mobile · PWA</span>
           </article>
           <article class="service">
-            <div class="service__top"><span class="service__icon"><i data-lucide="cpu"></i></span><span class="service__num">04</span></div>
+            <div class="service__top"><span class="service__num">04</span></div>
             <h3>AI &amp; Automation</h3>
             <p>Intelligent assistants and automation that reduce repetition and support better decisions.</p>
             <span class="service__meta">AI · Automation</span>
           </article>
           <article class="service">
-            <div class="service__top"><span class="service__icon"><i data-lucide="scan-qr"></i></span><span class="service__num">05</span></div>
+            <div class="service__top"><span class="service__num">05</span></div>
             <h3>Enterprise &amp; Identity</h3>
             <p>Unified systems, attendance and identification tools designed around trust and verification.</p>
             <span class="service__meta">Enterprise · Identity</span>
           </article>
           <article class="service">
-            <div class="service__top"><span class="service__icon"><i data-lucide="radio"></i></span><span class="service__num">06</span></div>
+            <div class="service__top"><span class="service__num">06</span></div>
             <h3>Networking &amp; Emerging Tech</h3>
             <p>Connectivity, infrastructure and early exploration of the technologies shaping what comes next.</p>
             <span class="service__meta">Network · Emerging</span>
@@ -265,11 +258,7 @@
         <div class="uni">
           <!-- Core hub -->
           <aside class="uni-core reveal" aria-labelledby="uni-core-title">
-            <span class="uni-core__grid" aria-hidden="true"></span>
-            <span class="uni-core__orb" aria-hidden="true"></span>
-
             <div class="uni-core__top">
-              <span class="uni-core__mark" aria-hidden="true">FL</span>
               <span class="uni-core__brand">FastLine Technologies</span>
             </div>
 
@@ -289,7 +278,7 @@
 
             <a class="uni-core__cta" href="#lab">
               <span>Explore the Innovation Lab</span>
-              <i data-lucide="arrow-down-right" aria-hidden="true"></i>
+
             </a>
           </aside>
 
@@ -297,13 +286,12 @@
           <div class="uni-products reveal" data-d="1">
             <div class="uni-products__head">
               <span class="uni-kicker">Products &amp; platforms</span>
-              <span class="uni-products__count" aria-hidden="true">04</span>
             </div>
 
             <div class="uni-grid">
               <a class="uni-product" href="projects/femos.html">
                 <span class="uni-product__top">
-                  <span class="uni-product__icon"><i data-lucide="scan-qr" aria-hidden="true"></i></span>
+
                   <span class="uni-status uni-status--dev">In Development</span>
                 </span>
                 <span class="uni-product__body">
@@ -311,12 +299,12 @@
                   <span class="uni-product__name">FeMOS</span>
                   <span class="uni-product__desc">Smart attendance, announcements and a permanent student identity — one campus system that keeps working offline.</span>
                 </span>
-                <span class="uni-product__link">Explore <i data-lucide="arrow-right" aria-hidden="true"></i></span>
+                <span class="uni-product__link">Explore </span>
               </a>
 
               <a class="uni-product" href="projects/neo-smartcore.html">
                 <span class="uni-product__top">
-                  <span class="uni-product__icon"><i data-lucide="cpu" aria-hidden="true"></i></span>
+
                   <span class="uni-status uni-status--proto">Prototype</span>
                 </span>
                 <span class="uni-product__body">
@@ -324,12 +312,12 @@
                   <span class="uni-product__name">Neo SmartCore</span>
                   <span class="uni-product__desc">An intelligence core for business operations — visibility, stock monitoring and daily reporting in one place.</span>
                 </span>
-                <span class="uni-product__link">Explore <i data-lucide="arrow-right" aria-hidden="true"></i></span>
+                <span class="uni-product__link">Explore </span>
               </a>
 
               <a class="uni-product" href="projects/fit.html">
                 <span class="uni-product__top">
-                  <span class="uni-product__icon"><i data-lucide="badge-check" aria-hidden="true"></i></span>
+
                   <span class="uni-status uni-status--concept">Concept</span>
                 </span>
                 <span class="uni-product__body">
@@ -337,12 +325,12 @@
                   <span class="uni-product__name">FIT</span>
                   <span class="uni-product__desc">Digital identity and device interaction — attendance and verification through QR and NFC workflows.</span>
                 </span>
-                <span class="uni-product__link">Explore <i data-lucide="arrow-right" aria-hidden="true"></i></span>
+                <span class="uni-product__link">Explore </span>
               </a>
 
               <a class="uni-product" href="projects/jsl-fastline.html">
                 <span class="uni-product__top">
-                  <span class="uni-product__icon"><i data-lucide="globe" aria-hidden="true"></i></span>
+
                   <span class="uni-status uni-status--concept">Concept</span>
                 </span>
                 <span class="uni-product__body">
@@ -350,7 +338,7 @@
                   <span class="uni-product__name">JSL FastLine</span>
                   <span class="uni-product__desc">A social and growth platform designed from the offline up — built for real handsets, data costs and zero signal.</span>
                 </span>
-                <span class="uni-product__link">Explore <i data-lucide="arrow-right" aria-hidden="true"></i></span>
+                <span class="uni-product__link">Explore </span>
               </a>
             </div>
           </div>
@@ -363,13 +351,13 @@
               <span class="uni-kicker">Research &amp; experiments</span>
               <h3>What we are exploring next</h3>
             </div>
-            <a class="uni-research__cta" href="#lab">Innovation Lab <i data-lucide="arrow-right" aria-hidden="true"></i></a>
+            <a class="uni-research__cta" href="#lab">Innovation Lab </a>
           </div>
 
           <ul class="uni-themes">
             <li>
               <a href="#lab">
-                <span class="uni-theme__icon"><i data-lucide="brain-circuit" aria-hidden="true"></i></span>
+
                 <span class="uni-theme__text">
                   <span class="uni-theme__name">AI systems</span>
                   <span class="uni-theme__desc">Intelligence with a real job to do.</span>
@@ -378,7 +366,7 @@
             </li>
             <li>
               <a href="#lab">
-                <span class="uni-theme__icon"><i data-lucide="radio" aria-hidden="true"></i></span>
+
                 <span class="uni-theme__text">
                   <span class="uni-theme__name">Connected technology</span>
                   <span class="uni-theme__desc">Networks that work with or without the internet.</span>
@@ -387,7 +375,7 @@
             </li>
             <li>
               <a href="#lab">
-                <span class="uni-theme__icon"><i data-lucide="wifi-off" aria-hidden="true"></i></span>
+
                 <span class="uni-theme__text">
                   <span class="uni-theme__name">Low-connectivity systems</span>
                   <span class="uni-theme__desc">Functionality first, connection as an upgrade.</span>
@@ -396,7 +384,7 @@
             </li>
             <li>
               <a href="#lab">
-                <span class="uni-theme__icon"><i data-lucide="workflow" aria-hidden="true"></i></span>
+
                 <span class="uni-theme__text">
                   <span class="uni-theme__name">Automation</span>
                   <span class="uni-theme__desc">Routine handled by systems, judgement kept by people.</span>
@@ -405,7 +393,7 @@
             </li>
             <li>
               <a href="#lab">
-                <span class="uni-theme__icon"><i data-lucide="scan-qr" aria-hidden="true"></i></span>
+
                 <span class="uni-theme__text">
                   <span class="uni-theme__name">Digital identity</span>
                   <span class="uni-theme__desc">Portable identity reused across the ecosystem.</span>
@@ -452,9 +440,9 @@
                 <span>PWA</span><span>Node.js</span><span>PostgreSQL</span><span>Redis</span><span>WebSockets</span><span>IndexedDB</span>
               </div>
               <div class="project__actions">
-                <a href="/projects/femos" class="btn btn--primary">Explore FeMOS <i data-lucide="arrow-right"></i></a>
+                <a href="/projects/femos" class="btn btn--primary">Explore FeMOS </a>
               </div>
-              <p class="project__note"><i data-lucide="info"></i> Pilot universities: MUST · UDSM · UDOM</p>
+              <p class="project__note"> Pilot universities: MUST · UDSM · UDOM</p>
             </div>
           </article>
 
@@ -486,9 +474,9 @@
                 <span>AI Engine</span><span>Automation</span><span>Core Engine</span><span>Data Intelligence</span>
               </div>
               <div class="project__actions">
-                <a href="/projects/neo-smartcore" class="btn btn--primary">Explore Neo SmartCore <i data-lucide="arrow-right"></i></a>
+                <a href="/projects/neo-smartcore" class="btn btn--primary">Explore Neo SmartCore </a>
               </div>
-              <p class="project__note"><i data-lucide="info"></i> Reusable core engine — designed to plug into any application</p>
+              <p class="project__note"> Reusable core engine — designed to plug into any application</p>
             </div>
           </article>
 
@@ -534,9 +522,9 @@
                 <span>Digital Identity</span><span>QR Verif</span><span>Device Interaction</span>
               </div>
               <div class="project__actions">
-                <a href="/projects/fit" class="btn btn--primary">Explore FIT <i data-lucide="arrow-right"></i></a>
+                <a href="/projects/fit" class="btn btn--primary">Explore FIT </a>
               </div>
-              <p class="project__note"><i data-lucide="info"></i> Concept — early architecture, not yet a released product</p>
+              <p class="project__note"> Concept — early architecture, not yet a released product</p>
             </div>
           </article>
 
@@ -563,9 +551,9 @@
                 <span>React Native</span><span>Expo</span><span>TypeScript</span><span>WatermelonDB</span><span>TensorFlow Lite</span>
               </div>
               <div class="project__actions">
-                <a href="/projects/jsl-fastline" class="btn btn--primary">Explore the Vision <i data-lucide="arrow-right"></i></a>
+                <a href="/projects/jsl-fastline" class="btn btn--primary">Explore the Vision </a>
               </div>
-              <p class="project__note"><i data-lucide="info"></i> Proposal v1.0 — complete architecture, entering build phase</p>
+              <p class="project__note"> Proposal v1.0 — complete architecture, entering build phase</p>
             </div>
           </article>
 
@@ -596,7 +584,6 @@
         </div>
         <div class="rhythm-grid">
           <div class="player reveal" data-d="1">
-            <div class="player__glow"></div>
             <div class="player__top">
               <div class="player__title">FastLine Sonic Identity<small>Brand · Sound · Motion</small></div>
               <span class="player__status" id="rhythm-status">Prep</span>
@@ -613,21 +600,16 @@
               </div>
             </div>
             <div class="player__foot">
-              <div class="vol"><i data-lucide="volume-2"></i><span class="meter"><i></i></span></div>
+              <div class="vol"><span class="meter"><i></i></span></div>
               <span class="player__note" id="rhythm-note">Recording in progress — the track will land here.</span>
             </div>
           </div>
           <audio id="rhythm-audio" preload="none" src="https://res.cloudinary.com/dlv2esvfc/video/upload/v1790961348/Fast_Connections_azajr0.mp3"></audio>
           <div class="outro-card reveal" data-d="2">
-            <div class="flame"></div>
             <span class="eyebrow" style="margin-bottom: 16px;">The Signal</span>
             <h3>SEE THE SIGNAL</h3>
             <p>A visual and sonic signature for FastLine Technologies — the brand motion you'll recognise across the universe.</p>
-            <div class="outro-signal" aria-hidden="true">
-              <span class="ring"></span><span class="ring r2"></span><span class="ring r3"></span>
-              <span class="mark">FL</span>
-            </div>
-            <button class="btn btn--ghost" data-video="https://res.cloudinary.com/dlv2esvfc/video/upload/v1790956219/Technology_brand_film_loop_20261002184452_ytncv8.mp4">Watch the Outro <i data-lucide="clapperboard"></i></button>
+            <button class="btn btn--ghost" data-video="https://res.cloudinary.com/dlv2esvfc/video/upload/v1790956219/Technology_brand_film_loop_20261002184452_ytncv8.mp4">Watch the Outro </button>
           </div>
         </div>
       </div>
@@ -643,27 +625,27 @@
         </div>
         <div class="lab-grid">
           <div class="lab-item reveal">
-            <div class="lab-item__top"><span class="lab-item__icon"><i data-lucide="brain-circuit"></i></span><span class="st st-research">Research</span></div>
+            <div class="lab-item__top"><span class="st st-research">Research</span></div>
             <div><h3>AI Systems</h3><p>Practical intelligence applied to real workflows — not decorative AI, but models with a job to do.</p></div>
           </div>
           <div class="lab-item reveal" data-d="1">
-            <div class="lab-item__top"><span class="lab-item__icon"><i data-lucide="radio"></i></span><span class="st st-experiment">Experiment</span></div>
+            <div class="lab-item__top"><span class="st st-experiment">Experiment</span></div>
             <div><h3>Connected Technology</h3><p>Networks and devices that talk to each other, including in places where the internet is absent.</p></div>
           </div>
           <div class="lab-item reveal" data-d="2">
-            <div class="lab-item__top"><span class="lab-item__icon"><i data-lucide="wifi-off"></i></span><span class="st st-experiment">Experiment</span></div>
+            <div class="lab-item__top"><span class="st st-experiment">Experiment</span></div>
             <div><h3>Low-Connectivity Systems</h3><p>Software engineered from the offline up — functionality first, connection as an upgrade.</p></div>
           </div>
           <div class="lab-item reveal" data-d="1">
-            <div class="lab-item__top"><span class="lab-item__icon"><i data-lucide="zap"></i></span><span class="st st-proto">Prototype</span></div>
+            <div class="lab-item__top"><span class="st st-proto">Prototype</span></div>
             <div><h3>Automation</h3><p>Turning repetitive operations into systems that run themselves and flag only what matters.</p></div>
           </div>
           <div class="lab-item reveal" data-d="2">
-            <div class="lab-item__top"><span class="lab-item__icon"><i data-lucide="scan-qr"></i></span><span class="st st-proto">Prototype</span></div>
+            <div class="lab-item__top"><span class="st st-proto">Prototype</span></div>
             <div><h3>Digital Identity</h3><p>Portable, verifiable identity — the layer that makes attendance, access and trust work.</p></div>
           </div>
           <div class="lab-item reveal" data-d="3">
-            <div class="lab-item__top"><span class="lab-item__icon"><i data-lucide="smart-device"></i></span><span class="st st-dev">In Dev</span></div>
+            <div class="lab-item__top"><span class="st st-dev">In Dev</span></div>
             <div><h3>Smart Devices</h3><p>Hardware-adjacent experiments: device interaction, proximity and physical-world endpoints.</p></div>
           </div>
         </div>
@@ -680,12 +662,12 @@
             <p class="lead">Exploration continues quietly in several directions. What appears here is honest scope — not announced hype.</p>
           </div>
           <div class="next-list">
-            <div class="next-item reveal"><span class="next-item__l"><i data-lucide="layout-grid"></i><span><h4>Intelligent Business Systems</h4><p>Operations, reporting and control for real businesses.</p></span></span><span class="mark">Exploring</span></div>
-            <div class="next-item reveal" data-d="1"><span class="next-item__l"><i data-lucide="badge-check"></i><span><h4>Connected Identity</h4><p>One verifiable identity across every FastLine surface.</p></span></span><span class="mark">Exploring</span></div>
-            <div class="next-item reveal" data-d="2"><span class="next-item__l"><i data-lucide="wand-2"></i><span><h4>AI-Powered Tools</h4><p>Helpful intelligence inside the products people already use.</p></span></span><span class="mark">Building</span></div>
-            <div class="next-item reveal" data-d="3"><span class="next-item__l"><i data-lucide="signal"></i><span><h4>Low-Connectivity Platforms</h4><p>Software that serves people the internet forgets.</p></span></span><span class="mark">Core Focus</span></div>
-            <div class="next-item reveal" data-d="4"><span class="next-item__l"><i data-lucide="cpu"></i><span><h4>Smart Devices</h4><p>Where software meets the physical world.</p></span></span><span class="mark">Tinkering</span></div>
-            <div class="next-item reveal" data-d="5"><span class="next-item__l"><i data-lucide="workflow"></i><span><h4>Automation</h4><p>Systems that handle the routine so people keep the judgement.</p></span></span><span class="mark">Exploring</span></div>
+            <div class="next-item reveal"><span class="next-item__l"><span><h4>Intelligent Business Systems</h4><p>Operations, reporting and control for real businesses.</p></span></span><span class="mark">Exploring</span></div>
+            <div class="next-item reveal" data-d="1"><span class="next-item__l"><span><h4>Connected Identity</h4><p>One verifiable identity across every FastLine surface.</p></span></span><span class="mark">Exploring</span></div>
+            <div class="next-item reveal" data-d="2"><span class="next-item__l"><span><h4>AI-Powered Tools</h4><p>Helpful intelligence inside the products people already use.</p></span></span><span class="mark">Building</span></div>
+            <div class="next-item reveal" data-d="3"><span class="next-item__l"><span><h4>Low-Connectivity Platforms</h4><p>Software that serves people the internet forgets.</p></span></span><span class="mark">Core Focus</span></div>
+            <div class="next-item reveal" data-d="4"><span class="next-item__l"><span><h4>Smart Devices</h4><p>Where software meets the physical world.</p></span></span><span class="mark">Tinkering</span></div>
+            <div class="next-item reveal" data-d="5"><span class="next-item__l"><span><h4>Automation</h4><p>Systems that handle the routine so people keep the judgement.</p></span></span><span class="mark">Exploring</span></div>
           </div>
         </div>
       </div>
@@ -695,7 +677,6 @@
     <section id="note" class="section" style="background: var(--bg-1); border-block: 1px solid var(--line-soft);">
       <div class="container">
         <div class="note-content reveal">
-          <p class="note-mark">"</p>
           <p class="note-text">
             I believe technology becomes meaningful when <em>it solves something real</em>.
             FastLine started from a simple idea: build systems that are useful today,
@@ -703,7 +684,7 @@
             of that journey.
           </p>
           <p class="note-quote">"Within Evry Human ,It Lies A Power So Vast And Mysterious That Awakens Only,When You Dare to Believe That You Can."</p>
-          <div class="note-sign"><span class="note-sign__name">Jay Bros</span><small>Founder, FastLine Technologies</small></div>
+          <div class="note-sign"><span class="note-sign__name"><span class="jay-bros">Jay Bros</span></span><small>Founder, FastLine Technologies</small></div>
         </div>
       </div>
     </section>
@@ -716,13 +697,13 @@
           <h2 class="h-large">Let's Build Something That Matters.</h2>
           <p>Have an idea, a problem or a system that needs to exist? Let's turn it into something real.</p>
           <div class="actions" style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
-            <a href="mailto:jslfastline58@gmail.com?subject=Project%20Inquiry%20%7C%20FastLine%20Technologies" class="btn btn--primary">Start a Project <i data-lucide="arrow-right"></i></a>
-            <a href="#projects" class="btn btn--ghost">Explore Projects <i data-lucide="compass"></i></a>
+            <a href="mailto:jslfastline58@gmail.com?subject=Project%20Inquiry%20%7C%20FastLine%20Technologies" class="btn btn--primary">Start a Project </a>
+            <a href="#projects" class="btn btn--ghost">Explore Projects </a>
           </div>
           <div style="display: flex; flex-wrap: wrap; gap: 14px; justify-content: center; margin-top: 44px;">
-            <a class="btn btn--line" href="mailto:jslfastline58@gmail.com?subject=Project%20Inquiry%20%7C%20FastLine%20Technologies" style="font-size: 0.8rem;">jslfastline58@gmail.com <i data-lucide="mail"></i></a>
-            <a class="btn btn--line" href="https://wa.me/255718573799?text=Hello%20FastLine%20Technologies%2C%20I%27d%20like%20to%20discuss%20a%20project." target="_blank" rel="noopener" style="font-size: 0.8rem;">WhatsApp · 0718 573 799 <i data-lucide="message-circle"></i></a>
-            <a class="btn btn--line" href="tel:+255718573799" style="font-size: 0.8rem;">+255 718 573 799 <i data-lucide="phone"></i></a>
+            <a class="btn btn--line" href="mailto:jslfastline58@gmail.com?subject=Project%20Inquiry%20%7C%20FastLine%20Technologies" style="font-size: 0.8rem;">jslfastline58@gmail.com </a>
+            <a class="btn btn--line" href="https://wa.me/255718573799?text=Hello%20FastLine%20Technologies%2C%20I%27d%20like%20to%20discuss%20a%20project." target="_blank" rel="noopener" style="font-size: 0.8rem;">WhatsApp · 0718 573 799 </a>
+            <a class="btn btn--line" href="tel:+255718573799" style="font-size: 0.8rem;">+255 718 573 799 </a>
           </div>
         </div>
       </div>
@@ -731,7 +712,6 @@
     <!-- ================= OUTRO ================= -->
     <section id="outro">
       <div class="container">
-        <div class="outro-beats" aria-hidden="true"><i></i></div>
         <p class="outro-sig">FastLine Technologies</p>
         <p class="outro-sub">Fast Connections, Smart Future.</p>
       </div>
@@ -747,7 +727,7 @@
               <span class="brand__txt"><span class="brand__name">FastLine Technologies</span></span>
             </a>
             <p>Technology · Innovation · Digital Systems. Fast Connections, Smart Future.</p>
-            <span class="sig">Founded &amp; Engineered by Jay Bros</span>
+            <span class="sig">Founded &amp; Engineered by <span class="jay-bros">Jay Bros</span></span>
           </div>
           <div>
             <h5>Products</h5>
@@ -801,16 +781,7 @@
       </div>
     </div>
 
-    <!-- ================= SIGNAL OVERLAY ================= -->
-    <div id="signal-overlay" class="hidden" aria-hidden="true">
-      <div class="signal-stage">
-        <div class="signal-ring r1"></div><div class="signal-ring r2"></div><div class="signal-ring r3"></div>
-        <p class="signal-text">FastLine Technologies</p>
-        <p class="signal-sub">Fast Connections, Smart Future.</p>
-      </div>
-    </div>
-
     <script src="data/projects.js"></script>
-    <script src="site.js?v=202623"></script>
+    <script src="site.js?v=202624"></script>
   </body>
 </html>

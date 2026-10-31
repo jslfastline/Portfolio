@@ -11,9 +11,6 @@
     'https://res.cloudinary.com/dlv2esvfc/video/upload/v1790956219/Technology_brand_film_loop_20261002184452_ytncv8.mp4';
   var BRAND_POSTER = 'assets/images/brand-poster-1920.jpg';
 
-  /* ---------- Lucide ---------- */
-  if (window.lucide) lucide.createIcons();
-
   /* ---------- Progress bar ---------- */
   var progressBar = document.getElementById('progress');
   function onScroll() {
@@ -24,27 +21,6 @@
   }
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
-
-  /* ---------- Cursor glow ---------- */
-  var glow = document.getElementById('cursor-glow');
-  if (glow && !REDUCED && window.matchMedia('(pointer:fine)').matches) {
-    var raf = null;
-    window.addEventListener('mousemove', function (e) {
-      if (raf) return;
-      raf = requestAnimationFrame(function () {
-        glow.style.transform = 'translate(' + (e.clientX - 260) + 'px,' + (e.clientY - 260) + 'px)';
-        raf = null;
-      });
-    });
-    var over = false;
-    document.addEventListener('mouseover', function (e) {
-      var tag = e.target.tagName;
-      var interact = tag === 'A' || tag === 'BUTTON' || (e.target.closest && e.target.closest('.media-item,.project__media'));
-      glow.style.opacity = interact ? 0.35 : 0;
-    });
-  } else if (glow) {
-    glow.style.display = 'none';
-  }
 
   /* ---------- Navbar ---------- */
   var navbar = document.getElementById('navbar');
@@ -295,80 +271,6 @@
     parallaxTick();
   }
 
-  /* ---------- Vision particles ---------- */
-  var canvas = document.getElementById('vision-canvas');
-  if (canvas) {
-    var ctx = canvas.getContext && canvas.getContext('2d');
-    if (ctx && !REDUCED) {
-      var DPR = Math.min(window.devicePixelRatio || 1, 2);
-      var particles = [];
-      var running = false;
-
-      function sizeCanvas() {
-        var w = canvas.parentElement.clientWidth;
-        var h = canvas.parentElement.clientHeight;
-        canvas.width = w * DPR;
-        canvas.height = h * DPR;
-        canvas.style.width = w + 'px';
-        canvas.style.height = h + 'px';
-        var density = w < 640 ? 26 : 60;
-        particles = [];
-        for (var i = 0; i < density; i++) {
-          particles.push({
-            x: Math.random() * w, y: Math.random() * h,
-            vx: (Math.random() - 0.5) * 0.25, vy: -Math.random() * 0.3 - 0.05,
-            r: Math.random() * 1.6 + 0.5
-          });
-        }
-      }
-      function frame() {
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-        ctx.save();
-        ctx.scale(DPR, DPR);
-        var w = canvas.width / DPR;
-        var h = canvas.height / DPR;
-        var lineDist = 110;
-        for (var i = 0; i < particles.length; i++) {
-          var p = particles[i];
-          p.x += p.vx; p.y += p.vy;
-          if (p.y < -10) { p.y = h + 10; p.x = Math.random() * w; }
-          if (p.x < -10) p.x = w + 10;
-          if (p.x > w + 10) p.x = -10;
-          ctx.beginPath();
-          ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-          ctx.fillStyle = 'rgba(23,69,142,0.5)';
-          ctx.fill();
-          for (var j = i + 1; j < particles.length; j++) {
-            var q = particles[j];
-            var dx = p.x - q.x, dy = p.y - q.y;
-            var d2 = dx * dx + dy * dy;
-            if (d2 < lineDist * lineDist) {
-              ctx.beginPath();
-              ctx.moveTo(p.x, p.y);
-              ctx.lineTo(q.x, q.y);
-              ctx.strokeStyle = 'rgba(23,69,142,' + (0.18 * (1 - Math.sqrt(d2) / lineDist)).toFixed(3) + ')';
-              ctx.lineWidth = 1;
-              ctx.stroke();
-            }
-          }
-        }
-        ctx.restore();
-        if (running) requestAnimationFrame(frame);
-      }
-      var visionObs = new IntersectionObserver(function (entries) {
-        entries.forEach(function (e) {
-          if (e.isIntersecting && !running) { running = true; sizeCanvas(); requestAnimationFrame(frame); }
-          else if (!e.isIntersecting && running) { running = false; }
-        });
-      }, { threshold: 0.05 });
-      visionObs.observe(canvas);
-      window.addEventListener('resize', function () { if (running) sizeCanvas(); });
-      sizeCanvas();
-    } else if (ctx) {
-      canvas.style.display = 'none';
-    }
-  }
-
   /* ---------- Rhythm (Sonic Identity) ---------- */
   var rhythmPlay = document.getElementById('rhythm-play');
   var rhythmAudio = document.getElementById('rhythm-audio');
@@ -434,33 +336,4 @@
     });
   }
 
-  /* ---------- Signal overlay ---------- */
-  var signalOverlay = document.getElementById('signal-overlay');
-  if (signalOverlay) {
-    function openSignal() {
-      signalOverlay.classList.remove('hidden', 'closing');
-      var msg = document.createElement('button');
-      msg.className = 'signal-msg';
-      msg.textContent = 'FastLine — tap to close';
-      msg.addEventListener('click', closeSignal);
-      if (!signalOverlay.querySelector('.signal-msg')) signalOverlay.querySelector('.signal-stage').appendChild(msg);
-      clearTimeout(signalOverlay._t);
-      signalOverlay._t = setTimeout(closeSignal, 6000);
-    }
-    function closeSignal() {
-      if (!signalOverlay.classList.contains('hidden')) {
-        signalOverlay.classList.add('closing');
-        setTimeout(function () { signalOverlay.classList.add('hidden'); }, 900);
-      }
-    }
-    document.querySelectorAll('.js-signal').forEach(function (btn) {
-      btn.addEventListener('click', openSignal);
-    });
-    signalOverlay.addEventListener('click', function (e) {
-      if (e.target === signalOverlay) closeSignal();
-    });
-    document.addEventListener('keydown', function (e) {
-      if (e.key === 'Escape' && !signalOverlay.classList.contains('hidden')) closeSignal();
-    });
-  }
 })();
