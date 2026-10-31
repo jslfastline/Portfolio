@@ -34,7 +34,7 @@
     <script src="https://unpkg.com/lucide@latest"></script>
     <link rel="preload" as="font" type="font/woff2" href="assets/fonts/sora-700-v2.woff2" crossorigin />
     <link rel="preload" as="font" type="font/woff2" href="assets/fonts/inter-400-v2.woff2" crossorigin />
-    <link rel="stylesheet" href="site.css?v=202622" />
+    <link rel="stylesheet" href="site.css?v=202623" />
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -259,20 +259,161 @@
         <div class="section-head center reveal">
           <span class="eyebrow">The Ecosystem</span>
           <h2 class="h-large">The FastLine Universe</h2>
-          <p class="lead">A growing ecosystem of products, platforms and experiments.</p>
+          <p class="lead">A growing ecosystem of products, platforms and experiments — built around one connected core.</p>
         </div>
-        <div class="universe-map reveal" id="universe-map" data-d="1">
-          <svg class="lines" id="universe-lines" preserveAspectRatio="none" aria-hidden="true"></svg>
-          <div class="node node--center node--pulse" data-key="fastline" style="left: 50%; top: 50%;">
-            <span class="node__core node__core--brand">FastLine</span>
-            <span class="node__halo" aria-hidden="true"></span>
+
+        <div class="uni">
+          <!-- Core hub -->
+          <aside class="uni-core reveal" aria-labelledby="uni-core-title">
+            <span class="uni-core__grid" aria-hidden="true"></span>
+            <span class="uni-core__orb" aria-hidden="true"></span>
+
+            <div class="uni-core__top">
+              <span class="uni-core__mark" aria-hidden="true">FL</span>
+              <span class="uni-core__brand">FastLine Technologies</span>
+            </div>
+
+            <h3 class="uni-core__title" id="uni-core-title">One core.<br><span>Many directions.</span></h3>
+            <p class="uni-core__text">Products, research and infrastructure share the same foundation — so every new build makes the next one stronger.</p>
+
+            <dl class="uni-stats">
+              <div class="uni-stat">
+                <dt>Products</dt>
+                <dd>04</dd>
+              </div>
+              <div class="uni-stat">
+                <dt>Research themes</dt>
+                <dd>05</dd>
+              </div>
+            </dl>
+
+            <a class="uni-core__cta" href="#lab">
+              <span>Explore the Innovation Lab</span>
+              <i data-lucide="arrow-down-right" aria-hidden="true"></i>
+            </a>
+          </aside>
+
+          <!-- Products -->
+          <div class="uni-products reveal" data-d="1">
+            <div class="uni-products__head">
+              <span class="uni-kicker">Products &amp; platforms</span>
+              <span class="uni-products__count" aria-hidden="true">04</span>
+            </div>
+
+            <div class="uni-grid">
+              <a class="uni-product" href="projects/femos.html">
+                <span class="uni-product__top">
+                  <span class="uni-product__icon"><i data-lucide="scan-qr" aria-hidden="true"></i></span>
+                  <span class="uni-status uni-status--dev">In Development</span>
+                </span>
+                <span class="uni-product__body">
+                  <span class="uni-product__cat">Campus Operating System</span>
+                  <span class="uni-product__name">FeMOS</span>
+                  <span class="uni-product__desc">Smart attendance, announcements and a permanent student identity — one campus system that keeps working offline.</span>
+                </span>
+                <span class="uni-product__link">Explore <i data-lucide="arrow-right" aria-hidden="true"></i></span>
+              </a>
+
+              <a class="uni-product" href="projects/neo-smartcore.html">
+                <span class="uni-product__top">
+                  <span class="uni-product__icon"><i data-lucide="cpu" aria-hidden="true"></i></span>
+                  <span class="uni-status uni-status--proto">Prototype</span>
+                </span>
+                <span class="uni-product__body">
+                  <span class="uni-product__cat">Business Operations Intelligence</span>
+                  <span class="uni-product__name">Neo SmartCore</span>
+                  <span class="uni-product__desc">An intelligence core for business operations — visibility, stock monitoring and daily reporting in one place.</span>
+                </span>
+                <span class="uni-product__link">Explore <i data-lucide="arrow-right" aria-hidden="true"></i></span>
+              </a>
+
+              <a class="uni-product" href="projects/fit.html">
+                <span class="uni-product__top">
+                  <span class="uni-product__icon"><i data-lucide="badge-check" aria-hidden="true"></i></span>
+                  <span class="uni-status uni-status--concept">Concept</span>
+                </span>
+                <span class="uni-product__body">
+                  <span class="uni-product__cat">Identification &amp; Attendance Technology</span>
+                  <span class="uni-product__name">FIT</span>
+                  <span class="uni-product__desc">Digital identity and device interaction — attendance and verification through QR and NFC workflows.</span>
+                </span>
+                <span class="uni-product__link">Explore <i data-lucide="arrow-right" aria-hidden="true"></i></span>
+              </a>
+
+              <a class="uni-product" href="projects/jsl-fastline.html">
+                <span class="uni-product__top">
+                  <span class="uni-product__icon"><i data-lucide="globe" aria-hidden="true"></i></span>
+                  <span class="uni-status uni-status--concept">Concept</span>
+                </span>
+                <span class="uni-product__body">
+                  <span class="uni-product__cat">Low-Connectivity Digital Ecosystem</span>
+                  <span class="uni-product__name">JSL FastLine</span>
+                  <span class="uni-product__desc">A social and growth platform designed from the offline up — built for real handsets, data costs and zero signal.</span>
+                </span>
+                <span class="uni-product__link">Explore <i data-lucide="arrow-right" aria-hidden="true"></i></span>
+              </a>
+            </div>
           </div>
-          <div id="universe-nodes"></div>
-          <div class="node-pop" id="node-pop" role="dialog" aria-live="polite"></div>
         </div>
-        <p class="reveal" style="text-align: center; color: var(--faint); font-size: 0.82rem; letter-spacing: 0.1em; margin-top: 22px;">
-          Select a node to explore — each product opens into its own page.
-        </p>
+
+        <!-- Research themes -->
+        <div class="uni-research reveal" data-d="2">
+          <div class="uni-research__head">
+            <div>
+              <span class="uni-kicker">Research &amp; experiments</span>
+              <h3>What we are exploring next</h3>
+            </div>
+            <a class="uni-research__cta" href="#lab">Innovation Lab <i data-lucide="arrow-right" aria-hidden="true"></i></a>
+          </div>
+
+          <ul class="uni-themes">
+            <li>
+              <a href="#lab">
+                <span class="uni-theme__icon"><i data-lucide="brain-circuit" aria-hidden="true"></i></span>
+                <span class="uni-theme__text">
+                  <span class="uni-theme__name">AI systems</span>
+                  <span class="uni-theme__desc">Intelligence with a real job to do.</span>
+                </span>
+              </a>
+            </li>
+            <li>
+              <a href="#lab">
+                <span class="uni-theme__icon"><i data-lucide="radio" aria-hidden="true"></i></span>
+                <span class="uni-theme__text">
+                  <span class="uni-theme__name">Connected technology</span>
+                  <span class="uni-theme__desc">Networks that work with or without the internet.</span>
+                </span>
+              </a>
+            </li>
+            <li>
+              <a href="#lab">
+                <span class="uni-theme__icon"><i data-lucide="wifi-off" aria-hidden="true"></i></span>
+                <span class="uni-theme__text">
+                  <span class="uni-theme__name">Low-connectivity systems</span>
+                  <span class="uni-theme__desc">Functionality first, connection as an upgrade.</span>
+                </span>
+              </a>
+            </li>
+            <li>
+              <a href="#lab">
+                <span class="uni-theme__icon"><i data-lucide="workflow" aria-hidden="true"></i></span>
+                <span class="uni-theme__text">
+                  <span class="uni-theme__name">Automation</span>
+                  <span class="uni-theme__desc">Routine handled by systems, judgement kept by people.</span>
+                </span>
+              </a>
+            </li>
+            <li>
+              <a href="#lab">
+                <span class="uni-theme__icon"><i data-lucide="scan-qr" aria-hidden="true"></i></span>
+                <span class="uni-theme__text">
+                  <span class="uni-theme__name">Digital identity</span>
+                  <span class="uni-theme__desc">Portable identity reused across the ecosystem.</span>
+                </span>
+              </a>
+            </li>
+          </ul>
+        </div>
       </div>
     </section>
 
@@ -670,6 +811,6 @@
     </div>
 
     <script src="data/projects.js"></script>
-    <script src="site.js?v=202622"></script>
+    <script src="site.js?v=202623"></script>
   </body>
 </html>
