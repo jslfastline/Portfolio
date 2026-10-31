@@ -230,10 +230,11 @@
     <script>
       document.getElementById('contactForm').addEventListener('submit', function (e) {
         e.preventDefault();
-        const name = this.name.value.trim();
-        const email = this.email.value.trim();
-        const subject = this.subject.value || 'Project Inquiry';
-        const message = this.message.value.trim();
+        const fields = this.elements;
+        const name = fields['name'].value.trim();
+        const email = fields['email'].value.trim();
+        const subject = fields['subject'].value || 'Project Inquiry';
+        const message = fields['message'].value.trim();
         const text = 'Hello FastLine Technologies,\n\nSubject: ' + subject +
           '\nName: ' + name + '\nEmail: ' + email +
           '\n\n' + message;
