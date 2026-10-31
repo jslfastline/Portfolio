@@ -2,6 +2,8 @@
 (function () {
   'use strict';
 
+  document.documentElement.classList.add('js');
+
   var REDUCED = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var MOBILE_WIDTH = 640;
 
@@ -59,23 +61,53 @@
   syncNav();
 
   if (burger && mNav) {
+    var lastFocus = null;
+    function closeMenu(restoreFocus) {
+      mNav.classList.remove('open');
+      burger.classList.remove('open');
+      burger.setAttribute('aria-expanded', 'false');
+      burger.setAttribute('aria-label', 'Open menu');
+      mNav.setAttribute('aria-hidden', 'true');
+      if (navbar) navbar.classList.remove('menu-open');
+      document.body.style.overflow = '';
+      if (restoreFocus !== false && lastFocus) lastFocus.focus();
+    }
+    function openMenu() {
+      lastFocus = document.activeElement;
+      mNav.classList.add('open');
+      burger.classList.add('open');
+      burger.setAttribute('aria-expanded', 'true');
+      burger.setAttribute('aria-label', 'Close menu');
+      mNav.setAttribute('aria-hidden', 'false');
+      if (navbar) navbar.classList.add('menu-open');
+      document.body.style.overflow = 'hidden';
+      var first = mNav.querySelector('a');
+      if (first) {
+        mNav.offsetHeight;
+        first.focus();
+        if (document.activeElement !== first) setTimeout(function () { first.focus(); }, 60);
+      }
+    }
     burger.addEventListener('click', function () {
-      var open = mNav.classList.toggle('open');
-      burger.classList.toggle('open', open);
-      burger.setAttribute('aria-expanded', open ? 'true' : 'false');
-      mNav.setAttribute('aria-hidden', open ? 'false' : 'true');
-      if (navbar) navbar.classList.toggle('menu-open', open);
-      document.body.style.overflow = open ? 'hidden' : '';
+      if (mNav.classList.contains('open')) closeMenu();
+      else openMenu();
     });
     mNav.querySelectorAll('a').forEach(function (a) {
-      a.addEventListener('click', function () {
-        mNav.classList.remove('open');
-        burger.classList.remove('open');
-        burger.setAttribute('aria-expanded', 'false');
-        mNav.setAttribute('aria-hidden', 'true');
-        if (navbar) navbar.classList.remove('menu-open');
-        document.body.style.overflow = '';
-      });
+      a.addEventListener('click', function () { closeMenu(false); });
+    });
+    document.addEventListener('keydown', function (e) {
+      if (!mNav.classList.contains('open')) return;
+      if (e.key === 'Escape') { e.preventDefault(); closeMenu(); return; }
+      if (e.key !== 'Tab') return;
+      var focusables = mNav.querySelectorAll('a, button');
+      if (!focusables.length) return;
+      var firstEl = focusables[0];
+      var lastEl = focusables[focusables.length - 1];
+      if (e.shiftKey && document.activeElement === firstEl) { e.preventDefault(); lastEl.focus(); }
+      else if (!e.shiftKey && document.activeElement === lastEl) { e.preventDefault(); firstEl.focus(); }
+    });
+    window.addEventListener('resize', function () {
+      if (window.innerWidth > 1060 && mNav.classList.contains('open')) closeMenu(false);
     });
   }
 
@@ -299,7 +331,12 @@
       } else {
         el.addEventListener('click', function (e) {
           e.stopPropagation();
-          if (!isCompact()) showPop(n, el);
+          if (isCompact()) {
+            var lab = document.getElementById('lab');
+            if (lab) lab.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            return;
+          }
+          showPop(n, el);
         });
         el.addEventListener('mouseenter', function () { if (!isCompact()) showPop(n, el); });
       }
@@ -433,7 +470,7 @@
           if (p.x > w + 10) p.x = -10;
           ctx.beginPath();
           ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-          ctx.fillStyle = 'rgba(15,118,110,0.5)';
+          ctx.fillStyle = 'rgba(23,69,142,0.5)';
           ctx.fill();
           for (var j = i + 1; j < particles.length; j++) {
             var q = particles[j];
@@ -443,7 +480,7 @@
               ctx.beginPath();
               ctx.moveTo(p.x, p.y);
               ctx.lineTo(q.x, q.y);
-              ctx.strokeStyle = 'rgba(15,118,110,' + (0.18 * (1 - Math.sqrt(d2) / lineDist)).toFixed(3) + ')';
+              ctx.strokeStyle = 'rgba(23,69,142,' + (0.18 * (1 - Math.sqrt(d2) / lineDist)).toFixed(3) + ')';
               ctx.lineWidth = 1;
               ctx.stroke();
             }

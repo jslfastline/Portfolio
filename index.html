@@ -27,7 +27,9 @@
     <link rel="icon" type="image/png" sizes="192x192" href="favicon-192.png" />
     <link rel="apple-touch-icon" href="apple-touch-icon.png" />
     <script src="https://unpkg.com/lucide@latest"></script>
-    <link rel="stylesheet" href="site.css?v=202619" />
+    <link rel="preload" as="font" type="font/woff2" href="assets/fonts/sora-700.woff2" crossorigin />
+    <link rel="preload" as="font" type="font/woff2" href="assets/fonts/inter-400.woff2" crossorigin />
+    <link rel="stylesheet" href="site.css?v=202620" />
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -79,12 +81,12 @@
       </div>
     </nav>
 
-    <div id="m-nav" aria-hidden="true">
-      <a href="/#home">01 <small>Home</small></a>
-      <a href="/about">02 <small>About</small></a>
-      <a href="/#services">03 <small>Services</small></a>
-      <a href="/#projects">04 <small>Projects</small></a>
-      <a href="/contact">05 <small>Contact</small></a>
+    <div id="m-nav" role="navigation" aria-label="Mobile" aria-hidden="true">
+      <a href="/#home"><small>01</small>Home</a>
+      <a href="/about"><small>02</small>About</a>
+      <a href="/#services"><small>03</small>Services</a>
+      <a href="/#projects"><small>04</small>Projects</a>
+      <a href="/contact"><small>05</small>Contact</a>
     </div>
 
     <!-- ================= HERO ================= -->
@@ -130,14 +132,14 @@
             </div>
             <div class="builder-photo__ring" aria-hidden="true"></div>
             <div class="builder-photo__label">
-              <p class="n" style="font-family:var(--font); font-weight:800; font-size:1.4rem;">Jay Bros</p>
+              <p class="n">Jay Bros</p>
               <p class="r">Founder · Engineer · Innovator</p>
             </div>
           </div>
           <div class="reveal" data-d="2">
             <div class="builder-name">
-              <h2 class="h-large grad" style="letter-spacing:-0.02em;">Jay Bros</h2>
-              <span class="flag" style="font-family:var(--font); font-size:0.7rem; letter-spacing:0.26em; text-transform:uppercase; color:var(--accent);">The Person Behind the Brand</span>
+              <h2 class="h-large">Jay Bros</h2>
+              <span class="flag">The Person Behind the Brand</span>
             </div>
             <p class="builder-role">Founder · Software Engineer · Innovator</p>
             <p class="builder-bio">
@@ -171,55 +173,6 @@
       </div>
     </section>
 
-    <!-- ================= SERVICES ================= -->
-    <section id="services" class="section">
-      <div class="container">
-        <div class="section-head reveal">
-          <span class="eyebrow">Services</span>
-          <h2 class="h-large">What We Build</h2>
-          <p class="lead">Six disciplines, one standard — systems designed to work in the real world.</p>
-        </div>
-        <div class="services-grid reveal" data-d="1">
-          <article class="service">
-            <span class="service__icon"><i data-lucide="globe"></i></span>
-            <h3>Web Systems</h3>
-            <p>Fast, resilient websites, platforms and dashboards built for clarity, scale and daily use.</p>
-            <span class="service__meta">Web · Platform</span>
-          </article>
-          <article class="service">
-            <span class="service__icon"><i data-lucide="monitor"></i></span>
-            <h3>Software &amp; Desktop</h3>
-            <p>Purpose-built applications and tools that turn operational friction into clean, reliable workflows.</p>
-            <span class="service__meta">Software · Desktop</span>
-          </article>
-          <article class="service">
-            <span class="service__icon"><i data-lucide="smartphone"></i></span>
-            <h3>Mobile Applications</h3>
-            <p>Responsive mobile experiences and installable apps that stay usable on real networks and real devices.</p>
-            <span class="service__meta">Mobile · PWA</span>
-          </article>
-          <article class="service">
-            <span class="service__icon"><i data-lucide="cpu"></i></span>
-            <h3>AI &amp; Automation</h3>
-            <p>Intelligent assistants and automation that reduce repetition and support better decisions.</p>
-            <span class="service__meta">AI · Automation</span>
-          </article>
-          <article class="service">
-            <span class="service__icon"><i data-lucide="scan-qr"></i></span>
-            <h3>Enterprise &amp; Identity</h3>
-            <p>Unified systems, attendance and identification tools designed around trust and verification.</p>
-            <span class="service__meta">Enterprise · Identity</span>
-          </article>
-          <article class="service">
-            <span class="service__icon"><i data-lucide="radio"></i></span>
-            <h3>Networking &amp; Emerging Tech</h3>
-            <p>Connectivity, infrastructure and early exploration of the technologies shaping what comes next.</p>
-            <span class="service__meta">Network · Emerging</span>
-          </article>
-        </div>
-      </div>
-    </section>
-
     <!-- ================= THE VISION ================= -->
     <section id="vision" class="section" style="background: var(--bg-1); border-block: 1px solid var(--line-soft); overflow: hidden; position: relative;">
       <canvas id="vision-canvas" aria-hidden="true"></canvas>
@@ -228,8 +181,8 @@
           <div class="reveal">
             <span class="eyebrow" style="margin-bottom: 22px;">The Vision</span>
             <p class="vision-statement">
-              Technology should do more than exist.
-              <span class="line-2 grad" style="display: block;">It should solve.</span>
+              <span class="line-1">Technology should do more than exist.</span>
+              <span class="line-2 grad">It should solve.</span>
             </p>
           </div>
           <div class="vision-side reveal" data-d="2">
@@ -240,6 +193,55 @@
               intelligent systems and emerging technologies.
             </p>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= SERVICES ================= -->
+    <section id="services" class="section">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Services</span>
+          <h2 class="h-large">What We Build</h2>
+          <p class="lead">Six disciplines, one standard — systems designed to work in the real world.</p>
+        </div>
+        <div class="services-grid reveal" data-d="1">
+          <article class="service">
+            <div class="service__top"><span class="service__icon"><i data-lucide="globe"></i></span><span class="service__num">01</span></div>
+            <h3>Web Systems</h3>
+            <p>Fast, resilient websites, platforms and dashboards built for clarity, scale and daily use.</p>
+            <span class="service__meta">Web · Platform</span>
+          </article>
+          <article class="service">
+            <div class="service__top"><span class="service__icon"><i data-lucide="monitor"></i></span><span class="service__num">02</span></div>
+            <h3>Software &amp; Desktop</h3>
+            <p>Purpose-built applications and tools that turn operational friction into clean, reliable workflows.</p>
+            <span class="service__meta">Software · Desktop</span>
+          </article>
+          <article class="service">
+            <div class="service__top"><span class="service__icon"><i data-lucide="smartphone"></i></span><span class="service__num">03</span></div>
+            <h3>Mobile Applications</h3>
+            <p>Responsive mobile experiences and installable apps that stay usable on real networks and real devices.</p>
+            <span class="service__meta">Mobile · PWA</span>
+          </article>
+          <article class="service">
+            <div class="service__top"><span class="service__icon"><i data-lucide="cpu"></i></span><span class="service__num">04</span></div>
+            <h3>AI &amp; Automation</h3>
+            <p>Intelligent assistants and automation that reduce repetition and support better decisions.</p>
+            <span class="service__meta">AI · Automation</span>
+          </article>
+          <article class="service">
+            <div class="service__top"><span class="service__icon"><i data-lucide="scan-qr"></i></span><span class="service__num">05</span></div>
+            <h3>Enterprise &amp; Identity</h3>
+            <p>Unified systems, attendance and identification tools designed around trust and verification.</p>
+            <span class="service__meta">Enterprise · Identity</span>
+          </article>
+          <article class="service">
+            <div class="service__top"><span class="service__icon"><i data-lucide="radio"></i></span><span class="service__num">06</span></div>
+            <h3>Networking &amp; Emerging Tech</h3>
+            <p>Connectivity, infrastructure and early exploration of the technologies shaping what comes next.</p>
+            <span class="service__meta">Network · Emerging</span>
+          </article>
         </div>
       </div>
     </section>
@@ -262,7 +264,7 @@
           <div class="node-pop" id="node-pop" role="dialog" aria-live="polite"></div>
         </div>
         <p class="reveal" style="text-align: center; color: var(--faint); font-size: 0.82rem; letter-spacing: 0.1em; margin-top: 22px;">
-          Hover a node to explore — each product opens into its own page.
+          Select a node to explore — each product opens into its own page.
         </p>
       </div>
     </section>
@@ -314,7 +316,7 @@
               <div class="project__media" data-parallax="0.05">
                 <span class="project__index">02 — Neo SmartCore</span>
                 <span class="project__status st-prototype">Prototype</span>
-                <img src="https://res.cloudinary.com/j8zmetxr/image/upload/v1789212918/NeoSmartCore_Icon_1024_zj2ycl.png" alt="Neo SmartCore engine logo" loading="lazy" style="object-fit: contain; padding: 10%; background: radial-gradient(80% 80% at 50% 30%, rgba(2,132,199,0.12), transparent);" />
+                <img src="https://res.cloudinary.com/j8zmetxr/image/upload/v1789212918/NeoSmartCore_Icon_1024_zj2ycl.png" alt="Neo SmartCore engine logo" loading="lazy" style="object-fit: contain; padding: 10%; background: radial-gradient(80% 80% at 50% 30%, rgba(23,69,142,0.12), transparent);" />
                 <button class="media-play" data-video="https://res.cloudinary.com/dlv2esvfc/video/upload/v1790959148/Smatco_duyug5.mp4" aria-label="Watch Neo SmartCore film">
                   <span class="play-orb"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.14v13.72c0 .8.87 1.3 1.56.9l10.4-6.86a1.05 1.05 0 0 0 0-1.8L9.56 4.24A1.04 1.04 0 0 0 8 5.14Z"/></svg></span>
                   <span class="media-play__label">Watch how it works</span>
@@ -345,27 +347,27 @@
           <!-- FIT -->
           <article class="project reveal" id="p-fit">
             <div class="project__visual reveal" data-d="1">
-              <div class="project__media" data-parallax="0.05" style="display: grid; place-items: center; background: radial-gradient(70% 70% at 50% 35%, rgba(56,189,248,0.1), transparent)" data-qr-art>
+              <div class="project__media" data-parallax="0.05" style="display: grid; place-items: center; background: radial-gradient(70% 70% at 50% 35%, rgba(17,187,250,0.1), transparent)" data-qr-art>
                 <span class="project__index">03 — FIT</span>
                 <span class="project__status st-concept">Concept</span>
                 <svg viewBox="0 0 200 200" role="img" aria-label="FIT identification technology visual" style="width: 62%; height: auto;">
-                  <rect x="4" y="4" width="84" height="84" rx="8" fill="rgba(56,189,248,0.06)" stroke="rgba(56,189,248,0.5)" stroke-width="1.5"/>
-                  <g fill="#38BDF8">
+                  <rect x="4" y="4" width="84" height="84" rx="8" fill="rgba(17,187,250,0.06)" stroke="rgba(17,187,250,0.5)" stroke-width="1.5"/>
+                  <g fill="#11BBFA">
                     <rect x="16" y="16" width="18" height="18" rx="2"/><rect x="44" y="16" width="10" height="10" rx="2"/><rect x="64" y="16" width="14" height="14" rx="2"/>
                     <rect x="16" y="44" width="10" height="10" rx="2"/><rect x="56" y="44" width="22" height="10" rx="2"/><rect x="16" y="64" width="14" height="14" rx="2"/><rect x="44" y="64" width="20" height="10" rx="2"/>
                   </g>
-                  <rect x="112" y="4" width="84" height="84" rx="8" fill="rgba(2,132,199,0.05)" stroke="rgba(2,132,199,0.45)" stroke-width="1.5"/>
-                  <g fill="#0284C7">
+                  <rect x="112" y="4" width="84" height="84" rx="8" fill="rgba(23,69,142,0.05)" stroke="rgba(23,69,142,0.45)" stroke-width="1.5"/>
+                  <g fill="#17458E">
                     <rect x="124" y="16" width="18" height="18" rx="2"/><rect x="152" y="16" width="10" height="10" rx="2"/><rect x="172" y="16" width="14" height="14" rx="2"/>
                     <rect x="124" y="44" width="10" height="10" rx="2"/><rect x="144" y="44" width="22" height="10" rx="2"/><rect x="178" y="64" width="10" height="10" rx="2"/>
                   </g>
                   <g transform="translate(112,112)" fill="#94A3B8">
                     <rect x="12" y="12" width="18" height="18" rx="2"/><rect x="40" y="12" width="10" height="10" rx="2"/><rect x="12" y="40" width="10" height="10" rx="2"/><rect x="40" y="40" width="10" height="10" rx="2"/>
                   </g>
-                  <circle cx="20" cy="184" r="14" fill="none" stroke="#0284C7" stroke-width="1.5"/>
-                  <circle cx="20" cy="184" r="5" fill="#0284C7"/>
-                  <circle cx="180" cy="184" r="14" fill="none" stroke="#38BDF8" stroke-width="1.5"/>
-                  <circle cx="180" cy="184" r="5" fill="#38BDF8"/>
+                  <circle cx="20" cy="184" r="14" fill="none" stroke="#17458E" stroke-width="1.5"/>
+                  <circle cx="20" cy="184" r="5" fill="#17458E"/>
+                  <circle cx="180" cy="184" r="14" fill="none" stroke="#11BBFA" stroke-width="1.5"/>
+                  <circle cx="180" cy="184" r="5" fill="#11BBFA"/>
                 </svg>
                 <span class="grain"></span>
               </div>
@@ -553,7 +555,7 @@
             of that journey.
           </p>
           <p class="note-quote">"Within Evry Human ,It Lies A Power So Vast And Mysterious That Awakens Only,When You Dare to Believe That You Can."</p>
-          <div class="note-sign">Jay Bros<small>Founder, FastLine Technologies</small></div>
+          <div class="note-sign"><span class="note-sign__name">Jay Bros</span><small>Founder, FastLine Technologies</small></div>
         </div>
       </div>
     </section>
@@ -661,6 +663,6 @@
     </div>
 
     <script src="data/projects.js"></script>
-    <script src="site.js?v=202619"></script>
+    <script src="site.js?v=202620"></script>
   </body>
 </html>
