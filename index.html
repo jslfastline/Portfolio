@@ -10,7 +10,12 @@
     />
     <meta name="keywords" content="FastLine Technologies, FastLine Technology, JSL FastLine, Jay Bros, Technology Innovation Tanzania, Software Engineering Tanzania, Digital Systems Tanzania" />
     <link rel="canonical" href="https://fastline.co.tz/" />
-    <link rel="preload" as="image" href="https://res.cloudinary.com/dlv2esvfc/image/upload/v1793379640/Circuit_traces_on_white_background_54edf945_2K_zlvdr6.jpg" fetchpriority="high" />
+    <link rel="preload" as="image" media="(max-width: 767px)" fetchpriority="high"
+      href="https://res.cloudinary.com/dlv2esvfc/image/upload/f_auto,q_auto:good,w_960,c_limit/v1793379640/Circuit_traces_on_white_background_54edf945_2K_zlvdr6.jpg" />
+    <link rel="preload" as="image" media="(min-width: 768px) and (max-width: 1279px)" fetchpriority="high"
+      href="https://res.cloudinary.com/dlv2esvfc/image/upload/f_auto,q_auto:good,w_1600,c_limit/v1793379640/Circuit_traces_on_white_background_54edf945_2K_zlvdr6.jpg" />
+    <link rel="preload" as="image" media="(min-width: 1280px)" fetchpriority="high"
+      href="https://res.cloudinary.com/dlv2esvfc/image/upload/f_auto,q_auto:good,w_1920,c_limit/v1793379640/Circuit_traces_on_white_background_54edf945_2K_zlvdr6.jpg" />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="FastLine Technologies" />
     <meta property="og:title" content="FastLine Technologies | Building What's Next" />
@@ -29,7 +34,7 @@
     <script src="https://unpkg.com/lucide@latest"></script>
     <link rel="preload" as="font" type="font/woff2" href="assets/fonts/sora-700-v2.woff2" crossorigin />
     <link rel="preload" as="font" type="font/woff2" href="assets/fonts/inter-400-v2.woff2" crossorigin />
-    <link rel="stylesheet" href="site.css?v=202621" />
+    <link rel="stylesheet" href="site.css?v=202622" />
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -91,14 +96,16 @@
 
     <!-- ================= HERO ================= -->
     <header id="home" class="hero">
-      <div class="hero__media" aria-hidden="true"></div>
+      <div class="hero__media" aria-hidden="true">
+        <div class="hero__media-img"></div>
+      </div>
       <div class="hero__wash" aria-hidden="true"></div>
 
       <div class="container hero__inner">
         <div class="hero__content">
           <h1 class="hero__title hero__enter hero__enter--2" aria-label="FastLine Technologies">
             <span aria-hidden="true">FastLine</span>
-            <span aria-hidden="true">Technologies</span>
+            <span class="hero__title-accent" aria-hidden="true">Technologies</span>
           </h1>
           <p class="hero__tagline hero__enter hero__enter--3">Fast Connections, Smart Future.</p>
         </div>
@@ -663,6 +670,6 @@
     </div>
 
     <script src="data/projects.js"></script>
-    <script src="site.js?v=202621"></script>
+    <script src="site.js?v=202622"></script>
   </body>
 </html>
