@@ -22,7 +22,23 @@
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png" />
     <link rel="icon" type="image/png" sizes="192x192" href="favicon-192.png" />
     <link rel="apple-touch-icon" href="apple-touch-icon.png" />
-    <link rel="stylesheet" href="site.css?v=202625" />
+    <meta name="theme-color" content="#F8FAFC" />
+    <script>
+      (function () {
+        try {
+          var t = localStorage.getItem('fastline-theme');
+          if (t !== 'dark' && t !== 'light') t = 'light';
+          document.documentElement.setAttribute('data-theme', t);
+          document.documentElement.style.colorScheme = t;
+          var m = document.querySelector('meta[name="theme-color"]');
+          if (m) m.setAttribute('content', t === 'dark' ? '#080F1D' : '#F8FAFC');
+        } catch (e) {
+          document.documentElement.setAttribute('data-theme', 'light');
+          document.documentElement.style.colorScheme = 'light';
+        }
+      })();
+    </script>
+    <link rel="stylesheet" href="site.css?v=202626" />
   </head>
   <body>
     <div id="progress"></div>
@@ -42,6 +58,9 @@
           <li><a href="/#projects">Projects</a></li>
           <li><a href="/contact" class="active" aria-current="page">Contact</a></li>
         </ul>
+        <button class="theme-toggle theme-toggle--desktop" type="button" data-theme-toggle aria-label="Switch to dark theme">
+          <span class="theme-toggle__label" data-theme-label>Dark</span>
+        </button>
         <button class="nav-burger" id="nav-burger" aria-label="Open menu" aria-expanded="false">
           <span></span><span></span><span></span>
         </button>
@@ -54,6 +73,12 @@
       <a href="/#services"><small>03</small>Services</a>
       <a href="/#projects"><small>04</small>Projects</a>
       <a href="/contact"><small>05</small>Contact</a>
+      <div class="m-nav__foot">
+        <span class="m-nav__foot-label">Theme</span>
+        <button class="theme-toggle theme-toggle--mobile" type="button" data-theme-toggle aria-label="Switch to dark theme">
+          <span class="theme-toggle__label" data-theme-label>Dark</span>
+        </button>
+      </div>
     </div>
 
     <header class="p-hero">
@@ -270,6 +295,6 @@
       });
     </script>
     <script src="data/projects.js"></script>
-    <script src="site.js?v=202625"></script>
+    <script src="site.js?v=202626"></script>
   </body>
 </html>

@@ -6,6 +6,65 @@
 
   var REDUCED = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+  /* ---------- Theme ---------- */
+  var THEME_KEY = 'fastline-theme';
+  var root = document.documentElement;
+
+  function currentTheme() {
+    return root.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
+  }
+
+  function syncThemeControls(theme) {
+    var nextLabel = theme === 'dark' ? 'Light' : 'Dark';
+    var nextName = theme === 'dark' ? 'light' : 'dark';
+    document.querySelectorAll('[data-theme-toggle]').forEach(function (btn) {
+      var label = btn.querySelector('[data-theme-label]');
+      if (label) label.textContent = nextLabel;
+      btn.setAttribute('aria-label', 'Switch to ' + nextName + ' theme');
+      btn.setAttribute('title', 'Switch to ' + nextName + ' theme');
+    });
+    var meta = document.querySelector('meta[name="theme-color"]');
+    if (meta) meta.setAttribute('content', theme === 'dark' ? '#080F1D' : '#F8FAFC');
+  }
+
+  function applyTheme(theme, animate, persist) {
+    var next = theme === 'dark' ? 'dark' : 'light';
+    if (animate && !REDUCED) {
+      root.classList.add('theme-changing');
+      void root.offsetWidth;
+    }
+    root.setAttribute('data-theme', next);
+    root.style.colorScheme = next;
+    syncThemeControls(next);
+    if (persist !== false) {
+      try { localStorage.setItem(THEME_KEY, next); } catch (e) {}
+    }
+    if (animate && !REDUCED) {
+      window.setTimeout(function () { root.classList.remove('theme-changing'); }, 380);
+    }
+  }
+
+  document.addEventListener('click', function (e) {
+    var btn = e.target.closest ? e.target.closest('[data-theme-toggle]') : null;
+    if (!btn) return;
+    e.preventDefault();
+    var next = currentTheme() === 'dark' ? 'light' : 'dark';
+    var toggles = document.querySelectorAll('[data-theme-toggle]');
+    toggles.forEach(function (b) { b.classList.add('is-changing'); });
+    window.setTimeout(function () {
+      applyTheme(next, true);
+      toggles.forEach(function (b) { b.classList.remove('is-changing'); });
+    }, REDUCED ? 0 : 130);
+  });
+
+  window.addEventListener('storage', function (e) {
+    if (e.key === THEME_KEY && (e.newValue === 'dark' || e.newValue === 'light')) {
+      applyTheme(e.newValue, true, false);
+    }
+  });
+
+  syncThemeControls(currentTheme());
+
   /* ---------- Brand media source ---------- */
   var BRAND_FILM =
     'https://res.cloudinary.com/dlv2esvfc/video/upload/v1790956219/Technology_brand_film_loop_20261002184452_ytncv8.mp4';
