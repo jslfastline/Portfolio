@@ -49,7 +49,7 @@
         }
       })();
     </script>
-    <link rel="stylesheet" href="site.css?v=202627" />
+    <link rel="stylesheet" href="site.css?v=202628" />
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -133,8 +133,6 @@
           <p class="hero__tagline hero__enter hero__enter--3">Fast Connections, Smart Future.</p>
         </div>
       </div>
-
-      <a href="#builder" class="hero__scroll">Scroll</a>
     </header>
 
     <!-- ================= MARQUEE ================= -->
@@ -230,7 +228,7 @@
           <h2 class="h-large">What We Build</h2>
           <p class="lead">Six disciplines, one standard — systems designed to work in the real world.</p>
         </div>
-        <div class="services-grid reveal" data-d="1">
+        <div class="services-grid" data-stagger data-stagger-step="90">
           <article class="service">
             <div class="service__top"><span class="service__num">01</span></div>
             <h3>Web Systems</h3>
@@ -308,12 +306,12 @@
           </aside>
 
           <!-- Products -->
-          <div class="uni-products reveal" data-d="1">
+          <div class="uni-products">
             <div class="uni-products__head">
               <span class="uni-kicker">Products &amp; platforms</span>
             </div>
 
-            <div class="uni-grid">
+            <div class="uni-grid" data-stagger data-stagger-step="90">
               <a class="uni-product" href="projects/femos.html">
                 <span class="uni-product__top">
 
@@ -379,7 +377,7 @@
             <a class="uni-research__cta" href="#lab">Innovation Lab </a>
           </div>
 
-          <ul class="uni-themes">
+          <ul class="uni-themes" data-stagger data-stagger-step="80">
             <li>
               <a href="#lab">
 
@@ -442,8 +440,8 @@
         <div class="projects-list">
 
           <!-- FeMOS -->
-          <article class="project reveal" id="p-femos">
-            <div class="project__visual reveal" data-d="1">
+          <article class="project" id="p-femos" data-stagger data-stagger-step="110">
+            <div class="project__visual reveal-image">
               <div class="project__media project__media--phone" data-parallax="0.06">
                 <span class="project__index">01 — FeMOS</span>
                 <span class="project__status st-in-dev">In Development</span>
@@ -451,7 +449,7 @@
                 <span class="grain"></span>
               </div>
             </div>
-            <div class="reveal" data-d="2">
+            <div class="project__body reveal reveal-right">
               <p class="project__cat">Campus Operating System</p>
               <h3 class="h-title">FeMOS</h3>
               <p class="project__sub">Smart Attendance &amp; Identification</p>
@@ -472,8 +470,8 @@
           </article>
 
           <!-- Neo SmartCore -->
-          <article class="project reveal" id="p-neo">
-            <div class="project__visual reveal" data-d="1">
+          <article class="project" id="p-neo" data-stagger data-stagger-step="110">
+            <div class="project__visual reveal-image">
               <div class="project__media" data-parallax="0.05">
                 <span class="project__index">02 — Neo SmartCore</span>
                 <span class="project__status st-prototype">Prototype</span>
@@ -485,7 +483,7 @@
                 <span class="grain"></span>
               </div>
             </div>
-            <div class="reveal" data-d="2">
+            <div class="project__body reveal reveal-right">
               <p class="project__cat">Business Operations Intelligence</p>
               <h3 class="h-title">Neo SmartCore</h3>
               <p class="project__sub">Business Operations Intelligence</p>
@@ -506,8 +504,8 @@
           </article>
 
           <!-- FIT -->
-          <article class="project reveal" id="p-fit">
-            <div class="project__visual reveal" data-d="1">
+          <article class="project" id="p-fit" data-stagger data-stagger-step="110">
+            <div class="project__visual reveal-image">
               <div class="project__media" data-parallax="0.05" style="display: grid; place-items: center; background: radial-gradient(70% 70% at 50% 35%, rgba(17,187,250,0.1), transparent)" data-qr-art>
                 <span class="project__index">03 — FIT</span>
                 <span class="project__status st-concept">Concept</span>
@@ -533,7 +531,7 @@
                 <span class="grain"></span>
               </div>
             </div>
-            <div class="reveal" data-d="2">
+            <div class="project__body reveal reveal-right">
               <p class="project__cat">Identification &amp; Attendance Technology</p>
               <h3 class="h-title">FIT</h3>
               <p class="project__sub">FastLine Identifying Technology</p>
@@ -554,8 +552,8 @@
           </article>
 
           <!-- JSL FastLine -->
-          <article class="project reveal" id="p-jsl">
-            <div class="project__visual reveal" data-d="1">
+          <article class="project" id="p-jsl" data-stagger data-stagger-step="110">
+            <div class="project__visual reveal-image">
               <div class="project__media" data-parallax="0.05">
                 <span class="project__index">04 — JSL FastLine</span>
                 <span class="project__status st-concept">Concept</span>
@@ -563,7 +561,7 @@
                 <span class="grain"></span>
               </div>
             </div>
-            <div class="reveal" data-d="2">
+            <div class="project__body reveal reveal-right">
               <p class="project__cat">Low-Connectivity Digital Ecosystem</p>
               <h3 class="h-title">JSL FastLine</h3>
               <p class="project__sub">Low-Connectivity Digital Ecosystem</p>
@@ -595,7 +593,7 @@
           <p class="lead">Captured in motion. New films drop here as they are produced.</p>
         </div>
         <div class="filters reveal" id="media-filters" data-d="1"></div>
-        <div class="media-grid reveal" id="media-grid" data-d="2"></div>
+        <div class="media-grid" id="media-grid" data-stagger data-stagger-step="80"></div>
       </div>
     </section>
 
@@ -607,7 +605,7 @@
           <h2 class="h-large">Listen to Our Rhythm</h2>
           <p class="lead">Every technology has a rhythm. This is ours.</p>
         </div>
-        <div class="rhythm-grid">
+        <div class="rhythm-grid" data-stagger data-stagger-step="120">
           <div class="player reveal" data-d="1">
             <div class="player__top">
               <div class="player__title">FastLine Sonic Identity<small>Brand · Sound · Motion</small></div>
@@ -648,7 +646,7 @@
           <h2 class="h-large">Where Experiments Become Possibilities</h2>
           <p class="lead">Not everything at FastLine is a finished application. Some things are being researched, tried and tested. Honesty about stage is part of the brand.</p>
         </div>
-        <div class="lab-grid">
+        <div class="lab-grid" data-stagger data-stagger-step="80">
           <div class="lab-item reveal">
             <div class="lab-item__top"><span class="st st-research">Research</span></div>
             <div><h3>AI Systems</h3><p>Practical intelligence applied to real workflows — not decorative AI, but models with a job to do.</p></div>
@@ -686,7 +684,7 @@
             <h2 class="h-large" style="margin-bottom: 20px;">The Current Products Are Only Part of the Story.</h2>
             <p class="lead">Exploration continues quietly in several directions. What appears here is honest scope — not announced hype.</p>
           </div>
-          <div class="next-list">
+          <div class="next-list" data-stagger data-stagger-step="80">
             <div class="next-item reveal"><span class="next-item__l"><span><h4>Intelligent Business Systems</h4><p>Operations, reporting and control for real businesses.</p></span></span><span class="mark">Exploring</span></div>
             <div class="next-item reveal" data-d="1"><span class="next-item__l"><span><h4>Connected Identity</h4><p>One verifiable identity across every FastLine surface.</p></span></span><span class="mark">Exploring</span></div>
             <div class="next-item reveal" data-d="2"><span class="next-item__l"><span><h4>AI-Powered Tools</h4><p>Helpful intelligence inside the products people already use.</p></span></span><span class="mark">Building</span></div>
@@ -836,6 +834,6 @@
     </div>
 
     <script src="data/projects.js"></script>
-    <script src="site.js?v=202627"></script>
+    <script src="site.js?v=202628"></script>
   </body>
 </html>

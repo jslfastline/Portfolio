@@ -6,6 +6,13 @@
 
   var REDUCED = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+  /* Failsafe: if motion setup ever fails, never leave content hidden. */
+  var revealFailSafe = window.setTimeout(function () {
+    document.querySelectorAll('.reveal, .reveal-image').forEach(function (el) {
+      el.classList.add('in');
+    });
+  }, 2600);
+
   /* ---------- Theme ---------- */
   var THEME_KEY = 'fastline-theme';
   var root = document.documentElement;
@@ -145,21 +152,169 @@
     });
   }
 
-  /* ---------- Reveal on scroll ---------- */
-  var revealObs = new IntersectionObserver(
-    function (entries) {
-      entries.forEach(function (e) {
-        if (e.isIntersecting) {
-          e.target.classList.add('in');
-          revealObs.unobserve(e.target);
-        }
+  /* ---------- Premium card motion ---------- */
+  var FINE_POINTER = window.matchMedia && window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+  var MOBILE_MOTION = window.matchMedia && window.matchMedia('(max-width: 820px)').matches;
+  var revealObs = null;
+
+  function setupStaggerGroups() {
+    document.querySelectorAll('[data-stagger]').forEach(function (group) {
+      var step = parseInt(group.getAttribute('data-stagger-step'), 10);
+      if (isNaN(step)) step = 90;
+      if (MOBILE_MOTION) step = Math.min(step, 80);
+      var maxDelay = MOBILE_MOTION ? 360 : 620;
+      var children = Array.prototype.slice.call(group.children);
+      var items = children.filter(function (el) {
+        return el.nodeType === 1 && (el.classList.contains('reveal') || el.classList.contains('reveal-image'));
       });
-    },
-    { threshold: 0.12 }
-  );
-  document.querySelectorAll('.reveal').forEach(function (el) {
-    revealObs.observe(el);
-  });
+      if (!items.length) {
+        items = children.filter(function (el) { return el.nodeType === 1; });
+        items.forEach(function (el) { el.classList.add('reveal'); });
+      }
+      items.forEach(function (el, i) {
+        el.style.setProperty('--reveal-delay', Math.min(i * step, maxDelay) + 'ms');
+      });
+    });
+  }
+
+  function addSpotlight(el) {
+    if (el.querySelector(':scope > .fx-spot')) return;
+    var spot = document.createElement('span');
+    spot.className = 'fx-spot';
+    spot.setAttribute('aria-hidden', 'true');
+    el.insertBefore(spot, el.firstChild);
+    el.setAttribute('data-spotlight', '');
+  }
+
+  function enhanceCards() {
+    document.querySelectorAll(
+      '.service, .uni-product, .lab-item, .next-item, .media-item, .p-card, .p-step, .c-card, .office-card, .legal__item, .project__media'
+    ).forEach(addSpotlight);
+
+    document.querySelectorAll('.project__media, .p-visual').forEach(function (el) {
+      if (el.querySelector('video')) return;
+      if (!el.querySelector(':scope > .fx-sheen')) {
+        var sheen = document.createElement('span');
+        sheen.className = 'fx-sheen';
+        sheen.setAttribute('aria-hidden', 'true');
+        el.appendChild(sheen);
+      }
+      el.setAttribute('data-image-reveal', '');
+    });
+
+    document.querySelectorAll('.project__media').forEach(function (el) {
+      el.setAttribute('data-tilt', '');
+    });
+  }
+
+  function setupReveals() {
+    if (revealObs) revealObs.disconnect();
+    var items = document.querySelectorAll('.reveal, .reveal-image');
+    if (!('IntersectionObserver' in window)) {
+      items.forEach(function (el) { el.classList.add('in'); });
+      return;
+    }
+    revealObs = new IntersectionObserver(
+      function (entries) {
+        entries.forEach(function (entry) {
+          if (!entry.isIntersecting) return;
+          entry.target.classList.add('in');
+          revealObs.unobserve(entry.target);
+        });
+      },
+      { threshold: 0.12, rootMargin: '0px 0px -6% 0px' }
+    );
+
+    items.forEach(function (el) {
+      if (el.classList.contains('in')) return;
+      var r = el.getBoundingClientRect();
+      if (r.top < window.innerHeight * 0.94 && r.bottom > 0) {
+        el.classList.add('in');
+      } else {
+        revealObs.observe(el);
+      }
+    });
+  }
+
+  function setupPointerFx() {
+    if (!FINE_POINTER || REDUCED) return;
+
+    var spotRaf = null;
+    var spotEvent = null;
+    document.addEventListener('pointermove', function (e) {
+      spotEvent = e;
+      if (spotRaf) return;
+      spotRaf = requestAnimationFrame(function () {
+        spotRaf = null;
+        var ev = spotEvent;
+        if (!ev) return;
+        var card = ev.target.closest ? ev.target.closest('[data-spotlight]') : null;
+        if (!card) return;
+        var rect = card.getBoundingClientRect();
+        if (!rect.width || !rect.height) return;
+        card.style.setProperty('--spot-x', ((ev.clientX - rect.left) / rect.width * 100).toFixed(2) + '%');
+        card.style.setProperty('--spot-y', ((ev.clientY - rect.top) / rect.height * 100).toFixed(2) + '%');
+      });
+    }, { passive: true });
+
+    var tiltActive = null;
+    var tiltRaf = null;
+    var tiltEvent = null;
+    var MAX_TILT = 3.2;
+
+    function resetTilt(el) {
+      if (!el) return;
+      el.classList.remove('is-tilting');
+      el.style.setProperty('--tilt-x', '0deg');
+      el.style.setProperty('--tilt-y', '0deg');
+    }
+
+    document.addEventListener('pointermove', function (e) {
+      tiltEvent = e;
+      if (tiltRaf) return;
+      tiltRaf = requestAnimationFrame(function () {
+        tiltRaf = null;
+        var ev = tiltEvent;
+        var card = ev.target.closest ? ev.target.closest('[data-tilt]') : null;
+        if (card !== tiltActive) {
+          resetTilt(tiltActive);
+          tiltActive = card;
+          if (card) card.classList.add('is-tilting');
+        }
+        if (!card) return;
+        var rect = card.getBoundingClientRect();
+        if (!rect.width || !rect.height) return;
+        var px = (ev.clientX - rect.left) / rect.width - 0.5;
+        var py = (ev.clientY - rect.top) / rect.height - 0.5;
+        card.style.setProperty('--tilt-y', (px * MAX_TILT * 2).toFixed(2) + 'deg');
+        card.style.setProperty('--tilt-x', (-py * MAX_TILT * 2).toFixed(2) + 'deg');
+      });
+    }, { passive: true });
+
+    function clearTilt() {
+      resetTilt(tiltActive);
+      tiltActive = null;
+    }
+    document.addEventListener('pointerleave', clearTilt);
+    window.addEventListener('blur', clearTilt);
+    window.addEventListener('scroll', function () {
+      if (tiltActive) {
+        resetTilt(tiltActive);
+        tiltActive = null;
+      }
+    }, { passive: true });
+  }
+
+  function initCardMotion() {
+    setupStaggerGroups();
+    enhanceCards();
+    setupReveals();
+    setupPointerFx();
+    if (revealFailSafe) {
+      clearTimeout(revealFailSafe);
+      revealFailSafe = null;
+    }
+  }
 
   /* ---------- Hero video ---------- */
   var heroVideo = document.getElementById('hero-video');
@@ -321,7 +476,7 @@
         if (r.bottom < -80 || r.top > vh + 80) return;
         var progress = (r.top + r.height / 2 - vh / 2) / vh; // -0.5..0.5
         var shift = progress * 70 * it.speed * 10;
-        it.img.style.transform = 'scale(1.12) translateY(' + shift.toFixed(1) + 'px)';
+        it.img.style.setProperty('--parallax-y', shift.toFixed(1) + 'px');
       });
     }
     window.addEventListener('scroll', function () {
@@ -394,5 +549,8 @@
       }
     });
   }
+
+  /* ---------- Initialise card motion after dynamic content ---------- */
+  initCardMotion();
 
 })();

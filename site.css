@@ -303,35 +303,6 @@ ul { list-style: none; }
   letter-spacing: 0;
   color: var(--muted);
 }
-.hero__scroll {
-  position: absolute;
-  left: max(32px, calc((100vw - var(--max)) / 2 + 32px));
-  bottom: 34px;
-  z-index: 4;
-  display: inline-flex;
-  align-items: center;
-  gap: 12px;
-  font-family: var(--font);
-  font-size: 0.64rem;
-  font-weight: 500;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--faint);
-  transition: color 0.3s;
-}
-.hero__scroll:hover { color: var(--ink); }
-.hero__scroll .cue {
-  width: 1px; height: 38px;
-  background: linear-gradient(180deg, rgba(17,24,39,0.05), rgba(17,24,39,0.45));
-  position: relative;
-  overflow: hidden;
-}
-.hero__scroll .cue::after {
-  content: ""; position: absolute; left: 0; top: 0;
-  width: 1px; height: 12px; background: var(--accent-2);
-  animation: cue-drop 2.2s var(--ease) infinite;
-}
-@keyframes cue-drop { 0% { transform: translateY(-12px); opacity: 0; } 25% { opacity: 1; } 75%,100% { transform: translateY(38px); opacity: 0; } }
 @keyframes heroReveal { to { opacity: 0.92; transform: scale(1); } }
 
 /* entrance choreography */
@@ -824,12 +795,36 @@ footer { background: var(--bg-1); border-top: 1px solid var(--line-soft); paddin
 #fab:hover { transform: translateY(-3px) scale(1.05); }
 #fab svg { width: 24px; height: 24px; }
 
-/* ---------- Reveal (hidden only when JS is confirmed running) ---------- */
-.js .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.9s var(--ease), transform 0.9s var(--ease); }
-.js .reveal.in { opacity: 1; transform: none; }
-.js .reveal[data-d="1"] { transition-delay: 0.1s; }
-.js .reveal[data-d="2"] { transition-delay: 0.2s; }
-.js .reveal[data-d="3"] { transition-delay: 0.3s; }
+/* ---------- Reveal presets (hidden only when JS is confirmed running) ----------
+   Uses the individual translate/scale properties so hover transforms remain
+   free to compose on top of the reveal state. */
+.js .reveal,
+.js .reveal-image {
+  --reveal-x: 0px;
+  --reveal-y: 28px;
+  --reveal-scale: 0.98;
+  --reveal-duration: 780ms;
+  --reveal-delay: 0ms;
+  opacity: 0;
+  transition:
+    opacity var(--reveal-duration) var(--ease) var(--reveal-delay),
+    translate var(--reveal-duration) var(--ease) var(--reveal-delay),
+    scale var(--reveal-duration) var(--ease) var(--reveal-delay);
+  will-change: opacity, translate, scale;
+}
+.js .reveal { translate: var(--reveal-x) var(--reveal-y); scale: var(--reveal-scale); }
+.js .reveal-image { --reveal-y: 20px; --reveal-scale: 0.97; translate: 0 var(--reveal-y); scale: var(--reveal-scale); }
+.js .reveal.reveal-up { --reveal-y: 32px; --reveal-scale: 0.98; }
+.js .reveal.reveal-scale { --reveal-y: 12px; --reveal-scale: 0.96; }
+.js .reveal.reveal-left { --reveal-x: -32px; --reveal-y: 0px; --reveal-scale: 1; }
+.js .reveal.reveal-right { --reveal-x: 32px; --reveal-y: 0px; --reveal-scale: 1; }
+.js .reveal.in,
+.js .reveal-image.in {
+  opacity: 1;
+  translate: 0 0;
+  scale: 1;
+  will-change: auto;
+}
 
 /* ============================================================
    RESPONSIVE
@@ -858,7 +853,6 @@ footer { background: var(--bg-1); border-top: 1px solid var(--line-soft); paddin
       linear-gradient(180deg, rgba(255,255,255,0.84) 0%, rgba(255,255,255,0.62) 42%, rgba(255,255,255,0.50) 72%, rgba(255,255,255,0.92) 100%);
   }
   .hero__title { font-size: clamp(2.7rem, 10.5vw, 4.4rem); }
-  .hero__scroll { left: 22px; }
   .vision-layout { grid-template-columns: 1fr; gap: 48px; }
   .next-layout { grid-template-columns: 1fr; gap: 48px; }
   .next-stick { position: static; }
@@ -874,7 +868,6 @@ footer { background: var(--bg-1); border-top: 1px solid var(--line-soft); paddin
   .hero__media { background-position: 64% center; }
   .hero__title { font-size: clamp(2.5rem, 13.5vw, 3.5rem); line-height: 1; letter-spacing: -0.035em; }
   .hero__tagline { font-size: 1rem; max-width: 30ch; }
-  .hero__scroll { left: 22px; bottom: 26px; }
   .marquee { padding: 16px 0; }
   .builder-method { grid-template-columns: 1fr 1fr; }
   .media-grid { grid-template-columns: 1fr; }
@@ -895,7 +888,6 @@ footer { background: var(--bg-1); border-top: 1px solid var(--line-soft); paddin
   .hero__inner { padding-top: calc(var(--nav-h) + 8px); padding-bottom: 64px; }
   .hero__title { font-size: clamp(2rem, 6vw, 3.1rem); }
   .hero__tagline { font-size: 0.95rem; }
-  .hero__scroll { bottom: 16px; }
 }
 
 /* ---------- Reduced motion ---------- */
@@ -1720,7 +1712,7 @@ button:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; bo
 .legal__item ul li::before { display: none; }
 .project__media::before,
 .project__media::after { display: none; }
-.note-mark, .outro-beats, .hero__scroll .cue { display: none; }
+.note-mark, .outro-beats { display: none; }
 
 /* --- Pills become calm, rectangular tags --- */
 .chip,
@@ -1821,7 +1813,7 @@ a.pill:hover { color: var(--accent); border-color: rgba(8,121,171,0.35); backgro
 /* --- Media --- */
 .media-item { border-radius: 16px; }
 .media-item:hover { border-color: rgba(8,121,171,0.28); box-shadow: var(--shadow-sm); }
-.media-item > div:first-child { border-radius: 16px !important; }
+.media-item > div:first-of-type { border-radius: 16px !important; }
 .play-orb { box-shadow: none; }
 .media-item__shade { background: linear-gradient(180deg, transparent 30%, rgba(255,255,255,0.96)); }
 .media-item.is-soon .play-orb { background: var(--bg-1); color: var(--faint); border-color: var(--line); }
@@ -2646,8 +2638,6 @@ html[data-theme="dark"] .hero::after {
 html[data-theme="dark"] .hero__title { color: var(--ink); }
 html[data-theme="dark"] .hero__title .hero__title-accent { color: #4FD1FF; }
 html[data-theme="dark"] .hero__tagline { color: var(--muted); }
-html[data-theme="dark"] .hero__scroll { color: var(--faint); }
-html[data-theme="dark"] .hero__scroll:hover { color: var(--ink); }
 
 html[data-theme="dark"] .marquee { background: var(--bg-1); border-color: var(--line-soft); }
 html[data-theme="dark"] .marquee span { color: var(--muted); }
@@ -3278,4 +3268,207 @@ html[data-theme="dark"] .signal-msg { color: var(--faint); border-color: var(--l
   .theme-toggle__label { transition: none !important; }
   html[data-theme="dark"] .hero__media-img { animation: none !important; opacity: 0.42; transform: none; }
   html[data-theme="dark"] #m-nav::before { display: none; }
+}
+
+/* ==================================================================
+   PREMIUM CARD MOTION & INTERACTION SYSTEM   v202628
+   Reveal presets, stagger groups, spotlight, tilt, image response.
+   ================================================================== */
+:root {
+  --card-lift: -5px;
+  --card-border-hover: rgba(8, 121, 171, 0.34);
+  --card-shadow-hover: 0 24px 54px -30px rgba(8, 121, 171, 0.30), 0 2px 6px rgba(15, 23, 42, 0.04);
+  --card-spot: rgba(17, 187, 250, 0.11);
+}
+
+html[data-theme="dark"] {
+  --card-border-hover: rgba(17, 187, 250, 0.34);
+  --card-shadow-hover: 0 26px 60px -30px rgba(0, 0, 0, 0.82), 0 0 34px -18px rgba(17, 187, 250, 0.28);
+  --card-spot: rgba(17, 187, 250, 0.13);
+}
+
+/* --- Pointer spotlight (injected once per selected card) --- */
+.fx-spot {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  opacity: 0;
+  background: radial-gradient(220px circle at var(--spot-x, 50%) var(--spot-y, 50%), var(--card-spot), transparent 64%);
+  transition: opacity 320ms var(--ease);
+}
+[data-spotlight] { position: relative; }
+[data-spotlight] > .fx-spot { z-index: 0; }
+[data-spotlight]:not(.project__media):not(.media-item) > :not(.fx-spot) { position: relative; z-index: 1; }
+.project__media > .fx-spot { z-index: 1; }
+.project__media > .project__index,
+.project__media > .project__status { z-index: 2; }
+.project__media > .media-play { z-index: 3; }
+.media-item > .fx-spot { z-index: 1; }
+.media-item > .media-item__shade { z-index: 2; }
+.media-item > .media-item__tag,
+.media-item > .media-item__body { z-index: 3; }
+
+@media (hover: hover) and (pointer: fine) {
+  [data-spotlight]:hover > .fx-spot,
+  [data-spotlight]:focus-within > .fx-spot { opacity: 1; }
+}
+
+/* --- Image sheen + controlled media response --- */
+.fx-sheen {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  border-radius: inherit;
+  pointer-events: none;
+  opacity: 0;
+  background: linear-gradient(115deg, transparent 32%, rgba(17, 187, 250, 0.14) 50%, transparent 68%);
+  transform: translate3d(-28%, 0, 0);
+  transition: opacity 360ms var(--ease), transform 900ms var(--ease);
+}
+
+.project__media img {
+  transform: translate3d(0, var(--parallax-y, 0px), 0);
+  scale: var(--media-scale, 1.12);
+  transition: scale 700ms var(--ease), filter 500ms var(--ease);
+}
+.project__media--phone img { --media-scale: 1.02; }
+.project__media svg { transition: scale 700ms var(--ease); }
+.p-visual img,
+.p-visual video,
+.p-visual > svg { transition: scale 700ms var(--ease); }
+
+@media (hover: hover) and (pointer: fine) {
+  [data-image-reveal]:hover > .fx-sheen { opacity: 1; transform: translate3d(28%, 0, 0); }
+}
+
+@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+  .project__media:hover img { --media-scale: 1.16; filter: saturate(1.04); }
+  .project__media--phone:hover img { --media-scale: 1.07; }
+  .project__media:hover svg { scale: 1.03; }
+  .p-visual:hover img { scale: 1.025; }
+  .p-visual:hover video,
+  .p-visual:hover > svg { scale: 1.015; }
+}
+
+/* --- Restrained hover lift, border depth, cyan ambient light --- */
+@media (hover: hover) and (pointer: fine) {
+  .uni-product,
+  .lab-item,
+  .next-item,
+  .p-card,
+  .p-step,
+  .c-card,
+  .office-card,
+  .legal__item,
+  .media-item,
+  .project__media {
+    transition:
+      transform 340ms var(--ease),
+      border-color 300ms var(--ease),
+      box-shadow 340ms var(--ease),
+      background-color 300ms var(--ease);
+  }
+
+  .uni-product:hover,
+  .lab-item:hover,
+  .next-item:hover,
+  .p-card:hover,
+  .p-step:hover,
+  .c-card:hover,
+  .office-card:hover,
+  .legal__item:hover,
+  .media-item:hover {
+    transform: translate3d(0, var(--card-lift), 0);
+    border-color: var(--card-border-hover);
+    box-shadow: var(--card-shadow-hover);
+  }
+
+  html[data-theme="dark"] .uni-product:hover,
+  html[data-theme="dark"] .lab-item:hover,
+  html[data-theme="dark"] .next-item:hover,
+  html[data-theme="dark"] .p-card:hover,
+  html[data-theme="dark"] .p-step:hover,
+  html[data-theme="dark"] .c-card:hover,
+  html[data-theme="dark"] .office-card:hover,
+  html[data-theme="dark"] .legal__item:hover,
+  html[data-theme="dark"] .media-item:hover,
+  html[data-theme="dark"] .project__media:hover {
+    border-color: var(--card-border-hover);
+    box-shadow: var(--card-shadow-hover);
+  }
+
+  /* The services panel is one seamless grid, so lift its content instead. */
+  .service:hover {
+    border-color: var(--card-border-hover);
+    box-shadow: var(--card-shadow-hover);
+  }
+  .service > :not(.fx-spot) { transition: transform 340ms var(--ease); }
+  .service:hover > :not(.fx-spot) { transform: translate3d(0, -3px, 0); }
+
+  .project__media:hover {
+    border-color: var(--card-border-hover);
+    box-shadow: var(--card-shadow-hover);
+  }
+
+  .project__index,
+  .project__status {
+    transition: transform 340ms var(--ease), border-color 300ms var(--ease), background-color 300ms var(--ease);
+  }
+  .project__media:hover .project__index,
+  .project__media:hover .project__status { transform: translate3d(0, -2px, 0); }
+}
+
+/* --- Subtle 3D tilt: project media only, fine pointers only --- */
+@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+  [data-tilt] {
+    transform: perspective(1000px) rotateX(var(--tilt-x, 0deg)) rotateY(var(--tilt-y, 0deg)) translate3d(0, var(--tilt-lift, 0px), 0);
+    transition: transform 520ms var(--ease), border-color 300ms var(--ease), box-shadow 340ms var(--ease);
+    transform-style: preserve-3d;
+    will-change: transform;
+  }
+  [data-tilt].is-tilting { transition: transform 90ms linear; }
+  [data-tilt]:hover { --tilt-lift: -4px; }
+}
+
+/* --- Lighter motion on phones/tablets --- */
+@media (max-width: 820px) {
+  .js .reveal,
+  .js .reveal.reveal-up,
+  .js .reveal.reveal-scale,
+  .js .reveal.reveal-left,
+  .js .reveal.reveal-right,
+  .js .reveal-image {
+    --reveal-x: 0px;
+    --reveal-y: 18px;
+    --reveal-scale: 0.99;
+    --reveal-duration: 600ms;
+  }
+  .js .reveal-image { translate: 0 14px; scale: 0.99; }
+}
+
+/* --- Touch devices: no pointer-dependent effects --- */
+@media (hover: none), (pointer: coarse) {
+  .fx-spot,
+  .fx-sheen { display: none; }
+  .service > :not(.fx-spot) { transform: none !important; }
+}
+
+/* --- Reduced motion: content is always present and still --- */
+@media (prefers-reduced-motion: reduce) {
+  .js .reveal,
+  .js .reveal-image {
+    opacity: 1 !important;
+    transform: none !important;
+    translate: none !important;
+    scale: none !important;
+    clip-path: none !important;
+    transition: none !important;
+    will-change: auto;
+  }
+  [data-tilt] { transform: none !important; }
+  .fx-spot,
+  .fx-sheen { display: none !important; }
+  .service > :not(.fx-spot) { transform: none !important; }
 }
