@@ -1,0 +1,35 @@
+{
+  "license": "Unsplash License: https://unsplash.com/license",
+  "assets": [
+    {
+      "file": "web-systems.jpg",
+      "source": "https://images.unsplash.com/photo-1498050108023-c5249f4df085",
+      "discovery": "https://unsplash.com/s/photos/laptop-with-code"
+    },
+    {
+      "file": "software-desktop.jpg",
+      "source": "https://images.unsplash.com/photo-1519389950473-47ba0277781c",
+      "discovery": "https://unsplash.com/s/photos/software-development-workspace"
+    },
+    {
+      "file": "mobile-applications.jpg",
+      "source": "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9",
+      "discovery": "https://unsplash.com/s/photos/mobile-ui"
+    },
+    {
+      "file": "ai-automation.jpg",
+      "source": "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158",
+      "discovery": "https://unsplash.com/s/photos/artificial-intelligence-technology"
+    },
+    {
+      "file": "enterprise-identity.jpg",
+      "source": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b",
+      "discovery": "https://unsplash.com/s/photos/cybersecurity-technology"
+    },
+    {
+      "file": "networking-emerging-tech.jpg",
+      "source": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31",
+      "discovery": "https://unsplash.com/s/photos/network-infrastructure"
+    }
+  ]
+}
