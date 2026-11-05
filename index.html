@@ -45,7 +45,7 @@
         }
       })();
     </script>
-    <link rel="stylesheet" href="site.css?v=202629" />
+    <link rel="stylesheet" href="site.css?v=202630" />
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -317,7 +317,7 @@
             <dl class="uni-stats">
               <div class="uni-stat">
                 <dt>Products</dt>
-                <dd>04</dd>
+                <dd aria-label="4 products"><span data-products-counter aria-hidden="true">04</span></dd>
               </div>
               <div class="uni-stat">
                 <dt>Research themes</dt>
@@ -325,69 +325,78 @@
               </div>
             </dl>
 
-            <a class="uni-core__cta" href="#lab">
-              <span>Explore the Innovation Lab</span>
-
-            </a>
+            <button class="uni-core__cta" type="button" aria-expanded="false" aria-controls="uni-products">
+              <span>Explore Innovation Lab</span>
+            </button>
           </aside>
+        </div>
 
-          <!-- Products -->
-          <div class="uni-products">
+        <div class="uni-products-panel" id="uni-products" aria-hidden="true" inert>
+          <div class="uni-products-panel__inner">
             <div class="uni-products__head">
               <span class="uni-kicker">Products &amp; platforms</span>
             </div>
 
-            <div class="uni-grid" data-stagger data-stagger-step="90">
+            <!-- Unsplash sources (Unsplash License; attribution is not required):
+                 FeMOS: https://images.unsplash.com/photo-1595079676339-1534801ad6cf?auto=format&fit=crop&w=960&h=650&q=85
+                 JSL FastLine: https://images.unsplash.com/photo-1551650975-87deedd944c3?auto=format&fit=crop&w=960&h=650&q=85
+                 Neo SmartCore: https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=960&h=650&q=85
+                 FIT: https://images.unsplash.com/photo-1633265486064-086b219458ec?auto=format&fit=crop&w=960&h=650&q=85 -->
+            <div class="uni-grid">
               <a class="uni-product" href="projects/femos.html">
-                <span class="uni-product__top">
-
+                <span class="uni-product__image">
+                  <img src="assets/images/femos.jpg" alt="Phone displaying a QR code check-in screen" width="960" height="650" loading="lazy" decoding="async" />
+                  <span class="uni-product__image-shade" aria-hidden="true"></span>
                   <span class="uni-status uni-status--dev">In Development</span>
                 </span>
                 <span class="uni-product__body">
                   <span class="uni-product__cat">Campus Operating System</span>
                   <span class="uni-product__name">FeMOS</span>
                   <span class="uni-product__desc">Smart attendance, announcements and a permanent student identity — one campus system that keeps working offline.</span>
+                  <span class="uni-product__link">Explore <span aria-hidden="true">↗</span></span>
                 </span>
-                <span class="uni-product__link">Explore </span>
-              </a>
-
-              <a class="uni-product" href="projects/neo-smartcore.html">
-                <span class="uni-product__top">
-
-                  <span class="uni-status uni-status--proto">Prototype</span>
-                </span>
-                <span class="uni-product__body">
-                  <span class="uni-product__cat">Business Operations Intelligence</span>
-                  <span class="uni-product__name">Neo SmartCore</span>
-                  <span class="uni-product__desc">An intelligence core for business operations — visibility, stock monitoring and daily reporting in one place.</span>
-                </span>
-                <span class="uni-product__link">Explore </span>
-              </a>
-
-              <a class="uni-product" href="projects/fit.html">
-                <span class="uni-product__top">
-
-                  <span class="uni-status uni-status--concept">Concept</span>
-                </span>
-                <span class="uni-product__body">
-                  <span class="uni-product__cat">Identification &amp; Attendance Technology</span>
-                  <span class="uni-product__name">FIT</span>
-                  <span class="uni-product__desc">Digital identity and device interaction — attendance and verification through QR and NFC workflows.</span>
-                </span>
-                <span class="uni-product__link">Explore </span>
               </a>
 
               <a class="uni-product" href="projects/jsl-fastline.html">
-                <span class="uni-product__top">
-
+                <span class="uni-product__image">
+                  <img src="assets/images/jsl-fastline.jpg" alt="Smartphone displaying a sophisticated mobile dashboard app" width="960" height="650" loading="lazy" decoding="async" />
+                  <span class="uni-product__image-shade" aria-hidden="true"></span>
                   <span class="uni-status uni-status--concept">Concept</span>
                 </span>
                 <span class="uni-product__body">
                   <span class="uni-product__cat">Low-Connectivity Digital Ecosystem</span>
                   <span class="uni-product__name">JSL FastLine</span>
                   <span class="uni-product__desc">A social and growth platform designed from the offline up — built for real handsets, data costs and zero signal.</span>
+                  <span class="uni-product__link">Explore <span aria-hidden="true">↗</span></span>
                 </span>
-                <span class="uni-product__link">Explore </span>
+              </a>
+
+              <a class="uni-product" href="projects/neo-smartcore.html">
+                <span class="uni-product__image">
+                  <img src="assets/images/neo-smartcore.jpg" alt="Business analytics dashboard displayed on a laptop" width="960" height="650" loading="lazy" decoding="async" />
+                  <span class="uni-product__image-shade" aria-hidden="true"></span>
+                  <span class="uni-status uni-status--proto">Prototype</span>
+                </span>
+                <span class="uni-product__body">
+                  <span class="uni-product__cat">Business Operations Intelligence</span>
+                  <span class="uni-product__name">Neo SmartCore</span>
+                  <span class="uni-product__desc">An intelligence core for business operations — visibility, stock monitoring and daily reporting in one place.</span>
+                  <span class="uni-product__link">Explore <span aria-hidden="true">↗</span></span>
+                </span>
+              </a>
+
+              <a class="uni-product" href="projects/fit.html">
+                <span class="uni-product__image">
+                  <img src="assets/images/fit-identity.jpg" alt="Combination lock and payment card on a keyboard, representing identity security" width="960" height="650" loading="lazy" decoding="async" />
+                  <span class="uni-product__image-shade" aria-hidden="true"></span>
+                  <span class="uni-status uni-status--concept">Concept</span>
+                </span>
+                <span class="uni-product__body">
+                  <span class="uni-product__cat">Identification &amp; Attendance Technology</span>
+                  <span class="uni-product__name">FastLine Identifying Tool (FIT)</span>
+                  <span class="uni-product__desc">Digital identity and device interaction — attendance and verification through QR and NFC workflows.</span>
+                  <span class="uni-product__link">Explore <span aria-hidden="true">↗</span></span>
+                </span>
               </a>
             </div>
           </div>
@@ -860,6 +869,6 @@
     </div>
 
     <script src="data/projects.js"></script>
-    <script src="site.js?v=202628"></script>
+    <script src="site.js?v=202630"></script>
   </body>
 </html>

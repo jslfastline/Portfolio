@@ -72,6 +72,93 @@
 
   syncThemeControls(currentTheme());
 
+  /* ---------- FastLine Universe ---------- */
+  var universeCore = document.querySelector('#universe .uni-core');
+  var productsCounter = document.querySelector('[data-products-counter]');
+  var exploreLabButton = document.querySelector('.uni-core__cta[aria-controls="uni-products"]');
+  var productsPanel = document.getElementById('uni-products');
+
+  if (productsCounter) {
+    var counterStarted = false;
+
+    function animateProductsCounter() {
+      if (counterStarted) return;
+      counterStarted = true;
+
+      var riseDuration = 780;
+      var peakDuration = 140;
+      var fallDuration = 1500;
+      var startTime = null;
+
+      function renderCount(value) {
+        var count = Math.round(value);
+        productsCounter.textContent = count >= 100
+          ? '100+'
+          : count === 0 ? '0' : String(count).padStart(2, '0');
+      }
+
+      function tick(timestamp) {
+        if (startTime === null) startTime = timestamp;
+        var elapsed = timestamp - startTime;
+
+        if (elapsed < riseDuration) {
+          var rise = elapsed / riseDuration;
+          renderCount(100 * (1 - Math.pow(1 - rise, 3)));
+          requestAnimationFrame(tick);
+          return;
+        }
+
+        if (elapsed < riseDuration + peakDuration) {
+          renderCount(100);
+          requestAnimationFrame(tick);
+          return;
+        }
+
+        var fallElapsed = elapsed - riseDuration - peakDuration;
+        if (fallElapsed < fallDuration) {
+          renderCount(100 - 96 * (fallElapsed / fallDuration));
+          requestAnimationFrame(tick);
+          return;
+        }
+
+        productsCounter.textContent = '04';
+      }
+
+      productsCounter.textContent = '0';
+      requestAnimationFrame(tick);
+    }
+
+    if (REDUCED) {
+      productsCounter.textContent = '04';
+      counterStarted = true;
+    } else if (universeCore && 'IntersectionObserver' in window) {
+      var productsCounterObserver = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (!entry.isIntersecting) return;
+          productsCounterObserver.unobserve(entry.target);
+          animateProductsCounter();
+        });
+      }, { threshold: 0.18 });
+      productsCounterObserver.observe(universeCore);
+    } else {
+      animateProductsCounter();
+    }
+  }
+
+  if (exploreLabButton && productsPanel) {
+    exploreLabButton.addEventListener('click', function () {
+      var expanded = exploreLabButton.getAttribute('aria-expanded') !== 'true';
+      exploreLabButton.setAttribute('aria-expanded', String(expanded));
+      productsPanel.setAttribute('aria-hidden', String(!expanded));
+      if (expanded) productsPanel.removeAttribute('inert');
+      else productsPanel.setAttribute('inert', '');
+      productsPanel.classList.toggle('is-open', expanded);
+
+      var label = exploreLabButton.querySelector('span');
+      if (label) label.textContent = expanded ? 'Close Innovation Lab' : 'Explore Innovation Lab';
+    });
+  }
+
   /* ---------- Brand media source ---------- */
   var BRAND_FILM =
     'https://res.cloudinary.com/dlv2esvfc/video/upload/v1790956219/Technology_brand_film_loop_20261002184452_ytncv8.mp4';
