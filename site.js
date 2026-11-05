@@ -290,7 +290,7 @@
     });
 
     document.querySelectorAll('.project__media').forEach(function (el) {
-      el.setAttribute('data-tilt', '');
+      if (!el.closest('#projects')) el.setAttribute('data-tilt', '');
     });
   }
 

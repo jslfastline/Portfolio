@@ -1,0 +1,112 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1100" viewBox="0 0 1600 1100" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="120" y1="30" x2="1480" y2="1070" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#132A43"/>
+      <stop offset=".54" stop-color="#0A182A"/>
+      <stop offset="1" stop-color="#07111F"/>
+    </linearGradient>
+    <linearGradient id="phone" x1="630" y1="177" x2="1000" y2="955" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#273F59"/>
+      <stop offset="1" stop-color="#0B1726"/>
+    </linearGradient>
+    <linearGradient id="screen" x1="672" y1="240" x2="946" y2="872" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F5FAFE"/>
+      <stop offset="1" stop-color="#E5EEF7"/>
+    </linearGradient>
+    <linearGradient id="cyan" x1="314" y1="657" x2="1260" y2="389" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#42D4E9"/>
+      <stop offset="1" stop-color="#668DF8"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0" cy="0" r="1" gradientTransform="matrix(530 390 -500 680 800 520)" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#148DCA" stop-opacity=".2"/>
+      <stop offset="1" stop-color="#148DCA" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="grid" width="46" height="46" patternUnits="userSpaceOnUse">
+      <path d="M46 0H0V46" stroke="#9BC4E4" stroke-opacity=".045"/>
+    </pattern>
+    <filter id="shadow" x="170" y="130" width="1260" height="910" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse">
+      <feGaussianBlur stdDeviation="30"/>
+    </filter>
+  </defs>
+  <path fill="url(#bg)" d="M0 0h1600v1100H0z"/>
+  <path fill="url(#glow)" d="M0 0h1600v1100H0z"/>
+  <path fill="url(#grid)" d="M0 0h1600v1100H0z"/>
+  <ellipse cx="800" cy="1000" fill="#020914" fill-opacity=".72" filter="url(#shadow)" rx="520" ry="38"/>
+  <g stroke="url(#cyan)" stroke-opacity=".28" stroke-width="2">
+    <path d="M300 390c94-94 246-94 340 0M260 350c116-116 304-116 420 0M220 310c138-138 362-138 500 0"/>
+    <path d="M1300 390c-94-94-246-94-340 0M1340 350c-116-116-304-116-420 0M1380 310c-138-138-362-138-500 0"/>
+    <path d="M435 722c110 110 288 110 398 0M395 762c132 132 346 132 478 0M355 802c154 154 404 154 558 0"/>
+  </g>
+  <circle cx="800" cy="390" r="7" fill="#62D7EF"/>
+  <circle cx="800" cy="722" r="7" fill="#62D7EF"/>
+  <rect x="617" y="132" width="366" height="825" rx="66" fill="#020811" fill-opacity=".55" filter="url(#shadow)"/>
+  <rect x="632" y="126" width="336" height="830" rx="58" fill="#040A12" stroke="#91B6D7" stroke-opacity=".55" stroke-width="3"/>
+  <rect x="648" y="145" width="304" height="792" rx="44" fill="url(#screen)"/>
+  <path d="M744 152h112a18 18 0 0 1 18 18v6H726v-6a18 18 0 0 1 18-18Z" fill="#030912"/>
+  <text x="678" y="222" fill="#17344D" font-family="Sora,Arial,sans-serif" font-size="18" font-weight="600">JSL FastLine</text>
+  <text x="678" y="244" fill="#788DA1" font-family="Inter,Arial,sans-serif" font-size="10" letter-spacing="1.5">COMMUNITY · PREVIEW</text>
+  <circle cx="914" cy="222" r="17" fill="#D9E7F0"/>
+  <path d="M908 222h12M914 216v12" stroke="#348CAC" stroke-width="1.8" stroke-linecap="round"/>
+  <rect x="675" y="268" width="250" height="48" rx="12" fill="#E0F2F1"/>
+  <circle cx="696" cy="292" r="5" fill="#27A48E"/>
+  <text x="710" y="296" fill="#35645F" font-family="Inter,Arial,sans-serif" font-size="11">Offline-first preview</text>
+  <text x="677" y="357" fill="#203B52" font-family="Sora,Arial,sans-serif" font-size="20" font-weight="600">A space to connect</text>
+  <text x="677" y="381" fill="#73879A" font-family="Inter,Arial,sans-serif" font-size="11">Designed for everyday connections</text>
+  <rect x="675" y="405" width="250" height="178" rx="17" fill="#FFFFFF" stroke="#D8E5EE"/>
+  <rect x="693" y="423" width="42" height="42" rx="14" fill="#DFF4F6"/>
+  <path d="M705 445c0-6 4-10 9-10s9 4 9 10v5h-18v-5Z" stroke="#2598B3" stroke-width="1.8"/>
+  <path d="M700 451h28" stroke="#2598B3" stroke-width="1.8" stroke-linecap="round"/>
+  <text x="748" y="439" fill="#2B4258" font-family="Inter,Arial,sans-serif" font-size="12" font-weight="600">Community</text>
+  <text x="748" y="458" fill="#8999A9" font-family="Inter,Arial,sans-serif" font-size="10">Illustrative app screen</text>
+  <path d="M694 486h202M694 500h176M694 514h188" stroke="#D5E0E9" stroke-width="7" stroke-linecap="round"/>
+  <rect x="694" y="541" width="107" height="23" rx="11.5" fill="#EAF2FA"/>
+  <text x="710" y="556" fill="#526D83" font-family="Inter,Arial,sans-serif" font-size="9">Saved on device</text>
+  <rect x="675" y="599" width="250" height="116" rx="17" fill="#FFFFFF" stroke="#D8E5EE"/>
+  <text x="695" y="629" fill="#334C62" font-family="Inter,Arial,sans-serif" font-size="12" font-weight="600">Growth tools</text>
+  <text x="695" y="650" fill="#8496A7" font-family="Inter,Arial,sans-serif" font-size="10">Useful resources, ready when needed</text>
+  <rect x="695" y="672" width="153" height="25" rx="12.5" fill="#E8F2F8"/>
+  <text x="710" y="688" fill="#526F87" font-family="Inter,Arial,sans-serif" font-size="9">Illustrative content</text>
+  <rect x="675" y="731" width="250" height="67" rx="15" fill="#EAF3F8"/>
+  <circle cx="699" cy="764" r="13" fill="#D3EAF1"/>
+  <path d="M693 764h12M699 758v12" stroke="#328EA8" stroke-width="1.7" stroke-linecap="round"/>
+  <text x="722" y="760" fill="#415C72" font-family="Inter,Arial,sans-serif" font-size="11" font-weight="600">Connection status</text>
+  <text x="722" y="779" fill="#728A9B" font-family="Inter,Arial,sans-serif" font-size="10">Content saved for offline use</text>
+  <path d="M675 831h250" stroke="#D1DEE8"/>
+  <g fill="#4F708A" font-family="Inter,Arial,sans-serif" font-size="8">
+    <circle cx="704" cy="862" r="8" fill="#2F98B2" fill-opacity=".18"/>
+    <text x="694" y="887">HOME</text>
+    <circle cx="758" cy="862" r="8" fill="#93A7B8" fill-opacity=".24"/>
+    <text x="746" y="887">CHATS</text>
+    <circle cx="812" cy="862" r="8" fill="#93A7B8" fill-opacity=".24"/>
+    <text x="800" y="887">GROW</text>
+    <circle cx="866" cy="862" r="8" fill="#93A7B8" fill-opacity=".24"/>
+    <text x="851" y="887">GROUPS</text>
+    <circle cx="920" cy="862" r="8" fill="#93A7B8" fill-opacity=".24"/>
+    <text x="909" y="887">PROFILE</text>
+  </g>
+  <g font-family="Inter,Arial,sans-serif">
+    <rect x="220" y="462" width="280" height="78" rx="17" fill="#10243A" stroke="#7BC5E5" stroke-opacity=".22"/>
+    <circle cx="249" cy="501" r="12" fill="#153C50"/>
+    <path d="M242 501c4-5 10-5 14 0M245 506c2-3 6-3 8 0" stroke="#64D7E9" stroke-width="1.8" stroke-linecap="round"/>
+    <text x="274" y="497" fill="#E3EFF9" font-size="12">Offline-first</text>
+    <text x="274" y="517" fill="#8198AE" font-size="10">Connection as an upgrade</text>
+    <rect x="1100" y="462" width="280" height="78" rx="17" fill="#10243A" stroke="#7BC5E5" stroke-opacity=".22"/>
+    <circle cx="1129" cy="501" r="12" fill="#19384C"/>
+    <path d="M1122 501h14M1129 494v14" stroke="#72D4E5" stroke-width="1.8" stroke-linecap="round"/>
+    <text x="1154" y="497" fill="#E3EFF9" font-size="12">Digital community</text>
+    <text x="1154" y="517" fill="#8198AE" font-size="10">Mobile platform concept</text>
+    <rect x="220" y="625" width="280" height="78" rx="17" fill="#10243A" stroke="#7BC5E5" stroke-opacity=".22"/>
+    <circle cx="249" cy="664" r="12" fill="#153C50"/>
+    <path d="M242 664h14M249 657v14" stroke="#64D7E9" stroke-width="1.8" stroke-linecap="round"/>
+    <text x="274" y="660" fill="#E3EFF9" font-size="12">Growth tools</text>
+    <text x="274" y="680" fill="#8198AE" font-size="10">A connected experience</text>
+    <rect x="1100" y="625" width="280" height="78" rx="17" fill="#10243A" stroke="#7BC5E5" stroke-opacity=".22"/>
+    <circle cx="1129" cy="664" r="12" fill="#19384C"/>
+    <path d="M1122 664h14M1129 657v14" stroke="#72D4E5" stroke-width="1.8" stroke-linecap="round"/>
+    <text x="1154" y="660" fill="#E3EFF9" font-size="12">AI coach</text>
+    <text x="1154" y="680" fill="#8198AE" font-size="10">Concept direction</text>
+  </g>
+  <rect x="1140" y="875" width="278" height="38" rx="19" fill="#081726" fill-opacity=".92" stroke="#78C7E9" stroke-opacity=".24"/>
+  <circle cx="1162" cy="894" r="4" fill="#53D6F1"/>
+  <text x="1176" y="898" fill="#C5D8E9" font-family="Inter,Arial,sans-serif" font-size="10" letter-spacing="1">ILLUSTRATIVE APP CONCEPT</text>
+</svg>

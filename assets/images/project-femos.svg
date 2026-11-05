@@ -1,0 +1,99 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1100" viewBox="0 0 1600 1100" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="120" y1="40" x2="1450" y2="1070" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#102B4A"/>
+      <stop offset=".58" stop-color="#08172A"/>
+      <stop offset="1" stop-color="#06101F"/>
+    </linearGradient>
+    <linearGradient id="panel" x1="200" y1="150" x2="1210" y2="900" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#142B45"/>
+      <stop offset="1" stop-color="#0D1D32"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="350" y1="410" x2="1000" y2="810" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#42D5FF"/>
+      <stop offset="1" stop-color="#4F86F7"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0" cy="0" r="1" gradientTransform="matrix(650 520 -590 737 1160 170)" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#159CE0" stop-opacity=".24"/>
+      <stop offset="1" stop-color="#159CE0" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="grid" width="48" height="48" patternUnits="userSpaceOnUse">
+      <path d="M48 0H0V48" stroke="#8CB4D9" stroke-opacity=".055"/>
+    </pattern>
+    <filter id="shadow" x="30" y="55" width="1440" height="1010" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse">
+      <feGaussianBlur stdDeviation="30"/>
+    </filter>
+  </defs>
+  <path fill="url(#bg)" d="M0 0h1600v1100H0z"/>
+  <path fill="url(#glow)" d="M0 0h1600v1100H0z"/>
+  <path fill="url(#grid)" d="M0 0h1600v1100H0z"/>
+  <ellipse cx="760" cy="1000" fill="#020914" fill-opacity=".72" filter="url(#shadow)" rx="620" ry="38"/>
+  <rect x="84" y="102" width="1285" height="838" rx="26" fill="#030A14" fill-opacity=".38" stroke="#7BC9F0" stroke-opacity=".18" stroke-width="2"/>
+  <rect x="98" y="116" width="1257" height="810" rx="20" fill="url(#panel)"/>
+  <path d="M98 175h1257" stroke="#B6D4EA" stroke-opacity=".12"/>
+  <circle cx="128" cy="145" r="6" fill="#FF7D79" fill-opacity=".82"/>
+  <circle cx="151" cy="145" r="6" fill="#F6C65B" fill-opacity=".82"/>
+  <circle cx="174" cy="145" r="6" fill="#5AC99A" fill-opacity=".82"/>
+  <rect x="213" y="132" width="192" height="25" rx="7" fill="#FFFFFF" fill-opacity=".045"/>
+  <text x="231" y="149" fill="#AFC6DB" font-family="Inter,Arial,sans-serif" font-size="12" letter-spacing="1.5">FEMOS · PREVIEW</text>
+  <rect x="99" y="176" width="202" height="750" fill="#081629" fill-opacity=".68"/>
+  <text x="129" y="219" fill="#EAF5FF" font-family="Sora,Arial,sans-serif" font-size="18" font-weight="600">FeMOS</text>
+  <text x="129" y="243" fill="#718BA7" font-family="Inter,Arial,sans-serif" font-size="10" letter-spacing="2">CAMPUS SYSTEM</text>
+  <rect x="119" y="274" width="163" height="42" rx="10" fill="#42C6F2" fill-opacity=".13" stroke="#42C6F2" stroke-opacity=".2"/>
+  <circle cx="140" cy="295" r="5" fill="#51D4F5"/>
+  <text x="156" y="299" fill="#D9F6FF" font-family="Inter,Arial,sans-serif" font-size="13">Overview</text>
+  <circle cx="140" cy="349" r="5" fill="#64809D"/>
+  <text x="156" y="353" fill="#A8BBD0" font-family="Inter,Arial,sans-serif" font-size="13">Attendance</text>
+  <circle cx="140" cy="403" r="5" fill="#64809D"/>
+  <text x="156" y="407" fill="#A8BBD0" font-family="Inter,Arial,sans-serif" font-size="13">Students</text>
+  <circle cx="140" cy="457" r="5" fill="#64809D"/>
+  <text x="156" y="461" fill="#A8BBD0" font-family="Inter,Arial,sans-serif" font-size="13">Staff</text>
+  <circle cx="140" cy="511" r="5" fill="#64809D"/>
+  <text x="156" y="515" fill="#A8BBD0" font-family="Inter,Arial,sans-serif" font-size="13">Announcements</text>
+  <rect x="327" y="205" width="980" height="75" rx="14" fill="#FFFFFF" fill-opacity=".035" stroke="#C1D8EE" stroke-opacity=".075"/>
+  <text x="355" y="239" fill="#F3F8FF" font-family="Sora,Arial,sans-serif" font-size="23" font-weight="600">Campus overview</text>
+  <text x="355" y="260" fill="#829BB5" font-family="Inter,Arial,sans-serif" font-size="12">An illustrative interface concept</text>
+  <rect x="1092" y="225" width="184" height="34" rx="9" fill="#102B43" stroke="#75CDE9" stroke-opacity=".2"/>
+  <circle cx="1111" cy="242" r="4" fill="#44CFB1"/>
+  <text x="1124" y="246" fill="#BDCFDF" font-family="Inter,Arial,sans-serif" font-size="11">Preview workspace</text>
+  <g>
+    <rect x="327" y="302" width="298" height="112" rx="14" fill="#11253B" stroke="#A8CCE5" stroke-opacity=".1"/>
+    <rect x="643" y="302" width="298" height="112" rx="14" fill="#11253B" stroke="#A8CCE5" stroke-opacity=".1"/>
+    <rect x="959" y="302" width="348" height="112" rx="14" fill="#11253B" stroke="#A8CCE5" stroke-opacity=".1"/>
+    <text x="351" y="333" fill="#8EA7C0" font-family="Inter,Arial,sans-serif" font-size="12">ATTENDANCE</text>
+    <text x="351" y="380" fill="#ECF6FF" font-family="Sora,Arial,sans-serif" font-size="31" font-weight="600">—</text>
+    <text x="667" y="333" fill="#8EA7C0" font-family="Inter,Arial,sans-serif" font-size="12">STUDENT RECORDS</text>
+    <text x="667" y="380" fill="#ECF6FF" font-family="Sora,Arial,sans-serif" font-size="31" font-weight="600">—</text>
+    <text x="983" y="333" fill="#8EA7C0" font-family="Inter,Arial,sans-serif" font-size="12">CAMPUS UPDATES</text>
+    <text x="983" y="380" fill="#ECF6FF" font-family="Sora,Arial,sans-serif" font-size="31" font-weight="600">—</text>
+  </g>
+  <rect x="327" y="436" width="628" height="420" rx="16" fill="#0C1C30" stroke="#A8CCE5" stroke-opacity=".1"/>
+  <text x="355" y="474" fill="#ECF6FF" font-family="Sora,Arial,sans-serif" font-size="16" font-weight="600">Attendance activity</text>
+  <text x="355" y="497" fill="#7E96AF" font-family="Inter,Arial,sans-serif" font-size="11">Illustrative attendance overview</text>
+  <path d="M354 770h560M354 700h560M354 630h560M354 560h560" stroke="#C3D7E8" stroke-opacity=".07"/>
+  <path d="M354 790 425 726l74 19 75-112 73 43 73-64 75 37 75-83 72 22" stroke="url(#accent)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M354 790 425 726l74 19 75-112 73 43 73-64 75 37 75-83 72 22v124H354z" fill="url(#accent)" fill-opacity=".09"/>
+  <circle cx="722" cy="666" r="6" fill="#56D5F9" stroke="#10263D" stroke-width="4"/>
+  <rect x="973" y="436" width="334" height="420" rx="16" fill="#0C1C30" stroke="#A8CCE5" stroke-opacity=".1"/>
+  <text x="1000" y="474" fill="#ECF6FF" font-family="Sora,Arial,sans-serif" font-size="16" font-weight="600">Campus tools</text>
+  <g font-family="Inter,Arial,sans-serif">
+    <rect x="997" y="501" width="286" height="70" rx="11" fill="#142A41"/>
+    <rect x="1015" y="519" width="34" height="34" rx="10" fill="#143D57"/>
+    <path d="M1025 536h14M1032 529v14" stroke="#5DD8F6" stroke-width="2" stroke-linecap="round"/>
+    <text x="1063" y="532" fill="#DCE9F6" font-size="12">Attendance register</text>
+    <text x="1063" y="551" fill="#718BA6" font-size="10">Illustrative module</text>
+    <rect x="997" y="585" width="286" height="70" rx="11" fill="#142A41"/>
+    <rect x="1015" y="603" width="34" height="34" rx="10" fill="#19384D"/>
+    <path d="M1023 613h18M1023 620h18M1023 627h12" stroke="#68CCDF" stroke-width="2" stroke-linecap="round"/>
+    <text x="1063" y="616" fill="#DCE9F6" font-size="12">Student identity</text>
+    <text x="1063" y="635" fill="#718BA6" font-size="10">Illustrative module</text>
+    <rect x="997" y="669" width="286" height="70" rx="11" fill="#142A41"/>
+    <rect x="1015" y="687" width="34" height="34" rx="10" fill="#20354B"/>
+    <path d="M1023 697h18M1023 704h18M1023 711h12" stroke="#8EC7E5" stroke-width="2" stroke-linecap="round"/>
+    <text x="1063" y="700" fill="#DCE9F6" font-size="12">Announcements</text>
+    <text x="1063" y="719" fill="#718BA6" font-size="10">Illustrative module</text>
+  </g>
+  <rect x="1160" y="881" width="212" height="38" rx="19" fill="#081726" fill-opacity=".92" stroke="#78C7E9" stroke-opacity=".24"/>
+  <circle cx="1182" cy="900" r="4" fill="#53D6F1"/>
+  <text x="1196" y="904" fill="#C5D8E9" font-family="Inter,Arial,sans-serif" font-size="10" letter-spacing="1.2">ILLUSTRATIVE PREVIEW</text>
+</svg>

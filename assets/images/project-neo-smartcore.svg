@@ -1,0 +1,106 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1100" viewBox="0 0 1600 1100" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="86" y1="50" x2="1500" y2="1040" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#142640"/>
+      <stop offset=".52" stop-color="#0A182A"/>
+      <stop offset="1" stop-color="#06111F"/>
+    </linearGradient>
+    <linearGradient id="screen" x1="208" y1="198" x2="1300" y2="920" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#12263D"/>
+      <stop offset="1" stop-color="#0B192B"/>
+    </linearGradient>
+    <linearGradient id="cyan" x1="520" y1="700" x2="1140" y2="480" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#42D7F4"/>
+      <stop offset="1" stop-color="#7895FF"/>
+    </linearGradient>
+    <radialGradient id="light" cx="0" cy="0" r="1" gradientTransform="matrix(700 480 -700 1020 1200 80)" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#3986D8" stop-opacity=".2"/>
+      <stop offset="1" stop-color="#3986D8" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="grid" width="44" height="44" patternUnits="userSpaceOnUse">
+      <path d="M44 0H0V44" stroke="#A3C5E7" stroke-opacity=".045"/>
+    </pattern>
+    <filter id="shadow" x="30" y="40" width="1540" height="1030" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse">
+      <feGaussianBlur stdDeviation="30"/>
+    </filter>
+  </defs>
+  <path fill="url(#bg)" d="M0 0h1600v1100H0z"/>
+  <path fill="url(#light)" d="M0 0h1600v1100H0z"/>
+  <path fill="url(#grid)" d="M0 0h1600v1100H0z"/>
+  <ellipse cx="800" cy="1005" fill="#020914" fill-opacity=".72" filter="url(#shadow)" rx="650" ry="38"/>
+  <rect x="95" y="100" width="1410" height="850" rx="25" fill="#030A14" fill-opacity=".45" stroke="#83B8DD" stroke-opacity=".18" stroke-width="2"/>
+  <rect x="111" y="116" width="1378" height="818" rx="18" fill="url(#screen)"/>
+  <path d="M111 178h1378" stroke="#C1D8EE" stroke-opacity=".12"/>
+  <circle cx="142" cy="146" r="6" fill="#F07878" fill-opacity=".86"/>
+  <circle cx="165" cy="146" r="6" fill="#E9C45D" fill-opacity=".86"/>
+  <circle cx="188" cy="146" r="6" fill="#59C996" fill-opacity=".86"/>
+  <rect x="232" y="133" width="228" height="26" rx="7" fill="#FFFFFF" fill-opacity=".045"/>
+  <text x="250" y="151" fill="#AFC6DB" font-family="Inter,Arial,sans-serif" font-size="12" letter-spacing="1.4">NEO SMARTCORE · PREVIEW</text>
+  <rect x="112" y="179" width="205" height="754" fill="#081629" fill-opacity=".72"/>
+  <text x="142" y="224" fill="#ECF5FF" font-family="Sora,Arial,sans-serif" font-size="18" font-weight="600">Neo SmartCore</text>
+  <text x="142" y="248" fill="#718BA7" font-family="Inter,Arial,sans-serif" font-size="10" letter-spacing="1.5">OPERATIONS INTELLIGENCE</text>
+  <rect x="132" y="280" width="165" height="42" rx="10" fill="#53C7E9" fill-opacity=".13" stroke="#53C7E9" stroke-opacity=".2"/>
+  <circle cx="153" cy="301" r="5" fill="#5BD8EF"/>
+  <text x="169" y="305" fill="#DDF7FF" font-family="Inter,Arial,sans-serif" font-size="12">Overview</text>
+  <circle cx="153" cy="357" r="5" fill="#637E99"/>
+  <text x="169" y="361" fill="#A9BBD0" font-family="Inter,Arial,sans-serif" font-size="12">Inventory</text>
+  <circle cx="153" cy="413" r="5" fill="#637E99"/>
+  <text x="169" y="417" fill="#A9BBD0" font-family="Inter,Arial,sans-serif" font-size="12">Sales</text>
+  <circle cx="153" cy="469" r="5" fill="#637E99"/>
+  <text x="169" y="473" fill="#A9BBD0" font-family="Inter,Arial,sans-serif" font-size="12">Reports</text>
+  <circle cx="153" cy="525" r="5" fill="#637E99"/>
+  <text x="169" y="529" fill="#A9BBD0" font-family="Inter,Arial,sans-serif" font-size="12">Automation</text>
+  <rect x="340" y="210" width="1115" height="70" rx="13" fill="#FFFFFF" fill-opacity=".032" stroke="#BAD5EC" stroke-opacity=".08"/>
+  <text x="370" y="244" fill="#F2F7FC" font-family="Sora,Arial,sans-serif" font-size="22" font-weight="600">Operations overview</text>
+  <text x="370" y="264" fill="#7F98B2" font-family="Inter,Arial,sans-serif" font-size="11">A business intelligence dashboard concept</text>
+  <rect x="1266" y="230" width="161" height="34" rx="9" fill="#102B43" stroke="#75CDE9" stroke-opacity=".2"/>
+  <circle cx="1285" cy="247" r="4" fill="#61C9D9"/>
+  <text x="1299" y="251" fill="#C5D6E6" font-family="Inter,Arial,sans-serif" font-size="10">ILLUSTRATIVE UI</text>
+  <g>
+    <rect x="340" y="302" width="344" height="112" rx="13" fill="#11253B" stroke="#B5D2E8" stroke-opacity=".1"/>
+    <rect x="701" y="302" width="344" height="112" rx="13" fill="#11253B" stroke="#B5D2E8" stroke-opacity=".1"/>
+    <rect x="1062" y="302" width="393" height="112" rx="13" fill="#11253B" stroke="#B5D2E8" stroke-opacity=".1"/>
+    <text x="367" y="334" fill="#8EA7C0" font-family="Inter,Arial,sans-serif" font-size="11" letter-spacing="1">STOCK OVERVIEW</text>
+    <text x="367" y="381" fill="#EAF5FF" font-family="Sora,Arial,sans-serif" font-size="30" font-weight="600">—</text>
+    <path d="M579 382v-18h14v18m12 0v-30h14v30m12 0v-43h14v43" stroke="#53CFEA" stroke-width="5" stroke-linecap="round"/>
+    <text x="728" y="334" fill="#8EA7C0" font-family="Inter,Arial,sans-serif" font-size="11" letter-spacing="1">SALES &amp; ACTIVITY</text>
+    <text x="728" y="381" fill="#EAF5FF" font-family="Sora,Arial,sans-serif" font-size="30" font-weight="600">—</text>
+    <path d="M943 379c10-20 18-21 27-9 10 14 18 2 28-14 8-12 15-12 25 0" stroke="#8A9AFF" stroke-width="4" stroke-linecap="round"/>
+    <text x="1089" y="334" fill="#8EA7C0" font-family="Inter,Arial,sans-serif" font-size="11" letter-spacing="1">DAILY REPORTING</text>
+    <text x="1089" y="381" fill="#EAF5FF" font-family="Sora,Arial,sans-serif" font-size="30" font-weight="600">—</text>
+    <circle cx="1386" cy="360" r="23" stroke="#53CFEA" stroke-opacity=".55" stroke-width="8"/>
+    <path d="M1386 337a23 23 0 0 1 19 10" stroke="#8A9AFF" stroke-width="8" stroke-linecap="round"/>
+  </g>
+  <rect x="340" y="436" width="690" height="443" rx="15" fill="#0C1C30" stroke="#B5D2E8" stroke-opacity=".1"/>
+  <text x="370" y="476" fill="#EDF6FF" font-family="Sora,Arial,sans-serif" font-size="16" font-weight="600">Business activity</text>
+  <text x="370" y="499" fill="#7F98B2" font-family="Inter,Arial,sans-serif" font-size="11">Illustrative trend visualization</text>
+  <path d="M370 790h630M370 725h630M370 660h630M370 595h630M370 530h630" stroke="#D3E5F4" stroke-opacity=".065"/>
+  <path d="M379 763c57-11 60-65 115-56 54 9 58-43 110-38 50 5 66 40 112 20 47-20 75-81 120-58 44 22 76-5 128-54" stroke="url(#cyan)" stroke-width="5" stroke-linecap="round"/>
+  <path d="M379 763c57-11 60-65 115-56 54 9 58-43 110-38 50 5 66 40 112 20 47-20 75-81 120-58 44 22 76-5 128-54v213H379z" fill="url(#cyan)" fill-opacity=".075"/>
+  <rect x="1050" y="436" width="405" height="443" rx="15" fill="#0C1C30" stroke="#B5D2E8" stroke-opacity=".1"/>
+  <text x="1080" y="476" fill="#EDF6FF" font-family="Sora,Arial,sans-serif" font-size="16" font-weight="600">Inventory signals</text>
+  <text x="1080" y="499" fill="#7F98B2" font-family="Inter,Arial,sans-serif" font-size="11">Stock monitoring concept</text>
+  <g font-family="Inter,Arial,sans-serif">
+    <rect x="1078" y="524" width="348" height="78" rx="11" fill="#142A41"/>
+    <rect x="1096" y="543" width="38" height="38" rx="11" fill="#1B3851"/>
+    <path d="M1105 554h20v17h-20zM1105 559h20" stroke="#65D2EB" stroke-width="1.6"/>
+    <text x="1151" y="555" fill="#E2EFFA" font-size="12">Category A</text>
+    <text x="1151" y="576" fill="#7F98B2" font-size="10">Inventory group</text>
+    <path d="M1365 568h34" stroke="#60C6DE" stroke-width="4" stroke-linecap="round"/>
+    <rect x="1078" y="615" width="348" height="78" rx="11" fill="#142A41"/>
+    <rect x="1096" y="634" width="38" height="38" rx="11" fill="#25364F"/>
+    <path d="M1105 645h20v17h-20zM1105 650h20" stroke="#9DAAF3" stroke-width="1.6"/>
+    <text x="1151" y="646" fill="#E2EFFA" font-size="12">Category B</text>
+    <text x="1151" y="667" fill="#7F98B2" font-size="10">Inventory group</text>
+    <path d="M1365 659h22" stroke="#8C9AF1" stroke-width="4" stroke-linecap="round"/>
+    <rect x="1078" y="706" width="348" height="78" rx="11" fill="#142A41"/>
+    <rect x="1096" y="725" width="38" height="38" rx="11" fill="#1A3945"/>
+    <path d="M1105 736h20v17h-20zM1105 741h20" stroke="#62CFC2" stroke-width="1.6"/>
+    <text x="1151" y="737" fill="#E2EFFA" font-size="12">Category C</text>
+    <text x="1151" y="758" fill="#7F98B2" font-size="10">Inventory group</text>
+    <path d="M1365 750h28" stroke="#63CDBD" stroke-width="4" stroke-linecap="round"/>
+  </g>
+  <rect x="1180" y="890" width="276" height="34" rx="17" fill="#081726" fill-opacity=".92" stroke="#78C7E9" stroke-opacity=".24"/>
+  <circle cx="1200" cy="907" r="4" fill="#53D6F1"/>
+  <text x="1214" y="911" fill="#C5D8E9" font-family="Inter,Arial,sans-serif" font-size="10" letter-spacing="1.1">ILLUSTRATIVE DASHBOARD</text>
+</svg>
