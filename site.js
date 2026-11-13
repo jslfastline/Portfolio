@@ -403,6 +403,111 @@
     }
   }
 
+  /* ---------- Hero value typewriter ---------- */
+  function setupHeroTypewriter() {
+    var typeEl = document.querySelector('.hero__type');
+    if (!typeEl) return;
+    var textEl = typeEl.querySelector('.hero__type-text');
+    var sizerEl = document.querySelector('.hero__type-sizer');
+    if (!textEl || !sizerEl) return;
+
+    var SENTENCES = [
+      'We build digital systems for businesses and institutions.',
+      'We develop software, websites and mobile applications.',
+      'We automate workflows with intelligent technology.',
+      'We create networking and connectivity solutions.',
+      'We build our own technology products and innovations.'
+    ];
+
+    function measure() {
+      var tallest = 0;
+      var longest = SENTENCES[0];
+      SENTENCES.forEach(function (sentence) {
+        sizerEl.textContent = sentence;
+        var h = sizerEl.offsetHeight;
+        if (h > tallest) { tallest = h; longest = sentence; }
+      });
+      sizerEl.textContent = longest;
+      if (tallest) sizerEl.style.minHeight = tallest + 'px';
+    }
+    measure();
+
+    var resizeTimer = null;
+    function onResize() {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(measure, 160);
+    }
+    window.addEventListener('resize', onResize);
+
+    if (REDUCED) {
+      textEl.textContent = SENTENCES[0];
+      typeEl.classList.add('is-static');
+      return;
+    }
+
+    if (document.fonts && document.fonts.ready) {
+      document.fonts.ready.then(measure).catch(function () {});
+    }
+
+    var index = 0;
+    var pos = 0;
+    var timer = null;
+    var stopped = false;
+
+    function schedule(fn, ms) {
+      if (stopped) return;
+      timer = setTimeout(fn, ms);
+    }
+
+    function typeNext() {
+      var sentence = SENTENCES[index];
+      pos += 1;
+      textEl.textContent = sentence.slice(0, pos);
+      typeEl.classList.add('is-typing');
+      if (pos < sentence.length) {
+        schedule(typeNext, 48 + Math.random() * 12);
+      } else {
+        typeEl.classList.remove('is-typing');
+        schedule(eraseNext, 2000);
+      }
+    }
+
+    function eraseNext() {
+      var sentence = SENTENCES[index];
+      pos -= 1;
+      textEl.textContent = sentence.slice(0, Math.max(pos, 0));
+      typeEl.classList.add('is-typing');
+      if (pos > 0) {
+        schedule(eraseNext, 22 + Math.random() * 8);
+      } else {
+        typeEl.classList.remove('is-typing');
+        index = (index + 1) % SENTENCES.length;
+        schedule(typeNext, 460);
+      }
+    }
+
+    textEl.textContent = '';
+    schedule(typeNext, 1200);
+
+    function stop() {
+      stopped = true;
+      clearTimeout(timer);
+      timer = null;
+      window.removeEventListener('resize', onResize);
+    }
+    window.addEventListener('pagehide', stop, { once: true });
+    window.addEventListener('pageshow', function (e) {
+      if (!e.persisted) return;
+      stopped = false;
+      index = 0;
+      pos = 0;
+      textEl.textContent = '';
+      window.addEventListener('resize', onResize);
+      window.addEventListener('pagehide', stop, { once: true });
+      schedule(typeNext, 700);
+    });
+  }
+
   /* ---------- Hero video ---------- */
   var heroVideo = document.getElementById('hero-video');
   if (heroVideo) {
@@ -639,5 +744,6 @@
 
   /* ---------- Initialise card motion after dynamic content ---------- */
   initCardMotion();
+  setupHeroTypewriter();
 
 })();
