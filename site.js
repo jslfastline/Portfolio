@@ -72,93 +72,6 @@
 
   syncThemeControls(currentTheme());
 
-  /* ---------- FastLine Universe ---------- */
-  var universeCore = document.querySelector('#universe .uni-core');
-  var productsCounter = document.querySelector('[data-products-counter]');
-  var exploreLabButton = document.querySelector('.uni-core__cta[aria-controls="uni-products"]');
-  var productsPanel = document.getElementById('uni-products');
-
-  if (productsCounter) {
-    var counterStarted = false;
-
-    function animateProductsCounter() {
-      if (counterStarted) return;
-      counterStarted = true;
-
-      var riseDuration = 780;
-      var peakDuration = 140;
-      var fallDuration = 1500;
-      var startTime = null;
-
-      function renderCount(value) {
-        var count = Math.round(value);
-        productsCounter.textContent = count >= 100
-          ? '100+'
-          : count === 0 ? '0' : String(count).padStart(2, '0');
-      }
-
-      function tick(timestamp) {
-        if (startTime === null) startTime = timestamp;
-        var elapsed = timestamp - startTime;
-
-        if (elapsed < riseDuration) {
-          var rise = elapsed / riseDuration;
-          renderCount(100 * (1 - Math.pow(1 - rise, 3)));
-          requestAnimationFrame(tick);
-          return;
-        }
-
-        if (elapsed < riseDuration + peakDuration) {
-          renderCount(100);
-          requestAnimationFrame(tick);
-          return;
-        }
-
-        var fallElapsed = elapsed - riseDuration - peakDuration;
-        if (fallElapsed < fallDuration) {
-          renderCount(100 - 96 * (fallElapsed / fallDuration));
-          requestAnimationFrame(tick);
-          return;
-        }
-
-        productsCounter.textContent = '04';
-      }
-
-      productsCounter.textContent = '0';
-      requestAnimationFrame(tick);
-    }
-
-    if (REDUCED) {
-      productsCounter.textContent = '04';
-      counterStarted = true;
-    } else if (universeCore && 'IntersectionObserver' in window) {
-      var productsCounterObserver = new IntersectionObserver(function (entries) {
-        entries.forEach(function (entry) {
-          if (!entry.isIntersecting) return;
-          productsCounterObserver.unobserve(entry.target);
-          animateProductsCounter();
-        });
-      }, { threshold: 0.18 });
-      productsCounterObserver.observe(universeCore);
-    } else {
-      animateProductsCounter();
-    }
-  }
-
-  if (exploreLabButton && productsPanel) {
-    exploreLabButton.addEventListener('click', function () {
-      var expanded = exploreLabButton.getAttribute('aria-expanded') !== 'true';
-      exploreLabButton.setAttribute('aria-expanded', String(expanded));
-      productsPanel.setAttribute('aria-hidden', String(!expanded));
-      if (expanded) productsPanel.removeAttribute('inert');
-      else productsPanel.setAttribute('inert', '');
-      productsPanel.classList.toggle('is-open', expanded);
-
-      var label = exploreLabButton.querySelector('span');
-      if (label) label.textContent = expanded ? 'Close Innovation Lab' : 'Explore Innovation Lab';
-    });
-  }
-
   /* ---------- Brand media source ---------- */
   var BRAND_FILM =
     'https://res.cloudinary.com/dlv2esvfc/video/upload/v1790956219/Technology_brand_film_loop_20261002184452_ytncv8.mp4';
@@ -275,7 +188,7 @@
 
   function enhanceCards() {
     document.querySelectorAll(
-      '.service, .uni-product, .lab-item, .next-item, .media-item, .p-card, .p-step, .c-card, .office-card, .legal__item, .project__media'
+      '.service, .uni-product, .pillar, .audience, .product-card, .principle, .contact-action, .update, .lab-item, .next-item, .media-item, .p-card, .p-step, .c-card, .office-card, .legal__item, .project__media'
     ).forEach(addSpotlight);
 
     document.querySelectorAll('.project__media, .p-visual').forEach(function (el) {
@@ -619,7 +532,7 @@
           '<div class="media-item__shade"></div>' +
           '<span class="media-item__tag">' + item.tag + '</span>' +
           '<div class="media-item__body">' +
-          '<div><h4>' + item.title + '</h4><p>' + (item.videoUrl ? 'Play in-page' : 'Film coming soon') + '</p></div>' +
+          '<div><h3>' + item.title + '</h3><p>' + (item.videoUrl ? 'Play in-page' : 'Film coming soon') + '</p></div>' +
           (item.videoUrl
             ? '<span class="play-orb"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.14v13.72c0 .8.87 1.3 1.56.9l10.4-6.86a1.05 1.05 0 0 0 0-1.8L9.56 4.24A1.04 1.04 0 0 0 8 5.14Z"/></svg></span>'
             : '<span class="soonsoon">Soon</span>') +
@@ -742,7 +655,74 @@
     });
   }
 
+  /* ---------- Inside FastLine updates ---------- */
+  var updatesList = document.getElementById('updates-list');
+  var updatesCount = document.getElementById('updates-count');
+  var UPDATES = Array.isArray(window.FASTLINE_UPDATES) ? window.FASTLINE_UPDATES : [];
+
+  function escapeHTML(value) {
+    return String(value == null ? '' : value)
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;')
+      .replace(/'/g, '&#39;');
+  }
+
+  function parseUpdateDate(value) {
+    if (!value) return null;
+    var d = new Date(value);
+    if (isNaN(d.getTime())) return null;
+    return {
+      iso: d.toISOString().slice(0, 10),
+      label: d.toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' })
+    };
+  }
+
+  function renderUpdates() {
+    if (!updatesList) return;
+
+    if (updatesCount) {
+      updatesCount.textContent = UPDATES.length === 1 ? '1 update' : UPDATES.length + ' updates';
+    }
+
+    if (!UPDATES.length) {
+      updatesList.innerHTML =
+        '<div class="inside-empty">' +
+          '<span class="inside-empty__mark" aria-hidden="true"><i></i></span>' +
+          '<h4>No public updates yet.</h4>' +
+          '<p>This log opens when there is real work to report — a prototype milestone, a pilot, a release, or a lesson worth sharing. Nothing is posted before it happens.</p>' +
+          '<a class="btn btn--line" href="#products">See what we are building </a>' +
+        '</div>';
+      return;
+    }
+
+    updatesList.innerHTML = UPDATES.map(function (item) {
+      var date = parseUpdateDate(item.date);
+      var tag = item.tag ? '<span class="update__tag">' + escapeHTML(item.tag) + '</span>' : '';
+      var link = item.link
+        ? '<a class="update__link" href="' + escapeHTML(item.link) + '">' + escapeHTML(item.linkLabel || 'Read more') + ' <span aria-hidden="true">↗</span></a>'
+        : '';
+      var image = item.image
+        ? '<img class="update__image" src="' + escapeHTML(item.image) + '" alt="' + escapeHTML(item.imageAlt || item.title) + '" loading="lazy" decoding="async">'
+        : '';
+      return (
+        '<article class="update">' +
+          image +
+          '<div class="update__meta">' +
+            (date ? '<time datetime="' + date.iso + '">' + date.label + '</time>' : '') +
+            tag +
+          '</div>' +
+          '<h4>' + escapeHTML(item.title) + '</h4>' +
+          (item.summary ? '<p>' + escapeHTML(item.summary) + '</p>' : '') +
+          link +
+        '</article>'
+      );
+    }).join('');
+  }
+
   /* ---------- Initialise card motion after dynamic content ---------- */
+  renderUpdates();
   initCardMotion();
   setupHeroTypewriter();
 
