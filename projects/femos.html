@@ -38,7 +38,7 @@
         }
       })();
     </script>
-    <link rel="stylesheet" href="../site.css?v=202632" />
+    <link rel="stylesheet" href="../site.css?v=202635" />
   </head>
   <body>
     <div id="progress"></div>
@@ -46,11 +46,8 @@
     <nav id="navbar" aria-label="Primary">
       <div class="container nav-inner">
         <a href="/" class="brand" aria-label="FastLine Technologies — home">
-          <span class="brand__mark"><img src="../RoundIcon.png" alt="" referrerpolicy="no-referrer" /></span>
-          <span class="brand__txt">
-            <span class="brand__name">FastLine Technologies</span>
-            
-</span>
+          <span class="brand__mark"><img src="../RoundIcon.png" alt="" width="512" height="512" referrerpolicy="no-referrer" /></span>
+          <span class="brand__txt"><span class="brand__name">FastLine Technologies</span></span>
         </a>
         <ul class="nav-links">
           <li><a href="/#home">Home</a></li>
@@ -74,9 +71,8 @@
       <a href="/#solutions"><small>02</small>Solutions</a>
       <a href="/#products"><small>03</small>Products</a>
       <a href="/#projects" aria-current="page"><small>04</small>Projects</a>
-      <a href="/#inside"><small>05</small>Inside</a>
-      <a href="/about"><small>06</small>About</a>
-      <a href="/contact"><small>07</small>Contact</a>
+      <a href="/about"><small>05</small>About</a>
+      <a href="/contact"><small>06</small>Contact</a>
       <div class="m-nav__foot">
         <span class="m-nav__foot-label">Theme</span>
         <button class="theme-toggle theme-toggle--mobile" type="button" data-theme-toggle aria-label="Switch to dark theme">
@@ -85,21 +81,24 @@
       </div>
     </div>
 
+    <main id="main">
+
     <header class="p-hero">
       <div class="container p-wrap reveal in">
         <span class="eyebrow p-eyebrow">Campus Operating System</span>
-        <h1 class="p-title">FeMOS <span class="grad">Operator</span></h1>
+        <h1 class="p-title">FeMOS <span class="grad">Campus OS</span></h1>
         <p class="p-sub">An operating system for an entire campus. FeMOS replaces paper attendance and scattered announcements with one unified, offline-capable platform for students, lecturers and administrators.</p>
         <div class="p-meta">
           <span class="chip in-dev">In Development</span>
           <span class="chip plain">FastLine Enterprises Modern Operation System</span>
-          <span class="chip plain">Proposal · Pilot: MUST · UDSM · UDOM</span>
+          <span class="chip plain">Proposal · Proposed pilots: MUST · UDSM · UDOM (unconfirmed)</span>
         </div>
       </div>
     </header>
 
     <section class="p-section">
       <div class="container">
+        <h2 class="sr-only">Overview</h2>
         <div class="p-visual reveal-image">
           <img src="https://res.cloudinary.com/j8zmetxr/image/upload/v1789212897/FeMOS_phone_nobg_pmxxay.png" alt="FeMOS — campus operating system phone preview" loading="lazy" />
           <span class="grain"></span>
@@ -113,13 +112,13 @@
           </div>
           <div class="p-card reveal" data-d="1">
             <span class="p-card__k"> The Idea</span>
-            <h3>One system that cannot be fooled</h3>
-            <p>Give every campus one system — attendance, announcements and identity — that works even when the internet does not, and make it impossible to fake.</p>
+            <h3>One system that keeps working</h3>
+            <p>Give every campus one system — attendance, announcements and identity — that works even when the internet does not, and makes attendance records harder to falsify and easier to audit.</p>
           </div>
           <div class="p-card reveal" data-d="2">
             <span class="p-card__k"> The Solution</span>
-            <h3>Offline-first, fraud-proof</h3>
-            <p>A Progressive Web Application with per-campus edge servers: Smart Attendance with rotating QR and geofencing, Smart Announcements with mandatory read-acknowledgement, and a permanent Student Unique Identity with QR and NFC support.</p>
+            <h3>Offline-first, auditable</h3>
+            <p>A Progressive Web Application with per-campus edge servers: attendance with rotating QR and geofencing, announcements with read-acknowledgement, and a persistent student identity with QR and NFC support.</p>
           </div>
         </div>
       </div>
@@ -133,9 +132,9 @@
         </div>
         <div class="p-steps" data-stagger data-stagger-step="80">
           <div class="p-step reveal" data-d="0"><span class="p-step__n">01</span><p>A student signs in by scanning a rotating, time-limited QR code at the lecture venue.</p></div>
-          <div class="p-step reveal" data-d="1"><span class="p-step__n">02</span><p>Geofencing and device fingerprinting reject signs-in made outside the campus or from cloned devices.</p></div>
-          <div class="p-step reveal" data-d="2"><span class="p-step__n">03</span><p>Attendance and timestamps sync instantly over the campus network and are queued offline when connectivity drops.</p></div>
-          <div class="p-step reveal" data-d="3"><span class="p-step__n">04</span><p>Administrators see live dashboards; announcements carry a read-acknowledgement trail so nobody can claim they did not see it.</p></div>
+          <div class="p-step reveal" data-d="1"><span class="p-step__n">02</span><p>Geofencing and device checks flag sign-ins made outside the campus or from a device already linked to another student.</p></div>
+          <div class="p-step reveal" data-d="2"><span class="p-step__n">03</span><p>Attendance and timestamps sync over the campus network and are queued offline when connectivity drops.</p></div>
+          <div class="p-step reveal" data-d="3"><span class="p-step__n">04</span><p>Administrators see live dashboards; announcements carry a read-acknowledgement trail so delivery can be checked.</p></div>
         </div>
       </div>
     </section>
@@ -147,11 +146,11 @@
           <h2 class="h-large">Key Capabilities</h2>
         </div>
         <div class="p-pills reveal">
-          <span class="pill on">Smart Attendance — real-time, fraud-proof sign-in</span>
-          <span class="pill on">Smart Announcements — offline delivery queue + read acknowledgment</span>
-          <span class="pill on">Student Unique Identity — permanent FEMOS IDs, QR &amp; NFC</span>
-          <span class="pill on">Edge Servers — per-campus infrastructure, zero internet needed</span>
-          <span class="pill on">Anti-Fraud — rotating QR, geofencing, device fingerprinting</span>
+          <span class="pill on">Attendance — real-time sign-in with an auditable record</span>
+          <span class="pill on">Announcements — offline delivery queue + read acknowledgement</span>
+          <span class="pill on">Student Identity — persistent FeMOS IDs, QR &amp; NFC</span>
+          <span class="pill on">Edge Servers — per-campus infrastructure, no internet required</span>
+          <span class="pill on">Integrity checks — rotating QR, geofencing, device checks</span>
         </div>
         <div class="section-head reveal" style="margin-top: 70px;">
           <span class="eyebrow">FeMOS</span>
@@ -168,7 +167,7 @@
         <div class="p-road reveal">
           <div>
             <h3>Status &amp; Roadmap</h3>
-            <p>FeMOS is in active development. A live system is not yet publicly available — this page will be updated the moment a pilot goes live. Pilots are being prepared at MUST, UDSM and UDOM.</p>
+            <p>FeMOS is in active development. No public system is live yet. Proposed pilot discussions with MUST, UDSM and UDOM are not confirmed, and this page will be updated only when a pilot is agreed and running.</p>
           </div>
           <span class="chip in-dev">In Development</span>
         </div>
@@ -192,6 +191,8 @@
       </div>
     </section>
 
+    </main>
+
     <footer class="footer">
       <div class="footer__ambient" aria-hidden="true"></div>
       <div class="container footer__inner">
@@ -203,11 +204,17 @@
             </a>
             <p class="footer-brand-tagline">Fast Connections, Smart Future.</p>
             <p class="footer-brand-descriptor">
-              <span>Digital Systems</span>
+              <span>Web Systems</span>
               <span class="footer-brand-dot" aria-hidden="true">·</span>
-              <span>Intelligent Solutions</span>
+              <span>Software</span>
               <span class="footer-brand-dot" aria-hidden="true">·</span>
-              <span>Connectivity.</span>
+              <span>Mobile</span>
+              <span class="footer-brand-dot" aria-hidden="true">·</span>
+              <span>Automation</span>
+              <span class="footer-brand-dot" aria-hidden="true">·</span>
+              <span>Identity</span>
+              <span class="footer-brand-dot" aria-hidden="true">·</span>
+              <span>Networks</span>
             </p>
             <p class="footer-brand-founder">Founded &amp; Engineered by <span class="jay-bros">Jay Bros</span></p>
 
@@ -224,11 +231,6 @@
                     <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.39.6.11.82-.26.82-.58 0-.28-.01-1.04-.02-2.04-3.34.73-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.09-.75.08-.74.08-.74 1.2.09 1.84 1.24 1.84 1.24 1.07 1.83 2.81 1.3 3.5.99.1-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.13-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.3-1.55 3.3-1.23 3.3-1.23.66 1.66.25 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.6-2.8 5.63-5.48 5.92.43.37.82 1.1.82 2.22 0 1.6-.01 2.9-.01 3.29 0 .32.21.7.82.58A12 12 0 0 0 24 12C24 5.37 18.63 0 12 0Z"/></svg>
                   </a>
                 </li>
-                <li>
-                  <a class="footer-social-link" href="https://www.linkedin.com/feed/" target="_blank" rel="noopener noreferrer" aria-label="FastLine Technologies on LinkedIn">
-                    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.4v1.56h.05c.47-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45z"/></svg>
-                  </a>
-                </li>
               </ul>
             </nav>
           </section>
@@ -240,7 +242,7 @@
                 <li><a href="/projects/femos">FeMOS</a></li>
                 <li><a href="/projects/jsl-fastline">JSL FastLine</a></li>
                 <li><a href="/projects/neo-smartcore">Neo SmartCore</a></li>
-                <li><a href="/projects/fit">FIT</a></li>
+                <li><a href="/projects/fit">FastLine Identifying Tool</a></li>
               </ul>
             </div>
             <div class="footer-nav-col">
@@ -249,7 +251,6 @@
                 <li><a href="/#solutions">Solutions</a></li>
                 <li><a href="/#products">Products</a></li>
                 <li><a href="/#projects">Projects</a></li>
-                <li><a href="/#inside">Inside FastLine</a></li>
                 <li><a href="/#lab">Innovation Lab</a></li>
                 <li><a href="/#media">Media</a></li>
                 <li><a href="/about">Company Story</a></li>
@@ -276,6 +277,6 @@
     <a id="fab" href="https://wa.me/255718573799?text=Hello%20FastLine%20Technologies" target="_blank" rel="noopener" aria-label="Chat on WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.16-.17.2-.35.22-.64.08-.3-.15-1.26-.47-2.4-1.48-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.6.13-.14.3-.35.44-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.5 0 1.47 1.07 2.9 1.22 3.1.15.2 2.1 3.2 5.09 4.49.71.3 1.27.49 1.7.63.72.23 1.37.2 1.88.12.58-.09 1.76-.72 2-1.42.25-.7.25-1.3.18-1.42-.08-.13-.28-.2-.58-.35zM12.05 21.79h-.01a9.7 9.7 0 0 1-4.94-1.35l-.36-.21-3.66.96.98-3.57-.24-.37a9.69 9.69 0 0 1-1.48-5.18c0-5.35 4.35-9.7 9.71-9.7a9.65 9.65 0 0 1 9.7 9.7c0 5.36-4.35 9.71-9.7 9.71zm8.14-17.85A11.66 11.66 0 0 0 12.05 0C5.5 0 .15 5.35.15 11.92c0 2.1.55 4.15 1.59 5.95L.07 24l6.3-1.65a11.9 11.9 0 0 0 5.68 1.45h.01c6.55 0 11.9-5.35 11.9-11.92 0-3.18-1.24-6.17-3.49-8.42z"/></svg></a>
 
     <script src="../data/projects.js"></script>
-    <script src="../site.js?v=202632"></script>
+    <script src="../site.js?v=202635"></script>
   </body>
 </html>

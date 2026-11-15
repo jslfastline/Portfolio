@@ -506,15 +506,11 @@
 
   /* ---------- Media section ---------- */
   var PROJECTS = window.FASTLINE_PROJECTS || [];
+  /* Only finished media is listed. Add an item when the film actually exists. */
   var MEDIA_ITEMS = [
-    { title: 'FastLine Technologies — Brand Film', tag: 'Brand', cat: ['brand', 'vision'], thumb: BRAND_POSTER, videoUrl: BRAND_FILM },
-    { title: 'FeMOS — Staff Attendance & Identification', tag: 'Product', cat: ['product'], thumb: PROJECTS[0] ? PROJECTS[0].thumbnail : null, videoUrl: null },
-    { title: 'Neo SmartCore — Operations Intelligence', tag: 'Product', cat: ['product'], thumb: PROJECTS[1] ? PROJECTS[1].thumbnail : null, videoUrl: PROJECTS[1] ? PROJECTS[1].videoUrl : null },
-    { title: 'FIT — Identifying Technology', tag: 'Product', cat: ['product', 'demo'], thumb: null, videoUrl: null },
-    { title: 'JSL FastLine — Low-Connectivity Ecosystem', tag: 'Vision', cat: ['vision'], thumb: PROJECTS[3] ? PROJECTS[3].thumbnail : null, videoUrl: null }
-  ];
-  var FILTERS = ['ALL', 'BRAND', 'PRODUCT', 'DEMO', 'VISION', 'EXPERIMENT'];
-  var filtersWrap = document.getElementById('media-filters');
+    { title: 'FastLine Technologies — Brand Film', tag: 'Brand', thumb: BRAND_POSTER, videoUrl: BRAND_FILM },
+    { title: 'Neo SmartCore — Operations Core', tag: 'Product', thumb: PROJECTS[1] ? (PROJECTS[1].poster || PROJECTS[1].thumbnail) : null, videoUrl: PROJECTS[1] ? PROJECTS[1].videoUrl : null }
+  ].filter(function (item) { return !!item.videoUrl; });
   var grid = document.getElementById('media-grid');
 
   function renderMedia(list) {
@@ -522,47 +518,23 @@
     grid.innerHTML = list
       .map(function (item) {
         var thumb = item.thumb
-          ? '<img src="' + item.thumb + '" alt="" loading="lazy" />'
+          ? '<img src="' + item.thumb + '" alt="" width="1280" height="720" loading="lazy" decoding="async" />'
           : '';
-        var playClass = item.videoUrl ? '' : ' is-soon';
         return (
-          '<div class="media-item' + playClass + '" data-cats="' + item.cat.join(' ') + '"' +
-          (item.videoUrl ? ' data-video="' + item.videoUrl + '"' : '') + '>' +
+          '<button class="media-item" type="button" data-video="' + item.videoUrl + '" aria-label="Play ' + item.title + '">' +
           '<div style="position:absolute;inset:0;overflow:hidden;border-radius:20px;">' + thumb + '</div>' +
           '<div class="media-item__shade"></div>' +
           '<span class="media-item__tag">' + item.tag + '</span>' +
           '<div class="media-item__body">' +
-          '<div><h3>' + item.title + '</h3><p>' + (item.videoUrl ? 'Play in-page' : 'Film coming soon') + '</p></div>' +
-          (item.videoUrl
-            ? '<span class="play-orb"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.14v13.72c0 .8.87 1.3 1.56.9l10.4-6.86a1.05 1.05 0 0 0 0-1.8L9.56 4.24A1.04 1.04 0 0 0 8 5.14Z"/></svg></span>'
-            : '<span class="soonsoon">Soon</span>') +
-          '</div></div>'
+          '<div><h3>' + item.title + '</h3><p>Play in-page</p></div>' +
+          '<span class="play-orb"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.14v13.72c0 .8.87 1.3 1.56.9l10.4-6.86a1.05 1.05 0 0 0 0-1.8L9.56 4.24A1.04 1.04 0 0 0 8 5.14Z"/></svg></span>' +
+          '</div></button>'
         );
       })
       .join('');
   }
 
-  function renderFilters() {
-    if (!filtersWrap) return;
-    filtersWrap.innerHTML = FILTERS.map(function (f) {
-      return '<button class="filter' + (f === 'ALL' ? ' active' : '') + '" data-filter="' + f + '">' + f + '</button>';
-    }).join('');
-    filtersWrap.querySelectorAll('.filter').forEach(function (btn) {
-      btn.addEventListener('click', function () {
-        filtersWrap.querySelectorAll('.filter').forEach(function (b) { b.classList.remove('active'); });
-        btn.classList.add('active');
-        var f = btn.getAttribute('data-filter');
-        grid.querySelectorAll('.media-item').forEach(function (el) {
-          var cats = (el.getAttribute('data-cats') || '').split(' ');
-          var show = f === 'ALL' || cats.indexOf(f.toLowerCase()) !== -1;
-          el.style.display = show ? '' : 'none';
-        });
-      });
-    });
-  }
-
   if (grid) renderMedia(MEDIA_ITEMS);
-  renderFilters();
 
   /* ---------- Project media parallax ---------- */
   if (!REDUCED) {
@@ -655,74 +627,7 @@
     });
   }
 
-  /* ---------- Inside FastLine updates ---------- */
-  var updatesList = document.getElementById('updates-list');
-  var updatesCount = document.getElementById('updates-count');
-  var UPDATES = Array.isArray(window.FASTLINE_UPDATES) ? window.FASTLINE_UPDATES : [];
-
-  function escapeHTML(value) {
-    return String(value == null ? '' : value)
-      .replace(/&/g, '&amp;')
-      .replace(/</g, '&lt;')
-      .replace(/>/g, '&gt;')
-      .replace(/"/g, '&quot;')
-      .replace(/'/g, '&#39;');
-  }
-
-  function parseUpdateDate(value) {
-    if (!value) return null;
-    var d = new Date(value);
-    if (isNaN(d.getTime())) return null;
-    return {
-      iso: d.toISOString().slice(0, 10),
-      label: d.toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' })
-    };
-  }
-
-  function renderUpdates() {
-    if (!updatesList) return;
-
-    if (updatesCount) {
-      updatesCount.textContent = UPDATES.length === 1 ? '1 update' : UPDATES.length + ' updates';
-    }
-
-    if (!UPDATES.length) {
-      updatesList.innerHTML =
-        '<div class="inside-empty">' +
-          '<span class="inside-empty__mark" aria-hidden="true"><i></i></span>' +
-          '<h4>No public updates yet.</h4>' +
-          '<p>This log opens when there is real work to report — a prototype milestone, a pilot, a release, or a lesson worth sharing. Nothing is posted before it happens.</p>' +
-          '<a class="btn btn--line" href="#products">See what we are building </a>' +
-        '</div>';
-      return;
-    }
-
-    updatesList.innerHTML = UPDATES.map(function (item) {
-      var date = parseUpdateDate(item.date);
-      var tag = item.tag ? '<span class="update__tag">' + escapeHTML(item.tag) + '</span>' : '';
-      var link = item.link
-        ? '<a class="update__link" href="' + escapeHTML(item.link) + '">' + escapeHTML(item.linkLabel || 'Read more') + ' <span aria-hidden="true">↗</span></a>'
-        : '';
-      var image = item.image
-        ? '<img class="update__image" src="' + escapeHTML(item.image) + '" alt="' + escapeHTML(item.imageAlt || item.title) + '" loading="lazy" decoding="async">'
-        : '';
-      return (
-        '<article class="update">' +
-          image +
-          '<div class="update__meta">' +
-            (date ? '<time datetime="' + date.iso + '">' + date.label + '</time>' : '') +
-            tag +
-          '</div>' +
-          '<h4>' + escapeHTML(item.title) + '</h4>' +
-          (item.summary ? '<p>' + escapeHTML(item.summary) + '</p>' : '') +
-          link +
-        '</article>'
-      );
-    }).join('');
-  }
-
   /* ---------- Initialise card motion after dynamic content ---------- */
-  renderUpdates();
   initCardMotion();
   setupHeroTypewriter();
 

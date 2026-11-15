@@ -20,7 +20,7 @@
   --ink: #0F172A;
   --muted: #475569;
   --faint: #5B6B80;
-  --accent: #0879AB;
+  --accent: #0772A1;
   --accent-2: #11BBFA;
   --cyan: #11BBFA;
   --accent-soft: #E7F6FE;
@@ -5000,6 +5000,182 @@ html.theme-changing .update {
   transition: background-color 0.35s var(--ease), border-color 0.35s var(--ease), color 0.35s var(--ease);
 }
 
+/* ---------- Service cards: deliverable / problem / beneficiary ---------- */
+.pillar__facts {
+  display: grid;
+  gap: 11px;
+  margin-top: 4px;
+  padding-top: 17px;
+  border-top: 1px solid var(--line-soft);
+}
+.pillar__facts > div {
+  display: grid;
+  gap: 3px;
+}
+.pillar__facts dt {
+  font-family: var(--font);
+  font-size: 0.54rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--faint);
+}
+.pillar__facts dd {
+  font-size: 0.79rem;
+  line-height: 1.6;
+  color: var(--muted);
+  text-wrap: pretty;
+}
+
+/* ---------- Product status note ---------- */
+.status-note {
+  margin: -26px 0 40px;
+  padding: 13px 18px;
+  max-width: 78ch;
+  border-left: 2px solid var(--accent);
+  border-radius: 0 10px 10px 0;
+  background: var(--accent-soft);
+  font-size: 0.79rem;
+  line-height: 1.6;
+  color: var(--muted);
+}
+
+/* ---------- Innovation Lab: grouped by stage ---------- */
+.lab-groups {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+  align-items: stretch;
+}
+.lab-group {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  padding: 28px 26px 30px;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: #FFFFFF;
+  transition: border-color 0.3s, box-shadow 0.35s var(--ease);
+}
+.lab-group__head {
+  margin-bottom: 20px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--line-soft);
+}
+.lab-group__label {
+  display: inline-block;
+  margin-bottom: 10px;
+  font-family: var(--font);
+  font-size: 0.58rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+.lab-group__label--active { color: var(--amber); }
+.lab-group__label--future { color: var(--faint); }
+.lab-group__head p {
+  font-size: 0.78rem;
+  line-height: 1.55;
+  color: var(--faint);
+  text-wrap: pretty;
+}
+.lab-group__list {
+  display: grid;
+  gap: 16px;
+  list-style: none;
+}
+.lab-group__list li {
+  display: grid;
+  gap: 4px;
+  padding-left: 15px;
+  border-left: 2px solid var(--line-soft);
+}
+.lab-group__list strong {
+  font-family: var(--font);
+  font-weight: 600;
+  font-size: 0.88rem;
+  line-height: 1.4;
+  color: var(--ink);
+}
+.lab-group__list span {
+  font-size: 0.79rem;
+  line-height: 1.6;
+  color: var(--muted);
+  text-wrap: pretty;
+}
+.lab-note {
+  margin-top: 26px;
+  max-width: 72ch;
+  font-size: 0.8rem;
+  line-height: 1.6;
+  color: var(--faint);
+}
+
+/* ---------- Media: finished films only ---------- */
+.media-grid--two { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.media-grid--two .media-item { aspect-ratio: 16 / 9; }
+button.media-item {
+  width: 100%;
+  padding: 0;
+  font: inherit;
+  color: inherit;
+  text-align: left;
+  cursor: pointer;
+  -webkit-appearance: none;
+  appearance: none;
+}
+button.media-item:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+.media-note {
+  margin-top: 24px;
+  text-align: center;
+  font-size: 0.79rem;
+  line-height: 1.6;
+  color: var(--faint);
+}
+
+/* ---------- Builder: principles + quote inside the section ---------- */
+.builder-principles {
+  margin-top: clamp(56px, 7vw, 88px);
+  padding-top: clamp(40px, 5vw, 60px);
+  border-top: 1px solid var(--line-soft);
+}
+.builder-quote {
+  margin-top: clamp(44px, 6vw, 72px);
+  padding-top: clamp(36px, 5vw, 56px);
+  border-top: 1px solid var(--line-soft);
+}
+
+/* ---------- Contact: primary conversion action ---------- */
+.contact-action--primary {
+  border-color: rgba(8, 121, 171, 0.4);
+  background: linear-gradient(180deg, #FFFFFF, var(--accent-soft));
+}
+.contact-action--primary strong { color: var(--accent); }
+
+/* ---------- Dark theme: new components ---------- */
+html[data-theme="dark"] .lab-group {
+  background: var(--glass-bg);
+  border-color: var(--glass-border);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+html[data-theme="dark"] .lab-group__head { border-bottom-color: var(--line-soft); }
+html[data-theme="dark"] .lab-group__list li { border-left-color: rgba(148, 163, 184, 0.18); }
+html[data-theme="dark"] .status-note {
+  background: var(--accent-soft);
+  color: var(--muted);
+}
+html[data-theme="dark"] .contact-action--primary {
+  border-color: rgba(17, 187, 250, 0.38);
+  background: linear-gradient(180deg, var(--panel), rgba(17, 187, 250, 0.1));
+}
+html[data-theme="dark"] .contact-action--primary strong { color: var(--accent); }
+html[data-theme="dark"] .lab-note,
+html[data-theme="dark"] .media-note { color: var(--faint); }
+
 /* ---------- Responsive ---------- */
 @media (max-width: 1200px) and (min-width: 1061px) {
   .nav-links { gap: 26px; }
@@ -5012,13 +5188,16 @@ html.theme-changing .update {
 }
 
 @media (max-width: 900px) {
-  .solutions-grid { grid-template-columns: 1fr; }
+  .solutions-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .lab-groups { grid-template-columns: 1fr; }
   .products-grid { grid-template-columns: 1fr; }
   .why-layout { grid-template-columns: 1fr; gap: 44px; }
   .ecosystem-bar { flex-direction: column; align-items: flex-start; gap: 20px; }
 }
 
 @media (max-width: 640px) {
+  .solutions-grid { grid-template-columns: 1fr; }
+  .media-grid--two { grid-template-columns: 1fr; }
   .audiences-grid { grid-template-columns: 1fr; }
   .audience { min-height: 0; }
   .status-legend {
