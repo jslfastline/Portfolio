@@ -5237,3 +5237,14 @@ html[data-theme="dark"] .media-note { color: var(--faint); }
   .audience:hover,
   .contact-action:hover { transform: none !important; }
 }
+
+/* --- Neo SmartCore: direct launch link kwenye product card --- */
+.product-card__links {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px 20px;
+  margin-top: auto;
+}
+.product-card__links .product-card__link { margin-top: 0; }
+.product-card__link--live { border-bottom-color: var(--accent); }
